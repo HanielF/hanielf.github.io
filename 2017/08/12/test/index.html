@@ -100,18 +100,18 @@
 
 
 
-<meta name="description" content="testtest">
+<meta name="description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
 <meta name="keywords" content="Note,Learning,LNMP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test">
 <meta property="og:url" content="http://catchdream.me/2017/08/12/test/index.html">
 <meta property="og:site_name" content="Jounery Of A Newbie">
-<meta property="og:description" content="testtest">
+<meta property="og:description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-13T02:42:51.337Z">
+<meta property="og:updated_time" content="2017-08-13T02:47:59.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test">
-<meta name="twitter:description" content="testtest">
+<meta name="twitter:description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
 
 
 
@@ -460,7 +460,23 @@
       
 
       
-        <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>test<br><a id="more"></a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。</p>
+<p>其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。</p>
+<p>下面就是<strong>Centos/Fedora</strong>搭建LNMP环境的教程。<br><a id="more"></a></p>
+<h1 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h1><div class="note info"><p>OS: Fedora 25<br>Nginx Version: 1.6.2<br>Mysql Version: MariaDB 10.2<br>PHP Version: PHP7.17</p>
+</div>
+<h1 id="安装Nginx-PHP7-1-7和PHP-FPM"><a href="#安装Nginx-PHP7-1-7和PHP-FPM" class="headerlink" title="安装Nginx,PHP7.1.7和PHP-FPM"></a>安装Nginx,PHP7.1.7和PHP-FPM</h1><h2 id="Fedora-25"><a href="#Fedora-25" class="headerlink" title="Fedora 25"></a>Fedora 25</h2><h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo -i </div><div class="line"><span class="comment">## OR ##</span></div><div class="line">su -</div></pre></td></tr></table></figure>
+<p>###　添加repositories</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">## Remi Dependency on Fedora ##</span></div><div class="line">    rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm </div><div class="line">    rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</div><div class="line"></div><div class="line">    <span class="comment">## The version 25 can be replaced by 26/24 ##</span></div><div class="line">    rpm -Uvh http://rpms.famillecollet.com/fedora/remi-release-25.rpm</div><div class="line">``` </div><div class="line"></div><div class="line"><span class="comment">### 安装Nginx,PHP 7.1.7 and PHP-FPM</span></div><div class="line"></div><div class="line">``` bash</div><div class="line">    dnf --enablerepo=remi --enablerepo=remi-php71 install nginx php-fpm php-common</div></pre></td></tr></table></figure>
+<h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dnf --enablerepo=remi --enablerepo=remi-php71 install php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongodb php-pecl-redis php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml</div></pre></td></tr></table></figure>
+<div class="note warning"><p>关于这些模块的介绍可以自己百度,根据自己需要来安装,嫌麻烦的话～直接copy吧～</p>
+</div>
+<h3 id="关闭httpd-Apache-并打开Nginx-PHP-FPM"><a href="#关闭httpd-Apache-并打开Nginx-PHP-FPM" class="headerlink" title="关闭httpd(Apache)并打开Nginx,PHP-FPM"></a>关闭httpd(Apache)并打开Nginx,PHP-FPM</h3><p><strong>关闭Apache</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl stop httpd.service</div></pre></td></tr></table></figure></p>
+<p><strong>打开Nginx</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl start nginx.service</div></pre></td></tr></table></figure></p>
+<p><strong>打开PHP-FPM</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl start php-fpm.service</div></pre></td></tr></table></figure></p>
+<h3 id="设置开机自启Nginx-PHP-FPM"><a href="#设置开机自启Nginx-PHP-FPM" class="headerlink" title="设置开机自启Nginx PHP-FPM"></a>设置开机自启Nginx PHP-FPM</h3><p><strong>关闭httpd(Apache)的开机自启</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl <span class="built_in">disable</span> httpd.service</div></pre></td></tr></table></figure></p>
+<p><strong>设置Nginx和PHP-FPM开机自启</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl <span class="built_in">enable</span> nginx.service</div><div class="line">systemctl <span class="built_in">enable</span> php-fpm.service</div></pre></td></tr></table></figure></p>
+<h3 id="配置Nginx-和PHP-FPM"><a href="#配置Nginx-和PHP-FPM" class="headerlink" title="配置Nginx 和PHP-FPM"></a>配置Nginx 和PHP-FPM</h3><p><strong>先做好默认配置的备份</strong></p>
 
       
     </div>
@@ -696,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">1.</span> <span class="nav-text">test</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作环境"><span class="nav-number">2.</span> <span class="nav-text">操作环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Nginx-PHP7-1-7和PHP-FPM"><span class="nav-number">3.</span> <span class="nav-text">安装Nginx,PHP7.1.7和PHP-FPM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fedora-25"><span class="nav-number">3.1.</span> <span class="nav-text">Fedora 25</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到root用户"><span class="nav-number">3.1.1.</span> <span class="nav-text">切换到root用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装模块"><span class="nav-number">3.1.2.</span> <span class="nav-text">安装模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭httpd-Apache-并打开Nginx-PHP-FPM"><span class="nav-number">3.1.3.</span> <span class="nav-text">关闭httpd(Apache)并打开Nginx,PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置开机自启Nginx-PHP-FPM"><span class="nav-number">3.1.4.</span> <span class="nav-text">设置开机自启Nginx PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Nginx-和PHP-FPM"><span class="nav-number">3.1.5.</span> <span class="nav-text">配置Nginx 和PHP-FPM</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
