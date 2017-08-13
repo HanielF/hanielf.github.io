@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="Jounery Of A Newbie">
 <meta property="og:description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-13T02:54:42.448Z">
+<meta property="og:updated_time" content="2017-08-13T02:58:56.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test">
 <meta name="twitter:description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
@@ -516,10 +516,8 @@
 <p><strong>测试是否成功</strong><br>创建/srv/www/testsite.local/public_html/index.php并添加以下内容:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    phpinfo();</div></pre></td></tr></table></figure></p>
 <p>然后访问域名或者服务器ip看是否出现phpinfo的页面。</p>
 <p><strong>出现403 forbidden</strong><br>有可能是SELinux有问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chcon -R -t httpd_sys_content_t /srv/www/testsite.local/public_html</div></pre></td></tr></table></figure></p>
-<p><strong>远程链接到服务器</strong><br>打开防火墙的80端口<br>``` bash<br>    firewall-cmd –get-active-zones</p>
-<pre><code>firewall-cmd --permanent --zone=public --add-service=http
-## OR ##
-</code></pre>
+<p><strong>远程链接到服务器</strong><br>打开防火墙的80端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --get-active-zones</div><div class="line"></div><div class="line">firewall-cmd --permanent --zone=public --add-service=http</div><div class="line">firewall-cmd --permanent --zone=public --add-port=80/tcp</div><div class="line"></div><div class="line">systemctl restart firewalld.service</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
