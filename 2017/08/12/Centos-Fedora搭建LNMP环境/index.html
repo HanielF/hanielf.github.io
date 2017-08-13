@@ -103,14 +103,14 @@
 <meta name="description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
 <meta name="keywords" content="Note,Learning,LNMP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://catchdream.me/2017/08/12/test/index.html">
+<meta property="og:title" content="Centos-Fedora搭建LNMP环境">
+<meta property="og:url" content="http://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/index.html">
 <meta property="og:site_name" content="Jounery Of A Newbie">
 <meta property="og:description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-13T03:01:20.990Z">
+<meta property="og:updated_time" content="2017-08-13T03:04:12.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
+<meta name="twitter:title" content="Centos-Fedora搭建LNMP环境">
 <meta name="twitter:description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
 
 
@@ -139,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://catchdream.me/2017/08/12/test/"/>
+  <link rel="canonical" href="http://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/"/>
 
 
 
 
 
-  <title>test | Jounery Of A Newbie</title>
+  <title>Centos-Fedora搭建LNMP环境 | Jounery Of A Newbie</title>
   
 
 
@@ -340,7 +340,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://catchdream.me/2017/08/12/test/">
+    <link itemprop="mainEntityOfPage" href="http://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Haniel">
@@ -357,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test</h1>
+          <h1 class="post-title" itemprop="name headline">Centos-Fedora搭建LNMP环境</h1>
         
 
         <div class="post-meta">
@@ -422,8 +422,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/12/test/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/08/12/test/" itemprop="commentsCount"></span>
+                <a href="/2017/08/12/Centos-Fedora搭建LNMP环境/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/08/12/Centos-Fedora搭建LNMP环境/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -432,7 +432,7 @@
 
           
           
-             <span id="/2017/08/12/test/" class="leancloud_visitors" data-flag-title="test">
+             <span id="/2017/08/12/Centos-Fedora搭建LNMP环境/" class="leancloud_visitors" data-flag-title="Centos-Fedora搭建LNMP环境">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -516,13 +516,14 @@
 <p><strong>测试是否成功</strong><br>创建/srv/www/testsite.local/public_html/index.php并添加以下内容:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    phpinfo();</div></pre></td></tr></table></figure></p>
 <p>然后访问域名或者服务器ip看是否出现phpinfo的页面。</p>
 <p><strong>出现403 forbidden</strong><br>有可能是SELinux有问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chcon -R -t httpd_sys_content_t /srv/www/testsite.local/public_html</div></pre></td></tr></table></figure></p>
-<p><strong>远程链接到服务器</strong><br>打开防火墙的80端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --get-active-zones</div><div class="line"></div><div class="line">firewall-cmd --permanent --zone=public --add-service=http</div><div class="line">firewall-cmd --permanent --zone=public --add-port=80/tcp</div><div class="line"></div><div class="line">systemctl restart firewalld.service</div></pre></td></tr></table></figure></p>
-<h1 id="安装MariaDB"><a href="#安装MariaDB" class="headerlink" title="安装MariaDB"></a>安装MariaDB</h1><p>这里安装的是MariaDBm,而不是mysql,有如下几个原因</p>
+<p><strong>远程链接到服务器</strong><br>打开防火墙的80端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --get-active-zones</div><div class="line"></div><div class="line">firewall-cmd --permanent --zone=public --add-service=http</div><div class="line"><span class="comment">## OR ##</span></div><div class="line">firewall-cmd --permanent --zone=public --add-port=80/tcp</div><div class="line"></div><div class="line">systemctl restart firewalld.service</div></pre></td></tr></table></figure></p>
+<h1 id="安装MariaDB"><a href="#安装MariaDB" class="headerlink" title="安装MariaDB"></a>安装MariaDB</h1><div class="note warning"><p>这里安装的是MariaDBm,而不是mysql,有如下几个原因</p>
 <ul>
 <li>MariaDB本来就是一个Mysql的开源版本</li>
 <li>MariaDB和Mysql类似并兼容Mysql</li>
 <li>Fedora和Centos系列的发行版已经转用MariaDB了</li>
 </ul>
+</div>
 <p>我这里选择安装MariaDB 10.2.7[stable],具体安装过程如下~</p>
 <div class="note danger"><ul>
 <li>如果之前安装了Mysql,记得备份你的数据库和配置文件!</li>
@@ -578,7 +579,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>Post link:</strong>
-      <a href="http://catchdream.me/2017/08/12/test/" title="test">http://catchdream.me/2017/08/12/test/</a>
+      <a href="http://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/" title="Centos-Fedora搭建LNMP环境">http://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright Notice: </strong>
@@ -611,8 +612,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/12/Centos-Fedora搭建LNMP环境/" rel="next" title="Centos-Fedora搭建LNMP环境">
-                <i class="fa fa-chevron-left"></i> Centos-Fedora搭建LNMP环境
+              <a href="/2017/08/02/Markdown学习笔记/" rel="next" title="Markdown学习笔记">
+                <i class="fa fa-chevron-left"></i> Markdown学习笔记
               </a>
             
           </div>
@@ -620,6 +621,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/12/test/" rel="prev" title="test">
+                test <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -951,7 +956,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 92035, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 92035, xid: "2017/08/12/test/"});
+		_hcwp.push({widget:"Stream", widget_id: 92035, xid: "2017/08/12/Centos-Fedora搭建LNMP环境/"});
 		
 
 		(function() {
