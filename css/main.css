@@ -463,6 +463,7 @@ body {
 .footer {
   width: 100%;
   min-height: 50px;
+  margin: auto auto;
 }
 .footer-inner {
   box-sizing: border-box;
@@ -1820,7 +1821,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1cfe1f;
+  background: #8cfff2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1942,7 +1943,6 @@ pre .javascript .function {
 .footer {
   font-size: 14px;
   color: #999;
-  text-align: center;
 }
 .footer img {
   border: none;
