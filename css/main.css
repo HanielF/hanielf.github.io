@@ -1820,7 +1820,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe8a7;
+  background: #3ba20e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1942,7 +1942,6 @@ pre .javascript .function {
 .footer {
   font-size: 14px;
   color: #999;
-  margin: auto auto;
 }
 .footer img {
   border: none;
