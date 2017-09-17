@@ -463,13 +463,11 @@ body {
 .footer {
   width: 100%;
   min-height: 50px;
-  text-align: center;
 }
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
   width: 700px;
-  text-align: center;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -1822,7 +1820,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e93e0a;
+  background: #1cfe1f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1944,6 +1942,7 @@ pre .javascript .function {
 .footer {
   font-size: 14px;
   color: #999;
+  text-align: center;
 }
 .footer img {
   border: none;
