@@ -463,6 +463,7 @@ body {
 .footer {
   width: 100%;
   min-height: 50px;
+  text-align: center;
 }
 .footer-inner {
   box-sizing: border-box;
@@ -1821,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #95d5ff;
+  background: #e93e0a;
 }
 .links-of-blogroll {
   font-size: 13px;
