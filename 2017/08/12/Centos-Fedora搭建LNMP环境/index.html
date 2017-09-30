@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mala use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Learning,Note,LNMP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jounery Of A Newbie" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
+<meta name="keywords" content="Learning,Note,LNMP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos&#x2F;Fedora搭建LNMP环境">
+<meta property="og:url" content="https://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/index.html">
+<meta property="og:site_name" content="Jounery Of A Newbie">
+<meta property="og:description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-08-13T03:31:17.776Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Centos&#x2F;Fedora搭建LNMP环境">
+<meta name="twitter:description" content="前言原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。 其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。 下面就是Centos/Fedora搭建LNMP环境的教程。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mala',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'KQ07MV4OWP',
+      apiKey: 'b6563a24e764bf4304ff70c8168cdace',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/"/>
+
+
+
+
+
+  <title>Centos/Fedora搭建LNMP环境 | Jounery Of A Newbie</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-103976695-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+  <div class="container sidebar-position-right page-post-detail no-tag-categories-post ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jounery Of A Newbie</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+
+      
+        <p class="site-subtitle"></p>
+      
+
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    
+      
+
+      
+
+    
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haniel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://catchdream.me/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jounery Of A Newbie">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Centos/Fedora搭建LNMP环境</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-12T08:25:01+08:00">
+                2017-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LearningNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">LearningNotes</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LearningNotes/Centos-Fedora搭建LNMP/" itemprop="url" rel="index">
+                    <span itemprop="name">Centos/Fedora搭建LNMP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。</p>
+<p>其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。</p>
+<p><strong>下面就是<strong>Centos/Fedora</strong>搭建LNMP环境的教程。</strong><br><a id="more"></a></p>
+<h1 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h1><div class="note info"><p>OS: Fedora 25<br>Nginx Version: 1.6.2<br>Mysql Version: MariaDB 10.2<br>PHP Version: PHP7.17</p></div>
+<h1 id="安装Nginx-PHP7-1-7和PHP-FPM"><a href="#安装Nginx-PHP7-1-7和PHP-FPM" class="headerlink" title="安装Nginx,PHP7.1.7和PHP-FPM"></a>安装Nginx,PHP7.1.7和PHP-FPM</h1><h2 id="Fedora-25"><a href="#Fedora-25" class="headerlink" title="Fedora 25"></a>Fedora 25</h2><h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo -i </div><div class="line"><span class="comment">## OR ##</span></div><div class="line">su -</div></pre></td></tr></table></figure>
+<h3 id="添加repositories"><a href="#添加repositories" class="headerlink" title="添加repositories"></a>添加repositories</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## Remi Dependency on Fedora ##</span></div><div class="line">rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm </div><div class="line">rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</div><div class="line"></div><div class="line"><span class="comment">## The version 25 can be replaced by 26/24 ##</span></div><div class="line">rpm -Uvh http://rpms.famillecollet.com/fedora/remi-release-25.rpm</div></pre></td></tr></table></figure>
+<h3 id="安装Nginx-PHP-7-1-7-and-PHP-FPM"><a href="#安装Nginx-PHP-7-1-7-and-PHP-FPM" class="headerlink" title="安装Nginx,PHP 7.1.7 and PHP-FPM"></a>安装Nginx,PHP 7.1.7 and PHP-FPM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dnf --enablerepo=remi --enablerepo=remi-php71 install nginx php-fpm php-common</div></pre></td></tr></table></figure>
+<h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dnf --enablerepo=remi --enablerepo=remi-php71 install php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongodb php-pecl-redis php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml</div></pre></td></tr></table></figure>
+<div class="note warning"><p>关于这些模块的介绍可以自己百度,根据自己需要来安装,嫌麻烦的话～直接copy吧～</p></div>
+<h3 id="关闭httpd-Apache-并打开Nginx-PHP-FPM"><a href="#关闭httpd-Apache-并打开Nginx-PHP-FPM" class="headerlink" title="关闭httpd(Apache)并打开Nginx,PHP-FPM"></a>关闭httpd(Apache)并打开Nginx,PHP-FPM</h3><p><strong>关闭Apache</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl stop httpd.service</div></pre></td></tr></table></figure></p>
+<p><strong>打开Nginx</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl start nginx.service</div></pre></td></tr></table></figure></p>
+<p><strong>打开PHP-FPM</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl start php-fpm.service</div></pre></td></tr></table></figure></p>
+<h3 id="设置开机自启Nginx-PHP-FPM"><a href="#设置开机自启Nginx-PHP-FPM" class="headerlink" title="设置开机自启Nginx PHP-FPM"></a>设置开机自启Nginx PHP-FPM</h3><p><strong>关闭httpd(Apache)的开机自启</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl <span class="built_in">disable</span> httpd.service</div></pre></td></tr></table></figure></p>
+<p><strong>设置Nginx和PHP-FPM开机自启</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl <span class="built_in">enable</span> nginx.service</div><div class="line">systemctl <span class="built_in">enable</span> php-fpm.service</div></pre></td></tr></table></figure></p>
+<h3 id="配置Nginx-和PHP-FPM"><a href="#配置Nginx-和PHP-FPM" class="headerlink" title="配置Nginx 和PHP-FPM"></a>配置Nginx 和PHP-FPM</h3><p><strong>先做好默认配置的备份</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak</div><div class="line">cp /etc/nginx/nginx.conf.default /etc/nginx/nginx.conf</div></pre></td></tr></table></figure></p>
+<p><strong>修改PHP-FPM配置</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">vim /etc/php-fpm.d/www.conf</div><div class="line"></div><div class="line"><span class="comment">## 注释掉新添加一行 ##</span></div><div class="line">;listen = /run/php-fpm/www.sock</div><div class="line">listen = 127.0.0.1:9000</div></pre></td></tr></table></figure></p>
+<p><strong>为你的站点创建相关文件夹</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 将testsite.local换成你自己的　##</span></div><div class="line">mkdir -p /srv/www/testsite.local/public_html</div><div class="line">mkdir /srv/www/testsite.local/logs</div><div class="line">chown -R apache:apache /srv/www/testsite.local</div><div class="line"></div><div class="line">mkdir /etc/nginx/sites-available</div><div class="line">mkdir /etc/nginx/sites-enabled</div></pre></td></tr></table></figure></p>
+<div class="note info"><p>这里使用apache user　group是因为PHP-FPM默认运行apache,并且apache能够进入一些类似httpd这样的目录</p></div>
+<p> <strong>在/etc/nginx/nginx.conf文件\”include /etc/nginx/conf.d/*.conf\”这行后面添加一行</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include /etc/nginx/sites-enabled/*;</div></pre></td></tr></table></figure></p>
+<p> <strong>创建testsite.local 文件并配置</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 这是最基本的配置 ##</span></div><div class="line">server &#123;</div><div class="line">    server_name testsite.local;</div><div class="line">    access_log /srv/www/testsite.local/logs/access.log;</div><div class="line">    error_log /srv/www/testsite.local/logs/error.log;</div><div class="line">    root /srv/www/testsite.local/public_html;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        index index.html index.htm index.php;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location ~ \.php$ &#123;</div><div class="line">        include /etc/nginx/fastcgi_params;</div><div class="line">        fastcgi_pass  127.0.0.1:9000;</div><div class="line">        fastcgi_index index.php;</div><div class="line">        fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p> <strong>创建软链接到sites-enabled目录</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc/nginx/sites-enabled/</div><div class="line">ln -s /etc/nginx/sites-available/testsite.local</div><div class="line">systemctl restart nginx.service</div></pre></td></tr></table></figure></p>
+<p><strong>将testsite.local添加到/etc/hosts中</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">127.0.0.1               localhost.localdomain localhost testsite.local</div></pre></td></tr></table></figure></p>
+<p><a href="http://www.if-not-true-then-false.com/2011/nginx-and-php-fpm-configuration-and-optimizing-tips-and-tricks/" target="_blank" rel="external">更多的Nginx 和PHP-FPM配置点这里～</a></p>
+<h3 id="测试是否成功"><a href="#测试是否成功" class="headerlink" title="测试是否成功"></a>测试是否成功</h3><p> <strong>创建/srv/www/testsite.local/public_html/index.php并添加以下内容:</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    phpinfo();</div></pre></td></tr></table></figure></p>
+<p> <strong>然后访问域名或者服务器ip看是否出现phpinfo的页面。</strong></p>
+<h3 id="出现403-forbidden"><a href="#出现403-forbidden" class="headerlink" title="出现403 forbidden"></a>出现403 forbidden</h3><p> <strong>可能是SELinux有问题</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chcon -R -t httpd_sys_content_t /srv/www/testsite.local/public_html</div></pre></td></tr></table></figure></p>
+<h3 id="远程链接到服务器"><a href="#远程链接到服务器" class="headerlink" title="远程链接到服务器"></a>远程链接到服务器</h3><p> <strong>打开防火墙的80端口</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --get-active-zones</div><div class="line"></div><div class="line">firewall-cmd --permanent --zone=public --add-service=http</div><div class="line"><span class="comment">## OR ##</span></div><div class="line">firewall-cmd --permanent --zone=public --add-port=80/tcp</div><div class="line"></div><div class="line">systemctl restart firewalld.service</div></pre></td></tr></table></figure></p>
+<p> <strong>访问域名或者ip试试~</strong></p>
+<h2 id="Centos-7"><a href="#Centos-7" class="headerlink" title="Centos 7"></a>Centos 7</h2><h3 id="切换到root用户-1"><a href="#切换到root用户-1" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo -i </div><div class="line"><span class="comment">## OR ##</span></div><div class="line">su -</div></pre></td></tr></table></figure>
+<h3 id="添加repositories-1"><a href="#添加repositories-1" class="headerlink" title="添加repositories"></a>添加repositories</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## Centos 7 Remi repo ##</span></div><div class="line">rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</div><div class="line">rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## Centos 7 Nginx repo ##</span></div><div class="line">vim /etc/yum.repos.d/nginx.repo</div><div class="line"><span class="comment">## 添加 ##</span></div><div class="line">[nginx]</div><div class="line">name=nginx repo</div><div class="line">baseurl=http://nginx.org/packages/centos/<span class="variable">$releasever</span>/<span class="variable">$basearch</span>/</div><div class="line">gpgcheck=0</div><div class="line">enabled=1</div></pre></td></tr></table></figure>
+<h3 id="安装Nginx-PHP-7-1-7-and-PHP-FPM-1"><a href="#安装Nginx-PHP-7-1-7-and-PHP-FPM-1" class="headerlink" title="安装Nginx,PHP 7.1.7 and PHP-FPM"></a>安装Nginx,PHP 7.1.7 and PHP-FPM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum --enablerepo=remi,remi-php71 install nginx php-fpm php-common</div></pre></td></tr></table></figure>
+<h3 id="安装模块-1"><a href="#安装模块-1" class="headerlink" title="安装模块"></a>安装模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum --enablerepo=remi,remi-php71 install php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongodb php-pecl-redis php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml</div></pre></td></tr></table></figure>
+<h3 id="关闭httpd-Apache-并打开Nginx-PHP-FPM-1"><a href="#关闭httpd-Apache-并打开Nginx-PHP-FPM-1" class="headerlink" title="关闭httpd(Apache)并打开Nginx,PHP-FPM"></a>关闭httpd(Apache)并打开Nginx,PHP-FPM</h3><p><strong>关闭Apache</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/httpd stop</div><div class="line"><span class="comment">## OR ## </span></div><div class="line">service httpd stop</div></pre></td></tr></table></figure></p>
+<p><strong>打开Nginx和PHP-FPM</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl start nginx.service</div><div class="line">systemctl start php-fpm.service</div></pre></td></tr></table></figure></p>
+<h3 id="设置开机自启Nginx-PHP-FPM-1"><a href="#设置开机自启Nginx-PHP-FPM-1" class="headerlink" title="设置开机自启Nginx PHP-FPM"></a>设置开机自启Nginx PHP-FPM</h3><p><strong>关闭httpd(Apache)的开机自启,并设置nginx和php-fpm开机自启</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">systemctl <span class="built_in">disable</span> httpd.service</div><div class="line">systemctl <span class="built_in">enable</span> nginx.service</div><div class="line">systemctl <span class="built_in">enable</span> php-fpm.service</div></pre></td></tr></table></figure></p>
+<h3 id="配置Nginx-和PHP-FPM及其他"><a href="#配置Nginx-和PHP-FPM及其他" class="headerlink" title="配置Nginx 和PHP-FPM及其他"></a>配置Nginx 和PHP-FPM及其他</h3><div class="note info"><p>这一段的配置和fedora是一样的,可以不看了~</p></div>
+<p><strong>先做好默认配置的备份</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak</div><div class="line">cp /etc/nginx/nginx.conf.default /etc/nginx/nginx.conf</div></pre></td></tr></table></figure></p>
+<p><strong>修改PHP-FPM配置</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">vim /etc/php-fpm.d/www.conf</div><div class="line"></div><div class="line"><span class="comment">## 注释掉新添加一行 ##</span></div><div class="line">;listen = /run/php-fpm/www.sock</div><div class="line">listen = 127.0.0.1:9000</div></pre></td></tr></table></figure></p>
+<p><strong>为你的站点创建相关文件夹</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 将testsite.local换成你自己的　##</span></div><div class="line">mkdir -p /srv/www/testsite.local/public_html</div><div class="line">mkdir /srv/www/testsite.local/logs</div><div class="line">chown -R apache:apache /srv/www/testsite.local</div><div class="line"></div><div class="line">mkdir /etc/nginx/sites-available</div><div class="line">mkdir /etc/nginx/sites-enabled</div></pre></td></tr></table></figure></p>
+<p> <strong>在/etc/nginx/nginx.conf文件”include /etc/nginx/conf.d/*.conf”这行后面添加一行</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include /etc/nginx/sites-enabled/*;</div></pre></td></tr></table></figure></p>
+<p> <strong>创建testsite.local 文件并配置</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 这是最基本的配置 ##</span></div><div class="line">server &#123;</div><div class="line">    server_name testsite.local;</div><div class="line">    access_log /srv/www/testsite.local/logs/access.log;</div><div class="line">    error_log /srv/www/testsite.local/logs/error.log;</div><div class="line">    root /srv/www/testsite.local/public_html;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        index index.html index.htm index.php;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location ~ \.php$ &#123;</div><div class="line">        include /etc/nginx/fastcgi_params;</div><div class="line">        fastcgi_pass  127.0.0.1:9000;</div><div class="line">        fastcgi_index index.php;</div><div class="line">        fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p> <strong>创建软链接到sites-enabled目录</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc/nginx/sites-enabled/</div><div class="line">ln -s /etc/nginx/sites-available/testsite.local</div><div class="line">systemctl restart nginx.service</div></pre></td></tr></table></figure></p>
+<p> <strong>将testsite.local添加到/etc/hosts中</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">127.0.0.1               localhost.localdomain localhost testsite.local</div></pre></td></tr></table></figure></p>
+<p><a href="http://www.if-not-true-then-false.com/2011/nginx-and-php-fpm-configuration-and-optimizing-tips-and-tricks/" target="_blank" rel="external">更多的Nginx 和PHP-FPM配置点这里～</a></p>
+<p><strong>测试是否成功</strong><br>创建/srv/www/testsite.local/public_html/index.php并添加以下内容:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    phpinfo();</div></pre></td></tr></table></figure></p>
+<p>然后访问域名或者服务器ip看是否出现phpinfo的页面。</p>
+<p><strong>出现403 forbidden</strong><br>有可能是SELinux有问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chcon -R -t httpd_sys_content_t /srv/www/testsite.local/public_html</div></pre></td></tr></table></figure></p>
+<p><strong>远程链接到服务器</strong><br>打开防火墙的80端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --get-active-zones</div><div class="line"></div><div class="line">firewall-cmd --permanent --zone=public --add-service=http</div><div class="line"><span class="comment">## OR ##</span></div><div class="line">firewall-cmd --permanent --zone=public --add-port=80/tcp</div><div class="line"></div><div class="line">systemctl restart firewalld.service</div></pre></td></tr></table></figure></p>
+<h1 id="安装MariaDB"><a href="#安装MariaDB" class="headerlink" title="安装MariaDB"></a>安装MariaDB</h1><div class="note warning"><p>这里安装的是MariaDB,而不是Mysql,有如下几个原因</p>
+<ul>
+<li>MariaDB本来就是一个Mysql的开源版本</li>
+<li>MariaDB和Mysql类似并兼容Mysql</li>
+<li>Fedora和Centos系列的发行版已经转用MariaDB了</li>
+</ul></div>
+<p> <strong>我这里选择安装MariaDB 10.2.7 [stable],具体安装过程如下~</strong></p>
+<div class="note danger"><ul>
+<li>如果之前安装了Mysql,记得备份你的数据库和配置文件!</li>
+<li>如果是从低版本升级的,记得执行<code>mysql_upgrade</code>~</li>
+</ul></div>
+<h2 id="切换root用户"><a href="#切换root用户" class="headerlink" title="切换root用户"></a>切换root用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">su -</div><div class="line"><span class="comment">## OR ##</span></div><div class="line">sudo -i</div></pre></td></tr></table></figure>
+<p>##　添加MariaDB repo</p>
+<div class="note info"><p>现在Fedora 24/25/26 用户都可以直接安装MariaDB 10.1 而不用添加其他的repo来安装~</p></div>
+<p><a href="http://downloads.mariadb.org/mariadb/repositories/" target="_blank" rel="external">MariaDB repository configuration tool</a>,这里面有repo,自己选择repo文件安装,上面也有教程~</p>
+<h2 id="更新并安装"><a href="#更新并安装" class="headerlink" title="更新并安装"></a>更新并安装</h2><h3 id="Fedora-24-25-26"><a href="#Fedora-24-25-26" class="headerlink" title="Fedora 24/25/26"></a>Fedora 24/25/26</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dnf install mariadb mariadb-server</div></pre></td></tr></table></figure>
+<h3 id="Centos-7-1"><a href="#Centos-7-1" class="headerlink" title="Centos 7"></a>Centos 7</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install MariaDB MariaDB-server</div></pre></td></tr></table></figure>
+<h2 id="打开MariaDB并配置自启"><a href="#打开MariaDB并配置自启" class="headerlink" title="打开MariaDB并配置自启"></a>打开MariaDB并配置自启</h2><h3 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora"></a>Fedora</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">systemctl start mariadb.service <span class="comment">## use restart after update</span></div><div class="line"></div><div class="line">systemctl <span class="built_in">enable</span> mariadb.service</div></pre></td></tr></table></figure>
+<h3 id="Centos"><a href="#Centos" class="headerlink" title="Centos"></a>Centos</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">service mysql start <span class="comment">## use restart after update</span></div><div class="line"></div><div class="line"><span class="comment">## OR ##</span></div><div class="line">/etc/init.d/mysql start <span class="comment">## use restart after update</span></div><div class="line">chkconfig --levels 235 mysql on</div></pre></td></tr></table></figure>
+<h2 id="进行secure-installation"><a href="#进行secure-installation" class="headerlink" title="进行secure installation"></a>进行secure installation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/mysql_secure_installation</div></pre></td></tr></table></figure>
+<div class="note info"><p>自己看提示来~第一个没设置密码呢,直接回车,下面的大多数都选Y</p></div>
+<p>如果不想进行secure installation 的话,emmmmm….最好还是做下吧~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqladmin -u root password [your_password_here]</div></pre></td></tr></table></figure></p>
+<p>到这里其实已经结束了…233333</p>
+<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
+<h2 id="创建数据库和user"><a href="#创建数据库和user" class="headerlink" title="创建数据库和user"></a>创建数据库和user</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## CREATE DATABASE ##</span></div><div class="line">MariaDB [(none)]&gt; CREATE DATABASE webdb;</div><div class="line"></div><div class="line"><span class="comment">## CREATE USER ##</span></div><div class="line">MariaDB [(none)]&gt; CREATE USER <span class="string">'webdb_user'</span>@<span class="string">'10.0.15.25'</span> IDENTIFIED BY <span class="string">'password123'</span>;</div><div class="line"></div><div class="line"><span class="comment">## GRANT PERMISSIONS ##</span></div><div class="line">MariaDB [(none)]&gt; GRANT ALL ON webdb.* TO <span class="string">'webdb_user'</span>@<span class="string">'10.0.15.25'</span>;</div><div class="line"></div><div class="line"><span class="comment">##  FLUSH PRIVILEGES, Tell the server to reload the grant tables  ##</span></div><div class="line">MariaDB [(none)]&gt; FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
+<h2 id="确保数据库能远程连接"><a href="#确保数据库能远程连接" class="headerlink" title="确保数据库能远程连接"></a>确保数据库能远程连接</h2><h3 id="Centos-1"><a href="#Centos-1" class="headerlink" title="Centos"></a>Centos</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">vim /etc/sysconfig/iptables-config</div><div class="line"><span class="comment">## 添加 ##</span></div><div class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT</div><div class="line"><span class="comment">## 重启 ##</span></div><div class="line">service iptables restart</div><div class="line"><span class="comment">## OR ##</span></div><div class="line">/etc/init.d/iptables restart</div></pre></td></tr></table></figure>
+<h3 id="Fedora-1"><a href="#Fedora-1" class="headerlink" title="Fedora"></a>Fedora</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --get-active-zones</div><div class="line"><span class="comment">## 应该会输出如下 ##</span></div><div class="line">- public</div><div class="line">-    interfaces: wlp1s0</div><div class="line"></div><div class="line">firewall-cmd --permanent --zone=public --add-service=mysql</div><div class="line">systemctl restart firewalld.service</div><div class="line"></div><div class="line">mysql -h 10.0.15.25 -u myusername -p</div></pre></td></tr></table></figure>
+<div class="note success"><p>没想到要写这么多….打字累死宝宝了,不过总算结束了~美滋滋~</p></div>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Haniel
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/" title="Centos/Fedora搭建LNMP环境">https://catchdream.me/2017/08/12/Centos-Fedora搭建LNMP环境/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+          <a href="/tags/Learning/" rel="tag"><i class="fa fa-tag"></i> Learning</a>
+          
+          <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          
+          <a href="/tags/LNMP/" rel="tag"><i class="fa fa-tag"></i> LNMP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/02/Markdown学习笔记/" rel="next" title="Markdown学习笔记">
+                <i class="fa fa-chevron-left"></i> Markdown学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://catchdream.me/avatar.jpg"
+               alt="Haniel" />
+          <p class="site-author-name" itemprop="name">Haniel</p>
+           
+              <p class="site-description motion-element" itemprop="description">Jounery Of A Newbie</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/HanielF" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="hanielxx@outlook.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/Haniel_xx" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.facebook.com/haniel.farnsworth" target="_blank" title="FB Page">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                    
+                      FB Page
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作环境"><span class="nav-number">2.</span> <span class="nav-text">操作环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Nginx-PHP7-1-7和PHP-FPM"><span class="nav-number">3.</span> <span class="nav-text">安装Nginx,PHP7.1.7和PHP-FPM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fedora-25"><span class="nav-number">3.1.</span> <span class="nav-text">Fedora 25</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到root用户"><span class="nav-number">3.1.1.</span> <span class="nav-text">切换到root用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加repositories"><span class="nav-number">3.1.2.</span> <span class="nav-text">添加repositories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Nginx-PHP-7-1-7-and-PHP-FPM"><span class="nav-number">3.1.3.</span> <span class="nav-text">安装Nginx,PHP 7.1.7 and PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装模块"><span class="nav-number">3.1.4.</span> <span class="nav-text">安装模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭httpd-Apache-并打开Nginx-PHP-FPM"><span class="nav-number">3.1.5.</span> <span class="nav-text">关闭httpd(Apache)并打开Nginx,PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置开机自启Nginx-PHP-FPM"><span class="nav-number">3.1.6.</span> <span class="nav-text">设置开机自启Nginx PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Nginx-和PHP-FPM"><span class="nav-number">3.1.7.</span> <span class="nav-text">配置Nginx 和PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试是否成功"><span class="nav-number">3.1.8.</span> <span class="nav-text">测试是否成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出现403-forbidden"><span class="nav-number">3.1.9.</span> <span class="nav-text">出现403 forbidden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程链接到服务器"><span class="nav-number">3.1.10.</span> <span class="nav-text">远程链接到服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Centos-7"><span class="nav-number">3.2.</span> <span class="nav-text">Centos 7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到root用户-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">切换到root用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加repositories-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">添加repositories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Nginx-PHP-7-1-7-and-PHP-FPM-1"><span class="nav-number">3.2.3.</span> <span class="nav-text">安装Nginx,PHP 7.1.7 and PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装模块-1"><span class="nav-number">3.2.4.</span> <span class="nav-text">安装模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭httpd-Apache-并打开Nginx-PHP-FPM-1"><span class="nav-number">3.2.5.</span> <span class="nav-text">关闭httpd(Apache)并打开Nginx,PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置开机自启Nginx-PHP-FPM-1"><span class="nav-number">3.2.6.</span> <span class="nav-text">设置开机自启Nginx PHP-FPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Nginx-和PHP-FPM及其他"><span class="nav-number">3.2.7.</span> <span class="nav-text">配置Nginx 和PHP-FPM及其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装MariaDB"><span class="nav-number">4.</span> <span class="nav-text">安装MariaDB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#切换root用户"><span class="nav-number">4.1.</span> <span class="nav-text">切换root用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新并安装"><span class="nav-number">4.2.</span> <span class="nav-text">更新并安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fedora-24-25-26"><span class="nav-number">4.2.1.</span> <span class="nav-text">Fedora 24/25/26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos-7-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">Centos 7</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开MariaDB并配置自启"><span class="nav-number">4.3.</span> <span class="nav-text">打开MariaDB并配置自启</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fedora"><span class="nav-number">4.3.1.</span> <span class="nav-text">Fedora</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos"><span class="nav-number">4.3.2.</span> <span class="nav-text">Centos</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行secure-installation"><span class="nav-number">4.4.</span> <span class="nav-text">进行secure installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接数据库"><span class="nav-number">4.5.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库和user"><span class="nav-number">4.6.</span> <span class="nav-text">创建数据库和user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确保数据库能远程连接"><span class="nav-number">4.7.</span> <span class="nav-text">确保数据库能远程连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos-1"><span class="nav-number">4.7.1.</span> <span class="nav-text">Centos</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fedora-1"><span class="nav-number">4.7.2.</span> <span class="nav-text">Fedora</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haniel</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    Theme &mdash;
+    <a class="theme-link" href="https://github.com/Gabirel/next-geek">
+      NexT.Mala
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+
+  </div>
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>
