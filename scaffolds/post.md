@@ -9,6 +9,4 @@ mathjax: false
 
 <meta name="referrer" content="no-referrer" />
 
-
-
 <!--more-->
