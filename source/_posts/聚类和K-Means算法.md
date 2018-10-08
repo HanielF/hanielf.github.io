@@ -73,9 +73,6 @@ vector<Cluster> k_means(vector<vector<int> >trans,int k,int counts){
 
   //迭代counts次
   for(int cnt = 0;cnt<counts;cnt++){
-//    for(int i=0;i<k;i++){
-//      cout<<"cluster:"<<clusters[i].center[0]<<"\t"<<clusters[i].center[1]<<endl; 
-//    }
 
     //清空样本空间
     for(int i=0;i<k;i++)
@@ -83,44 +80,35 @@ vector<Cluster> k_means(vector<vector<int> >trans,int k,int counts){
 
     //计算样本属于的簇
     for(int i=0;i<row;i++){
-      //cout<<"计算样本属于的簇"<<endl;
       int tmp_center = 0;
       int minal = cal_distance(trans[i],clusters[tmp_center].center);
+
       for(int j=1;j<k;j++){
-//        cout<<"trans"<<trans[i][0]<<"\t"<<trans[i][1]<<endl;
-//        cout<<"center"<<clusters[j].center[0]<<"\t"<<clusters[j].center[1]<<endl;
         int distance = cal_distance(trans[i],clusters[j].center);
-//        cout<<"i: "<<i<<" distance: "<<distance<<endl;
         if(distance<minal){
           tmp_center = j;
           minal = distance;
         }
       }
-      //cout<<"tmp_center: "<<tmp_center<<endl;
+
       clusters[tmp_center].samples.push_back(i);
     }
-//  for(int i=0;i<clusters.size();i++){
-//    cout<<i<<"\t"<<clusters[i].samples.size()<<endl;
-//  }
 
     //重新计算簇中心
     for(int i=0;i<k;i++){
       int sum = 0;
+
       for(int m=0;m<trans[0].size();m++){
         for(int j=0;j<clusters[i].samples.size();j++){
           //cout<<"sum+=: "<<trans[clusters[i].samples[j]][m];
           sum+=trans[clusters[i].samples[j]][m];
         }
-//        cout<<"samples size: "<<clusters[i].samples.size()<<endl;
-//        cout<<"sum: "<<sum<<endl;
+
         clusters[i].center[m]=sum/clusters[i].samples.size();
         sum=0;
       }
     }
   }
-//  for(int i=0;i<clusters.size();i++){
-//    cout<<i<<"\t"<<clusters[i].center[0]<<"\t"<<clusters[i].center[i]<<endl;
-//  }
 
   return clusters;
 }
