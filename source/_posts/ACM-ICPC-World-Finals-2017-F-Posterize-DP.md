@@ -3,7 +3,7 @@ title: 'ACM-ICPC World Finals 2017 F.Posterize DP'
 comments: true
 mathjax: false
 date: 2018-09-27 16:27:00
-tags: [ACM-ICPC,Learning,动态规划]
+tags: [ACM-ICPC,Learning,DP]
 categories: Learning
 ---
 
@@ -48,25 +48,25 @@ Display the sum of the squared errors for an optimally chosen set of kk allowed 
 输出最优的 k 种可选取值对应的平方误差之和。
 {% endnote %}
 
- | Sample Input 1 | Sample Output 1  |
- | -----          |  -------         |
- | 2 1            |                  |  
- | 50 20000       | 66670000         |      
- | 150 10000      |                  |            
+ | Sample Input 1 | Sample Output 1 |
+ | -----          |  -------        |
+ | 2 1            |                 |  
+ | 50 20000       |                 |      
+ | 150 10000      |  66670000       | 
 
- | Sample Input 2 | Sample Output 2  |        
- | -----          |  -------         |
- | 2 2            |                  |  
- | 50 20000       | 0                |    
- | 150 10000      |                  |         
+ | Sample Input 2 | Sample Output 2 |        
+ | -----          |  -------        |
+ | 2 2            |                 |  
+ | 50 20000       |                 |    
+ | 150 10000      | 0               |
 
- | Sample Input 3 | Sample Output 3  |        
- | -----          |  -------         |
- | 4 2            |                  |       
- | 0 30000        |                  |       
- | 25 30000       |                  |         
- | 50 30000       | 37500000         |         
- | 255 30000      |                  |         
+ | Sample Input 3 | Sample Output 3 |        
+ | -----          |  -------        |
+ | 4 2            |                 |       
+ | 0 30000        |                 |       
+ | 25 30000       |                 |         
+ | 50 30000       |                 |         
+ | 255 30000      | 37500000        | 
 
 ### 思路
 　　主要是dp,记忆化搜索＋剪枝,看后面的代码注释和题解
