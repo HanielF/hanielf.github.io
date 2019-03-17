@@ -63,11 +63,11 @@
       
         <tags>
             
-            <tag> MachineLearning </tag>
-            
             <tag> Python </tag>
             
             <tag> Numpy </tag>
+            
+            <tag> MachineLearning </tag>
             
         </tags>
       
@@ -88,9 +88,9 @@
       
         <tags>
             
-            <tag> MachineLearning </tag>
-            
             <tag> Python </tag>
+            
+            <tag> MachineLearning </tag>
             
             <tag> Clustering </tag>
             
