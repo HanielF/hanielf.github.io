@@ -3,7 +3,7 @@ title: Markdown学习笔记
 comments: true
 mathjax: false
 date: 2017-08-02 15:52:13
-tags: Learning Markdown
+tags: [Learning,Markdown]
 categories: Learning
 ---
 

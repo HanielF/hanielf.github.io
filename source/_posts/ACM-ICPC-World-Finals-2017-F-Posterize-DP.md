@@ -8,9 +8,11 @@ categories: Learning
 ---
 
 <meta name="referrer" content="no-referrer" />
+  算法课居然直接安排了一个ACM-WF的题目...弄了半天弄懂了，记笔记记笔记!
+<!--more-->
 # ACM-ICPC World Finals 2017 F.Posterize DP
 
-## 原题<!--more-->
+## 原题
 ### 题意
 　　Pixels in a digital picture can be represented with three integers in the range 00 to 255255 that indicate the intensity of the red, green, and blue colors. To compress an image or to create an artistic effect, many photo-editing tools include a “posterize” operation which works as follows. Each color channel is examined separately; this problem focuses only on the red channel. Rather than allow all integers from 00 to 255255 for the red channel, a posterized image allows at most kk integers from this range. Each pixel’s original red intensity is replaced with the nearest of the allowed integers. The photo-editing tool selects a set of kk integers that minimizes the sum of the squared errors introduced across all pixels in the original image. If there are nn pixels that have original red values r1,…,rnr1,…,rn, and kk allowed integers v1,…,vkv1,…,vk, the sum of squared errors is defined as
 

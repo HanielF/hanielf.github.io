@@ -3,7 +3,7 @@ title: CentOS-Fedora搭建LNMP环境
 comments: true
 mathjax: false
 date: 2017-08-12 16:12:58
-tags: LNMP,Linux
+tags: [LNMP,Linux]
 categories: Linux
 ---
 
