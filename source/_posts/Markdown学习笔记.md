@@ -2,7 +2,7 @@
 title: Markdown学习笔记
 comments: true
 mathjax: false
-date: 2018-09-06 15:52:13
+date: 2017-08-02 15:52:13
 tags: Learning Markdown
 categories: Learning
 ---
@@ -64,14 +64,6 @@ categories: Learning
     
     This is an H2
     -------------  
-
-显示为:
-
-> This is an H1
-> ============
-> 
-> This is an H2
-> -------------  
   
 ### Atx
 
@@ -83,11 +75,6 @@ Atx形式则是在行首插入一到六个#,对应标题一到六阶
 
 ##### H5  
 ```
-显示为:
-
->  # H1
->  ##  H2
->  ##### H5  
   
 可以选择闭合#，且结尾的#和开头不用一样  
 ```
