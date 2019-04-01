@@ -57,7 +57,8 @@ categories: Learning
 # SpaceVim中自定义快捷键
 **下面是[SpaceVim官网](https://spacevim.org/cn)的说明**
 > 启动函数   
-> 由于 toml 配置的局限性，SpaceVim 提供了两种启动函数 bootstrap_before 和 bootstrap_after，在该函数内可以使用 Vim script。 可通过 ~/.SpaceVim.d/init.toml 的 [options] 片段中的这两个选项 bootstrap_before 和 bootstrap_after 来指定函数名称，例如：
+> 由于 toml 配置的局限性，SpaceVim 提供了两种启动函数 bootstrap_before 和 bootstrap_after，在该函数内可以使用 Vim script。 
+> 可通过 ~/.SpaceVim.d/init.toml 的 [options] 片段中的这两个选项 bootstrap_before 和 bootstrap_after 来指定函数名称，例如：
 > 
 > [options]  
 > 　　bootstrap_before = "myspacevim#before"  
@@ -96,7 +97,9 @@ categories: Learning
 
 　　:map <F5> i{e<Esc>a}<Esc>  
 
-其中：i{将插入字符{，然后使用Esc退回到命令状态；接着用e移到单词结尾，a}增加字符}，最后退至命令状态。在执行以上命令之后，光标定位在一个单词上（例如amount），按下F5键，这时字符就会变成{amount}的形式。   
+其中：i{将插入字符{，然后使用Esc退回到命令状态；接着用e移到单词结尾，a}增加字符}，最后退至命令状态。
+
+在执行以上命令之后，光标定位在一个单词上（例如amount），按下F5键，这时字符就会变成{amount}的形式。   
 
 ## 不同模式下的键盘映射
 使用下表中不同形式的map命令，可以针对特定的模式设置键盘映射：

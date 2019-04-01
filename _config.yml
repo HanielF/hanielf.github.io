@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Jounery Of A Newbie
+title: Catch Your Dream
 subtitle:
 description: Catch Your Dream!
 keywords:
@@ -82,5 +82,26 @@ deploy:
   type: git
   repo: git@github.com:HanielF/HanielF.github.io.git
 
-swiftype_key: xu3pSmqF5C1_JK8AhsXZ
+# Sitemap
+#sitemap:
+#  path: sitemap.xml
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+# Algolia search
+#algolia:
+#  appId: 'E7AQHE2MJC'
+#  apiKey: 'b92f34ecb3a29688510fbd52612b626c'
+#  adminApiKey: 'da411af43e058a6c27072b3e25fd732a'
+#  indexName: 'search'
+#  chunkSize: 5000
+#  fields:
+#    - title
+#    - slug
+#    - path
+#    - content:strip
 

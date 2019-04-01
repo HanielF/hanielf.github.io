@@ -84,7 +84,12 @@ deploy:
 # Sitemap
 sitemap:
     path: sitemap.xml
-    template: ./sitemap_template.xml
+baidusitemap:
+    path: baidusitemap.xml
+
+
+
+
 
 #========================================================
 # ---------------------------------------------------------------
@@ -223,8 +228,8 @@ social_icons:
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
 #avatar: https://catchdream.me/images/avatar.jpg
-avatar: /images/avatar.jpg
- #  avatar: /uploads/avatar.jpg
+# avatar: /images/avatar.jpg
+avatar: /uploads/avatar.jpg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -410,7 +415,7 @@ mathjax:
 han: false
 
 # Swiftype Search API Key
-swiftype_key: xu3pSmqF5C1_JK8AhsXZ
+# swiftype_key: 
 
 # Baidu Analytics ID
 #baidu_analytics:
@@ -442,12 +447,15 @@ suprise:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true
+  appid:  h26w2GPeIju4o37JSWro2OKv-gzGzoHsz
+  appkey:  dLWVYMk366NEnW44SaBr3FdL
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Comment input placeholder
+  placeholder: Comment in your way!
+  avatar: wavatar # 头像风格
+  guest_info: nick #昵称
+  pageSize: 10 # 每页展示条数
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
@@ -604,7 +612,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
