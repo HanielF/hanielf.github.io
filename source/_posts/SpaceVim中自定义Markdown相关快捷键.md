@@ -131,8 +131,8 @@ function! myspacevim#before() abort
     "使用v-p进行markdown网页预览
 　　autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} call SpaceVim#custom#SPC('nore', ['v', 'p'], ':!google-chrome-stable "%:p"', 'Markdown-Previews',1)
 
-    "对markdown进行行注释，在行首插入[//]:#(,在行尾插入右括号),命令是'I[//]:#(<Esc>A)<Esc>' 
-　　call SpaceVim#custom#SPC('nore', ['v', 'c'], 'I[//]:#(A)', 'Markdown-comment one line', 0)
+    "对markdown进行行注释，在行首插入[//]:#(,在行尾插入右括号),命令是'I[//]:#(<Esc>A)<Esc>',注意这里的<Esc>要用Ctrl-Esc来完成 
+　　call SpaceVim#custom#SPC('nore', ['v', 'c'], 'I[//]:#(<Esc>A)<Esc>', 'Markdown-comment one line', 0)
 
     "对markdown取消行注释,在行首删除[//]:#(,在行尾删除右括号)
 　　call SpaceVim#custom#SPC('nore', ['v', 'u'], '07x$x', 'Markdown-uncomment one line', 0)
