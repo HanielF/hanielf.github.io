@@ -3,7 +3,7 @@ title: LeetCode-001-Two Sum
 comments: true
 mathjax: false
 date: 2019-04-07 23:31:44
-tags: [LeetCode, hash map, math]
+tags: [LeetCode, Hash Map, Math]
 categories: [LeetCode]
 ---
 
@@ -74,7 +74,7 @@ public:
 
 {% note info %}
 ## C++中map的用法
-- 创建：map<string , int >mapString; key类型为string，val类型为int
+- 创建：map\<string, int\>mapString; key类型为string，val类型为int
 - 添加：
   - mapString["hello"]=1; 最常用的最简单的插入方式,**会覆盖之前的数据**
   - mapString.insert(make_pair("hello",1));  次常用,** insert()不会覆盖之前的数据**

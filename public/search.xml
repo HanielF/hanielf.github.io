@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode-003-Longest Substring Without Repeating Characters]]></title>
+    <url>%2F2019%2F04%2F13%2FLeetCode-003-Longest-Substring-Without-Repeating-Characters%2F</url>
+    <content type="text"><![CDATA[ProblemGiven a string, find the length of the longest substring without repeating characters. Examples: “abcabcbb” —-&gt; 3“bbbbb” —-&gt; 1“pwwkew” —-&gt; 3 Solutions 第一反应下想到的也是暴力遍历，写一个判断有没有重复字符串的函数，然后遍历每个子串，时间复杂度是O(n^3)，太高了，导致第一次提交没过，后面优化了下暴力法，过了。 除了暴力，题解上给出了滑动窗口的解法，利用前后两个指针i,j 不断移动来遍历字符串以及子串，i,j中间的就是没有重复字符的,如果遇到重复字符，就把i自增，一直到没有重复字符为止（就是相当于找到和j处的相同字符的为止），时间复杂度是O(n) 最后是优化的滑动窗口，先记录每个字符第一次出现的位置pos，然后第二次出现的时候，将第一个指针i直接变成pos+1 对上面的优化还有一个技巧是利用整数数组代替Map，也可以用bitmap每一位表示一个字符数量 C++ Codes这是我优化过的暴力法，勉强过了，判断函数那边用了太大的数组，可以用bitmap降低空间复杂度 用了72ms,20.1MB…僵硬 123456789101112131415161718192021222324252627class Solution &#123;public: int lengthOfLongestSubstring(string s) &#123; if(s.length()==0)return 0; int max=1; //i是最大长度，j是每次遍历的起始位置 for(int j=0;j&lt;s.length();j++)&#123; //这里让i直接从max开始，可以少一点没用的遍历 for(int i=max;i+j&lt;=s.length();i++)&#123; //如果有重复字符直接退出循环 if(!judgeSubstring(s.substr(j,i))) break; max=i; &#125; &#125; return max; &#125; bool judgeSubstring(string substr)&#123; int tmp[128]=&#123;0&#125;; for(int i=0;i&lt;substr.length();i++)&#123; //如果不是0就肯定有重复字符 if(tmp[int(substr[i])])return false; tmp[int(substr[i])]+=1; &#125; return true; &#125;&#125;; 好了，这是第三种方法对应的代码，这次只用了12ms,9.1MB，话说感觉这种滑动窗口有点像快排… 12345678910111213141516171819202122class Solution &#123;public: int lengthOfLongestSubstring(string s) &#123; int n=s.length(); //用来保存每个字符的下一个位置，用于出现重复字符的时候直接赋值给i int cNum[128]=&#123;0&#125;; int max=0; //i是第一个指针，j是第二个 for(int j=0,i=0;j&lt;n;j++)&#123; //如果不为0就是出现了和s[j]一样的字符，让i等于那个字符的后一个位置 if(cNum[s[j]])&#123; i = cNum[s[j]]&gt;i?cNum[s[j]]:i; &#125; //这里不管有没有重复字符都要更新max和cNum[s[j]] //很明显，如果有，i已经被更新，相当于已经变成了没有重复字符的情形，位置也要更新 max=(j-i+1)&gt;max?(j-i+1):max; cNum[s[j]]=j+1; &#125; return max; &#125;&#125;; Python Codes用时52ms，12.7MB 123456789101112131415class Solution(object): def lengthOfLongestSubstring(self, s): """ :type s: str :rtype: int """ cNum=dict() res=0 start=0 for i in range(len(s)): if s[i] in cNum: start=max(start,cNum[s[i]]) res=max(res,i-start+1) cNum[s[i]]=i+1 return res 总结总感觉自己想的太简单，优化还是有点难度的，这道题关键的就是一次遍历，用两个指针表示字符串，并且没有单独拿出字符串判断，而是用set或者map、dict这种方式记录当前子串的内容，用于判断是否有没有出现重复字符，优化的时候减少无用的遍历]]></content>
+      <tags>
+        <tag>Math</tag>
+        <tag>LeeCode</tag>
+        <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Canvas中像素级别ImageData缩放]]></title>
+    <url>%2F2019%2F04%2F10%2FCanvas%E4%B8%AD%E5%83%8F%E7%B4%A0%E7%BA%A7%E5%88%ABImageData%E7%BC%A9%E6%94%BE%2F</url>
+    <content type="text"><![CDATA[弄Web端手写数字识别的时候要把Canvas缩成32*32大小的，弄了三四个小时才弄好，刚开始想的是用canvas的画布缩放，弄了好久发现行不通，然后无意中发现可以获得每个像素的RGBA的值，然后又自己尝试每个像素缩放，语法不熟悉，各种尝试…好了不多说了，代码在下面 Canvas中对ImageData数据缩放 ctx: 原始canvas的context outCtx: 输出canvas的context scale: 缩放倍数 1234567891011121314151617181920212223242526272829function genImg() &#123; var imgData = ctx.getImageData(0,0,500,500); outCtx.putImageData(scaleImageData(imgData,0.5),0,0);&#125;function scaleImageData(imageData, scale) &#123; var scaled = outCtx.createImageData(imageData.width * scale, imageData.height * scale); for (var row = 0; row &lt; imageData.height; row++) &#123; for (var col = 0; col &lt; imageData.width; col++) &#123; var sourcePixel = [ imageData.data[(row * imageData.width + col) * 4 + 0], imageData.data[(row * imageData.width + col) * 4 + 1], imageData.data[(row * imageData.width + col) * 4 + 2], imageData.data[(row * imageData.width + col) * 4 + 3] ]; for (var y = 0; y &lt; scale; y++) &#123; var destRow = Math.floor(row * scale) + y; for (var x = 0; x &lt; scale; x++) &#123; var destCol = Math.floor(col * scale) + x; for (var i = 0; i &lt; 4; i++) &#123; scaled.data[(destRow * scaled.width + destCol) * 4 + i] = sourcePixel[i]; &#125; &#125; &#125; &#125; &#125; return scaled;&#125; 主要就是scaleImageData这个函数，原型是stackoverflow上的，不过有bug，自己修改了下。遇到问题果然还是要看源码…]]></content>
+      <categories>
+        <category>Daily</category>
+      </categories>
+      <tags>
+        <tag>Canvas</tag>
+        <tag>Web</tag>
+        <tag>Daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-002-Add Two Numbers]]></title>
     <url>%2F2019%2F04%2F09%2FLeetCode-002-Add-Two-Numbers%2F</url>
     <content type="text"><![CDATA[ProblemYou are given two non-empty linked lists representing two non-negative integers.The digits are stored in reverse order and each of their nodes contain a single digit.Add the two numbers and return it as a linked list.You may assume the two numbers do not contain any leading zero, except the number 0 itself. Example: Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)Output: 7 -&gt; 0 -&gt; 8Explanation: 342 + 465 = 807. Solutions因为以前做过差不多的题目，而且感觉也不难，设置一个进位标志，然后一个个往后加。 犯了三个小错误 算当前node的值时居然没把carry一起加起来算 算下次的carry时没有把上次的carry加上 忘了最后一次还可能有进位，要新建一个node 还纠结好久要不要头结点，刚开始以为题目不可以用头结点，毕竟Example上没有，写到后面还是出错了，看了题解换了有头结点的版本就好了。 C++ Codes123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123; int carry = 0; ListNode *res = new ListNode(0); ListNode *tmp = res; ListNode *p = l1; ListNode *q = l2; while(p!=NULL &amp;&amp; q!=NULL)&#123; tmp-&gt;next = new ListNode((p-&gt;val + q-&gt;val+carry)%10);//把+carry放在了%10的后面 carry = (p-&gt;val + q-&gt;val+carry)/10;//居然漏了+carry tmp = tmp-&gt;next; p=p-&gt;next; q=q-&gt;next; &#125; while(p!=NULL)&#123; tmp-&gt;next = new ListNode((p-&gt;val + carry)%10); carry = (p-&gt;val + carry)/10; tmp = tmp-&gt;next; p = p-&gt;next; &#125; while(q!=NULL)&#123; tmp-&gt;next = new ListNode((q-&gt;val + carry)%10); carry = (q-&gt;val + carry)/10; tmp = tmp-&gt;next; q = q-&gt;next; &#125; if(carry&gt;0) tmp-&gt;next = new ListNode(carry);//漏了最后的进位 return res-&gt;next; &#125;&#125;; 我这里在最后用了两个while来判断是否结束，题解上面是在第一个while里面对p和q进行了处理： 只要到了NULL，就让它的值为0，时间复杂度上来说是一样的，都是\max{l1的节点数，l2的节点数}，简单理解为O(n) Python Codes一共两种，不是自己写的，不是很熟悉Python的链表，多看看学习下。 第一中的sum写法不是很懂…绝望，第二种比较好理解 1234567891011121314151617181920# Definition for singly-linked list.# class ListNode:# def __init__(self, x):# self.val = x# self.next = Noneclass Solution: def addTwoNumbers(self, l1: ListNode, l2: ListNode) -&gt; ListNode: res = ListNode(0) tmp = res left = 0 while l1 or l2 or left: left, right = divmod(sum(l and l.val or 0 for l in (l1, l2)) + left, 10) tmp.next = ListNode(right) tmp = tmp.next l1 = l1 and l1.next l2 = l2 and l2.next return res.next 12345678910111213141516171819202122232425262728293031# Definition for singly-linked list.# class ListNode:# def __init__(self, x):# self.val = x# self.next = Noneclass Solution: def addTwoNumbers(self, l1: ListNode, l2: ListNode) -&gt; ListNode: head = ListNode(0) curr = head carry, total = 0, 0 while(l1 or l2): a = l1.val if l1 else 0 b = l2.val if l2 else 0 total = a + b + carry carry = total // 10 if l1 or l2: curr.next = ListNode(total % 10) if l1: l1 = l1.next if l2: l2 = l2.next curr = curr.next if carry&gt;0: curr.next = ListNode(carry) return head.next 总结感觉自己解题速度有点慢，而且粗心犯小错误。 感觉是练得太少，以后加油！]]></content>
@@ -9,9 +32,9 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>math</tag>
-        <tag>linked list</tag>
-        <tag>large number</tag>
+        <tag>Math</tag>
+        <tag>Linked List</tag>
+        <tag>Large Number</tag>
       </tags>
   </entry>
   <entry>
@@ -23,21 +46,21 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[LeetCode-001-Two Sum]]></title>
     <url>%2F2019%2F04%2F07%2FLeetCode-001-Two-Sum%2F</url>
-    <content type="text"><![CDATA[ProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution. Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]. UPDATE (2016/2/13): The return format had been changed to zero-based indices. Please read the above updated description carefully. Solutions 刚开始第一反应就是暴力遍历，但是时间复杂度是O(n^2) 题解用了hash map，时间复杂度为O(n) 第一种方式是两遍hash，第一遍将元素添加进去，第二遍遍历元素 第二种方式一遍hash，一边添加元素一边判断结果是否在已添加的元素中 C++ Codes12345678910111213141516171819class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; vector&lt;int&gt; res; map&lt;int,int&gt; numMap; //创建map map&lt;int ,int&gt;::iterator it; //创建迭代器 for(int i=0;i&lt;nums.size();i++)&#123; it=numMap.find(target-nums[i]); //find函数查找key if(it!=numMap.end())&#123; //如果到了end就说明没找到 res.push_back(i); res.push_back(numMap[target-nums[i]]); return res; &#125; numMap.insert(make_pair(nums[i],i)); //插入pair &#125; return res; &#125;&#125;; C++中vector用法回忆： 创建：vector vec; 访问：int i=vec[0]; 插入：vec.push_back(1);vec.insert(index,val)，在第i个元素后面插入 删除： vec.pop_back(),删除最后一个 vec.erase(index)，删除index位置处元素 vec.erase(1,3)，删除[1,3)区间的元素 大小：vec.size(); 清空：vec.clear(); 翻转：reverse(vec.begin(),vec.end());将元素翻转在vecotr，要#include 排序： sort(vec.begin(),vec.end());默认按照升序排列 sort(vec.begin(),vec.end(),cmp);定义排序比较函数将序排列 bool cmp(const int&amp;a,const int&amp;b){ return a&gt;b;} 迭代器访问 vector::iterator it;for(it=vec.begin();it!=vec.end();it++) cout&lt;&lt;*it&lt;&lt;endl; C++中map的用法 创建：mapmapString; key类型为string，val类型为int 添加： mapString[“hello”]=1; 最常用的最简单的插入方式,会覆盖之前的数据 mapString.insert(make_pair(“hello”,1)); 次常用, insert()不会覆盖之前的数据 mapString.insert(pair(“hello”,1)); mapString.insert(map::value_type(“hello”,1)); 迭代： map::iterator it;for ( it = mapString.begin( ); it != mapString.end( ); it++ ) cout &lt;&lt; “ “ &lt;&lt; it -&gt; second; 查找： 不建议! mapString[“hello”];返回”hello”对应的值，如果不存在，则添加一个元素，key为”hello”,val为类型默认值,并返回这个默认值 mapString.count(“hello”); map::count()方法返回被查找元素的个数,只有0或1 map::find()方法,返回的是被查找元素的位置，没有则返回map.end() map::iterator it;it = mapString.find(“hello”);if(it==test.end()){ cout&lt;&lt;”hello not found”&lt;&lt;endl;} 删除: mapString.erase(“hello”); 用迭代器删除,注意在迭代期间是不能被删除的 map::iterator it;it = mapString.find(“hello”); if(it==mapString.end()) cout&lt;&lt;”hello not found”&lt;&lt;endl;else mapString.erase(it); 排序：map中元素自动按照key升序排序，不可以用sort函数 大小：mapString.size(); 清除：mapString.clear(); Python Codes123456789class Solution: def twoSum(self, nums: List[int], target: int) -&gt; List[int]: map = &#123;&#125; for i, num in enumerate(nums): if target - num in map: return [map[target - num], i] map[num] = i return [] list中遍历的三种方式： for items in list: 根据元素遍历 for index in range(len(list)): 根据索引遍历 enumerate(seq, [start=0]) 创建枚举对象，同时列出数据下标和数据 seq: 一个序列、迭代器或其他支持迭代对象, 如列表、元组或字符串 start: 下标起始位置 返回：一个列表 [(下标，数据)…], 例如[(1, ‘a’), (2, ‘b’), (3, ‘c’)] iterList = iter(list) 创建迭代器遍历 用法：for item in iterList: print(item) 总结虽然第一题很简单，但是深入了看还是能学了不少东西的，在遍历这方面，时间复杂度优化可以用map，C++时间复杂度可以从O(n)降到O(logn)，python和java可以直接降到O(1). 而且打完代码复习了C++中vector的用法，还有pythonlist的enumerate遍历。C++ STL中的map是现学现卖了. 打算每天一题，感觉有点晚了，亡羊补牢把。]]></content>
+    <content type="text"><![CDATA[ProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution. Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]. UPDATE (2016/2/13): The return format had been changed to zero-based indices. Please read the above updated description carefully. Solutions 刚开始第一反应就是暴力遍历，但是时间复杂度是O(n^2) 题解用了hash map，时间复杂度为O(n) 第一种方式是两遍hash，第一遍将元素添加进去，第二遍遍历元素 第二种方式一遍hash，一边添加元素一边判断结果是否在已添加的元素中 C++ Codes12345678910111213141516171819class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; vector&lt;int&gt; res; map&lt;int,int&gt; numMap; //创建map map&lt;int ,int&gt;::iterator it; //创建迭代器 for(int i=0;i&lt;nums.size();i++)&#123; it=numMap.find(target-nums[i]); //find函数查找key if(it!=numMap.end())&#123; //如果到了end就说明没找到 res.push_back(i); res.push_back(numMap[target-nums[i]]); return res; &#125; numMap.insert(make_pair(nums[i],i)); //插入pair &#125; return res; &#125;&#125;; C++中vector用法回忆： 创建：vector vec; 访问：int i=vec[0]; 插入：vec.push_back(1);vec.insert(index,val)，在第i个元素后面插入 删除： vec.pop_back(),删除最后一个 vec.erase(index)，删除index位置处元素 vec.erase(1,3)，删除[1,3)区间的元素 大小：vec.size(); 清空：vec.clear(); 翻转：reverse(vec.begin(),vec.end());将元素翻转在vecotr，要#include 排序： sort(vec.begin(),vec.end());默认按照升序排列 sort(vec.begin(),vec.end(),cmp);定义排序比较函数将序排列 bool cmp(const int&amp;a,const int&amp;b){ return a&gt;b;} 迭代器访问 vector::iterator it;for(it=vec.begin();it!=vec.end();it++) cout&lt;&lt;*it&lt;&lt;endl; C++中map的用法 创建：map\mapString; key类型为string，val类型为int 添加： mapString[“hello”]=1; 最常用的最简单的插入方式,会覆盖之前的数据 mapString.insert(make_pair(“hello”,1)); 次常用, insert()不会覆盖之前的数据 mapString.insert(pair(“hello”,1)); mapString.insert(map::value_type(“hello”,1)); 迭代： map::iterator it;for ( it = mapString.begin( ); it != mapString.end( ); it++ ) cout &lt;&lt; “ “ &lt;&lt; it -&gt; second; 查找： 不建议! mapString[“hello”];返回”hello”对应的值，如果不存在，则添加一个元素，key为”hello”,val为类型默认值,并返回这个默认值 mapString.count(“hello”); map::count()方法返回被查找元素的个数,只有0或1 map::find()方法,返回的是被查找元素的位置，没有则返回map.end() map::iterator it;it = mapString.find(“hello”);if(it==test.end()){ cout&lt;&lt;”hello not found”&lt;&lt;endl;} 删除: mapString.erase(“hello”); 用迭代器删除,注意在迭代期间是不能被删除的 map::iterator it;it = mapString.find(“hello”); if(it==mapString.end()) cout&lt;&lt;”hello not found”&lt;&lt;endl;else mapString.erase(it); 排序：map中元素自动按照key升序排序，不可以用sort函数 大小：mapString.size(); 清除：mapString.clear(); Python Codes123456789class Solution: def twoSum(self, nums: List[int], target: int) -&gt; List[int]: map = &#123;&#125; for i, num in enumerate(nums): if target - num in map: return [map[target - num], i] map[num] = i return [] list中遍历的三种方式： for items in list: 根据元素遍历 for index in range(len(list)): 根据索引遍历 enumerate(seq, [start=0]) 创建枚举对象，同时列出数据下标和数据 seq: 一个序列、迭代器或其他支持迭代对象, 如列表、元组或字符串 start: 下标起始位置 返回：一个列表 [(下标，数据)…], 例如[(1, ‘a’), (2, ‘b’), (3, ‘c’)] iterList = iter(list) 创建迭代器遍历 用法：for item in iterList: print(item) 总结虽然第一题很简单，但是深入了看还是能学了不少东西的，在遍历这方面，时间复杂度优化可以用map，C++时间复杂度可以从O(n)降到O(logn)，python和java可以直接降到O(1). 而且打完代码复习了C++中vector的用法，还有pythonlist的enumerate遍历。C++ STL中的map是现学现卖了. 打算每天一题，感觉有点晚了，亡羊补牢把。]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>hash map</tag>
-        <tag>math</tag>
+        <tag>Hash Map</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -49,8 +72,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
       </tags>
   </entry>
   <entry>
@@ -62,15 +85,15 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
         <tag>PLA</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[MNIST入门-手写数字识别]]></title>
     <url>%2F2019%2F04%2F02%2FMNIST%E5%85%A5%E9%97%A8-%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[Target将训练一个机器学习模型用于预测图片里面的数字. 理解TensorFlow工作流程和机器学习的基本概念 和官网不同的是只记录关键点 关键词 MNISTTensorFlowSoftmax Regression 数据集 数据集被分成两部分：60000行的训练数据集（mnist.train）和10000行的测试数据集（mnist.test） 把这些图片设为“xs”，把这些标签设为“ys” 训练数据集的图片是 mnist.train.images ，训练数据集的标签是 mnist.train.labels mnist.train.images 是一个形状为 [60000, 784] 的张量，第一个维度数字索引图片，第二个维度数字索引每张图片中的像素点 向量值表某个像素的强度值，值介于0和1之间 mnist.train.labels 是一个 [60000, 10] 的数字矩阵 标签数据是”one-hot vectors” 10维，只有一个维度非0 标签0将表示成([1,0,0,0,0,0,0,0,0,0,0]) Softmaxsoftmax模型可以用来给不同的对象分配概率。即使在之后，我们训练更加精细的模型时，最后一步也需要用softmax来分配概率。 第一步]]></content>
+    <content type="text"><![CDATA[Target将训练一个机器学习模型用于预测图片里面的数字. 理解TensorFlow工作流程和机器学习的基本概念 和官网不同的是只记录关键点 关键词 MNISTTensorFlowSoftmax Regression 数据集 数据集被分成两部分：60000行的训练数据集（mnist.train）和10000行的测试数据集（mnist.test） 把这些图片设为“xs”，把这些标签设为“ys” 训练数据集的图片是 mnist.train.images ，训练数据集的标签是 mnist.train.labels mnist.train.images 是一个形状为 [60000, 784] 的张量，第一个维度数字索引图片，第二个维度数字索引每张图片中的像素点 向量值表某个像素的强度值，值介于0和1之间 mnist.train.labels 是一个 [60000, 10] 的数字矩阵 标签数据是”one-hot vectors” 10维，只有一个维度非0 标签0将表示成([1,0,0,0,0,0,0,0,0,0,0]) Softmaxsoftmax模型可以用来给不同的对象分配概率。即使在之后，我们训练更加精细的模型时，最后一步也需要用softmax来分配概率。 第一步 对数据进行加权求和，在手写数字识别的例子里就是丢每个像素值加权求和 在每个像素值求和的后面加上一个偏置量b_i，这是由于输入会有一些干扰量 可以得到输入图片 x ，[784]的向量，它代表的是数字 i 的证据可以表示: evidence_i = \sum_jW_{i,j}x_j+b_i其中W_i维度是[784,10]，代表权重，b_i维度是[10]代表是数字i类的偏置量，j代表图片x的像素索引用于求和 第二步再使用softmax函数将evidence转换成概率y y=softmax(evidence)softmax函数可以看成是激励函数(activation)，把线性函数输出转换成想要的格式:关于10个数字的概率分布。 softmax(x) = normalize(exp(x))softmax(x)_i = {exp(x_i) \over \sum_jexp(x_j)}即：把输入值当成幂指数求值，再正则化这些结果值 结合上面的evidence可以知道，evidence越大，正则化后的结果更大，就是权重更大。进一步写成: y = softmax(W_x + b)实现模型]]></content>
   </entry>
   <entry>
     <title><![CDATA[Fedora 26 编译内核]]></title>
@@ -92,8 +115,8 @@
         <category>Daily</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Daily</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -164,8 +187,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>Numpy</tag>
         <tag>MachineLearning</tag>
+        <tag>Numpy</tag>
       </tags>
   </entry>
   <entry>
@@ -191,8 +214,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>LNMP</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -203,8 +226,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>LNMP</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
