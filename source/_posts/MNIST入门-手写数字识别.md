@@ -3,8 +3,8 @@ title: MNIST入门-手写数字识别
 comments: true
 mathjax: false
 date: 2019-04-02 10:11:01
-tags:
-categories:
+tags: [TensorFlow, ML, MNIST]
+categories: MachineLearning
 ---
 
 <meta name="referrer" content="no-referrer" />

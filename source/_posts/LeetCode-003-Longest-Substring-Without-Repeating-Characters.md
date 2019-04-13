@@ -3,8 +3,8 @@ title: LeetCode-003-Longest Substring Without Repeating Characters
 comments: true
 mathjax: false
 date: 2019-04-13 01:02:13
-tags: [LeeCode, String, Math]
-categories:
+tags: [LeetCode, String, Math]
+categories: LeetCode
 ---
 
 <meta name="referrer" content="no-referrer" />
@@ -12,7 +12,6 @@ categories:
 {% note info %}
 ## [Problem](https://leetcode.com/problems/longest-substring-without-repeating-characters/) 
 Given a string, find the length of the **longest substring** without repeating characters.
-
 ### Examples:
 > "abcabcbb" ---> 3
 > "bbbbb" ---> 1
