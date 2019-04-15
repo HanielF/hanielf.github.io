@@ -13,6 +13,8 @@ mathjax: false
 ## [Problem]()   
 
 ### Examples:
+**Input:**
+**Output:**
 
 {% endnote %}
 <!--more-->
