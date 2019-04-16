@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://catchdream.me/"/>
-  <updated>2019-04-14T14:28:04.363Z</updated>
+  <updated>2019-04-15T13:25:28.728Z</updated>
   <id>https://catchdream.me/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-006-ZigZag Conversion</title>
+    <link href="https://catchdream.me/2019/04/15/LeetCode-006-ZigZag-Conversion/"/>
+    <id>https://catchdream.me/2019/04/15/LeetCode-006-ZigZag-Conversion/</id>
+    <published>2019-04-15T12:47:37.000Z</published>
+    <updated>2019-04-15T13:25:28.728Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a><a href="https://leetcode.com/problems/zigzag-conversion/submissions/" target="_blank" rel="noopener">Problem</a></h2><p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p><blockquote><p>P   A   H   N<br>A P L S I I G<br>Y   I   R  </p></blockquote><p>And then read line by line: <strong>“PAHNAPLSIIGYIR”</strong><br>Write the code that will take a string and make this conversion given a number of rows:   </p><blockquote><p>string convert(string s, int numRows);</p></blockquote></div><a id="more"></a><div class="note info"><h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><p><strong>Input:</strong> s = “PAYPALISHIRING”, numRows = 3<br><strong>Output:</strong> “PAHNAPLSIIGYIR”</p><p><strong>Input:</strong> s = “PAYPALISHIRING”, numRows = 4<br><strong>Output:</strong> “PINALSIGYAHRPI”<br><strong>Explanation:</strong></p><blockquote><p>P     I    N<br>A   L S  I G<br>Y A   H R<br>P     I</p></blockquote></div><h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><ul><li>想到的是用数学方法，遍历每一行，然后计算每一行字符的位置，逐个添加进去，是题解的第二种方法。每行的字符位置都满足一个数列，所以可以很简单的计算出来。时间复杂度是<script type="math/tex">O(n)</script>.</li><li>题解还给了一种方法是按行排序，每一行建一个字符串，从左向右迭代源字符串，判断每个字符是属于哪一行，然后加到那一行的字符串上，最后对每行字符串拼接，原理感觉和上一种方法差不多。时间复杂度也是<script type="math/tex">O(n)</script>  </li></ul><h2 id="C-Codes"><a href="#C-Codes" class="headerlink" title="C++ Codes"></a>C++ Codes</h2><p>自己想到的解法，用时12ms，内存10.2MB，超过99.51%感觉还是挺快的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">int</span> num = <span class="built_in">ceil</span>(len*<span class="number">1.0</span>/numRows);</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> d = <span class="number">2</span>*numRows<span class="number">-2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(numRows==<span class="number">1</span>)<span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numRows;i++)&#123;   <span class="comment">//遍历行</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=num;j++)&#123;    <span class="comment">//遍历每个Z</span></span><br><span class="line">                <span class="keyword">if</span>(i==<span class="number">0</span> &amp;&amp; (j<span class="number">-1</span>)*d&lt;len)&#123;  <span class="comment">//第一行</span></span><br><span class="line">                    res+=s[(j<span class="number">-1</span>)*d];</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span>(i==(numRows<span class="number">-1</span>) &amp;&amp; ((j<span class="number">-1</span>)*d+numRows<span class="number">-1</span>)&lt;len)&#123; <span class="comment">//最后一行</span></span><br><span class="line">                    res+=s[(j<span class="number">-1</span>)*d+numRows<span class="number">-1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span>&#123; <span class="comment">//其余行</span></span><br><span class="line">                        <span class="keyword">if</span>((j<span class="number">-1</span>)*d+i&lt;len)</span><br><span class="line">                            res+=s[(j<span class="number">-1</span>)*d+i];</span><br><span class="line">                        <span class="keyword">if</span>(j*d-i&lt;len)</span><br><span class="line">                            res+=s[j*d-i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><p>第二种遍历每个字符的解法:测试是20ms，12.6MB<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (numRows == <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; rows(min(numRows, <span class="keyword">int</span>(s.size())));</span><br><span class="line">        <span class="keyword">int</span> curRow = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> goingDown = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : s) &#123;</span><br><span class="line">            rows[curRow] += c;</span><br><span class="line">            <span class="keyword">if</span> (curRow == <span class="number">0</span> || curRow == numRows - <span class="number">1</span>) goingDown = !goingDown;</span><br><span class="line">            curRow += goingDown ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> ret;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span> row : rows) ret += row;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><h2 id="Python-Codes"><a href="#Python-Codes" class="headerlink" title="Python Codes"></a>Python Codes</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">convert</span><span class="params">(self, s: str, numRows: int)</span> -&gt; str:</span></span><br><span class="line">        slen = len(s)</span><br><span class="line">        num = math.ceil(slen/numRows);</span><br><span class="line">        res = <span class="string">""</span></span><br><span class="line">        d = <span class="number">2</span>*numRows<span class="number">-2</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> numRows==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(numRows):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,num+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> i==<span class="number">0</span> <span class="keyword">and</span> (j<span class="number">-1</span>)*d&lt;slen:</span><br><span class="line">                    res = res + s[(j<span class="number">-1</span>)*d]</span><br><span class="line">                <span class="keyword">elif</span> i==numRows<span class="number">-1</span> <span class="keyword">and</span> (j<span class="number">-1</span>)*d+numRows<span class="number">-1</span>&lt;slen:</span><br><span class="line">                    res = res + s[(j<span class="number">-1</span>)*d+numRows<span class="number">-1</span>]</span><br><span class="line">                <span class="keyword">else</span> :</span><br><span class="line">                    <span class="keyword">if</span> (j<span class="number">-1</span>)*d+i&lt;slen:</span><br><span class="line">                        res = res + s[(j<span class="number">-1</span>)*d+i]</span><br><span class="line">                    <span class="keyword">if</span>(j*d-i&lt;slen):</span><br><span class="line">                        res = res + s[j*d-i]</span><br><span class="line">                        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>很多题目可以直接从数学角度着手，会很方便</li><li>暴力法在很多时候都有用啊，时间复杂度不够再优化下说不定就过了</li></ul><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;div class=&quot;note info&quot;&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.com/problems/zigzag-conversion/submissions/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Problem&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;P   A   H   N&lt;br&gt;A P L S I I G&lt;br&gt;Y   I   R  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And then read line by line: &lt;strong&gt;“PAHNAPLSIIGYIR”&lt;/strong&gt;&lt;br&gt;Write the code that will take a string and make this conversion given a number of rows:   &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;string convert(string s, int numRows);&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://catchdream.me/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://catchdream.me/tags/LeetCode/"/>
+    
+      <category term="Math" scheme="https://catchdream.me/tags/Math/"/>
+    
+      <category term="String" scheme="https://catchdream.me/tags/String/"/>
+    
+      <category term="Split" scheme="https://catchdream.me/tags/Split/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-005-Longest Palindromic Substring</title>
@@ -168,11 +205,11 @@
     
       <category term="LeetCode" scheme="https://catchdream.me/tags/LeetCode/"/>
     
+      <category term="Math" scheme="https://catchdream.me/tags/Math/"/>
+    
       <category term="Linked List" scheme="https://catchdream.me/tags/Linked-List/"/>
     
       <category term="Large Number" scheme="https://catchdream.me/tags/Large-Number/"/>
-    
-      <category term="Math" scheme="https://catchdream.me/tags/Math/"/>
     
   </entry>
   
@@ -198,9 +235,9 @@
       <category term="机器学习基石" scheme="https://catchdream.me/categories/MachineLearning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/"/>
     
     
-      <category term="MachineLearning" scheme="https://catchdream.me/tags/MachineLearning/"/>
-    
       <category term="机器学习基石" scheme="https://catchdream.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/"/>
+    
+      <category term="MachineLearning" scheme="https://catchdream.me/tags/MachineLearning/"/>
     
   </entry>
   
@@ -227,9 +264,9 @@
     
       <category term="LeetCode" scheme="https://catchdream.me/tags/LeetCode/"/>
     
-      <category term="Math" scheme="https://catchdream.me/tags/Math/"/>
-    
       <category term="Hash Map" scheme="https://catchdream.me/tags/Hash-Map/"/>
+    
+      <category term="Math" scheme="https://catchdream.me/tags/Math/"/>
     
   </entry>
   
@@ -255,9 +292,9 @@
       <category term="机器学习基石" scheme="https://catchdream.me/categories/MachineLearning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/"/>
     
     
-      <category term="MachineLearning" scheme="https://catchdream.me/tags/MachineLearning/"/>
-    
       <category term="机器学习基石" scheme="https://catchdream.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/"/>
+    
+      <category term="MachineLearning" scheme="https://catchdream.me/tags/MachineLearning/"/>
     
   </entry>
   
@@ -283,9 +320,9 @@
       <category term="机器学习基石" scheme="https://catchdream.me/categories/MachineLearning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/"/>
     
     
-      <category term="MachineLearning" scheme="https://catchdream.me/tags/MachineLearning/"/>
-    
       <category term="机器学习基石" scheme="https://catchdream.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/"/>
+    
+      <category term="MachineLearning" scheme="https://catchdream.me/tags/MachineLearning/"/>
     
       <category term="PLA" scheme="https://catchdream.me/tags/PLA/"/>
     
@@ -365,9 +402,9 @@
       <category term="Daily" scheme="https://catchdream.me/categories/Daily/"/>
     
     
-      <category term="Daily" scheme="https://catchdream.me/tags/Daily/"/>
-    
       <category term="Linux" scheme="https://catchdream.me/tags/Linux/"/>
+    
+      <category term="Daily" scheme="https://catchdream.me/tags/Daily/"/>
     
   </entry>
   
@@ -519,9 +556,9 @@
     
       <category term="Python" scheme="https://catchdream.me/tags/Python/"/>
     
-      <category term="Numpy" scheme="https://catchdream.me/tags/Numpy/"/>
-    
       <category term="MachineLearning" scheme="https://catchdream.me/tags/MachineLearning/"/>
+    
+      <category term="Numpy" scheme="https://catchdream.me/tags/Numpy/"/>
     
   </entry>
   
@@ -553,32 +590,6 @@
       <category term="Clustering" scheme="https://catchdream.me/tags/Clustering/"/>
     
       <category term="K-Means" scheme="https://catchdream.me/tags/K-Means/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Fedora搭建LNMP环境</title>
-    <link href="https://catchdream.me/2017/08/13/Fedora%E6%90%AD%E5%BB%BALNMP%E7%8E%AF%E5%A2%83/"/>
-    <id>https://catchdream.me/2017/08/13/Fedora搭建LNMP环境/</id>
-    <published>2017-08-13T08:12:58.000Z</published>
-    <updated>2019-03-31T20:04:33.085Z</updated>
-    
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>woc!因为Algolia文章长度限制…不得不把原本的<centos-fedora搭建lnmp环境>改成两篇文章…佛了<br><a id="more"></a></centos-fedora搭建lnmp环境></p><p>原本在服务器上一直用的debian系,后来转到本机Fedora搭建环境就蒙了,之前也因为这个花了不少时间,为了把踩过得坑记下来,还是写篇文章。</p><p>其实所谓LNMP其实就是指Linux+Nginx+Mysql+PHP,因为Nginx发音问题,有时候也说是LEMP。</p><p><strong>下面就是<em>Centos/Fedora</em> 搭建LNMP环境的教程.</strong>  </p><h1 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h1><p>OS: Fedora 25<br>Nginx Version: 1.6.2<br>Mysql Version: MariaDB 10.2<br>PHP Version: PHP7.17</p><h1 id="安装Nginx-PHP7-1-7和PHP-FPM"><a href="#安装Nginx-PHP7-1-7和PHP-FPM" class="headerlink" title="安装Nginx,PHP7.1.7和PHP-FPM"></a>安装Nginx,PHP7.1.7和PHP-FPM</h1><h2 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h2><pre><code>sudo -i ## OR ##su -  </code></pre><h2 id="添加repositories"><a href="#添加repositories" class="headerlink" title="添加repositories"></a>添加repositories</h2><pre><code>## Remi Dependency on Fedora ##rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm## The version 25 can be replaced by 26/24 ##rpm -Uvh http://rpms.famillecollet.com/fedora/remi-release-25.rpm  </code></pre><h2 id="安装Nginx-PHP-7-1-7-and-PHP-FPM"><a href="#安装Nginx-PHP-7-1-7-and-PHP-FPM" class="headerlink" title="安装Nginx,PHP 7.1.7 and PHP-FPM"></a>安装Nginx,PHP 7.1.7 and PHP-FPM</h2><pre><code>dnf --enablerepo=remi --enablerepo=remi-php71 install nginx php-fpm php-common  </code></pre><h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><pre><code>dnf --enablerepo=remi --enablerepo=remi-php71 install php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongodb php-pecl-redis php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml  </code></pre><p>关于这些模块的介绍可以自己百度,根据自己需要来安装,嫌麻烦的话～直接copy吧～</p><h2 id="关闭httpd-Apache-并打开Nginx-PHP-FPM"><a href="#关闭httpd-Apache-并打开Nginx-PHP-FPM" class="headerlink" title="关闭httpd(Apache)并打开Nginx,PHP-FPM"></a>关闭httpd(Apache)并打开Nginx,PHP-FPM</h2><p> <strong>关闭Apache</strong>  </p><pre><code>systemctl stop httpd.service  </code></pre><p><strong>打开Nginx</strong>  </p><pre><code>systemctl start nginx.service  </code></pre><p><strong>打开PHP-FPM</strong>  </p><pre><code>systemctl start php-fpm.service  </code></pre><h2 id="设置开机自启Nginx-PHP-FPM"><a href="#设置开机自启Nginx-PHP-FPM" class="headerlink" title="设置开机自启Nginx PHP-FPM"></a>设置开机自启Nginx PHP-FPM</h2><p> <strong>关闭httpd(Apache)的开机自启</strong>  </p><pre><code>systemctl disable httpd.service  </code></pre><p><strong>设置Nginx和PHP-FPM开机自启</strong>  </p><pre><code>systemctl enable nginx.servicesystemctl enable php-fpm.service  </code></pre><h2 id="配置Nginx-和PHP-FPM"><a href="#配置Nginx-和PHP-FPM" class="headerlink" title="配置Nginx 和PHP-FPM"></a>配置Nginx 和PHP-FPM</h2><p> <strong>先做好默认配置的备份</strong>  </p><pre><code>cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bakcp /etc/nginx/nginx.conf.default /etc/nginx/nginx.conf  </code></pre><p><strong>修改PHP-FPM配置</strong>  </p><pre><code>vim /etc/php-fpm.d/www.conf## 注释掉新添加一行 ##;listen = /run/php-fpm/www.socklisten = 127.0.0.1:9000  </code></pre><p><strong>为你的站点创建相关文件夹</strong>  </p><pre><code>## 将testsite.local换成你自己的　##mkdir -p /srv/www/testsite.local/public_htmlmkdir /srv/www/testsite.local/logschown -R apache:apache /srv/www/testsite.localmkdir /etc/nginx/sites-availablemkdir /etc/nginx/sites-enabled  </code></pre><p>这里使用apache user group是因为PHP-FPM默认运行apache,并且apache能够进入一些类似httpd这样的目录</p><p><strong>在/etc/nginx/nginx.conf文件\”include /etc/nginx/conf.d/*.conf\”这行后面添加一行</strong>  </p><pre><code>include /etc/nginx/sites-enabled/*;  </code></pre><p><strong>创建testsite.local 文件并配置</strong>  </p><pre><code>## 这是最基本的配置 ##server {    server_name testsite.local;    access_log /srv/www/testsite.local/logs/access.log;    error_log /srv/www/testsite.local/logs/error.log;    root /srv/www/testsite.local/public_html;    location / {        index index.html index.htm index.php;    }    location ~ \.php$ {        include /etc/nginx/fastcgi_params;        fastcgi_pass  127.0.0.1:9000;        fastcgi_index index.php;        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;    }}  </code></pre><p><strong>创建软链接到sites-enabled目录</strong>  </p><pre><code>cd /etc/nginx/sites-enabled/ln -s /etc/nginx/sites-available/testsite.localsystemctl restart nginx.service  </code></pre><p><strong>将testsite.local添加到/etc/hosts中</strong>  </p><pre><code>127.0.0.1               localhost.localdomain localhost testsite.local  </code></pre><p><a href="http://www.if-not-true-then-false.com/2011/nginx-and-php-fpm-configuration-and-optimizing-tips-and-tricks/" target="_blank" rel="noopener">更多的Nginx 和PHP-FPM配置点这里～</a></p><h2 id="测试是否成功"><a href="#测试是否成功" class="headerlink" title="测试是否成功"></a>测试是否成功</h2><p><strong>创建/srv/www/testsite.local/public_html/index.php并添加以下内容:</strong>  </p><p><strong>然后访问域名或者服务器ip看是否出现phpinfo的页面。</strong></p><h2 id="出现403-forbidden"><a href="#出现403-forbidden" class="headerlink" title="出现403 forbidden"></a>出现403 forbidden</h2><p><strong>可能是SELinux有问题</strong>  </p><pre><code>chcon -R -t httpd_sys_content_t /srv/www/testsite.local/public_html  </code></pre><h2 id="远程链接到服务器"><a href="#远程链接到服务器" class="headerlink" title="远程链接到服务器"></a>远程链接到服务器</h2><p><strong>打开防火墙的80端口</strong>  </p><pre><code>firewall-cmd --get-active-zonesfirewall-cmd --permanent --zone=public --add-service=http## OR ##firewall-cmd --permanent --zone=public --add-port=80/tcpsystemctl restart firewalld.service  </code></pre><p><strong>访问域名或者ip试试~</strong></p><h1 id="安装MariaDB"><a href="#安装MariaDB" class="headerlink" title="安装MariaDB"></a>安装MariaDB</h1><p>这里安装的是MariaDB,而不是Mysql,有如下几个原因</p><ul><li>MariaDB本来就是一个Mysql的开源版本</li><li>MariaDB和Mysql类似并兼容Mysql</li><li>Fedora和Centos系列的发行版已经转用MariaDB了</li></ul><p><strong>我这里选择安装MariaDB 10.2.7 [stable],具体安装过程如下~</strong></p><ul><li>如果之前安装了Mysql,记得备份你的数据库和配置文件!</li><li>如果是从低版本升级的,记得执行<code>mysql_upgrade</code>~</li></ul><h2 id="切换root用户"><a href="#切换root用户" class="headerlink" title="切换root用户"></a>切换root用户</h2><pre><code>su -## OR ##sudo -i  </code></pre><h2 id="添加MariaDB-repo"><a href="#添加MariaDB-repo" class="headerlink" title="添加MariaDB repo"></a>添加MariaDB repo</h2><p>现在Fedora 24/25/26 用户都可以直接安装MariaDB 10.1 而不用添加其他的repo来安装~</p><p><a href="http://downloads.mariadb.org/mariadb/repositories/" target="_blank" rel="noopener">MariaDB repository configuration<br>tool</a>,这里面有repo,自己选择repo文件安装,上面也有教程~</p><h2 id="更新并安装"><a href="#更新并安装" class="headerlink" title="更新并安装"></a>更新并安装</h2><pre><code>dnf install mariadb mariadb-server  </code></pre><h2 id="打开MariaDB并配置自启"><a href="#打开MariaDB并配置自启" class="headerlink" title="打开MariaDB并配置自启"></a>打开MariaDB并配置自启</h2><pre><code>systemctl start mariadb.service ## use restart after updatesystemctl enable mariadb.service  </code></pre><h2 id="进行secure-installation"><a href="#进行secure-installation" class="headerlink" title="进行secure installation"></a>进行secure installation</h2><pre><code>/usr/bin/mysql_secure_installation  </code></pre><p>自己看提示来~第一个没设置密码呢,直接回车,下面的大多数都选Y</p><p>如果不想进行secure installation 的话,emmmmm….最好还是做下吧~  </p><p>到这里其实已经结束了…233333</p><h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><pre><code>mysql -u root -p  </code></pre><h2 id="创建数据库和user"><a href="#创建数据库和user" class="headerlink" title="创建数据库和user"></a>创建数据库和user</h2><pre><code>## CREATE DATABASE ##MariaDB [(none)]&gt; CREATE DATABASE webdb;## CREATE USER ##MariaDB [(none)]&gt; CREATE USER &#39;webdb_user&#39;@&#39;10.0.15.25&#39; IDENTIFIED BY &#39;password123&#39;;## GRANT PERMISSIONS ##MariaDB [(none)]&gt; GRANT ALL ON webdb.* TO &#39;webdb_user&#39;@&#39;10.0.15.25&#39;;##  FLUSH PRIVILEGES, Tell the server to reload the grant tables  ##MariaDB [(none)]&gt; FLUSH PRIVILEGES;  </code></pre><h2 id="确保数据库能远程连接"><a href="#确保数据库能远程连接" class="headerlink" title="确保数据库能远程连接"></a>确保数据库能远程连接</h2><pre><code>firewall-cmd --get-active-zones## 应该会输出如下 ##- public-    interfaces: wlp1s0firewall-cmd --permanent --zone=public --add-service=mysqlsystemctl restart firewalld.servicemysql -h 10.0.15.25 -u myusername -p  </code></pre><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;woc!因为Algolia文章长度限制…不得不把原本的&lt;centos-fedora搭建lnmp环境&gt;改成两篇文章…佛了&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="https://catchdream.me/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="https://catchdream.me/tags/Linux/"/>
-    
-      <category term="LNMP" scheme="https://catchdream.me/tags/LNMP/"/>
     
   </entry>
   

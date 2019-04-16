@@ -10,7 +10,7 @@ categories: Daily
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-弄Web端手写数字识别的时候要把Canvas缩成32\*32大小的，弄了三四个小时才弄好，刚开始想的是用canvas的画布缩放，弄了好久发现行不通，然后无意中发现可以获得每个像素的RGBA的值，然后又自己尝试每个像素缩放，语法不熟悉，各种尝试...
+弄Web端手写数字识别的时候要把Canvas缩成32\*32大小的，刚开始想的是用canvas的画布缩放，弄了好久发现行不通，然后无意中发现可以获得每个像素的RGBA的值，然后又自己尝试每个像素缩放，语法不熟悉，各种尝试...
 好了不多说了，代码在下面
 {% endnote %}
 <!--more-->
@@ -19,6 +19,8 @@ categories: Daily
 - ctx: 原始canvas的context
 - outCtx: 输出canvas的context
 - scale: 缩放倍数
+- scaled: 缩放后的ImageData
+- imageData.data: 图像的RGBA数组，是一个一维数组
 
 ```javascript
 function genImg() {

@@ -19,11 +19,13 @@ date: 2019-04-15 20:47:37
 The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 > P   A   H   N
 > A P L S I I G
-> Y   I   R
+> Y   I   R  
+
 And then read line by line: **"PAHNAPLSIIGYIR"**
+Write the code that will take a string and make this conversion given a number of rows:   
 > string convert(string s, int numRows);
 {% endnote %}
-
+<!--more-->
 {% note info %}
 ### Examples:
 **Input:** s = "PAYPALISHIRING", numRows = 3
@@ -37,7 +39,6 @@ And then read line by line: **"PAHNAPLSIIGYIR"**
 > Y A   H R
 > P     I
 {% endnote %}
-<!--more-->
 
 ## Solutions
 - 想到的是用数学方法，遍历每一行，然后计算每一行字符的位置，逐个添加进去，是题解的第二种方法。每行的字符位置都满足一个数列，所以可以很简单的计算出来。时间复杂度是$$ O(n) $$.
