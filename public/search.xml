@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MNIST入门-手写数字识别问题集锦]]></title>
+    <url>%2F2019%2F04%2F18%2FMNIST%E5%85%A5%E9%97%A8-%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6%2F</url>
+    <content type="text"><![CDATA[记录一下手写数字识别这个项目过程中遇到的问题，以及解决方法，还有一些图像处理方面的文章推荐 canvas画笔位置有偏移 使用window.innerHeight || document.documentElement.clientHeight语句获取视窗高度，同理获得宽度 移动端获得视窗的高度和宽度后，根据高视窗的大小设置canvas大小，以及下方按钮文字等大小 PC端通过canvas的mousedown、mousemove、mouseup这三个事件绘图，画笔的起始点和新点用event.clientX - canvas.offsetLeft获取x，同理获取y, 移动端用touchstart、touchmove、touchend这三个事件，画笔的起始点和终点都用event.targetTouches[0].clientX - canvas.offsetLeft获取x，event.targetTouches[0].clientY - canvas.offsetTop获取y canvas用二次贝塞尔曲线绘图PC端mousemove事件代码 123456789101112131415161718192021222324//PC端鼠标移动function draw(event) &#123; if (onoff == true) &#123; //获取新点和中点 var newx = event.clientX - canvas.offsetLeft; var newy = event.clientY - canvas.offsetTop; midx = 0.5*(newx+oldx); midy = 0.5*(newy+oldy); //设置粗细和颜色 ctx.lineWidth = linew; ctx.strokeStyle = linecolor; ctx.lineCap = 'round'; //绘制二次贝塞尔 ctx.moveTo(oldx,oldy); ctx.quadraticCurveTo( midx , midy , newx , newy ); ctx.stroke(); //转移新旧坐标 oldx = newx; oldy = newy; &#125;;&#125; mobile端mousemove事件代码 12345678910111213141516171819202122//移动端手指移动function tMove(event)&#123; //获取新点和中点 var touche = event.targetTouches[0]; var newx = touche.clientX - canvas.offsetLeft; var newy = touche.clientY - canvas.offsetTop; midx = 0.5*(newx+oldx); midy = 0.5*(newy+oldy); //设置粗细和颜色 ctx.lineWidth = linew; ctx.strokeStyle = linecolor; ctx.lineCap = 'round' ctx.beginPath(); ctx.moveTo(oldx,oldy); ctx.quadraticCurveTo(midx,midy,newx,newy); ctx.stroke(); oldx = newx; oldy = newy;&#125; canvas的imageData像素级缩放想要获得canvas上的图像并且缩放到28*28，使用scale方法是不行的，必须获取所有的像素RGBA值，然后横向隔一段取一个点，竖向隔几行取一行，一共横向每行取28个像素点，竖向取28行 代码如下： 1234567891011121314151617181920212223242526//缩放imageData,scale:倍数,返回:imageDatafunction scaleImageData(imageData, scale) &#123; var scaled = ctx.createImageData(imageData.width * scale, imageData.height * scale); for (var row = 0; row &lt; imageData.height; row++) &#123; for (var col = 0; col &lt; imageData.width; col++) &#123; var sourcePixel = [ imageData.data[(row * imageData.width + col) * 4 + 0], imageData.data[(row * imageData.width + col) * 4 + 1], imageData.data[(row * imageData.width + col) * 4 + 2], imageData.data[(row * imageData.width + col) * 4 + 3] ]; for (var y = 0; y &lt; scale; y++) &#123; var destRow = Math.floor(row * scale) + y; for (var x = 0; x &lt; scale; x++) &#123; var destCol = Math.floor(col * scale) + x; for (var i = 0; i &lt; 4; i++) &#123; scaled.data[(destRow * scaled.width + destCol) * 4 + i] = sourcePixel[i]; &#125; &#125; &#125; &#125; &#125;// alert(scaled.data.length); return scaled;&#125; 获取服务器的ip这里取巧了，直接从浏览器显示部分获取代码如下： 12345678//获取服务器ip，运行时urlPath为https://192.168.137.1:8000/function getRemoteIp()&#123; var urlPath = window.document.location.href; //浏览器显示地址 http://10.15.5.83:5555/ISV/demo.aspx?a=1&amp;b=2 // var docPath = window.document.location.pathname; //文件在服务器相对地址 /ISV/demo.aspx // var index = urlPath.indexOf(docPath); var serverPath = urlPath.substring(7, urlPath.length-1);//服务器ip 192.168.137.1 return serverPath;&#125; UA检测因为要适配移动端和PC端，所以简单的UA检测还是必要的，这里没有做的很复杂主要就是通过检测navigator.platfowm中的关键词来判断 代码如下： 12345678910111213141516171819202122var ua = navigator.userAgent; var system = &#123; win : false, mac : false, linux : false, // mobile iphone : false, android : false,&#125;;var p = navigator.platform;system.win = p.indexOf('Win') == 0;system.mac = p.indexOf('Mac') == 0;system.linux = p.indexOf('Linux') == 0;system.iphone = ua.indexOf('iPhone') &gt; -1;system.android = ua.indexOf('Android') &gt; -1if(system.win||system.mac)&#123; ...&#125; else if(system.android||system.iphone)&#123; ...&#125; python根据数组生成图片dtype一定要写的，不写生成错误imgData就是图片的RGBA数据数组，要转成np数组才可以用PIL的Image.fromarray() 123array = np.asarray(imgData, dtype=np.uint8)image = Image.fromarray(array, 'RGBA') image.save(outputImgPath + imgName +'.png') 将RGBA转换为RGB格式数组网上看了很多，有用PIL的，还有直接写算法转换的，用opencv的…很多这里发现PIL的不好用，读出来还是RGBA的格式，而且没办法用函数在数组上转换 最后解决办法是: 从前端传过来的数据是字典类型，先获取values() 将dict.vlues这个数组转换为ndarray数组 转换完了,再把这个RGBA数组用 PIL 转换为图片 用save()方法保存为临时图片 用opencv读取临时图片的RGB通道的数据 123456789# 将图片数据转换为ndarray类型npData = np.array(imageData,dtype=np.uint8).reshape(28,28,4)# 将RGBA格式数组转换为图片image = Image.fromarray(npData, 'RGBA') # 保存临时图片image.save('static/images/npimg.png')# 用opencv读取图片的RGB数据rgbImage = cv2.imread('static/images/npimg.png', cv2.IMREAD_COLOR) cv2.imread(path[, flags])cv2的imread函数的第二个参数这里说明下: 如果不设置，读进来的是BGR格式的数据，值在0-255,flag一共有3个取值cv2.IMREAD_COLOR : 读入彩色图片,任何与透明度相关通道的会被忽视,默认以这种方式读入.cv2.IMREAD_GRAYSCALE : 以灰度图的形式读入图片cv2.IMREAD_UNCHANGED : 保留读取图片原有的颜色通道. 可以简单的用-1,0,1来分别表示这3个flag Python图像处理图片的读写方式总结找到一个很全的博客，推荐一下：Python各类图像库的图片读写方式总结 opencv的基本操作推荐看看这篇文章：点击跳转 tensorflow简单的图像处理推荐链接：使用TensorFlow进行简单的图像处理 PIL格式转换推荐链接：Python图像处理库PIL中图像格式转换（一） 对图片灰度化如果只是灰度的话可以用PIL的convert函数，很方便，但是这里要用tensorflow，所以得用tf.image_to_grayscale(imageData)这个函数。注意事先要先将数据格式转换为tf.float32类型的 1234# 将rgb图片转换为float32格式rgbImage = tf.image.convert_image_dtype(rgbImage, tf.float32)# 将图片灰度化得到(28,28,1)格式的tensorrgbImage = tf.image.rgb_to_grayscale(rgbImage 后端改变图片的背景和画笔颜色数据出于美观，前端并不是黑底白字，但是模型训练的是黑底白字的，虽然后面测试用了灰度数据，还是会不准确，所以在数据处理前，对imageData中的部分像素进行修改，将橙色变为黑色，黑色画笔变为白色 123456789101112# 将橙色的背景转换为黑色,将画笔的黑色转为白色# input: RGBA格式图片数据# output: 修改过的RGBA格式图片数据def reveBlack(imageData): for i in range(0,len(imageData),4): # 如果画笔为白色 if imageData[i]==0 and imageData[i+1]==0 and imageData[i+2]==0: imageData[i]=imageData[i+1]=imageData[i+2]=255 # 如果背景为橙色 if imageData[i]==255 and imageData[i+1]==165 and imageData[i+2]==0: imageData[i]=imageData[i+1]=imageData[i+2]=0 return imageDat tensor和numpy数组转换tensor转ndarray由于项目里面是模型恢复，所以没有初始化这步有两种方法： 12345678### 将tensor转换为ndarrayinit = tf.initialize_all_variables()with tf.Session() as sess: sess.run(init) # 第一种 ndName = tensorName1.eval(session=sess) #第二种 ndName = sess.run(tensorName2) ndarray转tensor12# 将ndarray转换为tensortensorName = tf.convert_to_tensor(ndName, dtype = tf.float32) 使用训练好的模型参考链接：言初见的CSDN博客 训练用的算法是Lenet-5，下面的代码是部分调用模型代码，因为只有一张图片的数据，并不是用整个测试集，所以有些地方会有点不一样 主要还是通过恢复模型，传入图片数据来获得预测结果 注意点： x占位符的shape，要注意个train的一致，第一个shape要是1，因为只有一个图片 使用tf.argmax(y,1)函数获得最大预测的下标,这里就是结果了，因为是0-9正好对应了下标 输入的feed_dict测试数据必须是ndarray，不可以是tensor，因此要转换以下 代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344# 定义输入格式(1,28,28,1)x = tf.placeholder(tf.float32, [1, mnist_inference.IMAGE_SIZE, mnist_inference.IMAGE_SIZE, mnist_inference.NUM_CHANNEL], name='x-input')#直接通过调用封装好的函数来计算前向传播的结果 y = mnist_inference.interence(x,None, None)#使用tf.argmax(y, 1)就可以得到输入样例的预测类别 prediction = tf.argmax(y, 1)# 通过变量重命名的方式来加载模型# 所有滑动平均的值组成的字典,处在/ExponentialMovingAverage下的值 # 为了方便加载时重命名滑动平均量，tf.train.ExponentialMovingAverage类 # 提供了variables_to_store函数来生成tf.train.Saver类所需要的变量 # 这些值要从模型中提取variable_averages = tf.train.ExponentialMovingAverage(mnist_train.MOVING_AVERAGE_DECAY)variable_to_restore = variable_averages.variables_to_restore()saver = tf.train.Saver(variable_to_restore)# 用数据测试模型with tf.Session() as sess: # get_checkoutpoint_state()会通过checkoutpoint文件自动找到目录中最新模型的文件名 ckpt = tf.train.get_checkpoint_state(mnist_train.MODEL_PATH) if ckpt and ckpt.model_checkpoint_path: # 加载模型 saver.restore(sess, ckpt.model_checkpoint_path) # 将tensor转换为np数组,这里也可以用np的reshape方法 rgbNpData = tf.reshape(rgbImage,[1, mnist_inference.IMAGE_SIZE, mnist_inference.IMAGE_SIZE, mnist_inference.NUM_CHANNEL]) # 将tensor转换为ndarray reshaped_data = rgbNpData.eval() # 将输入的测试数据格式调整为一个四维矩阵 validate_feed = &#123;x: reshaped_data&#125; # 获得预测的结果数组 predictionNum = sess.run(prediction, feed_dict = validate_feed) print("Number is %d" %(predictionNum[0]))tf.reset_default_graph() 报错：Error: the tensor’s graph is different from the session’s graph这是因为session里面的图和使用的图不一样导致的，刚开始不清楚，把参考的博客上面的那句： with tf.Graph().as_default() as g:写上去了，导致默认图被设置成了g，但是用的又是恢复的图，所以不一样了 解决办法炒鸡简单…但是debug的过程里就一直没意识到就是了…就是把那句话去掉就行了哇 报错：List of Tensors when single Tensor expected使用tf.constant()函数的时候可能会报这个错误 看看这个函数的定义： def constant(value, dtype=None, shape=None, name=”Const”, verify_shape=False)value: A constant value (or list) of output type dtype.Returns: A Constant Tensor. 问题也应该清楚了，constant要求输入的是list，用的时候如果传入了tensor类型的，当然就不可以了 总结遇到的问题还是很多的，好几个bug都折磨了我几个小时，找不到bug在哪太艰难了，深深的感受到要学了点基础再来做项目，就说这个tensorflow，没有大致的学一遍，遇到问题完全就是无头苍蝇，不好排错 一个项目学到的东西还是挺多的，实战真的很重要啊]]></content>
+      <categories>
+        <category>MachineLearning</category>
+      </categories>
+      <tags>
+        <tag>Daily</tag>
+        <tag>ML</tag>
+        <tag>MNIST</tag>
+        <tag>Tensorflow</tag>
+        <tag>LeNet-5</tag>
+        <tag>Problems</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-008-String to Integer (atoi)]]></title>
     <url>%2F2019%2F04%2F16%2FLeetCode-008-String-to-Integer-atoi%2F</url>
-    <content type="text"><![CDATA[ProblemExamples:Input:Output: Solutions 没啥思维量，就是简单的遍历每个字符，然后设置两个flag，一个用于判断有没有到数字部分，第二个判断是不是负数，如果没到数字部分，就要分情况讨论，如果到了数字部分，判断到没到非数字，到了就退出，没到就每个数字加到结果上 C++ Codes每个字符遍历过去的方法，12ms，8.4MB123456789101112131415161718192021222324252627282930313233class Solution &#123;public: int myAtoi(string str) &#123; long long tmp = 0; int n = str.length(); if(n==0)return 0; bool flag = false;//是否到数字部分 int flag2 = 1;//负数标志，有就变为-1 for(int i=0;i&lt;n;i++)&#123; //已经开始数字部分的情况，即flag = true if(tmp&gt;INT_MAX)break; if(flag &amp;&amp; (str[i]&lt;'0' || str[i]&gt;'9')) break; if(flag) tmp = tmp*10+str[i]-'0'; //还没到数字的情况，前面那部分，分为空格、非数字非符号、数字或正负号 if(!flag &amp;&amp; str[i]==' ') continue; if(!flag &amp;&amp; str[i]!='+' &amp;&amp; str[i]!='-' &amp;&amp; (str[i]&lt;'0' || str[i]&gt;'9') ) return 0; if(!flag &amp;&amp; (str[i]=='+' || str[i]=='-'|| (str[i]&gt;='0'&amp;&amp;str[i]&lt;='9')))&#123; flag = true; if(str[i]=='-')flag2 = -1; if(str[i]=='+'||str[i]=='-')continue; tmp = tmp*10+str[i]-'0'; &#125; &#125; tmp*=flag2; if(tmp&gt;INT_MAX) return INT_MAX; if(tmp&lt;INT_MIN) return INT_MIN; return (int)tmp; &#125;&#125;; Python Codes借用了HazzaCheng的代码,这道题用python解简直作弊..1234567891011121314class Solution(object): def myAtoi(self, s): ls = list(s.strip()) if len(ls) == 0: return 0 sign = -1 if ls[0] == '-' else 1 if ls[0] in ['-', '+']: del ls[0] res, i = 0, 0 while i &lt; len(ls) and ls[i].isdigit(): res = res * 10 + ord(ls[i]) - ord('0') i += 1 return max(-2 ** 31, min(sign * res, 2 ** 31 - 1)) 总结 要注意各种情况的判断 就算用了long long作为中转，在循环中也要判断是否已经超过int表示范围，提前break，可能出现longlong都无法表示的测试 注意空串 注意前面的符号 不应该进行的操作及时continue掉 还是会出现’+’号的]]></content>
+    <content type="text"><![CDATA[Problem实现C++的atoi()函数The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value. The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function. If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed. If no valid conversion could be performed, a zero value is returned. Note: Only the space character ‘ ‘ is considered as whitespace character.Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^{31}, 2^{31} − 1]. If the numerical value is out of the range of representable values, INT_MAX 2^{31}-1 or INT_MIN -2^{31} is returned. Examples:Input:“42”Output:42Input:“ -42”Output:-42Input:“words and 987”Output:987 Solutions 没啥思维量，就是简单的遍历每个字符，然后设置两个flag，一个用于判断有没有到数字部分，第二个判断是不是负数，如果没到数字部分，就要分情况讨论，如果到了数字部分，判断到没到非数字，到了就退出，没到就每个数字加到结果上 C++ Codes每个字符遍历过去的方法，12ms，8.4MB123456789101112131415161718192021222324252627282930313233class Solution &#123;public: int myAtoi(string str) &#123; long long tmp = 0; int n = str.length(); if(n==0)return 0; bool flag = false;//是否到数字部分 int flag2 = 1;//负数标志，有就变为-1 for(int i=0;i&lt;n;i++)&#123; //已经开始数字部分的情况，即flag = true if(tmp&gt;INT_MAX)break; if(flag &amp;&amp; (str[i]&lt;'0' || str[i]&gt;'9')) break; if(flag) tmp = tmp*10+str[i]-'0'; //还没到数字的情况，前面那部分，分为空格、非数字非符号、数字或正负号 if(!flag &amp;&amp; str[i]==' ') continue; if(!flag &amp;&amp; str[i]!='+' &amp;&amp; str[i]!='-' &amp;&amp; (str[i]&lt;'0' || str[i]&gt;'9') ) return 0; if(!flag &amp;&amp; (str[i]=='+' || str[i]=='-'|| (str[i]&gt;='0'&amp;&amp;str[i]&lt;='9')))&#123; flag = true; if(str[i]=='-')flag2 = -1; if(str[i]=='+'||str[i]=='-')continue; tmp = tmp*10+str[i]-'0'; &#125; &#125; tmp*=flag2; if(tmp&gt;INT_MAX) return INT_MAX; if(tmp&lt;INT_MIN) return INT_MIN; return (int)tmp; &#125;&#125;; Python Codes借用了HazzaCheng的代码,这道题用python解简直作弊..1234567891011121314class Solution(object): def myAtoi(self, s): ls = list(s.strip()) if len(ls) == 0: return 0 sign = -1 if ls[0] == '-' else 1 if ls[0] in ['-', '+']: del ls[0] res, i = 0, 0 while i &lt; len(ls) and ls[i].isdigit(): res = res * 10 + ord(ls[i]) - ord('0') i += 1 return max(-2 ** 31, min(sign * res, 2 ** 31 - 1)) 总结 要注意各种情况的判断 就算用了long long作为中转，在循环中也要判断是否已经超过int表示范围，提前break，可能出现longlong都无法表示的测试 注意空串 注意前面的符号 不应该进行的操作及时continue掉 还是会出现’+’号的]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
@@ -103,9 +119,9 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
+        <tag>Math</tag>
         <tag>Linked List</tag>
         <tag>Large Number</tag>
-        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -117,8 +133,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>机器学习基石</tag>
         <tag>MachineLearning</tag>
+        <tag>机器学习基石</tag>
       </tags>
   </entry>
   <entry>
@@ -130,8 +146,8 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>Math</tag>
         <tag>Hash Map</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -143,8 +159,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>机器学习基石</tag>
         <tag>MachineLearning</tag>
+        <tag>机器学习基石</tag>
       </tags>
   </entry>
   <entry>
@@ -156,8 +172,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>机器学习基石</tag>
         <tag>MachineLearning</tag>
+        <tag>机器学习基石</tag>
         <tag>PLA</tag>
       </tags>
   </entry>
@@ -266,8 +282,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>MachineLearning</tag>
         <tag>Numpy</tag>
+        <tag>MachineLearning</tag>
       </tags>
   </entry>
   <entry>
@@ -293,8 +309,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>LNMP</tag>
         <tag>Linux</tag>
+        <tag>LNMP</tag>
       </tags>
   </entry>
   <entry>
@@ -305,8 +321,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>LNMP</tag>
         <tag>Linux</tag>
+        <tag>LNMP</tag>
       </tags>
   </entry>
   <entry>
