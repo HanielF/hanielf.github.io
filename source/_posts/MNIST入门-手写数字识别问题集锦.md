@@ -9,7 +9,9 @@ categories: MachineLearning
 
 <meta name="referrer" content="no-referrer" />
 
+{% note info %}
 记录一下手写数字识别这个项目过程中遇到的问题，以及解决方法，还有一些图像处理方面的文章推荐
+{% endnote %}
 <!--more-->
 ## canvas画笔位置有偏移
 - 使用`window.innerHeight || document.documentElement.clientHeight`语句获取视窗高度，同理获得宽度
