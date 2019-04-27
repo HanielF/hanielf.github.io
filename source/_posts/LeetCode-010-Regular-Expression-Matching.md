@@ -42,29 +42,36 @@ The matching should cover the entire input string (not partial).
 <!--more-->
 
 ## Solutions
-- 递归
-- DP动态规划
+- 递归，首字母匹配，并且后面的子串也匹配
+- DP动态规划，自上而下和自下而上两种，自下而上的不用递归，时间复杂度上会好点
+- 自下而上的方法，在判断前一个字符的时候，因为后面的部分已经判断过了，所以可以直接从dp表里面取数据
 
-## Java Codes
-**递归方法，题解上的Java代码**
+## C++ Codes
+**递归方法**
 
-```java
+```C++
 class Solution {
-    public boolean isMatch(String text, String pattern) {
-        if (pattern.isEmpty()) return text.isEmpty();
-        boolean first_match = (!text.isEmpty() &&
-                               (pattern.charAt(0) == text.charAt(0) || pattern.charAt(0) == '.'));
+public:
+    bool isMatch(string s, string p) {
+        if(p.empty())return s.empty();
+        //第一个字符匹配或者是.匹配符
+        bool first_match = (!s.empty() &&
+                            (p[0]==s[0]||p[0]=='.'));
 
-        if (pattern.length() >= 2 && pattern.charAt(1) == '*'){
-            return (isMatch(text, pattern.substring(2)) ||
-                    (first_match && isMatch(text.substring(1), pattern)));
+        //如果是字符加*
+        if(p.length()>=2 && p[1]=='*'){
+            return (isMatch(s, p.substr(2)) ||
+                (first_match && isMatch(s.substr(1), p)));
+        //如果没有*或者少于两个字符
         } else {
-            return first_match && isMatch(text.substring(1), pattern.substring(1));
+            return first_match &&
+                isMatch(s.substr(1), p.substr(1));
         }
     }
-}
+};
 ```
 
+## Java Codes
 **自上而下的DP**
 
 ```Java
@@ -149,7 +156,7 @@ public:
                 case '*':        //零个或者多个前面的元素
                     if(p[pi-1]=='.') 
                     {
-                        if(pi==pn-1)return true;    //如果.*是最后两个字符，直接返回true
+                        if(pi==pn-1)re后面还要改turn true;    //如果.*是最后两个字符，直接返回true
                         while((p[pi+1]=='.'||p[pi+1]=='*')&&pi<pn){ //如果后面持续特殊字符
                             pi++;
                         }
@@ -190,7 +197,7 @@ public:
 
 ## Python Codes
 
-评论区有人一行正则就搞定了，我觉得，python一行也够了...
+评论区有人一行Java正则就搞定了，我觉得，python一行也够了...
 
 ```python
 略
@@ -199,7 +206,7 @@ public:
 ## 总结
 - 正则匹配这里，其实应该先想到递归和DP的，但是思维太局限，训练的少，虽然会递归和DP，但是想不起来用..仿佛读了假书..
 - 算法题需要训练，不光是会算法，不然都不知道题目应该用什么算法...
-- 后面还要改
+- 这道题来说，递归还是挺容易写的，首字母匹配，后面的也匹配就可以，再考虑下\*字符的情况
 
 
 ------
