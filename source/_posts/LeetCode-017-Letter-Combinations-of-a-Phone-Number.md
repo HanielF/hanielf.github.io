@@ -1,7 +1,9 @@
 ---
 title: LeetCode-017-Letter Combinations of a Phone Number
 tags:
-  - LeetCode, Recursive, Map
+  - LeetCode
+  - Recursive
+  - Map
 categories:
   - LeetCode
 comments: true

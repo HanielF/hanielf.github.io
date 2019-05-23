@@ -1,7 +1,9 @@
 ---
 title: LeetCode-014-Longest Common Prefix
 tags:
-  - LeetCode, Prefix, String
+  - LeetCode
+  - Prefix
+  - String
 categories:
   - LeetCode
 comments: true

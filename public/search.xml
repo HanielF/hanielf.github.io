@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C++优先级队列]]></title>
+    <url>%2F2019%2F05%2F23%2FC-%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%2F</url>
+    <content type="text"><![CDATA[前言写LeetCode的时候学了优先级队列，这里总结一下STL中优先级队列的使用和实现 介绍优先级队列也是队列的一种，FIFO结构，但是和普通的队列不同的是有一个优先级的权重 优先级队列有两种，一种是最小优先队列，值小的优先级越大，另一种是最大优先队列，值大的优先级越大 头文件： “queue.h”, “functional.h” 插入和删除操作复杂度都是O(lgn) 使用构造函数构造函数声明如下：12std::priority_queue&lt;T&gt; pq;std::priority_queue&lt;T, std::vector&lt;T&gt;, cmp&gt; pq; 第一种构造函数： 传入一个基本类型或者自定义类，自定义类要重载]]></content>
+      <categories>
+        <category>Daily</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Queue</tag>
+        <tag>PriorityQueue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-023-Merge k Sorted Lists]]></title>
+    <url>%2F2019%2F05%2F23%2FLeetCode-023-Merge-k-Sorted-Lists%2F</url>
+    <content type="text"><![CDATA[ProblemMerge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity. Examples:Input: [ 1-&gt;4-&gt;5, 1-&gt;3-&gt;4, 2-&gt;6]Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6 Solutions 相对上一题难度加大了一点，但是如果按照上一题的思路也是可以做的，就是时间复杂度会有点高 这里介绍两种方法，第一种就是类似上一题的解法，每次循环找到所有链表中最小的头结点，然后改变指针指向，并不新建节点，中间有个坑是测试用例中会有空的链表，要注意处理下。每次加一个节点，加的时候遍历所有链表，所以时间复杂度是O(n \times k),n是节点总数，k是链表数 第二种方法是使用优先级队列，先将所有链表加入队列中，每次从队列中找到最小的节点，然后也是找n个节点，相对上一种方法是在O(n \times k)的k这里进行了优化，因为优先级队列存取是log()级别，因此时间复杂度是O(n \times log(k)) 还想到一种方法是迭代，用上一题的方法进行两两合并，没有实现这种方法，看了题解有分治法，使用递归进两两合并 C++ Codes方法一就地改变链表指针指向，时间复杂度O(n \times k) 1234567891011121314151617181920212223242526272829303132333435363738/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) &#123; if(lists.size()==0)return NULL; ListNode *res = new ListNode(0); ListNode *pre = res; int min = 0; while(lists.size()!=0)&#123; //确保lists[0]非NULL while(lists.size()&gt;0 &amp;&amp; lists[min]==NULL)&#123; lists.erase(lists.begin()+min); min = 0; &#125; if(lists.size()==0) return res-&gt;next; for(int i=0;i&lt;lists.size();i++)&#123; if(lists[i]==NULL) continue; if(lists[i]-&gt;val&lt;lists[min]-&gt;val) min = i; &#125; pre-&gt;next = lists[min]; pre = pre-&gt;next; lists[min] = lists[min]-&gt;next; &#125; return res-&gt;next; &#125;&#125;; 方法二使用优先级队列进行每轮插入最小的节点，时间复杂度为O(n \times log(k)) 这里使用最小优先队列，最小的值优先级最大 1234567891011121314151617181920212223242526272829303132333435/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) &#123; //定义优先级队列比较结构 struct cmp&#123; bool operator ()(ListNode* a, ListNode* b)&#123; return a-&gt;val &gt; b-&gt;val; &#125; &#125;; ListNode *res = new ListNode(0); ListNode *p = res; //建立优先级队列，这里是最小优先队列，最小的值优先级最大 priority_queue&lt;ListNode*, vector&lt;ListNode*&gt;, cmp&gt; pq; for(ListNode* list : lists)&#123; if(list!=NULL) pq.push(list); &#125; while(pq.size()&gt;0)&#123; p-&gt;next = pq.top();//获取优先级最高的元素，即数字最小的 pq.pop();//删除队首元素 p = p-&gt;next; if(p-&gt;next != NULL) pq.push(p-&gt;next); &#125; return res-&gt;next; &#125;&#125;; 方法三分治法，使用递归两两合并，最终的链表等于合并好的前半部分加上合并好的后半部分，对前半部分在进行半部分和半部分的合并。 下面贴一下题解的代码，Java 12345678910111213141516171819202122232425262728293031323334/** * Definition for singly-linked list. * public class ListNode &#123; * int val; * ListNode next; * ListNode(int x) &#123; val = x; &#125; * &#125; */class Solution &#123; public ListNode mergeKLists(ListNode[] lists) &#123; if (lists == null || lists.length == 0) return null; return merge(lists, 0, lists.length - 1); &#125; private ListNode merge(ListNode[] lists, int left, int right) &#123; if (left == right) return lists[left]; int mid = left + (right - left) / 2; ListNode l1 = merge(lists, left, mid); ListNode l2 = merge(lists, mid + 1, right); return mergeTwoLists(l1, l2); &#125; private ListNode mergeTwoLists(ListNode l1, ListNode l2) &#123; if (l1 == null) return l2; if (l2 == null) return l1; if (l1.val &lt; l2.val) &#123; l1.next = mergeTwoLists(l1.next, l2); return l1; &#125; else &#123; l2.next = mergeTwoLists(l1,l2.next); return l2; &#125; &#125;&#125; Python Codes这里使用方法二 123456789101112131415161718192021222324# Definition for singly-linked list.# class ListNode:# def __init__(self, x):# self.val = x# self.next = Noneclass Solution: def mergeKLists(self, lists: List[ListNode]) -&gt; ListNode: import heapq dummy = ListNode(0) p = dummy head = [] for i in range(len(lists)): if lists[i] : heapq.heappush(head, (lists[i].val, i)) lists[i] = lists[i].next while head: val, idx = heapq.heappop(head) p.next = ListNode(val) p = p.next if lists[idx]: heapq.heappush(head, (lists[idx].val, idx)) lists[idx] = lists[idx].next return dummy.next 总结 合并多个链表相对上一题就是链表数变多之后的处理，可以用优先级队列加快节点的查找，也可以使用分治法，合并症各部分就是先合并前半部分和后半部分，再将这两个部分合在一起]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>PriorityQueue</tag>
+        <tag>LeetCode</tag>
+        <tag>List</tag>
+        <tag>LinkedList</tag>
+        <tag>Merge</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-021-Merge Two Sorted Lists]]></title>
+    <url>%2F2019%2F05%2F23%2FLeetCode-021-Merge-Two-Sorted-Lists%2F</url>
+    <content type="text"><![CDATA[ProblemMerge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. 简单说就是合并两个有序链表 Examples:Input:1-&gt;2-&gt;4, 1-&gt;3-&gt;4Output:1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4 Solutions 第一种方法是新建一个链表，每次创建新的节点，不影响原始链表。在两个链表都非空的是比较结点值大小，将小的值作为新节点的值插入结果链表中，并移动指针。 第二种方法也挺简单，只是单纯的改变指针，就地合并，但是会影响原始链表。 Python使用的方法，递归，也是就地的，前面的较小的节点加上后面所有的排好序的节点就是要的结果 C++ Codes方法一创建一个头结点，依次比较l1和l2的节点，逐个插入到新链表中，插入过程是创建了新的节点 123456789101112131415161718192021222324252627282930313233343536373839/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) &#123; ListNode* res = new ListNode(0); ListNode *p = res; ListNode *p1 = l1; ListNode *p2 = l2; while(p1!=NULL &amp;&amp; p2!=NULL)&#123; if(p1-&gt;val &gt; p2-&gt;val)&#123; p-&gt;next = new ListNode(p2-&gt;val); p2 = p2-&gt;next; &#125; else&#123; p-&gt;next = new ListNode(p1-&gt;val); p1 = p1-&gt;next; &#125; p = p-&gt;next; &#125; while(p1!=NULL)&#123; p-&gt;next = new ListNode(p1-&gt;val); p = p-&gt;next; p1 = p1-&gt;next; &#125; while(p2!=NULL)&#123; p-&gt;next = new ListNode(p2-&gt;val); p = p-&gt;next; p2 = p2-&gt;next; &#125; return res-&gt;next; &#125;&#125;; 方法二这种方法也可以像方法一那样，创建一个头结点，然后比较l1和l2，依次改变两个链表的指针 我用了另一种就地方法，其中一个链表不变，另一个链表依次找到合适位置插入这个这个链表 123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) &#123; //p1: 结果链表头结点，指向较小的 //p2: 另一个链表的头结点 if(l1==NULL)return l2; if(l2==NULL)return l1; ListNode *p1, *p2; if(l1-&gt;val &lt; l2-&gt;val)&#123; p1 = l1; p2 = l2; &#125;else&#123; p1 = l2; p2 = l1; &#125; ListNode *prefix=p1, *res = p1; p1 = p1-&gt;next; while(p2!=NULL)&#123; //找到p2指向的节点第一次小于p1节点的位置，前插 while(p1!=NULL &amp;&amp; p2-&gt;val &gt; p1-&gt;val)&#123; prefix = prefix-&gt;next; p1 = p1-&gt;next; &#125; //p1到结尾 if(p1==NULL)&#123; prefix-&gt;next = p2; return res; &#125; else&#123; prefix-&gt;next = p2; p2 = p2-&gt;next; prefix-&gt;next-&gt;next = p1; prefix = prefix-&gt;next; &#125; &#125; return res; &#125;&#125;; Python Codes递归的方法，每次保证递归返回的是较小的节点 这里用了交换l1和l2指针的方法，事实证明….不交换直接判断哪个小来调用递归时间少一点…佛了，交换是64ms，不交换是48ms… 12345678910111213# Definition for singly-linked list.# class ListNode:# def __init__(self, x):# self.val = x# self.next = Noneclass Solution: def mergeTwoLists(self, l1: ListNode, l2: ListNode) -&gt; ListNode: if not l1: return l2 if not l2: return l1 if l1.val&gt;l2.val: l1, l2 = l2, l1 l1.next = self.mergeTwoLists(l1.next,l2) return l1 总结 链表的问题这里总结是两种方法，一种是迭代，一种是递归，迭代过程中要注意节点指针不要混乱了。]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>List</tag>
+        <tag>LinkedList</tag>
+        <tag>Merge</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-020-Valid Parentheses]]></title>
     <url>%2F2019%2F05%2F22%2FLeetCode-020-Valid-Parentheses%2F</url>
     <content type="text"><![CDATA[ProblemGiven a string containing just the characters ‘(‘, ‘)’, ‘{‘, ‘}’, ‘[‘ and ‘]’, determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Note that an empty string is also considered valid. Examples:Input:“()”Output: trueInput:“[(])”Output: false Solutions 简单的利用栈，如果是左括号，就入栈，如果是右括号，就和栈顶匹配，相同，就让栈顶出栈，否则返回错误 ，这里用哈希表映射左右括号 C++ Codes1234567891011121314151617181920212223242526272829class Solution &#123;public: bool isValid(string s) &#123; if(s.length()==0)return true; //定义栈和哈希表 stack&lt;char&gt; chstack; map&lt;char,char&gt; mp; mp[')']='('; mp[']']='['; mp['&#125;']='&#123;'; for(int i=0;i&lt;s.length();i++)&#123; //左括号入栈 if(s[i]=='(' || s[i]=='[' || s[i]=='&#123;')&#123; chstack.push(s[i]); &#125; //右括号匹配栈顶 else&#123; if(chstack.empty()) return false; if(mp[s[i]]==chstack.top()) chstack.pop(); else return false; &#125; &#125; //如果匹配完了栈为空，就是符合要求的 if(chstack.empty())return true; else return false; &#125;&#125;; Python Codes1234567891011121314151617class Solution: def isValid(self, s: str) -&gt; bool: stack = [] lookup = &#123; "(":")", "[":"]", "&#123;":"&#125;" &#125; for alp in s: if alp in lookup: stack.append(alp) continue if stack and lookup[stack[-1]] == alp: stack.pop() else: return False return True if not stack else False 总结 做过的题，简单的利用出栈入栈进行括号匹配]]></content>
@@ -8,7 +50,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode, Stack, Pair, String</tag>
+        <tag>LeetCode</tag>
+        <tag>String</tag>
+        <tag>Stack</tag>
+        <tag>Pair</tag>
       </tags>
   </entry>
   <entry>
@@ -19,7 +64,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode, Recursive, Map</tag>
+        <tag>LeetCode</tag>
+        <tag>Map</tag>
+        <tag>Recursive</tag>
       </tags>
   </entry>
   <entry>
@@ -52,7 +99,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode, Prefix, String</tag>
+        <tag>LeetCode</tag>
+        <tag>String</tag>
+        <tag>Prefix</tag>
       </tags>
   </entry>
   <entry>
@@ -79,8 +128,8 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>String</tag>
-        <tag>Map</tag>
         <tag>Integer</tag>
+        <tag>Map</tag>
       </tags>
   </entry>
   <entry>
@@ -253,14 +302,14 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[LeetCode-001-Two Sum]]></title>
     <url>%2F2019%2F04%2F07%2FLeetCode-001-Two-Sum%2F</url>
-    <content type="text"><![CDATA[ProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution. Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]. UPDATE (2016/2/13): The return format had been changed to zero-based indices. Please read the above updated description carefully. Solutions 刚开始第一反应就是暴力遍历，但是时间复杂度是O(n^2) 题解用了hash map，时间复杂度为O(n) 第一种方式是两遍hash，第一遍将元素添加进去，第二遍遍历元素 第二种方式一遍hash，一边添加元素一边判断结果是否在已添加的元素中 C++ Codes12345678910111213141516171819class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; vector&lt;int&gt; res; map&lt;int,int&gt; numMap; //创建map map&lt;int ,int&gt;::iterator it; //创建迭代器 for(int i=0;i&lt;nums.size();i++)&#123; it=numMap.find(target-nums[i]); //find函数查找key if(it!=numMap.end())&#123; //如果到了end就说明没找到 res.push_back(i); res.push_back(numMap[target-nums[i]]); return res; &#125; numMap.insert(make_pair(nums[i],i)); //插入pair &#125; return res; &#125;&#125;; C++中vector用法回忆： 创建：vector vec; 访问：int i=vec[0]; 插入：vec.push_back(1);vec.insert(index,val)，在第i个元素后面插入 删除： vec.pop_back(),删除最后一个 vec.erase(index)，删除index位置处元素 vec.erase(1,3)，删除[1,3)区间的元素 大小：vec.size(); 清空：vec.clear(); 翻转：reverse(vec.begin(),vec.end());将元素翻转在vecotr，要#include 排序： sort(vec.begin(),vec.end());默认按照升序排列 sort(vec.begin(),vec.end(),cmp);定义排序比较函数将序排列 bool cmp(const int&amp;a,const int&amp;b){ return a&gt;b;} 迭代器访问 vector::iterator it;for(it=vec.begin();it!=vec.end();it++) cout&lt;&lt;*it&lt;&lt;endl; C++中map的用法 创建：map\mapString; key类型为string，val类型为int 添加： mapString[“hello”]=1; 最常用的最简单的插入方式,会覆盖之前的数据 mapString.insert(make_pair(“hello”,1)); 次常用, insert()不会覆盖之前的数据 mapString.insert(pair(“hello”,1)); mapString.insert(map::value_type(“hello”,1)); 迭代： map::iterator it;for ( it = mapString.begin( ); it != mapString.end( ); it++ ) cout &lt;&lt; “ “ &lt;&lt; it -&gt; second; 查找： 不建议! mapString[“hello”];返回”hello”对应的值，如果不存在，则添加一个元素，key为”hello”,val为类型默认值,并返回这个默认值 mapString.count(“hello”); map::count()方法返回被查找元素的个数,只有0或1 map::find()方法,返回的是被查找元素的位置，没有则返回map.end() map::iterator it;it = mapString.find(“hello”);if(it==test.end()){ cout&lt;&lt;”hello not found”&lt;&lt;endl;} 删除: mapString.erase(“hello”); 用迭代器删除,注意在迭代期间是不能被删除的 map::iterator it;it = mapString.find(“hello”); if(it==mapString.end()) cout&lt;&lt;”hello not found”&lt;&lt;endl;else mapString.erase(it); 排序：map中元素自动按照key升序排序，不可以用sort函数 大小：mapString.size(); 清除：mapString.clear(); Python Codes123456789class Solution: def twoSum(self, nums: List[int], target: int) -&gt; List[int]: map = &#123;&#125; for i, num in enumerate(nums): if target - num in map: return [map[target - num], i] map[num] = i return [] list中遍历的三种方式： for items in list: 根据元素遍历 for index in range(len(list)): 根据索引遍历 enumerate(seq, [start=0]) 创建枚举对象，同时列出数据下标和数据 seq: 一个序列、迭代器或其他支持迭代对象, 如列表、元组或字符串 start: 下标起始位置 返回：一个列表 [(下标，数据)…], 例如[(1, ‘a’), (2, ‘b’), (3, ‘c’)] iterList = iter(list) 创建迭代器遍历 用法：for item in iterList: print(item) 总结虽然第一题很简单，但是深入了看还是能学了不少东西的，在遍历这方面，时间复杂度优化可以用map，C++时间复杂度可以从O(n)降到O(logn)，python和java可以直接降到O(1). 而且打完代码复习了C++中vector的用法，还有pythonlist的enumerate遍历。C++ STL中的map是现学现卖了. 打算每天一题，感觉有点晚了，亡羊补牢把。]]></content>
+    <content type="text"><![CDATA[ProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution. Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]. UPDATE (2016/2/13): The return format had been changed to zero-based indices. Please read the above updated description carefully. Solutions 刚开始第一反应就是暴力遍历，但是时间复杂度是O(n^2) 题解用了hash map，时间复杂度为O(n) 第一种方式是两遍hash，第一遍将元素添加进去，第二遍遍历元素 第二种方式一遍hash，一边添加元素一边判断结果是否在已添加的元素中 C++ Codes12345678910111213141516171819class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; vector&lt;int&gt; res; map&lt;int,int&gt; numMap; //创建map map&lt;int ,int&gt;::iterator it; //创建迭代器 for(int i=0;i&lt;nums.size();i++)&#123; it=numMap.find(target-nums[i]); //find函数查找key if(it!=numMap.end())&#123; //如果到了end就说明没找到 res.push_back(i); res.push_back(numMap[target-nums[i]]); return res; &#125; numMap.insert(make_pair(nums[i],i)); //插入pair &#125; return res; &#125;&#125;; C++中vector用法回忆： 创建：vector vec; 访问：int i=vec[0]; 插入：vec.push_back(1); vec.insert(index,val)，在第i个元素后面插入 删除： vec.pop_back(),删除最后一个 vec.erase(index)，删除index位置处元素 vec.erase(1,3)，删除[1,3)区间的元素 大小：vec.size(); 清空：vec.clear(); 翻转：reverse(vec.begin(),vec.end());将元素翻转在vecotr，要#include 排序： sort(vec.begin(),vec.end());默认按照升序排列 sort(vec.begin(),vec.end(),cmp);定义排序比较函数将序排列 bool cmp(const int&amp;a,const int&amp;b){ return a&gt;b;} 迭代器访问 vector::iterator it;for(it=vec.begin();it!=vec.end();it++) cout&lt;&lt;*it&lt;&lt;endl; C++中map的用法 创建：mapmapString; key类型为string，val类型为int 添加： mapString[“hello”]=1; 最常用的最简单的插入方式,会覆盖之前的数据 mapString.insert(make_pair(“hello”,1)); 次常用, insert()不会覆盖之前的数据 mapString.insert(pair(“hello”,1)); mapString.insert(map::value_type(“hello”,1)); 迭代： map::iterator it;for ( it = mapString.begin( ); it != mapString.end( ); it++ ) cout &lt;&lt; “ “ &lt;&lt; it -&gt; second; 查找： 不建议! mapString[“hello”];返回”hello”对应的值，如果不存在，则添加一个元素，key为”hello”,val为类型默认值,并返回这个默认值 mapString.count(“hello”); map::count()方法返回被查找元素的个数,只有0或1 map::find()方法,返回的是被查找元素的位置，没有则返回map.end() map::iterator it;it = mapString.find(“hello”);if(it==test.end()){ cout&lt;&lt;”hello not found”&lt;&lt;endl;} 删除: mapString.erase(“hello”); 用迭代器删除,注意在迭代期间是不能被删除的 map::iterator it;it = mapString.find(“hello”); if(it==mapString.end()) cout&lt;&lt;”hello not found”&lt;&lt;endl;else mapString.erase(it); 排序：map中元素自动按照key升序排序，不可以用sort函数 大小：mapString.size(); 清除：mapString.clear(); Python Codes123456789class Solution: def twoSum(self, nums: List[int], target: int) -&gt; List[int]: map = &#123;&#125; for i, num in enumerate(nums): if target - num in map: return [map[target - num], i] map[num] = i return [] list中遍历的三种方式： for items in list: 根据元素遍历 for index in range(len(list)): 根据索引遍历 enumerate(seq, [start=0]) 创建枚举对象，同时列出数据下标和数据 seq: 一个序列、迭代器或其他支持迭代对象, 如列表、元组或字符串 start: 下标起始位置 返回：一个列表 [(下标，数据)…], 例如[(1, ‘a’), (2, ‘b’), (3, ‘c’)] iterList = iter(list) 创建迭代器遍历 用法：for item in iterList: print(item) 总结虽然第一题很简单，但是深入了看还是能学了不少东西的，在遍历这方面，时间复杂度优化可以用map，C++时间复杂度可以从O(n)降到O(logn)，python和java可以直接降到O(1). 而且打完代码复习了C++中vector的用法，还有pythonlist的enumerate遍历。C++ STL中的map是现学现卖了. 打算每天一题，感觉有点晚了，亡羊补牢把。]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
@@ -279,8 +328,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
       </tags>
   </entry>
   <entry>
@@ -292,8 +341,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
         <tag>PLA</tag>
       </tags>
   </entry>
@@ -402,8 +451,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>Numpy</tag>
         <tag>MachineLearning</tag>
+        <tag>Numpy</tag>
       </tags>
   </entry>
   <entry>
@@ -429,8 +478,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>LNMP</tag>
         <tag>Linux</tag>
+        <tag>LNMP</tag>
       </tags>
   </entry>
   <entry>
@@ -441,8 +490,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>LNMP</tag>
         <tag>Linux</tag>
+        <tag>LNMP</tag>
       </tags>
   </entry>
   <entry>

@@ -1,7 +1,10 @@
 ---
 title: LeetCode-020-Valid Parentheses
 tags:
-  - LeetCode, Stack, Pair, String
+  - LeetCode
+  - Stack
+  - Pair
+  - String
 categories:
   - LeetCode
 comments: true

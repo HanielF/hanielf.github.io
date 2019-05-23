@@ -49,9 +49,9 @@ public:
 
 {% note info %}
 ## C++中vector用法回忆：
-- 创建：vector<int> vec;
+- 创建：$$ vector<int> vec; $$
 - 访问：int i=vec[0];
-- 插入：vec.push_back(1);vec.insert(index,val)，在第i个元素后面插入
+- 插入：vec.push_back(1); vec.insert(index,val)，在第i个元素后面插入
 - 删除：
   - vec.pop_back(),删除最后一个
   - vec.erase(index)，删除index位置处元素
@@ -74,7 +74,7 @@ public:
 
 {% note info %}
 ## C++中map的用法
-- 创建：map\<string, int\>mapString; key类型为string，val类型为int
+- 创建：$$ map<string, int>mapString; $$ key类型为string，val类型为int
 - 添加：
   - mapString["hello"]=1; 最常用的最简单的插入方式,**会覆盖之前的数据**
   - mapString.insert(make_pair("hello",1));  次常用,** insert()不会覆盖之前的数据**
