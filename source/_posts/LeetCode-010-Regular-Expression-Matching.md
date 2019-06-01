@@ -1,7 +1,10 @@
 ---
 title: LeetCode-010-Regular Expression Matching
 tags:
-  - LeetCode, DP, String, Match
+  - LeetCode
+  - DP
+  - String
+  - Match
 categories:
   - LeetCode
 comments: true

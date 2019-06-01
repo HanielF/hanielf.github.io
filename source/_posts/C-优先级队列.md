@@ -4,7 +4,7 @@ comments: true
 mathjax: false
 date: 2019-05-23 13:42:24
 tags: [C++, Queue, PriorityQueue]
-categories: Daily
+categories: Learning
 ---
 
 <meta name="referrer" content="no-referrer" />

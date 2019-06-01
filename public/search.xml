@@ -1,11 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode-125-Valid Palindrome]]></title>
+    <url>%2F2019%2F06%2F02%2FLeetCode-125-Valid-Palindrome%2F</url>
+    <content type="text"><![CDATA[ProblemGiven a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. Note: For the purpose of this problem, we define empty string as valid palindrome. Examples:Input:“A man, a plan, a canal: Panama”Output:true Solutions 如果是单纯的回文串验证，那很简单，很多种方法 可以直接用函数将字符串逆序作比较 可以用两个指针指向头和尾，逐个字符比较 这道题因为还有空格，标点符号，大小写的问题，需要简单的处理下 C++ Codes8ms，超99% 123456789101112131415161718192021222324class Solution &#123;public: bool isPalindrome(string s) &#123; //全部变成小写并去掉非数字和字符的 transform(s.begin(),s.end(),s.begin(),::tolower); string res; for(int i=0;i&lt;s.length();i++)&#123; if((s[i]&gt;='0' &amp;&amp; s[i]&lt;='9') || (s[i]&gt;='a' &amp;&amp; s[i]&lt;='z')) res+=s[i]; &#125; cout&lt;&lt;res&lt;&lt;endl; if(res.empty()) return true; int l=0, r=res.length()-1; while(l&lt;res.length() &amp;&amp; r&gt;=0 &amp;&amp; l&lt;=r)&#123; if(res[l]==res[r])&#123; l++; r--; &#125;else&#123; return false; &#125; &#125; return true; &#125;&#125;; C++里面没有直接对字符串进行全部转换大写或者小写的方法可以用transform(s.begin(),s.end(),s.begin(),::tolower)更多方法可以进行百度，如果懒得找也可以自己遍历字符修改大小写 总结 要注意的就是字符串的预处理，并且处理之后如果是空串要返回true]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>String</tag>
+        <tag>Palindrome</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-088-Merge Sorted Array]]></title>
+    <url>%2F2019%2F06%2F02%2FLeetCode-088-Merge-Sorted-Array%2F</url>
+    <content type="text"><![CDATA[ProblemGiven two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note: The number of elements initialized in nums1 and nums2 are m and n respectively. You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2. 合并两个有序数组，合并到第一个数组里 Examples:Input: nums1 = [1,2,3,0,0,0], m = 3nums2 = [2,5,6], n = 3Output:[1,2,2,3,5,6] Solutions 简单题，所以可以直接暴力求解 先把第一个数组备份到tmp，然后对tmp和第二个数组进行合并，结果放到nums1里面就行 C++ Codes12ms，超90%，大部分人都是这个时间 12345678910111213141516171819class Solution &#123;public: void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) &#123; vector&lt;int&gt; tmp; for(int i=0;i&lt;m;i++) tmp.push_back(nums1[i]); int cnt=0, i, j; for(i=0,j=0;i&lt;m &amp;&amp; j&lt;n;cnt++)&#123; if(tmp[i]&lt;nums2[j])&#123; nums1[cnt]=tmp[i++]; &#125;else&#123; nums1[cnt]=nums2[j++]; &#125; &#125; while(i&lt;m) nums1[cnt++]=tmp[i++]; while(j&lt;n) nums1[cnt++]=nums2[j++]; &#125;&#125;; 总结 如果是多个链表合并，不是这种有序数组两个合并的，可以看另一个题目，网站搜索合并多个链表]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+        <tag>Merge</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-240-Search a 2D Matrix II]]></title>
+    <url>%2F2019%2F06%2F02%2FLeetCode-240-Search-a-2D-Matrix-II%2F</url>
+    <content type="text"><![CDATA[ProblemWrite an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties: Integers in each row are sorted in ascending from left to right. Integers in each column are sorted in ascending from top to bottom. 简单点说就是二维数组，从左向右递增，从上向下递增，然后查找输入的数组，要求高效 Examples:Input: [ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30]]Output:Given target = 5, return true.Given target = 20, return false. Solutions 如果是O(n)可能不行，毕竟要高效的算法，这里从数组的结构入手 以右上角为起点进行查找，如果比它大，就向下，如果比它小，就向左，一直找到边界位置 C++ Codes用时108ms 123456789101112131415161718class Solution &#123;public: bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) &#123; if(matrix.size()==0 || matrix[0].size()==0)return false; int col = matrix[0].size()-1; int row = 0; int n = matrix.size(); //边界条件就是col&gt;=0 &amp;&amp; row&lt;n while(col&gt;=0 &amp;&amp; row&lt;n)&#123; if(matrix[row][col]&gt;target) col--; else if(matrix[row][col]&lt;target) row++; else return true; &#125; return false; &#125;&#125;; 总结 对于这种排序好结构很明显的，尽量从结构上入手，找特点，而不是暴力解]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Matrix</tag>
+        <tag>Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-136-Single Number]]></title>
+    <url>%2F2019%2F05%2F26%2FLeetCode-136-Single-Number%2F</url>
+    <content type="text"><![CDATA[前言看到有算法面试集锦，刷点题，刚开始刷，前面都是简单题，随便看看了 ProblemGiven a non-empty array of integers, every element appears twice except for one. Find that single one. Note:Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory? Examples:Input:[2,2,1]Output:1 Solutions 刚开始就是向简单的遍历一遍，用map存出现次数，但是要O(1) 的空间复杂度，所以不可以 然后想到排序，排序完找，但是要线性时间复杂度。。。 最后是用异或的方法，因为题目说的是，只有一个出现一次，其他的全部出现两次 两个相同的数异或（XOR），结果为0，0和0异或当然还是0，然后就剩下了单独的一个数字，0和非0数异或等于非0数本身 C++ Codes时间复杂度O(n)，空间复杂度O(1) 1234567891011class Solution &#123;public: int singleNumber(vector&lt;int&gt;&amp; nums) &#123; if(nums.size()==0)return 0; int res = 0; for(int i=0;i&lt;nums.size();i++)&#123; res = res^nums[i]; &#125; return res; &#125;&#125;; 总结 注意题目细节，每个重复的数字都是出现两次]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Math</tag>
+        <tag>Xor</tag>
+        <tag>Linear</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-026-Remove Duplicates from Sorted Array]]></title>
+    <url>%2F2019%2F05%2F26%2FLeetCode-026-Remove-Duplicates-from-Sorted-Array%2F</url>
+    <content type="text"><![CDATA[ProblemGiven a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory. Examples:Input:[1,1,2]Output:Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn’t matter what you leave beyond the returned length. Solutions 简单说就是去掉排好序的重复元素的嘛，然后要求空间复杂度O(1) 利用双指针的思想，第一个指针指向排好序的最后一个元素，第二个指针指向当前的元素 如果当前元素不等于第一个指针指向的元素，那第一个指针自增，并赋值当前元素值 还有一种也能过的本办法，已经排序好了，所以遇到一个重复的删除一个就行，不过时间会花的很多 C++ Codes双指针法，时间复杂度是O(n)，花了32ms 12345678910111213141516class Solution &#123;public: int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123; if(nums.size()==0)return 0; //pre指向无重复排好序的最后一个位置 int pre=0; for(int i=1;i&lt;nums.size();i++)&#123; if(nums[i]!=nums[pre])&#123; pre++; nums[pre]=nums[i]; &#125; &#125; return pre+1; &#125;&#125;; C++ Codes暴力删除法，时间复杂度O(n)，用时252ms1234567891011121314class Solution &#123;public: int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123; if(nums.size()==0)return 0; for(int i=1;i&lt;nums.size();)&#123; if(nums[i]==nums[i-1])&#123; nums.erase(nums.begin()+i); &#125;else&#123; i++; &#125; &#125; return nums.size(); &#125;&#125;; 总结 双指针很多时候都是能用上的，特别是就地算法，或者查找、排序等算法 简单题就不写Py的版本了]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+        <tag>Duplicates</tag>
+        <tag>Sort</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-169-Majority Element]]></title>
+    <url>%2F2019%2F05%2F26%2FLeetCode-169-Majority-Element%2F</url>
+    <content type="text"><![CDATA[ProblemGiven an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times. You may assume that the array is non-empty and the majority element always exist in the array. Examples:Input:[3,2,3]Output:3Input:[2,2,1,1,1,2,2]Output:2 Solutions 找众数嘛，只要记录下来他们每个出现的次数就好了啊 用map存放每个数字出现的次数，然后遇到比n/2.0大的就return C++ Codes时间复杂度O(n),用时32ms 123456789101112131415161718192021class Solution &#123;public: int majorityElement(vector&lt;int&gt;&amp; nums) &#123; map&lt;int, int&gt; mymap; int n = nums.size(); int res = 0; for(int i=0;i&lt;n;i++)&#123; if(mymap.count(nums[i])==1) mymap[nums[i]] = mymap[nums[i]]+1; else mymap[nums[i]] = 1; if(mymap[nums[i]]&gt;n/2.0)&#123; res = nums[i]; break; &#125; &#125; return res; &#125;&#125;; Python Codes简单题就不写py版本了 总结 map真好用。。真香 数据量特别大的时候，可以用hash_map map的查找方式是二分查找，如果是100万条记录，最多也只要20次的string.compare的比较，200万条记录，也只要用21次的比较 如果想要在如此大的记录量下，只用一两次的string.compare就找到记录，那就要用hash_map]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Math</tag>
+        <tag>Map</tag>
+        <tag>Majority</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C++优先级队列]]></title>
     <url>%2F2019%2F05%2F23%2FC-%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%2F</url>
     <content type="text"><![CDATA[前言写LeetCode的时候学了优先级队列，这里总结一下STL中优先级队列的使用和实现 介绍优先级队列也是队列的一种，FIFO结构，但是和普通的队列不同的是有一个优先级的权重 优先级队列有两种，一种是最小优先队列，值小的优先级越大，另一种是最大优先队列，值大的优先级越大 头文件： “queue.h”, “functional.h” 插入和删除操作复杂度都是O(lgn) 使用构造函数构造函数声明如下：12std::priority_queue&lt;T&gt; pq;std::priority_queue&lt;T, std::vector&lt;T&gt;, cmp&gt; pq; 第一种构造函数： 传入一个基本类型或者自定义类，自定义类要重载]]></content>
       <categories>
-        <category>Daily</category>
+        <category>Learning</category>
       </categories>
       <tags>
         <tag>C++</tag>
@@ -77,7 +158,9 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode, Closest</tag>
+        <tag>LeetCode</tag>
+        <tag>Closest</tag>
+        <tag>3Sum</tag>
       </tags>
   </entry>
   <entry>
@@ -153,7 +236,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode, DP, String, Match</tag>
+        <tag>LeetCode</tag>
+        <tag>String</tag>
+        <tag>DP</tag>
+        <tag>Match</tag>
       </tags>
   </entry>
   <entry>
@@ -271,12 +357,13 @@
     <url>%2F2019%2F04%2F10%2FCanvas%E4%B8%AD%E5%83%8F%E7%B4%A0%E7%BA%A7%E5%88%ABImageData%E7%BC%A9%E6%94%BE%2F</url>
     <content type="text"><![CDATA[弄Web端手写数字识别的时候要把Canvas缩成32*32大小的，刚开始想的是用canvas的画布缩放，弄了好久发现行不通，然后无意中发现可以获得每个像素的RGBA的值，然后又自己尝试每个像素缩放，语法不熟悉，各种尝试…好了不多说了，代码在下面 Canvas中对ImageData数据缩放 ctx: 原始canvas的context outCtx: 输出canvas的context scale: 缩放倍数 scaled: 缩放后的ImageData imageData.data: 图像的RGBA数组，是一个一维数组 1234567891011121314151617181920212223242526272829function genImg() &#123; var imgData = ctx.getImageData(0,0,500,500); outCtx.putImageData(scaleImageData(imgData,0.5),0,0);&#125;function scaleImageData(imageData, scale) &#123; var scaled = outCtx.createImageData(imageData.width * scale, imageData.height * scale); for (var row = 0; row &lt; imageData.height; row++) &#123; for (var col = 0; col &lt; imageData.width; col++) &#123; var sourcePixel = [ imageData.data[(row * imageData.width + col) * 4 + 0], imageData.data[(row * imageData.width + col) * 4 + 1], imageData.data[(row * imageData.width + col) * 4 + 2], imageData.data[(row * imageData.width + col) * 4 + 3] ]; for (var y = 0; y &lt; scale; y++) &#123; var destRow = Math.floor(row * scale) + y; for (var x = 0; x &lt; scale; x++) &#123; var destCol = Math.floor(col * scale) + x; for (var i = 0; i &lt; 4; i++) &#123; scaled.data[(destRow * scaled.width + destCol) * 4 + i] = sourcePixel[i]; &#125; &#125; &#125; &#125; &#125; return scaled;&#125; 主要就是scaleImageData这个函数，原型是stackoverflow上的，不过有bug，自己修改了下。遇到问题果然还是要看源码…]]></content>
       <categories>
-        <category>Daily</category>
+        <category>Learning</category>
       </categories>
       <tags>
         <tag>Canvas</tag>
         <tag>Web</tag>
         <tag>Daily</tag>
+        <tag>Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -302,8 +389,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>机器学习基石</tag>
         <tag>MachineLearning</tag>
+        <tag>机器学习基石</tag>
       </tags>
   </entry>
   <entry>
@@ -328,8 +415,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>机器学习基石</tag>
         <tag>MachineLearning</tag>
+        <tag>机器学习基石</tag>
       </tags>
   </entry>
   <entry>
@@ -341,8 +428,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>机器学习基石</tag>
         <tag>MachineLearning</tag>
+        <tag>机器学习基石</tag>
         <tag>PLA</tag>
       </tags>
   </entry>
@@ -367,8 +454,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Learning</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -379,8 +466,8 @@
         <category>Daily</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Daily</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -451,8 +538,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>MachineLearning</tag>
         <tag>Numpy</tag>
+        <tag>MachineLearning</tag>
       </tags>
   </entry>
   <entry>
@@ -478,8 +565,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>LNMP</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -490,8 +577,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>LNMP</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>

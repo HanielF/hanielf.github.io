@@ -1,7 +1,9 @@
 ---
 title: LeetCode-016-3Sum Closest
 tags:
-  - LeetCode, Closest
+  - LeetCode
+  - Closest
+  - 3Sum
 categories:
   - LeetCode
 comments: true

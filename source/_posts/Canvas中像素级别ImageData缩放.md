@@ -3,8 +3,8 @@ title: Canvas中像素级别ImageData缩放
 comments: true
 mathjax: false
 date: 2019-04-10 20:56:48
-tags: [Canvas, Web, Daily]
-categories: Daily
+tags: [Canvas, Web, Daily, Learning]
+categories: Learning
 ---
 
 <meta name="referrer" content="no-referrer" />
