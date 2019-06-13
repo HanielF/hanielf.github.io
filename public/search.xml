@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode-124-Binary Tree Maximum Path Sum]]></title>
+    <url>%2F2019%2F06%2F13%2FLeetCode-124-Binary-Tree-Maximum-Path-Sum%2F</url>
+    <content type="text"><![CDATA[前言落了好多题没记录了，而且因为刷的是专项，没有按照顺序了，所以….顺序很乱，这阵子就先这样把，后面夏令营结束再按照顺序来，把以前的慢慢补上。 LeetCode中国还是挺方便的，加载速度比原版的快很多，而且可以中英文切换。 ProblemGiven a non-empty binary tree, find the maximum path sum. For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root. 求二叉树最大的路径和，任意节点到任意节点的最大路径和 Examples:Input:[1,2,3]Output:6Input:[-10,9,20,null,null,15,7]Output:42 Solutions 二叉树一般就是递归，这道题也很明显用递归，找到左子树、右子树的最大路径和，一共算了下，大概有一下几种情况 左子树路径和加根节点值最大 右子树路径和加根节点值最大 左右子树路径和都是负数，所以单独的根节点值最大 左右子树路径和加上根节点值最大，如果左右子树路径和都非负，那肯定就得加上嘛 这里之所以不把左子树路径和与右子树路径和单独列出来，是因为递归到左右子树的时候就相当于判断过来 按照这样的思路，就可以想到办法了，求左右子树路径和，然后找到最大的一边，加上根节点值，这是前三种情况，再和第四种情况：三者之和 比较，就可以得到最后的结果resSum，然后和全局遍历maxSum比较：maxSum = max(maxSum, resSum) 改进的方法是，判断左右子树的路径和是否小于0，如果小于0，那肯定就不走这边，所以令其为0，最后就变成了一种情况，就是上面的第四种，只要把三者相加，再和全局变量maxSum比较就可以 解释下，如果某一边大于0，那肯定要加上，如果小于0，不走那边就相当于加上0，就可以 但是最后的结果发现，虽然第二种办法，将四种情况缩成了一种情况，但是似乎时间会花的更多。第一种情况是32ms，第二种是40ms+。 C++ Codes递归，第一种解法，判断四种情况的，32ms 123456789101112131415161718192021222324252627282930/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int maxSum; int maxPathSum(TreeNode* root) &#123; maxSum = root-&gt;val; int rootGain = maxGain(root); return maxSum; &#125; int maxGain(TreeNode *root)&#123; if(root==NULL) return 0; int leftGain = maxGain(root-&gt;left); int rightGain = maxGain(root-&gt;right); int rootGain = max(leftGain, rightGain)+root-&gt;val; int newPathGain = leftGain + rightGain + root-&gt;val; int resGain = max(newPathGain, rootGain); if(resGain &gt; maxSum) maxSum = resGain; if(rootGain&lt;=0) return 0; return rootGain; &#125;&#125;; C++ Codes第二种解法，合并成一种情况的，44ms 1234567891011121314151617181920212223242526/** * Definition for a binary tree node. * struct TreeNode &#123; * int val; * TreeNode *left; * TreeNode *right; * TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125; * &#125;; */class Solution &#123;public: int maxSum; int maxPathSum(TreeNode* root) &#123; maxSum = root-&gt;val; int rootGain = maxGain(root); return maxSum; &#125; int maxGain(TreeNode *root)&#123; if(root==NULL) return 0; int leftGain = max(maxGain(root-&gt;left), 0); int rightGain = max(maxGain(root-&gt;right), 0); int newPathGain = leftGain + rightGain + root-&gt;val; maxSum = max(newPathGain, maxSum); return max(leftGain, rightGain)+root-&gt;val; &#125;&#125;; 总结 二叉树一般用递归就好了，查找还是啥操作的，一般递归+剪枝就可以，往这方向想]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>DP</tag>
+        <tag>Recursive</tag>
+        <tag>Hard</tag>
+        <tag>BinaryTree</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-125-Valid Palindrome]]></title>
     <url>%2F2019%2F06%2F02%2FLeetCode-125-Valid-Palindrome%2F</url>
     <content type="text"><![CDATA[ProblemGiven a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. Note: For the purpose of this problem, we define empty string as valid palindrome. Examples:Input:“A man, a plan, a canal: Panama”Output:true Solutions 如果是单纯的回文串验证，那很简单，很多种方法 可以直接用函数将字符串逆序作比较 可以用两个指针指向头和尾，逐个字符比较 这道题因为还有空格，标点符号，大小写的问题，需要简单的处理下 C++ Codes8ms，超99% 123456789101112131415161718192021222324class Solution &#123;public: bool isPalindrome(string s) &#123; //全部变成小写并去掉非数字和字符的 transform(s.begin(),s.end(),s.begin(),::tolower); string res; for(int i=0;i&lt;s.length();i++)&#123; if((s[i]&gt;='0' &amp;&amp; s[i]&lt;='9') || (s[i]&gt;='a' &amp;&amp; s[i]&lt;='z')) res+=s[i]; &#125; cout&lt;&lt;res&lt;&lt;endl; if(res.empty()) return true; int l=0, r=res.length()-1; while(l&lt;res.length() &amp;&amp; r&gt;=0 &amp;&amp; l&lt;=r)&#123; if(res[l]==res[r])&#123; l++; r--; &#125;else&#123; return false; &#125; &#125; return true; &#125;&#125;; C++里面没有直接对字符串进行全部转换大写或者小写的方法可以用transform(s.begin(),s.end(),s.begin(),::tolower)更多方法可以进行百度，如果懒得找也可以自己遍历字符修改大小写 总结 要注意的就是字符串的预处理，并且处理之后如果是空串要返回true]]></content>
@@ -104,8 +119,8 @@
       <tags>
         <tag>PriorityQueue</tag>
         <tag>LeetCode</tag>
-        <tag>List</tag>
         <tag>LinkedList</tag>
+        <tag>List</tag>
         <tag>Merge</tag>
       </tags>
   </entry>
@@ -118,8 +133,8 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>List</tag>
         <tag>LinkedList</tag>
+        <tag>List</tag>
         <tag>Merge</tag>
       </tags>
   </entry>
@@ -321,8 +336,8 @@
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>String</tag>
-        <tag>Palindromic</tag>
         <tag>DP</tag>
+        <tag>Palindromic</tag>
       </tags>
   </entry>
   <entry>
