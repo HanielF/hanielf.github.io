@@ -5,6 +5,7 @@ tags:
   - Stack
   - Pair
   - String
+  - Easy
 categories:
   - LeetCode
 comments: true

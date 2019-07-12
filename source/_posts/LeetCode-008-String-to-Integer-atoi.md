@@ -2,6 +2,7 @@
 title: LeetCode-008-String to Integer (atoi)
 tags:
   - LeetCode
+  - Medium
 categories:
   - LeetCode
 comments: true

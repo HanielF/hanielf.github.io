@@ -4,6 +4,7 @@ tags:
   - LeetCode
   - Prefix
   - String
+  - Easy
 categories:
   - LeetCode
 comments: true

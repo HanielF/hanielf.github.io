@@ -4,6 +4,7 @@ tags:
   - LeetCode
   - Matrix
   - Search
+  - Medium
 categories:
   - LeetCode
 comments: true

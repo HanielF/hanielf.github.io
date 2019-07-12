@@ -5,6 +5,7 @@ tags:
   - Duplicates
   - Array
   - Sort
+  - Easy
 categories:
   - LeetCode
 comments: true

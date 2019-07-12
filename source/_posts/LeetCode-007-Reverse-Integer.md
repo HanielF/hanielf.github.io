@@ -2,6 +2,7 @@
 title: LeetCode-007-Reverse Integer
 tags:
   - LeetCode
+  - Easy
   - Reverse
   - Big Number
   - String

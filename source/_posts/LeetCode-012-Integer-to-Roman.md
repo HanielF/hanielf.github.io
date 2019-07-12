@@ -5,6 +5,7 @@ tags:
   - Map
   - Integer
   - String
+  - Medium
 categories:
   - LeetCode
 comments: true

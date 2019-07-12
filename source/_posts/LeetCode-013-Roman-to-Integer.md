@@ -5,6 +5,7 @@ tags:
   - Math
   - String
   - Integer
+  - Easy
 categories:
   - LeetCode
 comments: true

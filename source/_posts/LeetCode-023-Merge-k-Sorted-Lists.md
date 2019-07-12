@@ -6,6 +6,7 @@ tags:
   - LinkedList
   - PriorityQueue
   - Merge
+  - Hard
 categories:
   - LeetCode
 comments: true
