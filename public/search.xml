@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[记2019南大计算机本科生开放日]]></title>
+    <url>%2F2019%2F07%2F12%2F%E8%AE%B02019%E5%8D%97%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9C%AC%E7%A7%91%E7%94%9F%E5%BC%80%E6%94%BE%E6%97%A5%2F</url>
+    <content type="text"><![CDATA[2019年7月12，恩，南大夏令营第一天，一天之内心情就像打翻的五味瓶。。。 哎，写下来这些也是希望能给后面的学弟学妹点帮助，毕竟我也是看了很多以前别人写的夏令营的博客才完全了解夏令营。不说了罢，再说，要落泪了… 申请夏令营和选拔初审南大入营选拔很看重绩点和排名，以及，学校，这些都是敲门砖。 当你绩点专业前5%，学校起码是211，你就有戏了，非211和985的，应该非常非常少，当然，如果你有很多厉害的奖，专利，论文啥的，就没问题除了上面的敲门砖，竞赛、论文、获奖、专利、软著这些之类的，如果有比较厉害的，也会很有希望。 复审不要以为收到第一封通知邮件就是入营了，那只是初审，复审还会刷掉点人。复审需要寄送材料，按照邮件要求寄送即可，不要作假就行 2019年大概400左右人入营，南京市内100+，非南京市280+，大概只给100不到的优营名额，竞争还是很激烈的 夏令营准备别想了，在你报名之前你就应该准备。 事实证明，如果你觉得自己有希望保研，最好大三下开学就准备夏令营，在大三下期末考之前，你需要认真复习准备我下面要说的。等期末结束再认真复习，就晚了。。我就是，期末之前复习不多，期末之后确认入营了才认真起来，但是时间完全不够用。 准备分为机试和面试 机试 你需要学大量的算法，ACM中等难度就可以 刷大量的题，100道肯定不够的，可以刷LeetCode上的中等难度题，也可以找上面的分类题目写。还可以刷牛客网的考研复试题。事实证明，这两个网站都很有用 刷完题要总结，可以用思维导图，我觉得挺好 面试 你需要复习数学相关，比如：概统、现代、离散 专业相关，比如：操作系统、数据结构、计网、计组、数据库。如果时间充足，全都复习，时间不够，按我的写的顺序复习 第一天机试第一天，算是最难受的了把。因为报道当天早上从学校出发的，所以要早起。但是，前一天晚上睡觉睡不着..不是我一个人，同行的四个人，都睡不着，一方面是无法避免的紧张，另一方面是，和自己生物钟不协调，睡太早 所以尽量提前几天调好生物钟把，精神会好点 上午11点左右到南大，路上本来想着再看看算法，但是因为晕车，困，没座位这些原因就没看。报道之后就直接去酒店登记入住了。酒店还是很棒的，毕竟四星级，条件很好。每天的午饭晚饭有餐券。不得不说！南大的伙食真的好，虽然，很贵….我看到一个女生，两个大荤加一个蔬菜，好像还有汤，26元..正常人均15把 吃完饭就没多少时间了，因为着凉肚子难受，趴桌子趴了一会。复习也只能大概过一遍。所以尽量夏令营之前准备妥当。吃饭的时候听可靠消息说今年的题目比较难，当时心里就慌了，后面等机房开门的时候就一直看算法，心情沉重， 机试要求下午1点半到，两点开始考试。一共两小时，三道题，每道题有10个测试用例，一个测试用例10分。满分也就是300分。 以前好像看到说可以看到测试用例。但是！并没有，只能看到你第几个通过，第几个没通过，而且今年看不到总排名 机试第一题大概意思是，给你一个不超过100位的数n，和一个不超过100的数字k，要求从数n中去掉k个数字，然后使得去掉k个数之后，n最小。 第二道题大概意思是，有B个男孩，G个女孩，要求所有男孩女孩排成一队，连续的男孩个数不可以超过K个，问一共有多少种排法 第三题是，给出一个二叉树的前序遍历序列和后序遍历序列，序列是没有空节点#号的，只有字母，问通过这两个序列可以构造多少中不同的二叉树，因为树的样子不一样，遍历的序列是可能一样的。比如前序序列:abc，后序序列cba，就有4种不同的树 题解等后面有了再更]]></content>
+      <categories>
+        <category>Daily</category>
+      </categories>
+      <tags>
+        <tag>Daily</tag>
+        <tag>Nju</tag>
+        <tag>SummerCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux将deb包转为ArchLinux软件包]]></title>
     <url>%2F2019%2F07%2F03%2FLinux%E5%B0%86deb%E5%8C%85%E8%BD%AC%E4%B8%BAArchLinux%E8%BD%AF%E4%BB%B6%E5%8C%85%2F</url>
     <content type="text"><![CDATA[前言有时候可能找不到arch用的包，只有deb包或者rpm包。将deb包转换为ArchLinux的包比较方便，使用了debtap这个工具debtap代表了 DEB T o A rch （Linux） P ackage的意思 安装debtap并更新数据安装[依赖关系:] 需要提前安装好 bash， binutils ，pkgfile 和 fakeroot 包如果直接安装会帮你安装依赖. 1yaourt -S debtap 遇到需要编辑的就默认enter跳过，需要安装的就确认，然后等就行了 创建/更新 pkgfile 和 debtap 数据库。1sudo debtap -u 转化假如要转化name.deb 1debtap name.deb 中间可能要输入点东西，自己看情况输入就好 其他参数： 略过除了编辑元数据之外的所有问题 1debtap -q name.deb 略过所有的问题（不推荐） 1debtap -Q name.deb 查看帮助 1debtap -h 安装软件包使用pacman安装软件包 1sudo pacman -U &lt;package-name&gt;]]></content>
@@ -8,9 +21,9 @@
         <category>Daily</category>
       </categories>
       <tags>
+        <tag>Daily</tag>
         <tag>Deb</tag>
         <tag>Debtap</tag>
-        <tag>Daily</tag>
         <tag>ArchLinux</tag>
       </tags>
   </entry>
@@ -36,8 +49,8 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>DP</tag>
         <tag>Hard</tag>
+        <tag>DP</tag>
         <tag>Recursive</tag>
         <tag>BinaryTree</tag>
       </tags>
@@ -153,9 +166,9 @@
         <tag>PriorityQueue</tag>
         <tag>LeetCode</tag>
         <tag>Hard</tag>
-        <tag>LinkedList</tag>
-        <tag>List</tag>
         <tag>Merge</tag>
+        <tag>List</tag>
+        <tag>LinkedList</tag>
       </tags>
   </entry>
   <entry>
@@ -168,9 +181,9 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>Easy</tag>
-        <tag>LinkedList</tag>
-        <tag>List</tag>
         <tag>Merge</tag>
+        <tag>List</tag>
+        <tag>LinkedList</tag>
       </tags>
   </entry>
   <entry>
@@ -266,10 +279,10 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>String</tag>
         <tag>Medium</tag>
-        <tag>Integer</tag>
+        <tag>String</tag>
         <tag>Map</tag>
+        <tag>Integer</tag>
       </tags>
   </entry>
   <entry>
@@ -295,9 +308,9 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
+        <tag>Hard</tag>
         <tag>String</tag>
         <tag>DP</tag>
-        <tag>Hard</tag>
         <tag>Match</tag>
       </tags>
   </entry>
@@ -368,8 +381,8 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>Math</tag>
-        <tag>String</tag>
         <tag>Medium</tag>
+        <tag>String</tag>
         <tag>Split</tag>
       </tags>
   </entry>
@@ -383,8 +396,8 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>Math</tag>
-        <tag>String</tag>
         <tag>Medium</tag>
+        <tag>String</tag>
         <tag>Palindromic</tag>
         <tag>DP</tag>
       </tags>
@@ -414,8 +427,8 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>Math</tag>
-        <tag>String</tag>
         <tag>Medium</tag>
+        <tag>String</tag>
       </tags>
   </entry>
   <entry>
@@ -426,10 +439,10 @@
         <category>Learning</category>
       </categories>
       <tags>
-        <tag>Learning</tag>
-        <tag>Daily</tag>
         <tag>Canvas</tag>
         <tag>Web</tag>
+        <tag>Daily</tag>
+        <tag>Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -441,10 +454,10 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>Math</tag>
-        <tag>Medium</tag>
         <tag>Linked List</tag>
         <tag>Large Number</tag>
+        <tag>Math</tag>
+        <tag>Medium</tag>
       </tags>
   </entry>
   <entry>
@@ -469,8 +482,8 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>Hash Map</tag>
         <tag>Math</tag>
+        <tag>Hash Map</tag>
         <tag>Easy</tag>
       </tags>
   </entry>

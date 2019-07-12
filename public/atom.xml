@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://catchdream.me/"/>
-  <updated>2019-07-03T10:56:57.898Z</updated>
+  <updated>2019-07-12T12:06:48.147Z</updated>
   <id>https://catchdream.me/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记2019南大计算机本科生开放日</title>
+    <link href="https://catchdream.me/2019/07/12/%E8%AE%B02019%E5%8D%97%E5%A4%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9C%AC%E7%A7%91%E7%94%9F%E5%BC%80%E6%94%BE%E6%97%A5/"/>
+    <id>https://catchdream.me/2019/07/12/记2019南大计算机本科生开放日/</id>
+    <published>2019-07-12T10:29:34.000Z</published>
+    <updated>2019-07-12T12:06:48.147Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>2019年7月12，恩，南大夏令营第一天，一天之内心情就像打翻的五味瓶。。。</p><p>哎，写下来这些也是希望能给后面的学弟学妹点帮助，毕竟我也是看了很多以前别人写的夏令营的博客才完全了解夏令营。<br>不说了罢，再说，要落泪了…</p></div><a id="more"></a><h1 id="申请夏令营和选拔"><a href="#申请夏令营和选拔" class="headerlink" title="申请夏令营和选拔"></a>申请夏令营和选拔</h1><h2 id="初审"><a href="#初审" class="headerlink" title="初审"></a>初审</h2><p>南大入营选拔很看重绩点和排名，以及，学校，这些都是敲门砖。</p><p>当你绩点专业前5%，学校起码是211，你就有戏了，非211和985的，应该非常非常少，当然，如果你有很多厉害的奖，专利，论文啥的，就没问题<br>除了上面的敲门砖，竞赛、论文、获奖、专利、软著这些之类的，如果有比较厉害的，也会很有希望。</p><h2 id="复审"><a href="#复审" class="headerlink" title="复审"></a>复审</h2><p>不要以为收到第一封通知邮件就是入营了，那只是初审，复审还会刷掉点人。<br>复审需要寄送材料，按照邮件要求寄送即可，不要作假就行</p><p>2019年大概400左右人入营，南京市内100+，非南京市280+，大概只给100不到的优营名额，竞争还是很激烈的</p><h1 id="夏令营"><a href="#夏令营" class="headerlink" title="夏令营"></a>夏令营</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>别想了，在你报名之前你就应该准备。</p><p>事实证明，如果你觉得自己有希望保研，最好大三下开学就准备夏令营，在大三下期末考之前，你需要认真复习准备我下面要说的。等期末结束再认真复习，就晚了。。<br>我就是，期末之前复习不多，期末之后确认入营了才认真起来，但是时间完全不够用。</p><p><strong>准备分为机试和面试</strong></p><ol><li>机试<ul><li>你需要学大量的算法，ACM中等难度就可以</li><li>刷大量的题，100道肯定不够的，可以刷<a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">LeetCode</a>上的中等难度题，也可以找上面的分类题目写。还可以刷<a href="https://www.nowcoder.com/ta/kaoyan" target="_blank" rel="noopener">牛客网</a>的考研复试题。事实证明，这两个网站都很有用</li><li>刷完题要总结，可以用思维导图，我觉得挺好</li></ul></li><li>面试<ul><li>你需要复习数学相关，比如：概统、现代、离散</li><li>专业相关，比如：操作系统、数据结构、计网、计组、数据库。如果时间充足，全都复习，时间不够，按我的写的顺序复习</li></ul></li></ol><h2 id="第一天机试"><a href="#第一天机试" class="headerlink" title="第一天机试"></a>第一天机试</h2><p>第一天，算是最难受的了把。因为报道当天早上从学校出发的，所以要早起。但是，前一天晚上睡觉睡不着..不是我一个人，同行的四个人，都睡不着，一方面是无法避免的紧张，另一方面是，和自己生物钟不协调，睡太早</p><p>所以尽量提前几天调好生物钟把，精神会好点</p><p>上午11点左右到南大，路上本来想着再看看算法，但是因为晕车，困，没座位这些原因就没看。报道之后就直接去酒店登记入住了。酒店还是很棒的，毕竟四星级，条件很好。<br>每天的午饭晚饭有餐券。不得不说！南大的伙食真的好，虽然，很贵….我看到一个女生，两个大荤加一个蔬菜，好像还有汤，26元..正常人均15把</p><p>吃完饭就没多少时间了，因为着凉肚子难受，趴桌子趴了一会。复习也只能大概过一遍。所以尽量夏令营之前准备妥当。<br>吃饭的时候听可靠消息说今年的题目比较难，当时心里就慌了，后面等机房开门的时候就一直看算法，心情沉重，</p><h3 id="机试"><a href="#机试" class="headerlink" title="机试"></a>机试</h3><p>要求下午1点半到，两点开始考试。<br>一共两小时，三道题，每道题有10个测试用例，一个测试用例10分。满分也就是300分。</p><p>以前好像看到说可以看到测试用例。但是！并没有，只能看到你第几个通过，第几个没通过，而且今年看不到总排名</p><p>机试第一题大概意思是，给你一个不超过100位的数n，和一个不超过100的数字k，要求从数n中去掉k个数字，然后使得去掉k个数之后，n最小。</p><p>第二道题大概意思是，有B个男孩，G个女孩，要求所有男孩女孩排成一队，连续的男孩个数不可以超过K个，问一共有多少种排法</p><p>第三题是，给出一个二叉树的前序遍历序列和后序遍历序列，序列是没有空节点#号的，只有字母，问通过这两个序列可以构造多少中不同的二叉树，因为树的样子不一样，遍历的序列是可能一样的。比如前序序列:abc，后序序列cba，就有4种不同的树</p><p>题解等后面有了再更</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;2019年7月12，恩，南大夏令营第一天，一天之内心情就像打翻的五味瓶。。。&lt;/p&gt;
+&lt;p&gt;哎，写下来这些也是希望能给后面的学弟学妹点帮助，毕竟我也是看了很多以前别人写的夏令营的博客才完全了解夏令营。&lt;br&gt;不说了罢，再说，要落泪了…&lt;/p&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="Daily" scheme="https://catchdream.me/categories/Daily/"/>
+    
+    
+      <category term="Daily" scheme="https://catchdream.me/tags/Daily/"/>
+    
+      <category term="Nju" scheme="https://catchdream.me/tags/Nju/"/>
+    
+      <category term="SummerCamp" scheme="https://catchdream.me/tags/SummerCamp/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux将deb包转为ArchLinux软件包</title>
@@ -36,11 +65,11 @@
       <category term="Daily" scheme="https://catchdream.me/categories/Daily/"/>
     
     
+      <category term="Daily" scheme="https://catchdream.me/tags/Daily/"/>
+    
       <category term="Deb" scheme="https://catchdream.me/tags/Deb/"/>
     
       <category term="Debtap" scheme="https://catchdream.me/tags/Debtap/"/>
-    
-      <category term="Daily" scheme="https://catchdream.me/tags/Daily/"/>
     
       <category term="ArchLinux" scheme="https://catchdream.me/tags/ArchLinux/"/>
     
@@ -102,9 +131,9 @@
     
       <category term="LeetCode" scheme="https://catchdream.me/tags/LeetCode/"/>
     
-      <category term="DP" scheme="https://catchdream.me/tags/DP/"/>
-    
       <category term="Hard" scheme="https://catchdream.me/tags/Hard/"/>
+    
+      <category term="DP" scheme="https://catchdream.me/tags/DP/"/>
     
       <category term="Recursive" scheme="https://catchdream.me/tags/Recursive/"/>
     
@@ -384,11 +413,11 @@
     
       <category term="Hard" scheme="https://catchdream.me/tags/Hard/"/>
     
-      <category term="LinkedList" scheme="https://catchdream.me/tags/LinkedList/"/>
+      <category term="Merge" scheme="https://catchdream.me/tags/Merge/"/>
     
       <category term="List" scheme="https://catchdream.me/tags/List/"/>
     
-      <category term="Merge" scheme="https://catchdream.me/tags/Merge/"/>
+      <category term="LinkedList" scheme="https://catchdream.me/tags/LinkedList/"/>
     
   </entry>
   
@@ -418,11 +447,11 @@
     
       <category term="Easy" scheme="https://catchdream.me/tags/Easy/"/>
     
-      <category term="LinkedList" scheme="https://catchdream.me/tags/LinkedList/"/>
+      <category term="Merge" scheme="https://catchdream.me/tags/Merge/"/>
     
       <category term="List" scheme="https://catchdream.me/tags/List/"/>
     
-      <category term="Merge" scheme="https://catchdream.me/tags/Merge/"/>
+      <category term="LinkedList" scheme="https://catchdream.me/tags/LinkedList/"/>
     
   </entry>
   
@@ -666,45 +695,13 @@
     
       <category term="LeetCode" scheme="https://catchdream.me/tags/LeetCode/"/>
     
-      <category term="String" scheme="https://catchdream.me/tags/String/"/>
-    
       <category term="Medium" scheme="https://catchdream.me/tags/Medium/"/>
     
-      <category term="Integer" scheme="https://catchdream.me/tags/Integer/"/>
+      <category term="String" scheme="https://catchdream.me/tags/String/"/>
     
       <category term="Map" scheme="https://catchdream.me/tags/Map/"/>
     
-  </entry>
-  
-  <entry>
-    <title>LeetCode-011-Container With Most Water</title>
-    <link href="https://catchdream.me/2019/04/30/LeetCode-011-Container-With-Most-Water/"/>
-    <id>https://catchdream.me/2019/04/30/LeetCode-011-Container-With-Most-Water/</id>
-    <published>2019-04-30T01:28:09.000Z</published>
-    <updated>2019-06-13T16:12:22.673Z</updated>
-    
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank" rel="noopener">Problem</a></h2><p>Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p><p><strong>Note</strong>: You may not slant the container and n is at least 2.</p><h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><p><strong>Input:</strong> [1,8,6,2,5,4,8,3,7]<br><strong>Output:</strong> 49</p></div><a id="more"></a><h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><ul><li>第一种方法就是暴力法，遍历每种情况，是<script type="math/tex">O(n^2)</script>复杂度，找到这里面的最大容量的情况，尝试了会超时，所以只能尽量优化到<script type="math/tex">O(n)</script>，于是有了下一种方法</li><li>第二种方法是用两个指针，初始情况是一个指向最开头，一个指向结尾，此时的宽度是最大的，然后比较当前两个指针所在位置的高度，低的一方向里面移动，移动会导致宽度减小，所以只能高度低的一边向内移，可能会有更高的。时间复杂度是<script type="math/tex">O(n)</script></li></ul><h2 id="C-Codes"><a href="#C-Codes" class="headerlink" title="C++ Codes"></a>C++ Codes</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(height.size() &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = height.size() - <span class="number">1</span>, res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">            res = max(res, min(height[i], height[j]) * (j - i));</span><br><span class="line">            height[i] &lt; height[j] ? i++ : j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="Python-Codes"><a href="#Python-Codes" class="headerlink" title="Python Codes"></a>Python Codes</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxArea</span><span class="params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> len(height) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        i = res = <span class="number">0</span></span><br><span class="line">        j = len(height) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; j:</span><br><span class="line">            res = max(res, min(height[i], height[j]) * (j - i))</span><br><span class="line">            <span class="keyword">if</span> height[i]&lt;height[j]:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>这道题思维上很简单，就是找到最大面积的两个值，但是如果简单的暴力法，中等难度的题目很明显没这么无脑，所以直接就超时了</li><li>之前做过的题目里也用到过两个指针遍历的方法，这样的<script type="math/tex">O(n)</script>复杂度还是很快的</li></ul><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;div class=&quot;note info&quot;&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.com/problems/container-with-most-water/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Problem&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You may not slant the container and n is at least 2.&lt;/p&gt;
-&lt;h3 id=&quot;Examples&quot;&gt;&lt;a href=&quot;#Examples&quot; class=&quot;headerlink&quot; title=&quot;Examples:&quot;&gt;&lt;/a&gt;Examples:&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; [1,8,6,2,5,4,8,3,7]&lt;br&gt;&lt;strong&gt;Output:&lt;/strong&gt; 49&lt;/p&gt;&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://catchdream.me/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://catchdream.me/tags/LeetCode/"/>
-    
-      <category term="Math" scheme="https://catchdream.me/tags/Math/"/>
-    
-      <category term="Medium" scheme="https://catchdream.me/tags/Medium/"/>
-    
-      <category term="Pointer" scheme="https://catchdream.me/tags/Pointer/"/>
+      <category term="Integer" scheme="https://catchdream.me/tags/Integer/"/>
     
   </entry>
   
