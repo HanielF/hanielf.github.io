@@ -284,6 +284,17 @@ hosts文件中有如下内容
 # ****用户密码****
 ```
 
+为用户添加sudo权限
+
+```
+# vim /etc/sudoers
+# 在root ALL=(ALL) ALL下面添加如下内容
+用户名 ALL=(ALL) ALL
+
+# 保存退出
+# :wq
+```
+
 ### 配置UEFI引导(重点)
 (这里网上看到的都有点不太一样, 导致我安装完之后电脑一直找不到Linux的引导项,
 一直进不来linux, 后来在archwiki上看到了正确的方法, 记录如下)
@@ -294,10 +305,10 @@ hosts文件中有如下内容
 
 我们选择GRUB [ArchWiki](https://wiki.archlinux.org/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)来引导系统,具体过程在archwiki中也讲的很清楚,这里不多赘述
 
-安装必要软件包
+安装必要软件包, efibootmgr是efi引导才要用的, ntfs-3g是为了能够识别windows的ntfs文件系统
 
 ```
-# pacman -S dosfstools grub efibootmgr
+# pacman -S dosfstools grub efibootmgr ntfs-3g
 ```
 **注意,我们选择的EFI系统分区是之前的/boot, 选择的启动引导器标识是GRUB,
 不懂可以不管, 直接执行**
@@ -369,4 +380,201 @@ xorg是其他例如xfce和gnome, kde一些桌面环境的基础, 提供图形环
 # pacman -S xorg
 ```
 
-# 安装Gnome桌面环境
+# 安装Gnome以及配置
+## Gnome和优化工具
+gnome是基本环境, gnome-extra是一个包合集, 里面有一些软件啥的,
+如果是喜欢干干净净的可以不装extra, 以后缺啥装啥
+
+gnome-tweak-tool是gnome桌面美化的很重要的工具
+
+```
+# pacman -S gnome gnome-extra gnome-tweak-tool
+```
+
+## 窗口管理服务gdm
+gnome一般用gdm, deepin用lightdm, xfce使用lxdm, kde使用sddm
+我们安装gdm之后要启用它
+
+```
+# pacman -S gdm
+# systemctl enable gdm
+```
+
+## 网络管理工具NetworkManager
+这一步做完之后就可以重启进入电脑啦, 其他的东西, 最好进入图形界面再做,
+边做边看效果
+
+```
+# pacman -S networkmanager
+# systemctl enable NetworkManager
+# reboot
+```
+
+## 添加archlinux-cn源
+官方仓库里面有很多我们常用但是没有的, 添加这个源会好很多
+
+```
+# sudo vim /etc/pacman.conf
+# 在末尾添加如下内容
+[archlinuxcn]
+SigLevel=Never
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+```
+
+## 其他常用软件和工具安装
+### 自带商店gnome-software
+可以自己先逛逛自带的gnome-software, 商店里面有很多工具类的
+
+如果发现商店打开后提示No application data found.可以按照如下操作恢复
+1. 在设置中将语言改成其他语言,英到中
+2. 重启
+3. 将语言改回原来的, 中到英
+4. 重启
+这样就可以啦
+
+### 字体
+下面这几个字体一般够用了, ttf-consolas-with-yahei是consolas和yahei结合体,
+英文consolas, 中文yahei
+
+```
+# sudo pacman -S ttf-consolas-with-yahei
+# sudo pacman -S wqy-microhei tf-dejavu wqy-zenhei
+```
+
+### fcitx输入法
+
+```
+# pacman -S fcitx-im fcitx fcitx-configtool
+# pacman -S fcitx-cloudpinyin fcitx-sogoupinyin
+```
+
+安装完之后还需要编辑配置文件, 具体可以看[ArchWiki](https://wiki.archlinux.org/index.php/Fcitx)
+一些常见的问题wiki里面也都说到了,所以如果下面的过程出现未知错误, 移步wiki查看
+
+修改配置文件, gnome on wayland, 无法读取~/.xprofile, 所以修改/etc/environment
+如果在登陆的时候选择Xorg的Gnome, 可以新建~/.xprofile, 添加如下内容
+然后重启生效
+
+```
+# vim /etc/environment
+# 添加如下内容
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+# reboot
+```
+
+使用fcitx-configtool进行进一步配置, 启用cloudpinyin等
+
+```
+# fcitx-configtool
+# 在input method那里点加号, 添加Pinyin
+# 在global-config进行全局配置
+# 在Apperance进行字体大小调整和状态显示
+# Addon进行插件管理, 双击插件进行设置
+```
+
+安装皮肤, 这里推荐一款简单好看的fcitx-skin-material
+
+```
+# sudo pacman -S fcitx-skin-material
+```
+
+如果出现在gnome-terminal中Ctrl+Space调不出fcitx
+
+```
+# gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
+```
+
+### 安装yaourt
+安装yaourt这个工具来使用AUR
+
+```
+# sudo pacman -S yaourt
+```
+
+### 浏览器
+firefox和chrome我都用
+
+```
+# sudo pacman -S firefox google-chrome
+```
+
+### wps-office
+
+```
+# sudo pacman -S wps-office
+```
+
+### 音乐和视频
+网易云和vlc, 以及视频解码包
+
+```
+# sudo pacman -S netease-cloud-music
+# sudo pacman -S vlc gstreamer0.10-plugins
+```
+### 压缩和解压
+tar unzip zip unrar rar 一般用tar就足够啦
+
+```
+# sudo pacman -S tar unzip zip unrar rar
+```
+
+## Gnome桌面美化
+推荐自己去[Gnome-Look](https://www.gnome-look.org/)找喜欢的主题和图标样式之类的
+### GTK主题
+我使用的是[flat-remix-blue](https://www.gnome-look.org/p/1214931/)
+
+安装步骤
+- [下载主题](https://www.gnome-look.org/p/1214931/startdownload?file_id=1563444013&file_name=05-Flat-Remix-GTK-Blue-Dark_20190718.tar.xz&file_type=application/x-xz&file_size=480876)
+- 解压 `tar -xvf 05-Flat-Remix-GTK-Blue-Dark_20190718.tar.xz`
+- 将Flat-Remix-GTK-Blue-Dark目录放到~/.themes目录下 `mv Flat-Remix-GTK-Blue-Dark/ ~/.themes/`
+- 在gnome-tweaks里面启用
+
+### Gnome-Shell主题
+我使用的是[Flat Remix GNOME/Ubuntu/GDM theme](https://www.gnome-look.org/p/1013030/)
+
+安装步骤
+- [下载shell主题](https://www.gnome-look.org/p/1013030/)
+- 解压 `tar -xvf Flat-Remix-Dark-fullPanel_20190616.tar.xz`
+- 将其移动到~/.themes目录下
+- 在gnome-tweaks里面的Extensions里面, 将User themes启用, 重启gnome-tweaks
+- 在gnome-tweaks里面选择shell主题
+
+### GDM主题
+推荐[High_Ubunterra](https://www.gnome-look.org/p/1207015/)
+
+安装步骤
+- 下载主题
+- 解压
+- cd High_Ubunterra_DD-2.4(noPass)
+- chmod +x install.sh
+- ./install.sh
+
+### icon主题
+推荐[Tela Icon Theme](https://www.gnome-look.org/p/1279924/)
+可以自己选择目录样式的颜色, 我安装的是manjaro
+具体可以看[github](https://github.com/vinceliuice/Tela-icon-theme)
+
+安装步骤
+- git clone https://github.com/vinceliuice/Tela-icon-theme.git
+- cd Tela-icon-theme
+- ./install.sh -n Tela-manjaro
+
+### screenfetch
+screenfetch可以在终端里输出你的系统logo和状态。
+如果需要打开终端自动输出, 可以在~/.bashrc添加: screenfetch
+
+```
+# sudo pacman -S screenfetch
+```
+
+### dock栏
+既然是mac风, 那肯定还是要有dock比较好看, gnome on wayland
+安装dash-to-dock插件, 具体参考[安装文档](https://micheleg.github.io/dash-to-dock/download.html#installation-from-source)
+
+安装方法
+1. 安装包解压缩后，重命名（删除邮箱后面的字符）后复制到目录~/.local/share/gnome-shell/extensions/下，然后重启 GNOME，再打开 Tweaks，应该就能在Extensions上看到 
+2. 下载github上的源码包,然后make, make install, 重启gnome, 参考[README](https://github.com/micheleg/dash-to-dock)
+
+
