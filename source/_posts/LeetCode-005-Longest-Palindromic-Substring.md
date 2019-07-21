@@ -2,6 +2,7 @@
 title: LeetCode-005-Longest Palindromic Substring
 tags:
   - LeetCode
+  - Medium
   - Math
   - String
   - Palindromic

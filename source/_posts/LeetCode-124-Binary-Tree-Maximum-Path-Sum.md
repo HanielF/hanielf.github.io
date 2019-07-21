@@ -6,6 +6,7 @@ tags:
   - BinaryTree
   - Recursive
   - DP
+  - Hard
 categories:
   - LeetCode
 comments: true

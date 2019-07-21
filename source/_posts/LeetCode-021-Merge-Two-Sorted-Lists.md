@@ -5,6 +5,7 @@ tags:
   - LinkedList
   - List
   - Merge
+  - Easy
 categories:
   - LeetCode
 comments: true

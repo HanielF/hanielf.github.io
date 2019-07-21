@@ -5,6 +5,7 @@ tags:
   - Math
   - Map
   - Majority
+  - Easy
 categories:
   - LeetCode
 comments: true

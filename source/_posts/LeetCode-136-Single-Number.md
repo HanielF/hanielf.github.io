@@ -5,6 +5,7 @@ tags:
   - Xor
   - Math
   - Linear
+  - Easy
 categories:
   - LeetCode
 comments: true

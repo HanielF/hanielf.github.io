@@ -2,6 +2,7 @@
 title: LeetCode-006-ZigZag Conversion
 tags:
   - LeetCode
+  - Medium
   - Math
   - String
   - Split

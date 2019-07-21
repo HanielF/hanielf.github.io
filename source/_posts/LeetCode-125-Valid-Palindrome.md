@@ -4,6 +4,7 @@ tags:
   - LeetCode
   - Palindrome
   - String
+  - Easy
 categories:
   - LeetCode
 comments: true

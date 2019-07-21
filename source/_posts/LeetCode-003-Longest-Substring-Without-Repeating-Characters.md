@@ -3,7 +3,7 @@ title: LeetCode-003-Longest Substring Without Repeating Characters
 comments: true
 mathjax: false
 date: 2019-04-13 01:02:13
-tags: [LeetCode, String, Math]
+tags: [LeetCode, String, Math, Medium]
 categories: LeetCode
 ---
 

@@ -4,6 +4,7 @@ tags:
   - LeetCode
   - Closest
   - 3Sum
+  - Medium
 categories:
   - LeetCode
 comments: true

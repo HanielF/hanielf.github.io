@@ -4,6 +4,7 @@ tags:
   - LeetCode
   - Array
   - Merge
+  - Easy
 categories:
   - LeetCode
 comments: true

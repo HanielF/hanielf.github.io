@@ -5,6 +5,7 @@ tags:
   - Math
   - Binary Search
   - Array
+  - Hard
 categories:
   - LeetCode
 comments: true
