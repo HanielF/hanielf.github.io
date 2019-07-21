@@ -1,9 +1,2 @@
-.DS_Store
-Thumbs.db
-db.json
-*.log
-public/
-.deploy*/
 themes/next-geek
-_config.yml
-next.yml
+.deploy_git
