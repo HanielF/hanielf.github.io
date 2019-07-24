@@ -3,18 +3,15 @@ title: Markdown学习笔记
 comments: true
 mathjax: false
 date: 2017-08-02 15:52:13
-tags: [Learning,Markdown]
-categories: Learning
+tags: [Learning,Markdown,Notes]
+categories: Notes
 ---
 
 <meta name="referrer" content="no-referrer" />
 
 # 前言
 
-本来博客初建，理应写点文章总结心得，说点自己的想法。  
-但正好这时候又学了[Markdown](https://en.wikipedia.org/wiki/Markdowna)，不如就先写个学习笔记，供自己以后写文参考。
-
-关于博客的搭建和以后的想法,就留着下次吧～  
+博客初建，初学[Markdown](https://en.wikipedia.org/wiki/Markdowna)，写个学习笔记，供自己以后写文参考。
 <!--more-->
 
 # 关于Markdown

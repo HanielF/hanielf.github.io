@@ -3,8 +3,8 @@ title: Tornado中的异步
 comments: true
 mathjax: false
 date: 2019-03-17 22:32:28
-tags: [Python,Tornado]
-categories: Python
+tags: [Python,Tornado, Async]
+categories: Notes
 ---
 
 <meta name="referrer" content="no-referrer" />

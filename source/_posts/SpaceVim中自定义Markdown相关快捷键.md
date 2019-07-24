@@ -3,8 +3,8 @@ title: SpaceVim中自定义Markdown相关快捷键
 comments: true
 mathjax: false
 date: 2019-03-18 23:14:48
-tags: [SpaceVim,Markdown]
-categories: Learning
+tags: [SpaceVim,Markdown, Notes]
+categories: Notes
 ---
 
 <meta name="referrer" content="no-referrer" />

@@ -3,10 +3,10 @@ title: Linux将deb包转为ArchLinux软件包
 tags:
   - Deb
   - Debtap
-  - Daily
   - ArchLinux
+  - Linux
 categories:
-  - Daily
+  - Linux
 comments: true
 mathjax: false
 date: 2019-07-03 18:35:48

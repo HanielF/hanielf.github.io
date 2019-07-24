@@ -3,8 +3,8 @@ title: C++优先级队列
 comments: true
 mathjax: false
 date: 2019-05-23 13:42:24
-tags: [C++, Queue, PriorityQueue]
-categories: Learning
+tags: [C++, Queue, PriorityQueue, Notes]
+categories: Notes
 ---
 
 <meta name="referrer" content="no-referrer" />

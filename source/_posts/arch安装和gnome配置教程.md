@@ -1,5 +1,5 @@
 ---
-title: arch安装和gnome配置教程
+title: Arch安装和Gnome配置教程
 tags:
   - Arch
   - Gnome
@@ -8,7 +8,7 @@ tags:
   - 双系统
   - Install
 categories:
-  - Daily
+  - Linux
 comments: true
 mathjax: false
 date: 2019-07-20 21:13:37
@@ -32,7 +32,7 @@ date: 2019-07-20 21:13:37
 - 启动方式: UEFI
 - 分区格式: GPT
 - 桌面系统: Gnome3
-- 参考链接: [ArchWiki](https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AE%89%E8%A3%85%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87)
+- 参考链接: [ArchWiki](https://wiki.archlinux.org/index.php/Installation_guide_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29#%E5%AE%89%E8%A3%85%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87)
 - 参考链接: [Arch安装教程](http://blog.lucode.net/linux/archlinux-install-tutorial.html)
 - 参考链接: [Arch安装图文教程](https://blog.csdn.net/r8l8q8/article/details/76516523)
 
@@ -421,8 +421,8 @@ SigLevel=Never
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 
-## 其他常用软件和工具安装
-### 自带商店gnome-software
+# 其他常用软件和工具安装
+## 自带商店gnome-software
 可以自己先逛逛自带的gnome-software, 商店里面有很多工具类的
 
 如果发现商店打开后提示No application data found.可以按照如下操作恢复
@@ -432,7 +432,7 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 4. 重启
 这样就可以啦
 
-### 字体
+## 字体
 下面这几个字体一般够用了, ttf-consolas-with-yahei是consolas和yahei结合体,
 英文consolas, 中文yahei
 
@@ -441,7 +441,7 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 # sudo pacman -S wqy-microhei tf-dejavu wqy-zenhei
 ```
 
-### fcitx输入法
+## fcitx输入法
 
 ```
 # pacman -S fcitx-im fcitx fcitx-configtool
@@ -486,43 +486,80 @@ XMODIFIERS=@im=fcitx
 # gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
 ```
 
-### 安装yaourt
+## 安装yaourt
 安装yaourt这个工具来使用AUR
 
 ```
 # sudo pacman -S yaourt
 ```
 
-### 浏览器
+## 安装oh-my-fish
+首先要安装fish, 相对于bash来说, 好用太多啦
+
+```
+# sudo pacman -S fish
+```
+然后去github上找到[oh-my-fish](https://github.com/oh-my-fish/oh-my-fish),
+README上说的很清楚很详细. 下面通过git安装
+
+```
+# with git
+# git clone https://github.com/oh-my-fish/oh-my-fish
+# cd oh-my-fish
+# bin/install --offline
+```
+
+然后安装主题, 可以自己去github上挑选, [传送门](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md)
+我这里安装**batman**这个主题
+
+```
+# omf install batman
+# omf theme batman
+```
+编辑配置文件, 设置一些全局变量方便使用
+
+```
+# vim $OMF_CONFIG/init.fish
+# 添加你的变量和function
+# 例如
+# set -xg dow $HOME/Documents/
+# function c
+#   clear
+# end
+```
+
+fish的使用请
+
+## 浏览器
 firefox和chrome我都用
 
 ```
 # sudo pacman -S firefox google-chrome
 ```
 
-### wps-office
+## wps-office
 
 ```
 # sudo pacman -S wps-office
 ```
 
-### 音乐和视频
+## 音乐和视频
 网易云和vlc, 以及视频解码包
 
 ```
 # sudo pacman -S netease-cloud-music
 # sudo pacman -S vlc gstreamer0.10-plugins
 ```
-### 压缩和解压
+## 压缩和解压
 tar unzip zip unrar rar 一般用tar就足够啦
 
 ```
 # sudo pacman -S tar unzip zip unrar rar
 ```
 
-## Gnome桌面美化
+# Gnome桌面美化
 推荐自己去[Gnome-Look](https://www.gnome-look.org/)找喜欢的主题和图标样式之类的
-### GTK主题
+## GTK主题
 我使用的是[flat-remix-blue](https://www.gnome-look.org/p/1214931/)
 
 安装步骤
@@ -531,7 +568,7 @@ tar unzip zip unrar rar 一般用tar就足够啦
 - 将Flat-Remix-GTK-Blue-Dark目录放到~/.themes目录下 `mv Flat-Remix-GTK-Blue-Dark/ ~/.themes/`
 - 在gnome-tweaks里面启用
 
-### Gnome-Shell主题
+## Gnome-Shell主题
 我使用的是[Flat Remix GNOME/Ubuntu/GDM theme](https://www.gnome-look.org/p/1013030/)
 
 安装步骤
@@ -541,7 +578,7 @@ tar unzip zip unrar rar 一般用tar就足够啦
 - 在gnome-tweaks里面的Extensions里面, 将User themes启用, 重启gnome-tweaks
 - 在gnome-tweaks里面选择shell主题
 
-### GDM主题
+## GDM主题
 推荐[High_Ubunterra](https://www.gnome-look.org/p/1207015/)
 
 安装步骤
@@ -551,7 +588,7 @@ tar unzip zip unrar rar 一般用tar就足够啦
 - chmod +x install.sh
 - ./install.sh
 
-### icon主题
+## icon主题
 推荐[Tela Icon Theme](https://www.gnome-look.org/p/1279924/)
 可以自己选择目录样式的颜色, 我安装的是manjaro
 具体可以看[github](https://github.com/vinceliuice/Tela-icon-theme)
@@ -561,7 +598,7 @@ tar unzip zip unrar rar 一般用tar就足够啦
 - cd Tela-icon-theme
 - ./install.sh -n Tela-manjaro
 
-### screenfetch
+## screenfetch
 screenfetch可以在终端里输出你的系统logo和状态。
 如果需要打开终端自动输出, 可以在~/.bashrc添加: screenfetch
 
@@ -569,7 +606,7 @@ screenfetch可以在终端里输出你的系统logo和状态。
 # sudo pacman -S screenfetch
 ```
 
-### dock栏
+## dock栏
 既然是mac风, 那肯定还是要有dock比较好看, gnome on wayland
 安装dash-to-dock插件, 具体参考[安装文档](https://micheleg.github.io/dash-to-dock/download.html#installation-from-source)
 
@@ -577,4 +614,17 @@ screenfetch可以在终端里输出你的系统logo和状态。
 1. 安装包解压缩后，重命名（删除邮箱后面的字符）后复制到目录~/.local/share/gnome-shell/extensions/下，然后重启 GNOME，再打开 Tweaks，应该就能在Extensions上看到 
 2. 下载github上的源码包,然后make, make install, 重启gnome, 参考[README](https://github.com/micheleg/dash-to-dock)
 
+## gnome-terminal背景透明
 
+```
+# yaourt -S gnome-terminal-transparency
+```
+安装过程会提示和gnome-terminal冲突,确认删除就可以.
+然后重启gnome-terminal, preference里面可以看到背景透明度设置
+
+# 结语
+写了很多, 妈妈再也不用担心我重装系统啦!
+作为一个参考吧, 以后总会因为各种原因需要重装. 
+所以记录一下, 也分享给新人使用, 岂不乐哉
+
+---------

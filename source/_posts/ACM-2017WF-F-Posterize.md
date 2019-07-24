@@ -3,8 +3,8 @@ title: 'ACM-2017WF-F-Posterize'
 comments: true
 mathjax: false
 date: 2018-09-27 16:27:00
-tags: [ACM-ICPC,Learning,DP]
-categories: Learning
+tags: [ACM-ICPC,Learning,DP,Notes]
+categories: Notes
 ---
 
 <meta name="referrer" content="no-referrer" />

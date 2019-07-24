@@ -3,8 +3,8 @@ title: cannot start gnome-tweaks
 comments: true
 mathjax: false
 date: 2019-03-20 20:36:47
-tags: [Daily,Linux]
-categories: Daily
+tags: [Gnome-tweaks,Linux]
+categories: Linux
 ---
 
 <meta name="referrer" content="no-referrer" />

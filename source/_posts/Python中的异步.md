@@ -3,8 +3,8 @@ title: Python中的异步
 comments: true
 mathjax: false
 date: 2019-03-17 20:28:26
-tags: Python
-categories: Python
+tags: [Python, Async]
+categories: Notes
 ---
 
 <meta name="referrer" content="no-referrer" />
