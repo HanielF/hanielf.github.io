@@ -2,6 +2,7 @@
 title: LeetCode-025-Reverse Nodes in k-Group
 tags:
   - LeetCode
+  - Algorithm
   - Stack
   - Recursion
   - LinkedList

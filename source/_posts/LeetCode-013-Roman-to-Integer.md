@@ -2,6 +2,7 @@
 title: LeetCode-013-Roman to Integer
 tags:
   - LeetCode
+  - Algorithm
   - Math
   - String
   - Integer

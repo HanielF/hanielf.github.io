@@ -2,6 +2,7 @@
 title: LeetCode-004-Median of Two Sorted Arrays
 tags:
   - LeetCode
+  - Algorithm
   - Math
   - Binary Search
   - Array

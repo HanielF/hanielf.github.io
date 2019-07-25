@@ -2,6 +2,7 @@
 title: LeetCode-018-4Sum
 tags:
   - LeetCode
+  - Algorithm
   - Math
   - TwoPointer
   - Medium

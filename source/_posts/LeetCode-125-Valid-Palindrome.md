@@ -2,6 +2,7 @@
 title: LeetCode-125-Valid Palindrome
 tags:
   - LeetCode
+  - Algorithm
   - Palindrome
   - String
   - Easy

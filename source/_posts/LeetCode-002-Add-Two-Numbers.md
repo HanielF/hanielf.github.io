@@ -3,7 +3,13 @@ title: LeetCode-002-Add Two Numbers
 comments: true
 mathjax: false
 date: 2019-04-09 00:39:36
-tags: [LeetCode, Linked List, Large Number, Math, Medium]
+tags: 
+  - Algorithm
+  - LeetCode
+  - Linked List
+  - Large Number
+  - Math
+  - Medium
 categories: [LeetCode]
 ---
 

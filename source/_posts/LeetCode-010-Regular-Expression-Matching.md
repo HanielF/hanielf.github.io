@@ -2,6 +2,7 @@
 title: LeetCode-010-Regular Expression Matching
 tags:
   - LeetCode
+  - Algorithm
   - DP
   - String
   - Match

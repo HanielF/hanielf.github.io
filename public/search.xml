@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[NowCoder-成绩排序]]></title>
+    <url>%2F2019%2F07%2F26%2FNowCoder-%E6%88%90%E7%BB%A9%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[Problem查找和排序题目：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩都按先录入排列在前的规则处理。 Examples:Input:输入多行，先输入要排序的人的个数，然后输入排序方法0（降序）或者1（升序）再分别输入他们的名字和成绩，以一个空格隔开Output:按照指定方式输出名字和成绩，名字和成绩之间以一个空格隔开按先录入排列在前的规则处理。示例： jack 70peter 96Tom 70smith 67 从高到低 成绩peter 96jack 70Tom 70smith 67 从低到高smith 67jack 70Tom 70peter 96 Solutions 冒泡排序是稳定排序, 不可以用快排, 快排不稳定 C++ Codes1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;vector&gt;using namespace std;//升序void bubbleSort(int *A, vector&lt;string&gt; &amp;name, int n)&#123; int tmp; string stmp; for(int i=0;i&lt;n-1;i++)&#123;//已经排序好的个数 bool flag = false; for(int j=n-1;j&gt;i;j--)&#123;//从最后向前找最小的 if(A[j]&lt;A[j-1])&#123; flag = true; tmp = A[j-1]; A[j-1]=A[j]; A[j]=tmp; stmp = name[j-1]; name[j-1]=name[j]; name[j]=stmp; &#125; &#125; if(!flag) break; &#125;&#125;//降序void bubbleSort2(int *A, vector&lt;string&gt; &amp;name, int n)&#123; int tmp; string stmp; for(int i=0;i&lt;n-1;i++)&#123;//已经排序好的个数 bool flag = false; for(int j=n-1;j&gt;i;j--)&#123;//从最后向前找最小的 if(A[j]&gt;A[j-1])&#123; flag = true; tmp = A[j-1]; A[j-1]=A[j]; A[j]=tmp; stmp = name[j-1]; name[j-1]=name[j]; name[j]=stmp; &#125; &#125; if(!flag) break; &#125;&#125;int main()&#123; vector&lt;string&gt; names(1000); int records[1000]; int n, tag; while(cin&gt;&gt;n&gt;&gt;tag)&#123; for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;names[i]&gt;&gt;records[i]; &#125; if(tag) bubbleSort(records, names, n); else bubbleSort2(records, names, n); for(int i=0;i&lt;n;i++) cout&lt;&lt;names[i]&lt;&lt;" "&lt;&lt;records[i]&lt;&lt;endl; &#125;&#125;]]></content>
+      <categories>
+        <category>NowCoder</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>Sort</tag>
+        <tag>NowCoder</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-025-Reverse Nodes in k-Group]]></title>
     <url>%2F2019%2F07%2F25%2FLeetCode-025-Reverse-Nodes-in-k-Group%2F</url>
     <content type="text"><![CDATA[ProblemGiven a linked list, reverse the nodes of a linked list k at a time and return its modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is. Examples:Input: 1-2-3-4-5Output: k=2, 2-1-4-3-5k=3, 3-2-1-4-5 Solutions 递归, 每次改变k个节点的链接顺序, 然后令最后一个节点的next等于下一次递归的返回值, 最后返回头节点, 如果本次不满k个, 直接返回. 每次递归的内容可以是迭代或者用栈, 两种方式的时间差不多 迭代, 基于第24题的迭代, 每次修改完一段之后, 要将此段和前一段相连, 还要和后一段相连, 要注意很多细节 利用栈, 因为k个节点进栈顺序和出栈顺序正好相反 C++ Codes节点数据结构 12345678/** * Definition for singly-linked list. * struct ListNode &#123; * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) &#123;&#125; * &#125;; */ 递归+栈 12345678910111213141516171819202122class Solution &#123;public: ListNode* reverseKGroup(ListNode* head, int k) &#123; if(k==1 || head==NULL) return head; ListNode* stack[k]; ListNode *p=head; //存入栈中 for(int i=0;i&lt;k;i++)&#123; if(p==NULL)return head; stack[i]=p; p=p-&gt;next; &#125; //逆序 for(int i=k-1;i&gt;0;i--)&#123; stack[i]-&gt;next=stack[i-1]; &#125; //和后一段相连 stack[0]-&gt;next=reverseKGroup(p, k); //每次递归返回头节点 return stack[k-1]; &#125;&#125;; 纯迭代, 相对递归感觉比较麻烦, 逻辑上要想更多, 但是资源肯定比递归消耗少1234567891011121314151617181920212223242526272829303132333435363738394041424344class Solution &#123;public: ListNode* reverseKGroup(ListNode* head, int k) &#123; if(k==1) return head; ListNode *front, *rear, *tmp, *p, *q, *s; front=head; for(int i=0;i&lt;k;i++)&#123; if(front!=NULL) front=front-&gt;next; else return head; &#125; front=rear=head; //front指向第一个节点, rear指向k+1个节点 for(int i=0;i&lt;k;i++)&#123; if(i==k-1) head=rear; rear=rear-&gt;next; &#125; //pre是前一段最后一个节点 ListNode *pre=new ListNode(0); while(true)&#123; p=front;q=front-&gt;next;s=q-&gt;next; while(q!=rear)&#123; q-&gt;next=p; p=q;q=s; //这里要注意rear可能是NULL, s-&gt;next需判断 if(s==rear &amp;&amp; s==NULL) break; else s=s-&gt;next; &#125; //本段和后一段相连,此时q=rear, s=rear-&gt;next, front-&gt;next=rear; //前面一段和本段第一个节点相连 pre-&gt;next=p; pre=front; //更新front和rear front=rear; for(int i=0;i&lt;k;i++) &#123; //rear可能没到目标就成了NULL if(rear==NULL)return head; rear=rear-&gt;next; &#125; &#125; return head; &#125;&#125;; Python Codes递归+栈 1234567891011121314151617181920class Solution: def reverseKGroup(self, head: ListNode, k: int) -&gt; ListNode: if k==1 or head==None: return head stack=[] p=head; #存入栈中 for i in range(k): if p==None: return head stack.append(p); p=p.next #逆序 for i in range(k-1, 0, -1): stack[i].next=stack[i-1] #和后一段相连, python递归要self.reverseKGroup() stack[0].next=self.reverseKGroup(p, k) #每次递归返回头节点 return stack[k-1] 迭代 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051# Definition for singly-linked list.# class ListNode:# def __init__(self, x):# self.val = x# self.next = Noneclass Solution: def reverseKGroup(self, head: ListNode, k: int) -&gt; ListNode: if k==1: return head front=head for i in range(k): if front!=None: front=front.next else: return head front=rear=head #front指向第一个节点, rear指向k+1个节点 for i in range(k): if i==k-1: head=rear rear=rear.next #pre是前一段最后一个节点 pre=ListNode(0); while True: p=front q=front.next s=q.next while q!=rear: q.next=p p=q q=s #这里要注意rear可能是NULL, s-&gt;next需判断 if s==rear and s==None: break else: s=s.next #本段和后一段相连,此时q=rear, s=rear-&gt;next, front.next=rear #前面一段和本段第一个节点相连 pre.next=p pre=front #新front和rear front=rear; for i in range(k): #rear可能没到目标就成了NULL if rear==None: return head rear=rear.next return head; 总结 逆序问题可利用栈的特性 发现问题可以分为多个子问题, 利用递归 迭代的过程注意避免空指针和环 Python是真的不太熟悉啦]]></content>
@@ -8,6 +21,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Hard</tag>
         <tag>Reverse</tag>
@@ -24,6 +38,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
         <tag>LinkedList</tag>
@@ -38,6 +53,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
         <tag>DP</tag>
@@ -66,6 +82,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
         <tag>LinkedList</tag>
@@ -96,6 +113,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>Medium</tag>
@@ -137,8 +155,8 @@
         <category>Notes</category>
       </categories>
       <tags>
-        <tag>Learning</tag>
         <tag>Notes</tag>
+        <tag>Learning</tag>
         <tag>DP</tag>
         <tag>Reprint</tag>
       </tags>
@@ -151,6 +169,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Hard</tag>
         <tag>DP</tag>
@@ -166,9 +185,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
-        <tag>String</tag>
         <tag>Easy</tag>
+        <tag>String</tag>
         <tag>Palindrome</tag>
       </tags>
   </entry>
@@ -180,6 +200,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Easy</tag>
         <tag>Array</tag>
@@ -194,6 +215,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
         <tag>Matrix</tag>
@@ -208,6 +230,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>Easy</tag>
@@ -223,6 +246,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Easy</tag>
         <tag>Array</tag>
@@ -238,6 +262,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>Easy</tag>
@@ -253,10 +278,10 @@
         <category>Notes</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>C++</tag>
         <tag>Queue</tag>
         <tag>PriorityQueue</tag>
+        <tag>Notes</tag>
       </tags>
   </entry>
   <entry>
@@ -268,6 +293,7 @@
       </categories>
       <tags>
         <tag>PriorityQueue</tag>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Hard</tag>
         <tag>LinkedList</tag>
@@ -283,6 +309,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Easy</tag>
         <tag>LinkedList</tag>
@@ -298,9 +325,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
-        <tag>String</tag>
         <tag>Easy</tag>
+        <tag>String</tag>
         <tag>Stack</tag>
         <tag>Pair</tag>
       </tags>
@@ -313,6 +341,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
         <tag>Map</tag>
@@ -327,6 +356,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
         <tag>Closest</tag>
@@ -341,6 +371,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
       </tags>
@@ -353,9 +384,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
-        <tag>String</tag>
         <tag>Easy</tag>
+        <tag>String</tag>
         <tag>Prefix</tag>
       </tags>
   </entry>
@@ -367,10 +399,11 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
-        <tag>String</tag>
         <tag>Easy</tag>
+        <tag>String</tag>
         <tag>Integer</tag>
       </tags>
   </entry>
@@ -382,6 +415,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
         <tag>String</tag>
@@ -397,6 +431,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>Medium</tag>
@@ -411,9 +446,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
-        <tag>String</tag>
         <tag>Hard</tag>
+        <tag>String</tag>
         <tag>DP</tag>
         <tag>Match</tag>
       </tags>
@@ -426,9 +462,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
-        <tag>String</tag>
         <tag>Easy</tag>
+        <tag>String</tag>
         <tag>Palindrome</tag>
       </tags>
   </entry>
@@ -456,6 +493,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Medium</tag>
       </tags>
@@ -468,9 +506,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
-        <tag>String</tag>
         <tag>Easy</tag>
+        <tag>String</tag>
         <tag>Reverse</tag>
         <tag>Big Number</tag>
       </tags>
@@ -483,6 +522,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>Medium</tag>
@@ -498,6 +538,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>Medium</tag>
@@ -514,6 +555,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>Binary Search</tag>
@@ -529,6 +571,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
         <tag>Math</tag>
         <tag>Medium</tag>
@@ -543,11 +586,11 @@
         <category>Notes</category>
       </categories>
       <tags>
+        <tag>Notes</tag>
         <tag>Canvas</tag>
         <tag>Web</tag>
         <tag>ImageData</tag>
         <tag>Learning</tag>
-        <tag>Notes</tag>
       </tags>
   </entry>
   <entry>
@@ -558,10 +601,11 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
+        <tag>Math</tag>
         <tag>Linked List</tag>
         <tag>Large Number</tag>
-        <tag>Math</tag>
         <tag>Medium</tag>
       </tags>
   </entry>
@@ -574,8 +618,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
       </tags>
   </entry>
   <entry>
@@ -586,9 +630,10 @@
         <category>LeetCode</category>
       </categories>
       <tags>
+        <tag>Algorithm</tag>
         <tag>LeetCode</tag>
-        <tag>Math</tag>
         <tag>Hash Map</tag>
+        <tag>Math</tag>
         <tag>Easy</tag>
       </tags>
   </entry>
@@ -601,8 +646,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
       </tags>
   </entry>
   <entry>
@@ -614,8 +659,8 @@
         <category>机器学习基石</category>
       </categories>
       <tags>
-        <tag>MachineLearning</tag>
         <tag>机器学习基石</tag>
+        <tag>MachineLearning</tag>
         <tag>PLA</tag>
       </tags>
   </entry>
@@ -713,8 +758,8 @@
         <category>Notes</category>
       </categories>
       <tags>
-        <tag>Learning</tag>
         <tag>Notes</tag>
+        <tag>Learning</tag>
         <tag>DP</tag>
         <tag>ACM-ICPC</tag>
       </tags>
@@ -728,8 +773,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>Numpy</tag>
         <tag>MachineLearning</tag>
+        <tag>Numpy</tag>
       </tags>
   </entry>
   <entry>
@@ -779,8 +824,8 @@
         <category>Notes</category>
       </categories>
       <tags>
-        <tag>Learning</tag>
         <tag>Notes</tag>
+        <tag>Learning</tag>
         <tag>Markdown</tag>
       </tags>
   </entry>

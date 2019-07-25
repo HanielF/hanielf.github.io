@@ -2,6 +2,7 @@
 title: LeetCode-020-Valid Parentheses
 tags:
   - LeetCode
+  - Algorithm
   - Stack
   - Pair
   - String

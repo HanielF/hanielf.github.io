@@ -2,6 +2,7 @@
 title: LeetCode-023-Merge k Sorted Lists
 tags:
   - LeetCode
+  - Algorithm
   - List
   - LinkedList
   - PriorityQueue

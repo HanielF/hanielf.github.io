@@ -2,6 +2,7 @@
 title: LeetCode-136-Single Number
 tags:
   - LeetCode
+  - Algorithm
   - Xor
   - Math
   - Linear

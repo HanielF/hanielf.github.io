@@ -2,6 +2,7 @@
 title: LeetCode-021-Merge Two Sorted Lists
 tags:
   - LeetCode
+  - Algorithm
   - LinkedList
   - List
   - Merge

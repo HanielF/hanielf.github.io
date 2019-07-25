@@ -1,7 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags: [LeetCode, ]
+tags: [LeetCode, Algorithm, ]
 categories: [LeetCode]
 comments: true
 mathjax: false

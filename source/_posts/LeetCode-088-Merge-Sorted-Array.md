@@ -2,6 +2,7 @@
 title: LeetCode-088-Merge Sorted Array
 tags:
   - LeetCode
+  - Algorithm
   - Array
   - Merge
   - Easy

@@ -2,6 +2,7 @@
 title: LeetCode-015-3Sum
 tags:
   - LeetCode
+  - Algorithm
   - Medium
 categories:
   - LeetCode

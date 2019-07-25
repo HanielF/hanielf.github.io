@@ -3,7 +3,12 @@ title: LeetCode-001-Two Sum
 comments: true
 mathjax: false
 date: 2019-04-07 23:31:44
-tags: [LeetCode, Hash Map, Math, Easy]
+tags: 
+  - Algorithm
+  - LeetCode
+  - Hash Map
+  - Math
+  - Easy
 categories: [LeetCode]
 ---
 

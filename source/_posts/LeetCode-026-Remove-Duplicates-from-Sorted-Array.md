@@ -2,6 +2,7 @@
 title: LeetCode-026-Remove Duplicates from Sorted Array
 tags:
   - LeetCode
+  - Algorithm
   - Duplicates
   - Array
   - Sort

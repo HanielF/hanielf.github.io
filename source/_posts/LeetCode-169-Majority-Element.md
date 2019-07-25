@@ -2,6 +2,7 @@
 title: LeetCode-169-Majority Element
 tags:
   - LeetCode
+  - Algorithm
   - Math
   - Map
   - Majority

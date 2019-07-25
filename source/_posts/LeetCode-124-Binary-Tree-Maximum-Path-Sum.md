@@ -2,6 +2,7 @@
 title: LeetCode-124-Binary Tree Maximum Path Sum
 tags:
   - LeetCode
+  - Algorithm
   - Hard
   - BinaryTree
   - Recursive

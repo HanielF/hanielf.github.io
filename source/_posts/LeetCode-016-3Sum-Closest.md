@@ -2,6 +2,7 @@
 title: LeetCode-016-3Sum Closest
 tags:
   - LeetCode
+  - Algorithm
   - Closest
   - 3Sum
   - Medium

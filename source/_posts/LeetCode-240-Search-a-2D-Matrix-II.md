@@ -2,6 +2,7 @@
 title: LeetCode-240-Search a 2D Matrix II
 tags:
   - LeetCode
+  - Algorithm
   - Matrix
   - Search
   - Medium

@@ -2,6 +2,7 @@
 title: LeetCode-022-Generate Parentheses
 tags:
   - LeetCode
+  - Algorithm
   - Parentheses
   - DP
   - Medium

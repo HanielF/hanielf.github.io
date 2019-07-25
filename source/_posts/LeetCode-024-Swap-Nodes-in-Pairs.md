@@ -2,6 +2,7 @@
 title: LeetCode-024-Swap Nodes in Pairs
 tags:
   - LeetCode
+  - Algorithm
   - Swap
   - LinkedList
   - Medium

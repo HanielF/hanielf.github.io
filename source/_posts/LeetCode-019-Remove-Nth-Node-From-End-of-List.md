@@ -2,6 +2,7 @@
 title: LeetCode-019-Remove Nth Node From End of List
 tags:
   - LeetCode
+  - Algorithm
   - LinkedList
   - TwoPointer
   - Medium

@@ -2,6 +2,7 @@
 title: LeetCode-014-Longest Common Prefix
 tags:
   - LeetCode
+  - Algorithm
   - Prefix
   - String
   - Easy

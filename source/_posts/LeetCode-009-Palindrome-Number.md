@@ -2,6 +2,7 @@
 title: LeetCode-009-Palindrome Number
 tags:
   - LeetCode
+  - Algorithm
   - Palindrome
   - String
   - Easy
