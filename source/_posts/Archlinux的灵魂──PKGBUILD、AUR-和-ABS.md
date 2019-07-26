@@ -10,7 +10,7 @@ categories:
 comments: true
 mathjax: false
 date: 2019-07-26 17:57:00
-urlname:
+urlname: archlinux-pkgbuild-aur-and-abs
 ---
 
 <meta name="referrer" content="no-referrer" />

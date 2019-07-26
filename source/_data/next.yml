@@ -202,11 +202,10 @@ scheme: Mala
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-
   #LinkLabel: Link
-  Github: https://github.com/HanielF
-  # E-Mail: hanielxx@outlook.com
-  Twitter: https://twitter.com/Haniel_xx
+  GitHub: https://github.com/HanielF
+  # Twitter: https://twitter.com/Haniel_xx
+  E-Mail: mailto:hanielxx@outlook.com
   # FB Page: https://m.facebook.com/haniel.farnsworth
 
 
