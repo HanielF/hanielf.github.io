@@ -10,6 +10,7 @@ tags:
   - Hard
 categories:
   - LeetCode
+urlname: leetcode-binary-tree-maximum-path-sum
 comments: true
 mathjax: false
 date: 2019-06-13 23:41:23
@@ -23,7 +24,7 @@ date: 2019-06-13 23:41:23
 
 LeetCode中国还是挺方便的，加载速度比原版的快很多，而且可以中英文切换。
 
-## [Problem](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/submissions/)   
+## [Problem](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)   
 Given a non-empty binary tree, find the maximum path sum.
 
 For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.

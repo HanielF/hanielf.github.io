@@ -8,6 +8,7 @@ tags:
   - Easy
 categories:
   - LeetCode
+urlname: leetcode-palindrome-number
 comments: true
 mathjax: false
 date: 2019-04-19 00:24:57

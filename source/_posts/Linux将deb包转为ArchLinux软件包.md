@@ -7,6 +7,7 @@ tags:
   - Linux
 categories:
   - Linux
+urlname: linux-deb2pkg
 comments: true
 mathjax: false
 date: 2019-07-03 18:35:48

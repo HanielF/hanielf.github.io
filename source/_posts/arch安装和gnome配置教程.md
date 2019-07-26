@@ -9,6 +9,7 @@ tags:
   - Install
 categories:
   - Linux
+urlname: archLinux-gnome-install
 comments: true
 mathjax: false
 date: 2019-07-20 21:13:37

@@ -3,6 +3,7 @@ title: {{ title }}
 date: {{ date }}
 tags: [LeetCode, Algorithm, ]
 categories: [LeetCode]
+urlname:
 comments: true
 mathjax: false
 ---

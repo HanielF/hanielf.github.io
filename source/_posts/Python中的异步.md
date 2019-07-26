@@ -5,6 +5,7 @@ mathjax: false
 date: 2019-03-17 20:28:26
 tags: [Python, Async]
 categories: Notes
+urlname: python-async
 ---
 
 <meta name="referrer" content="no-referrer" />

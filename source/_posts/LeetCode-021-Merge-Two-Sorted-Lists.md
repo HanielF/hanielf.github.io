@@ -9,6 +9,7 @@ tags:
   - Easy
 categories:
   - LeetCode
+urlname: leetcode-merge-two-sorted-lists
 comments: true
 mathjax: false
 date: 2019-05-23 00:28:14
@@ -17,7 +18,7 @@ date: 2019-05-23 00:28:14
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-## [Problem]()   
+## [Problem](https://leetcode-cn.com/problems/merge-two-sorted-lists/)   
 Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 
 简单说就是合并两个有序链表

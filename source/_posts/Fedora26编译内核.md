@@ -5,6 +5,7 @@ mathjax: false
 date: 2019-04-01 00:09:49
 tags: [Linux,Learning]
 categories: Linux
+urlname: fedora26-make-kernel
 ---
 
 <meta name="referrer" content="no-referrer" />

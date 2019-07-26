@@ -10,6 +10,7 @@ tags:
   - DP
 categories:
   - LeetCode
+urlname: leetcode-longest-palindromic-substring
 comments: true
 mathjax: false
 date: 2019-04-14 21:22:07
@@ -18,7 +19,7 @@ date: 2019-04-14 21:22:07
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-## [Problem](https://leetcode.com/problems/longest-palindromic-substring/solution/)   
+## [Problem](https://leetcode.com/problems/longest-palindromic-substring/)   
 Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 
 ### Examples:

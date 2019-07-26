@@ -6,6 +6,7 @@ tags:
   - Medium
 categories:
   - LeetCode
+urlname: leetcode-string-to-integer-atoi
 comments: true
 mathjax: false
 date: 2019-04-16 22:26:17

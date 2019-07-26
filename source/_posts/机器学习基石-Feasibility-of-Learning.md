@@ -5,6 +5,7 @@ mathjax: false
 date: 2019-04-08 17:38:49
 tags: [机器学习基石,MachineLearning]
 categories: [MachineLearning,机器学习基石,]
+urlname: machinelearning-feasibility-of-learning
 ---
 
 <meta name="referrer" content="no-referrer" />

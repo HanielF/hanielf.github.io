@@ -10,6 +10,7 @@ tags:
   - Hard
 categories:
   - LeetCode
+urlname: leetcode-merge-k-sorted-lists
 comments: true
 mathjax: false
 date: 2019-05-23 13:10:02

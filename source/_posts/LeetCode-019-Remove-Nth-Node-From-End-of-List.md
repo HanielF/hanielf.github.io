@@ -8,6 +8,7 @@ tags:
   - Medium
 categories:
   - LeetCode
+urlname: leetcode-remove-nth-node-from-end-of-list
 comments: true
 mathjax: false
 date: 2019-07-21 23:51:02

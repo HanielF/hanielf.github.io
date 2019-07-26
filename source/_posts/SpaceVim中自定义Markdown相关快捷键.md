@@ -5,6 +5,7 @@ mathjax: false
 date: 2019-03-18 23:14:48
 tags: [SpaceVim,Markdown, Notes]
 categories: Notes
+urlname: spacevim-custom-keybind
 ---
 
 <meta name="referrer" content="no-referrer" />

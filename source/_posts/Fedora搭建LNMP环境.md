@@ -5,6 +5,7 @@ mathjax: false
 date: 2017-08-13 16:12:58
 tags: [LNMP,Linux]
 categories: Linux
+urlname: fedora-lnmp
 ---
 
 <meta name="referrer" content="no-referrer" />

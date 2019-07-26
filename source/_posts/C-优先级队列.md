@@ -5,6 +5,7 @@ mathjax: false
 date: 2019-05-23 13:42:24
 tags: [C++, Queue, PriorityQueue, Notes]
 categories: Notes
+urlname: C-PriorityQueue
 ---
 
 <meta name="referrer" content="no-referrer" />

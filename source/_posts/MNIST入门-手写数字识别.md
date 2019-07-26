@@ -5,6 +5,7 @@ mathjax: false
 date: 2019-04-02 10:11:01
 tags: [TensorFlow, ML, MNIST]
 categories: MachineLearning
+urlname: mnist-beginner-digitrecognization
 ---
 
 <meta name="referrer" content="no-referrer" />

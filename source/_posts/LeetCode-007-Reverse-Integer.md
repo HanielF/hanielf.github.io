@@ -9,6 +9,7 @@ tags:
   - String
 categories:
   - LeetCode
+urlname: leetcode-reverse-integer
 comments: true
 mathjax: false
 date: 2019-04-16 22:07:29

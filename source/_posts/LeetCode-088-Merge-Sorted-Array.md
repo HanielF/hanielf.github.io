@@ -8,6 +8,7 @@ tags:
   - Easy
 categories:
   - LeetCode
+urlname: leetcode-merge-sorted-array
 comments: true
 mathjax: false
 date: 2019-06-02 00:40:13

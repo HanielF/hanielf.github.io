@@ -5,6 +5,7 @@ mathjax: true
 date: 2019-04-07 20:54:44
 tags: [机器学习基石,MachineLearning]
 categories: [MachineLearning,机器学习基石,]
+urlname: machinelearning-types-of-learning
 ---
 
 <meta name="referrer" content="no-referrer" />

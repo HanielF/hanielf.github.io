@@ -9,6 +9,7 @@ tags:
   - Easy
 categories:
   - LeetCode
+urlname: leetcode-remove-duplicates-from-sorted-array
 comments: true
 mathjax: false
 date: 2019-05-26 00:56:26

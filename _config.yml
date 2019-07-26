@@ -15,8 +15,10 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://hanielxx.com
 root: /
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: :category/:year-:month-:day-:urlname.html
 permalink_defaults:
+  urlname: index
 
 # Directory
 source_dir: source
@@ -99,11 +101,45 @@ search:
   format: html
   limit: 10000
 
-#设置百度主动推送 
+# sitemap
+sitemap:
+  path: sitemap.xml
+
+# baidusitemap
+baidusitemap:
+  path: baidusitemap.xml
+
+# 设置百度主动推送 
 baidu_url_submit: 
   count: 20 #比如200，代表提交最新的200个链接 
   host: hanielxx.com # 在百度站长平台中注册的域名，这个改为你自己的域名 
   token: gT0Hs3z4GUjVcTUv # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里! 
   path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里，这个默认
 
+# 设置禁止爬虫跟踪外链
+nofollow:
+  enable: true
+  exclude: # 例外链接
+    - https://hanielxx.com
 
+# 博文压缩hexo-neat压缩静态文件
+neat_enable: true
+# 压缩html
+neat_html:
+  enable: true
+  exclude:
+# 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js' 

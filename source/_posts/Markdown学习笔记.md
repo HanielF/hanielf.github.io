@@ -5,6 +5,7 @@ mathjax: false
 date: 2017-08-02 15:52:13
 tags: [Learning,Markdown,Notes]
 categories: Notes
+urlname: markdown-notes
 ---
 
 <meta name="referrer" content="no-referrer" />

@@ -5,6 +5,7 @@ mathjax: false
 date: 2018-09-11 01:08:32
 tags: [Python,Numpy,MachineLearning]
 categories: MachineLearning
+urlname: numpy-function-dot
 ---
 
 <meta name="referrer" content="no-referrer" />

@@ -5,6 +5,7 @@ mathjax: false
 date: 2019-03-17 22:32:28
 tags: [Python,Tornado, Async]
 categories: Notes
+urlname: tornado-async
 ---
 
 <meta name="referrer" content="no-referrer" />

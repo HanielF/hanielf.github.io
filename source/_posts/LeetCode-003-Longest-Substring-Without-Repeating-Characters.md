@@ -10,6 +10,7 @@ tags:
   - Math
   - Medium
 categories: LeetCode
+urlname: leetcode-longest-substring-without-repeating-characters 
 ---
 
 <meta name="referrer" content="no-referrer" />

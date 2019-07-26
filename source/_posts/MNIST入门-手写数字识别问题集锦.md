@@ -5,6 +5,7 @@ mathjax: false
 date: 2019-04-18 02:12:37
 tags: [Daily, MNIST, Tensorflow, LeNet-5, Problems,ML]
 categories: MachineLearning
+urlname: mnist-beginner-digitrecognization-problems
 ---
 
 <meta name="referrer" content="no-referrer" />

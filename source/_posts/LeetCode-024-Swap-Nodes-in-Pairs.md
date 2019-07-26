@@ -8,6 +8,7 @@ tags:
   - Medium
 categories:
   - LeetCode
+urlname: leetcode-swap-nodes-in-pairs
 comments: true
 mathjax: false
 date: 2019-07-24 01:15:46
@@ -16,7 +17,7 @@ date: 2019-07-24 01:15:46
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-## [Problem](https://leetcode-cn.com/problems/swap-nodes-in-pairs/submissions/)   
+## [Problem](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)   
 Given a linked list, swap every two adjacent nodes and return its head.
 
 You may **not** modify the values in the list's nodes, only nodes itself may be changed.

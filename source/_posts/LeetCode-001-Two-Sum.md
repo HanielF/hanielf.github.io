@@ -10,6 +10,7 @@ tags:
   - Math
   - Easy
 categories: [LeetCode]
+urlname: leetcode-two-sum
 ---
 
 <meta name="referrer" content="no-referrer" />

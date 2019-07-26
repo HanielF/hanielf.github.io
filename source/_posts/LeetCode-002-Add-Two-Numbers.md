@@ -11,6 +11,7 @@ tags:
   - Math
   - Medium
 categories: [LeetCode]
+urlname: leetcode-add-two-numbers
 ---
 
 <meta name="referrer" content="no-referrer" />

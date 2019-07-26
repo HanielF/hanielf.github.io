@@ -4,6 +4,7 @@ comments: true
 date: 2018-09-10 18:08:12
 tags: [Python,MachineLearning,Clustering,K-Means,Learning]
 categories: MachineLearning
+urlname: machinelearning-cluster-k-means
 mathjax: true
 ---
 

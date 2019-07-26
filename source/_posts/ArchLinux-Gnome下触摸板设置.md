@@ -7,6 +7,7 @@ tags:
   - Synaptics
 categories:
   - Linux
+urlname: ArchLinux-Gnome-Synaptics 
 comments: true
 mathjax: false
 date: 2019-07-22 23:58:57

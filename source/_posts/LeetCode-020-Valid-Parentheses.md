@@ -9,6 +9,7 @@ tags:
   - Easy
 categories:
   - LeetCode
+urlname: leetcode-valid-parentheses
 comments: true
 mathjax: false
 date: 2019-05-22 13:59:04

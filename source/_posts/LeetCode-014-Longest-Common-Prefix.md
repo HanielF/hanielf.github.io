@@ -8,6 +8,7 @@ tags:
   - Easy
 categories:
   - LeetCode
+urlname: leetcode-longest-common-prefix
 comments: true
 mathjax: false
 date: 2019-05-18 12:55:53

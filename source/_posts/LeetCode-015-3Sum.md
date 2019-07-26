@@ -6,6 +6,7 @@ tags:
   - Medium
 categories:
   - LeetCode
+urlname: leetcode-3sum
 comments: true
 mathjax: false
 date: 2019-05-19 21:22:18

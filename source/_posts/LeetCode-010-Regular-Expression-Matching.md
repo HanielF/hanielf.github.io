@@ -9,6 +9,7 @@ tags:
   - Hard
 categories:
   - LeetCode
+urlname: leetcode-regular-expression-matching
 comments: true
 mathjax: false
 date: 2019-04-27 01:43:57

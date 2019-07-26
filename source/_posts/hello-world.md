@@ -1,6 +1,8 @@
 ---
 title: Hello World
 date: 2017-08-01 14:04:32
+categories: Notes
+urlname: hello-world
 ---
 
 

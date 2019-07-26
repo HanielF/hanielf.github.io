@@ -8,6 +8,7 @@ tags:
   - Medium
 categories:
   - LeetCode
+urlname: leetcode-search-a-2d-matrix-ii
 comments: true
 mathjax: false
 date: 2019-06-02 00:29:32

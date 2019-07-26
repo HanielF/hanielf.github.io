@@ -5,6 +5,7 @@ mathjax: true
 date: 2019-04-07 12:36:48
 tags: [机器学习基石,MachineLearning,PLA]
 categories: [MachineLearning,机器学习基石,]
+urlname: machinelearning-pla
 ---
 
 <meta name="referrer" content="no-referrer" />

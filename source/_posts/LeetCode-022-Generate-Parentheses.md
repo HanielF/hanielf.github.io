@@ -8,6 +8,7 @@ tags:
   - Medium
 categories:
   - LeetCode
+urlname: leetcode-generate-parentheses
 comments: true
 mathjax: false
 date: 2019-07-23 01:00:33

@@ -3,6 +3,7 @@ title: {{ title }}
 date: {{ date }}
 tags: [ ,]
 categories: [ ,]
+urlname:
 comments: true
 mathjax: false
 ---

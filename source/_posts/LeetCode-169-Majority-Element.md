@@ -9,6 +9,7 @@ tags:
   - Easy
 categories:
   - LeetCode
+urlname: leetcode-majority-element
 comments: true
 mathjax: false
 date: 2019-05-26 00:55:31

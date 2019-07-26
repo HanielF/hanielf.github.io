@@ -9,6 +9,7 @@ tags:
   - Split
 categories:
   - LeetCode
+urlname: leetcode-zigzag-conversion
 comments: true
 mathjax: false
 date: 2019-04-15 20:47:37
@@ -17,7 +18,7 @@ date: 2019-04-15 20:47:37
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-## [Problem](https://leetcode.com/problems/zigzag-conversion/submissions/)   
+## [Problem](https://leetcode.com/problems/zigzag-conversion/)   
 The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 > P   A   H   N
 > A P L S I I G
