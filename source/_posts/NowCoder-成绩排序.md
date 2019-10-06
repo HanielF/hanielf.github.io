@@ -17,7 +17,7 @@ date: 2019-07-26 00:56:21
 
 {% note info %}
 ## 通知
-之前准备夏令营的时候刷了很多算法题, 有[牛客网:NowCoder](https://www.nowcoder.com/ta/kaoyan?page=1)的, 也有LeetCode的, 现在开始慢慢将牛客网的题目记录下来, 也权当复习. LeetCode后面的题目暂时不更新, 等刷到那里再更, 不然这顺序很乱
+之前刷了很多算法题, 有[牛客网:NowCoder](https://www.nowcoder.com/ta/kaoyan?page=1)的, 也有LeetCode的, 现在开始慢慢将牛客网的题目记录下来, 也权当复习. LeetCode后面的题目暂时不更新, 等刷到那里再更, 不然这顺序很乱
 
 ## [Problem](https://www.nowcoder.com/practice/0383714a1bb749499050d2e0610418b1?tpId=40&tqId=21333&tPage=1&rp=1&ru=/ta/kaoyan&qru=/ta/kaoyan/question-ranking)   
 查找和排序
