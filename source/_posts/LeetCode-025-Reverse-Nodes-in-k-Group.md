@@ -4,7 +4,7 @@ tags:
   - LeetCode
   - Algorithm
   - Stack
-  - Recursion
+  - Recursive
   - LinkedList
   - Reverse
   - Hard
