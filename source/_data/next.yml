@@ -25,8 +25,8 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
+# i18n_dir: :lang
+# skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -160,6 +160,7 @@ menu:
   categories: /categories/
   archives: /archives/
   tags: /tags/
+  algorithm: /tags/Algorithm/
   # about: /about/
   # sitemap: /sitemap.xml
   #commonweal: /404/
@@ -180,6 +181,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
+  algorithm: code
 
 
 # ---------------------------------------------------------------
