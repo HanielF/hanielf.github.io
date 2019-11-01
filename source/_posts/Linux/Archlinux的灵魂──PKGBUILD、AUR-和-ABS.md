@@ -6,7 +6,7 @@ tags:
   - AUR
   - ABS
 categories:
-  - Daily
+  - Linux
 comments: true
 mathjax: false
 date: 2019-07-26 17:57:00

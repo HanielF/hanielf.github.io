@@ -5,7 +5,7 @@ tags:
   - Algorithm
   - Easy
   - Reverse
-  - Big Number
+  - BigNumber
   - String
 categories:
   - LeetCode

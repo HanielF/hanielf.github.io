@@ -4,7 +4,7 @@ comments: true
 mathjax: false
 date: 2018-09-11 01:08:32
 tags: [Python,Numpy,MachineLearning]
-categories: MachineLearning
+categories: Notes
 urlname: numpy-function-dot
 ---
 
