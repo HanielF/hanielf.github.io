@@ -11,7 +11,7 @@ urlname:
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-## [Problem]()   
+## [Problem]()
 
 ### Examples:
 **Input:**

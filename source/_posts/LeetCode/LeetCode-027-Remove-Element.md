@@ -10,7 +10,7 @@ categories:
 comments: true
 mathjax: false
 date: 2019-10-24 09:27:06
-urlname:
+urlname: LeetCode-027-Remove-Element
 ---
 
 <meta name="referrer" content="no-referrer" />
