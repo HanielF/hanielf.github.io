@@ -79,9 +79,12 @@ EM是一种解决存在隐含变量优化问题的有效方法。既然不能直
 
 可以由前面阐述的内容得到下面的公式：
 
-<center>
-{% asset_img 3.png %}
-</center>
+\begin{equation}\begin{split}
+\sum_i logp(x^{(i)}; \theta) &= \sum_i log \sum_{z^{(i)}} p(x^{(i)},z^{(i)}; \theta) \\
+&= \sum_i log \sum_{z^{(i)}} Q_i(z^{(i)}) {p(x^{(i)}, z^{(i)}; \theta) \over Q_i(z^{(i)})} \\
+& \ge \sum_i \sum_{z^{(i)}} Q_i(z^{(i)}) log {p(x^{(i)},z^{(i)}; \theta) \over Q_i(z^{(i)})}
+\end{split}\end{equation}
+
 
 - （1）到（2）比较直接，就是分子分母同乘以一个相等的函数。
 - （2）到（3）利用了Jensen不等式，考虑到$$ log(x) $$是凹函数（二阶导数小于0），而且$$ \sum_{z^{(i)}} Q_i(z^{(i)})[{ p(x^{(i)}), z^{(i)}; \theta] \over Q_i(z^{(i)}) }] $$就是$$ [{ {p(x^{(i)}, z^{(i)}; \theta)} \over Q_i(z^{(i)}) }]$$的期望（回想期望公式中的Lazy Statistician规则）    
@@ -168,7 +171,7 @@ $$ J(Q,\theta) = \sum_i \sum_{z^{(i)}} Q_i(z^{(i)})log{ p(x^{(i)},z^{(i)};\theta
 
 从前面的推导中我们知道$$ {\ell}(\theta) \ge J(Q,\theta) $$，EM可以看作是J的坐标上升法，E步固定$$ \theta $$，优化$$ Q $$，M步固定$$ Q $$优化$$ \theta $$。
 
-##  重新审视混合高斯模型
+##  高斯混合模型
 
 我们已经知道了EM的精髓和推导过程，再次审视一下混合高斯模型。之前提到的混合高斯模型的参数$$ \phi , \mu  和 \sum  $$计算公式都是根据很多假定得出的，有些没有说明来由。为了简单，这里在M步只给出$$ \phi 和 \mu $$的推导方法。
 
