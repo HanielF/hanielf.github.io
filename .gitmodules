@@ -1,0 +1,3 @@
+[submodule "themes/next-geek"]
+	path = themes/next-geek
+	url = https://github.com/HanielF/next-geek
