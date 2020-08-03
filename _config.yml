@@ -80,12 +80,6 @@ theme: next-geek
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-#deploy:
-#  type: git
-#  repo: 
-#    github: git@github.com:HanielF/HanielF.github.io.git
-#    coding: git@git.coding.net:Haniel/Haniel.git
-#  branch: master
 deploy:
 - type: git
   repo: 
