@@ -81,6 +81,16 @@ mRNA（信使RNA）是由细胞核内的DNA转录来的,相当于蛋白质的设
 反应体系由模板DNA、一对引物、dNTP、耐高温的DNA聚合酶、酶反应缓冲体系及必须的离子等所组成。PCR反应循环的第一步为加热变性，使双链模板DNA变性为单链；第二步为复性，每个引物将与互补的DNA序列杂交；第三步为延伸，在耐高温的DNA聚合酶作用下，以变性的单链DNA为模板，从引物3ˊ端开始按5ˊ→3ˊ方向合成DNA链。这样经过一个周期的变性——复性——延伸等三步反应就可以产生倍增的DNA，假设PCR的效率为100%,反复n周期后，理论上就能扩增2n倍。PCR反应一般30-40次循环，DNA片段可放大数百万倍。
 见[PCR的扩增产物是什么，怎么扩增出来的](https://zhidao.baidu.com/question/345141221.html)
 
+1. guide strand 和 passenger strand：
+guide strand 是被整合到RISC中的，而passenger strand 被降解。
+guide strand 等同于 antisense strand，passenger strand 等同于sense strand。
+guide(antisense) strand和转录出的mRNA是互补配对的
+
+{% asset_img applications-sirna-general-structure-of-sirna.jpg "General structure of siRNA. Two RNA strands form a duplex 21 bp long with 3' dinucleotide overhangs on each strand. The antisense strand is a perfect reverse complement of the intended target mRNA." %}
+
+**设计siRNA的时候，从cDNA选19bp长度的序列，然后互补配对，`A-U/C-G/G-C/T-A`，然后反向就是得到了guide strand/antisense strand，然后再在末尾添加两个悬垂就是得到了Guide strand**
+
+
 ### 基本单位
 1. 碱基(A，G，C，T，U)：
 &nbsp;&nbsp;&nbsp;&nbsp;DNA有四种碱基对，即鸟嘌呤(G),腺嘌呤(A),胞嘧啶(C),胸腺嘧啶(T).其中G与C配对，A与T配对。RNA有A，G，C，U(尿嘧啶)这四种
