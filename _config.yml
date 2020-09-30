@@ -83,9 +83,8 @@ theme: next-geek
 deploy:
 - type: git
   repo: 
-    # github: git@github.com:HanielF/HanielF.github.io.git
-    github: https://github.com/HanielF/HanielF.github.io.git
-    coding: git@git.coding.net:Haniel/Haniel.git
+    github: https://github.com/HanielF/hanielxx.github.io.git
+    coding: git@e.coding.net:Haniel/Haniel.git
   branch: master
 - type: baidu_url_submitter
 
