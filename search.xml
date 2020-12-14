@@ -1847,7 +1847,7 @@ A backtick-delimited string in a code span: `` `foo` ``  </code></pre><p>显示�
   <entry>
     <title>UCAS模式识别与机器学习</title>
     <url>/Notes/2020-12-14-ucas-prml-review.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>国科大模式识别与机器学习笔记</p></div>]]></content>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>国科大模式识别与机器学习笔记</p></div><a id="more"></a>]]></content>
       <categories>
         <category>Notes</category>
       </categories>
@@ -1856,6 +1856,20 @@ A backtick-delimited string in a code span: `` `foo` ``  </code></pre><p>显示�
         <tag>Notes</tag>
         <tag>Review</tag>
         <tag>PRML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论文笔记 | Map Reduce</title>
+    <url>/Notes/2020-11-25-map-reduce.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>分布式经典论文Map Reduce笔记。论文原文：<a href="https://www.cs.amherst.edu/~ccmcgeoch/cs34/papers/p107-dean.pdf" target="_blank" rel="external nofollow noopener noreferrer">MapReduce: Simplified Data Processing on Large Clusters</a></p></div><a id="more"></a><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>将大的任务分成小的部分，分给不同的机器上，然后得到结果在汇聚到一起。</p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/RQBpjq.png" alt="RQBpjq"></p><ul><li>数据文件</li><li>分为M 份</li><li>选一个主进程，为其他worker进程分配一个map任务或者reduce任务</li><li>map任务从输入数据中取出key/value，使用map函数</li><li>中间key/value保存在内存</li><li>中间key/value写入磁盘，分为R 份</li><li>主进程将磁盘位置告诉reduce 进程</li><li>reduce worker收到master的位置信息后，使用RPC读数据</li><li>reduce worker将数据按照中间 key排序</li><li>reduce worker 迭代排序后的数据，将key和对应中间value集合传给reduce方法</li><li>reduce方法的输出被添加到最后的输出文件</li><li>所有的reduce结束后，返回给用户程序</li><li>最后应该是有R个output file，一般不用用户合并，可以直接调用另一个人mapreduce或者直接用于其他应用</li><li></li><li>M和R应该远大于worker的数量，能提升动态加载均衡，也能在worker失效时加快恢复</li></ul><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>Map函数，由用户编写，输入键值对集，产生中间键值对集，最后会把由相同键的key/value pair合并，然后传给reduce 函数。</p><p>输入数据被保存在节点本地，这样来节省带宽</p><h2 id="Reduce"><a href="#Reduce" class="headerlink" title="Reduce"></a>Reduce</h2><p>Reduce，接受中间键值对，一个键可能对应一个value集合。Reduce将所有的值进行merge，形成小的value集合，比如进行mean操作，产生一个value输出。<br>中间键值对是通过迭代器传给reduce方法的，这样就可以处理比较大的，无法全放进内存的数据。</p><p>Map操作和Reduce操作都在不同的的机器上进行，map是将数据分为M个，reduce是将中间key值分为R个<br>M和R应该比worker多的多，这样可以让每个worker执行多个task，能够提升动态加载的平衡，并且加速恢复fail worker</p><h2 id="容错"><a href="#容错" class="headerlink" title="容错"></a>容错</h2><p>master定期访问worker，没有回应的worker被标记为失效，然后这个worker上的map/reduce任务被重置为初始状态，等待重新分配到其他worker</p><p>MapReduce能够应对大规模的故障，在出故障的机器上：</p><ul><li>已经完成的map任务也要重做，因为map的结果保存在那个机器上，无法访问了。重做的同时，会发送通知给所有的reduce worker，它们还没有读过map输出的，会在新的map worker那读数据</li><li>已经完成的reduce不需要重做，因为结果是存在全局文件系统</li></ul><h2 id="答辩PPT"><a href="#答辩PPT" class="headerlink" title="答辩PPT"></a>答辩PPT</h2><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/dhh32t.png" alt="dhh32t"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/rxheIS.png" alt="rxheIS"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/bNZAk5.png" alt="bNZAk5"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/OzsRoX.png" alt="OzsRoX"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/WzpFFZ.png" alt="WzpFFZ"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/MmnA0V.png" alt="MmnA0V"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/CH017m.png" alt="CH017m"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/gN0g3b.png" alt="gN0g3b"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/KNPlHS.png" alt="KNPlHS"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/6PTCOf.png" alt="6PTCOf"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/xbuKgG.png" alt="xbuKgG"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/m4D7Vh.png" alt="m4D7Vh"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/4itxXM.png" alt="4itxXM"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/wR6D77.png" alt="wR6D77"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/n9mwJS.png" alt="n9mwJS"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/2nqvtK.png" alt="2nqvtK"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/zH7ORt.png" alt="zH7ORt"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/7AikXP.png" alt="7AikXP"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/3gKh1F.png" alt="3gKh1F"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/7hBrZA.png" alt="7hBrZA"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/aXOrs6.png" alt="aXOrs6"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/jwgAsc.png" alt="jwgAsc"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/hDO5kz.png" alt="hDO5kz"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/nlvUbH.png" alt="nlvUbH"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/fgsSpQ.png" alt="fgsSpQ"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/4J5m98.png" alt="4J5m98"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/S1MvAv.png" alt="S1MvAv"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/rDZZTa.png" alt="rDZZTa"></p>]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>MapReduce</tag>
+        <tag>DistributedSystem</tag>
+        <tag>PaperNotes</tag>
+        <tag>GFS</tag>
       </tags>
   </entry>
 </search>

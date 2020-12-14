@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hanielxx.com/Notes/2020-12-08-ucas-big-data-analysis-review</loc>
+    <loc>https://hanielxx.com/Notes/2020-12-14-ucas-prml-review</loc>
     
     <lastmod>2020-12-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/Notes/2020-12-14-ucas-prml-review</loc>
+    <loc>https://hanielxx.com/Notes/2020-11-25-map-reduce</loc>
+    
+    <lastmod>2020-12-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/Notes/2020-12-08-ucas-big-data-analysis-review</loc>
     
     <lastmod>2020-12-14</lastmod>
     
@@ -1762,6 +1769,34 @@
   
   <url>
     <loc>https://hanielxx.com/tags/PRML/</loc>
+    <lastmod>2020-12-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/MapReduce/</loc>
+    <lastmod>2020-12-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/DistributedSystem/</loc>
+    <lastmod>2020-12-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/PaperNotes/</loc>
+    <lastmod>2020-12-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/GFS/</loc>
     <lastmod>2020-12-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
