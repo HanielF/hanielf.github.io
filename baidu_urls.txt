@@ -1,4 +1,3 @@
-https://hanielxx.com/MachineLearning/2020-12-15-attention-is-all-you-need
 https://hanielxx.com/Notes/2020-12-14-ucas-prml-review
 https://hanielxx.com/Notes/2020-12-12-datascience-contest-seminar
 https://hanielxx.com/Notes/2020-12-08-ucas-big-data-analysis-review
@@ -6,6 +5,7 @@ https://hanielxx.com/Daily/2020-12-04-hypnic-jerk
 https://hanielxx.com/Papers/2020-11-25-map-reduce
 https://hanielxx.com/Notes/2020-11-19-ucas-datamining-review
 https://hanielxx.com/LeetCode/2020-11-16-LeetCode-Maximum-Subarray-Sum-with-One-Deletion
+https://hanielxx.com/MachineLearning/2020-11-15-attention-is-all-you-need
 https://hanielxx.com/Linux/2020-08-27-vim-keybord-record
 https://hanielxx.com/Papers/2020-08-04-CNN-DNN-siRNA-AUC
 https://hanielxx.com/Linux/2020-07-30-manjaro-mendeley-fcitx
