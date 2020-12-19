@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hanielxx.com/MachineLearning/2020-08-15-attention-is-all-you-need</loc>
+    
+    <lastmod>2020-12-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/Notes/2020-12-12-datascience-contest-seminar</loc>
     
     <lastmod>2020-12-19</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://hanielxx.com/Notes/2020-12-17-tsp-ilp</loc>
     
     <lastmod>2020-12-17</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/MachineLearning/2020-11-15-attention-is-all-you-need</loc>
-    
-    <lastmod>2020-12-16</lastmod>
     
   </url>
   
