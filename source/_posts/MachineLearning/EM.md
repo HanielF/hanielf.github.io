@@ -8,7 +8,7 @@ tags:
   - Algorithm
   - EM
   - Notes
-categories: Notes
+categories: MachineLearning
 urlname: EM-Notes
 ---
 

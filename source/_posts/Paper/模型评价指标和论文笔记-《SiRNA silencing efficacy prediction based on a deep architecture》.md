@@ -1,5 +1,5 @@
 ---
-title: CNN-DNN 预测siRNA沉默效率论文笔记及对AUC的理解与困惑
+title: 模型评价指标 | 论文笔记 |《SiRNA silencing efficacy prediction based on a deep architecture》
 tags:
   - DeepLearning
   - Paper
@@ -8,7 +8,7 @@ tags:
   - ROC
   - siRNA
 categories:
-  - DeepLearning
+  - Papers
 comments: true
 mathjax: true
 date: 2020-08-04 09:55:11
@@ -21,7 +21,7 @@ urlname: CNN-DNN-siRNA-AUC
 
 ## 前言
 
-论文《SiRNA silencing efficacy prediction based on a deep architecture》笔记，以及对这篇论文的看法、理解和困惑。
+论文《SiRNA silencing efficacy prediction based on a deep architecture》笔记，以及对这篇论文的看法、理解。最后是记录了模型的一些评价指标。
 
 {% endnote %}
 

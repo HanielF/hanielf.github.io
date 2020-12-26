@@ -6,7 +6,7 @@ tags:
   - MachineLearning
   - Paper
 categories:
-  - MachineLearning
+  - Papers
 comments: true
 mathjax: false
 date: 2019-10-17 10:56:51

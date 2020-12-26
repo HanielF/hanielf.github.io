@@ -10,7 +10,7 @@ urlname: tornado-async
 
 <meta name="referrer" content="no-referrer" />
 
-# Tornado中的异步
+
 ## 概述
 
 因为epoll主要用来解决网络IO的并发问题，所以Tornado中的异步也主要体现在网络的IO异步上，即异步web
