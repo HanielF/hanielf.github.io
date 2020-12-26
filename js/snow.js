@@ -87,7 +87,7 @@ function snowCanvas() {
     /* 窗口大小改变的处理 */
     window.onresize = function() {
         snowcanvas.width = window.innerWidth;
-        // snowcanvas.height = window.innerHeight;
+        snowcanvas.height = document.body.scrollHeight;
     }
 }
 /* 雪运动对象 */

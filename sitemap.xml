@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hanielxx.com/about/</loc>
+    
+    <lastmod>2020-12-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/Notes/2020-12-14-ucas-prml-review</loc>
     
     <lastmod>2020-12-26</lastmod>
@@ -149,21 +156,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/about/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/algorithm/</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/archives/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -177,7 +170,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/NowCoder/2019-09-21-max-sum-of-sequence</loc>
+    <loc>https://hanielxx.com/archives/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -192,6 +185,13 @@
   
   <url>
     <loc>https://hanielxx.com/NowCoder/2019-09-21-minimum-cost</loc>
+    
+    <lastmod>2020-11-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/NowCoder/2019-09-21-max-sum-of-sequence</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -268,13 +268,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/NowCoder/2019-09-22-remaining-tree</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/NowCoder/2019-09-21-day-of-the-year</loc>
     
     <lastmod>2020-11-14</lastmod>
@@ -289,7 +282,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/NowCoder/2019-09-21-factorial-of-bignumber</loc>
+    <loc>https://hanielxx.com/NowCoder/2019-09-22-remaining-tree</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -297,6 +290,13 @@
   
   <url>
     <loc>https://hanielxx.com/NowCoder/2019-09-21-perfect-num-and-excess-num</loc>
+    
+    <lastmod>2020-11-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/NowCoder/2019-09-21-factorial-of-bignumber</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -324,14 +324,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/Notes/2019-08-28-python-review</loc>
+    <loc>https://hanielxx.com/Notes/2019-03-18-spacevim-custom-keybind</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/Notes/2019-03-18-spacevim-custom-keybind</loc>
+    <loc>https://hanielxx.com/Notes/2019-08-28-python-review</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -485,14 +485,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/Linux/2020-07-30-manjaro-mendeley-fcitx</loc>
+    <loc>https://hanielxx.com/Linux/2020-08-27-vim-keybord-record</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/Linux/2020-08-27-vim-keybord-record</loc>
+    <loc>https://hanielxx.com/Linux/2020-07-30-manjaro-mendeley-fcitx</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -513,13 +513,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/Linux/2019-07-26-archlinux-pkgbuild-aur-and-abs</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/Linux/2019-11-10-arch-install-ycm</loc>
     
     <lastmod>2020-11-14</lastmod>
@@ -527,7 +520,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-06-02-leetcode-merge-sorted-array</loc>
+    <loc>https://hanielxx.com/Linux/2019-07-26-archlinux-pkgbuild-aur-and-abs</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -541,7 +534,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-06-02-leetcode-valid-palindrome</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-06-02-leetcode-merge-sorted-array</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -549,6 +542,13 @@
   
   <url>
     <loc>https://hanielxx.com/LeetCode/2019-06-13-leetcode-binary-tree-maximum-path-sum</loc>
+    
+    <lastmod>2020-11-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/LeetCode/2019-06-02-leetcode-valid-palindrome</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -653,13 +653,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-07-23-leetcode-generate-parentheses</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/LeetCode/2019-05-23-leetcode-merge-two-sorted-lists</loc>
     
     <lastmod>2020-11-14</lastmod>
@@ -667,7 +660,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-07-24-leetcode-swap-nodes-in-pairs</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-07-23-leetcode-generate-parentheses</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -675,6 +668,13 @@
   
   <url>
     <loc>https://hanielxx.com/LeetCode/2019-05-23-leetcode-merge-k-sorted-lists</loc>
+    
+    <lastmod>2020-11-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/LeetCode/2019-07-24-leetcode-swap-nodes-in-pairs</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -716,14 +716,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-05-22-leetcode-letter-combinations-of-a-phone-number</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-05-22-leetcode-3sum-closest</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-05-22-leetcode-3sum-closest</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-05-22-leetcode-letter-combinations-of-a-phone-number</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -751,14 +751,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-04-27-leetcode-regular-expression-matching</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-04-30-leetcode-container-with-most-water</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-04-30-leetcode-container-with-most-water</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-04-27-leetcode-regular-expression-matching</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -779,14 +779,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-04-15-leetcode-zigzag-conversion</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-04-14-leetcode-longest-palindromic-substring</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-04-14-leetcode-longest-palindromic-substring</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-04-15-leetcode-zigzag-conversion</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -837,21 +837,21 @@
 
   
   <url>
-    <loc>https://hanielxx.com/tags/Nju/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/SummerCamp/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/Daily/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/HypnicJerk/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Lift/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -893,7 +893,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Lift/</loc>
+    <loc>https://hanielxx.com/tags/Nju/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/SummerCamp/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -936,13 +943,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Problems/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/HypnicJerk/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1033,13 +1033,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Split/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/Palindromic/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1048,6 +1041,13 @@
   
   <url>
     <loc>https://hanielxx.com/tags/DP/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Split/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1075,7 +1075,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Match/</loc>
+    <loc>https://hanielxx.com/tags/Pointer/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1096,7 +1096,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Pointer/</loc>
+    <loc>https://hanielxx.com/tags/Match/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1104,13 +1104,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Prefix/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Recursive/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1125,6 +1118,13 @@
   
   <url>
     <loc>https://hanielxx.com/tags/3Sum/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Recursive/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1159,13 +1159,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Parentheses/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/List/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1180,7 +1173,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Swap/</loc>
+    <loc>https://hanielxx.com/tags/Parentheses/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1188,6 +1181,13 @@
   
   <url>
     <loc>https://hanielxx.com/tags/PriorityQueue/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Swap/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1244,13 +1244,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/BruteForce/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/UCAS/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1327,6 +1320,20 @@
   </url>
   
   <url>
+    <loc>https://hanielxx.com/tags/Vim/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/YCM/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/tags/ArchLinux/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1355,20 +1362,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Vim/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/YCM/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/LNMP/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1383,6 +1376,13 @@
   </url>
   
   <url>
+    <loc>https://hanielxx.com/tags/UCAS/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/tags/Deb/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1391,6 +1391,13 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Debtap/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Summary/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1412,13 +1419,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Gnome-tweaks/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Summary/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1453,20 +1453,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/EM/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Notes/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/%E5%87%B8%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1489,6 +1475,20 @@
   
   <url>
     <loc>https://hanielxx.com/tags/SVM/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/EM/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Notes/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1579,13 +1579,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Async/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/Markdown/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1593,7 +1586,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Review/</loc>
+    <loc>https://hanielxx.com/tags/Async/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1607,14 +1600,35 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Tornado/</loc>
+    <loc>https://hanielxx.com/tags/TSP/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Numpy/</loc>
+    <loc>https://hanielxx.com/tags/LP/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/ILP/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Review/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/PRML/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1622,6 +1636,27 @@
   
   <url>
     <loc>https://hanielxx.com/tags/BigData/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Tornado/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/DataMining/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Numpy/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1656,7 +1691,28 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/PRML/</loc>
+    <loc>https://hanielxx.com/tags/DataScience/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Contest/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/DataFountain/</loc>
+    <lastmod>2020-12-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Kaggle/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1664,13 +1720,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Reprint/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/DataMining/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1706,34 +1755,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Dijkstra/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/DataScience/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Contest/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/DataFountain/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Kaggle/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1853,27 +1874,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/PLA/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/TSP/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/LP/</loc>
-    <lastmod>2020-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/ILP/</loc>
     <lastmod>2020-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
