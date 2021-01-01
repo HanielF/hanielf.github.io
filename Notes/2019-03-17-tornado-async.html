@@ -18,7 +18,7 @@
         else:
             ret = json.loads(res.body)
         #  相当于gen.send()函数
-        raise tornado.gen.Return(ret)</code></pre></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a> <a href="/tags/Async/" rel="tag"><i class="fa fa-tag"></i> Async</a> <a href="/tags/Tornado/" rel="tag"><i class="fa fa-tag"></i> Tornado</a></div><div class="post-nav"><div class="post-nav-item"><a href="/Notes/2019-03-17-python-async" rel="prev" title="Python中的异步"><i class="fa fa-chevron-left"></i> Python中的异步</a></div><div class="post-nav-item"><a href="/Notes/2019-03-18-spacevim-custom-keybind" rel="next" title="SpaceVim中自定义Markdown相关快捷键">SpaceVim中自定义Markdown相关快捷键 <i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div class="comment-button-group"><a class="btn comment-button gitalk">gitalk</a> <a class="btn comment-button disqus">disqus</a></div><div class="comment-position gitalk"><div class="comments" id="gitalk-container"></div></div><div class="comment-position disqus"><div class="comments"><div id="disqus_thread"><noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript></div></div></div><script>(function() {
+        raise tornado.gen.Return(ret)</code></pre></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a> <a href="/tags/Async/" rel="tag"><i class="fa fa-tag"></i> Async</a> <a href="/tags/Tornado/" rel="tag"><i class="fa fa-tag"></i> Tornado</a></div><div class="post-nav"><div class="post-nav-item"><a href="/Notes/2019-03-17-python-async" rel="prev" title="Python中的异步"><i class="fa fa-chevron-left"></i> Python中的异步</a></div><div class="post-nav-item"><a href="/Notes/2019-03-18-spacevim-custom-keybind" rel="next" title="SpaceVim中自定义Markdown相关快捷键">SpaceVim中自定义Markdown相关快捷键 <i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div class="comment-button-group"><a class="btn comment-button disqus">disqus</a> <a class="btn comment-button gitalk">gitalk</a></div><div class="comment-position disqus"><div class="comments"><div id="disqus_thread"><noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript></div></div></div><div class="comment-position gitalk"><div class="comments" id="gitalk-container"></div></div><script>(function() {
           let commentButton = document.querySelectorAll('.comment-button');
             commentButton.forEach(element => {
             let commentClass = element.classList[2];
@@ -58,21 +58,7 @@
       let commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
-  }</script></div></main><footer class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2021</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">Haniel Farnsworth</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-chart-area"></i> </span><span class="post-meta-item-text">Symbols count total: </span><span title="Symbols count total">293k</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-coffee"></i> </span><span class="post-meta-item-text">Reading time total &asymp;</span> <span title="Reading time total">12:12</span></div><div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://github.com/next-geek/next-geek" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Next-geek</a></div></div></footer></div><script src="/lib/anime.min.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/snow.js"></script><script src="/js/bookmark.js"></script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js",(e=document.getElementsByTagName("script")[0]).parentNode.insertBefore(t,e)}()</script><script src="/js/local-search.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"><script>NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '27e3eba13ef3780f492b',
-      clientSecret: '4e28d0b26bbf1501e220a7d94b983aec4e4c11df',
-      repo        : 'CommentsRepo',
-      owner       : 'HanielF',
-      admin       : ['HanielF'],
-      id          : 'ce4524fd01260cc2b65e1b2c42db67db',
-        language: 'en',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});</script><script>function loadCount(){var d=document,n=d.createElement("script");n.src="https://hanielxx.disqus.com/count.js",n.id="dsq-count-scr",(d.head||d.body).appendChild(n)}window.addEventListener("load",loadCount,!1)</script><script>var disqus_config = function() {
+  }</script></div></main><footer class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2021</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">Haniel Farnsworth</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-chart-area"></i> </span><span class="post-meta-item-text">Symbols count total: </span><span title="Symbols count total">293k</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-coffee"></i> </span><span class="post-meta-item-text">Reading time total &asymp;</span> <span title="Reading time total">12:12</span></div><div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://github.com/next-geek/next-geek" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Next-geek</a></div></div></footer></div><script src="/lib/anime.min.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/snow.js"></script><script src="/js/bookmark.js"></script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js",(e=document.getElementsByTagName("script")[0]).parentNode.insertBefore(t,e)}()</script><script src="/js/local-search.js"></script><script>function loadCount(){var d=document,n=d.createElement("script");n.src="https://hanielxx.disqus.com/count.js",n.id="dsq-count-scr",(d.head||d.body).appendChild(n)}window.addEventListener("load",loadCount,!1)</script><script>var disqus_config = function() {
     this.page.url = "https://hanielxx.com/Notes/2019-03-17-tornado-async";
     this.page.identifier = "Notes/2019-03-17-tornado-async.html";
     this.page.title = "Tornado中的异步";
@@ -89,4 +75,18 @@
       s.setAttribute('data-timestamp', '' + +new Date());
       (d.head || d.body).appendChild(s);
     }
-  });</script></body></html>
+  });</script><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"><script>NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '27e3eba13ef3780f492b',
+      clientSecret: '4e28d0b26bbf1501e220a7d94b983aec4e4c11df',
+      repo        : 'CommentsRepo',
+      owner       : 'HanielF',
+      admin       : ['HanielF'],
+      id          : 'ce4524fd01260cc2b65e1b2c42db67db',
+        language: 'en',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});</script></body></html>
