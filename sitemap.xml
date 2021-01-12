@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hanielxx.com/Notes/2020-12-14-ucas-prml-review</loc>
+    <loc>https://hanielxx.com/MachineLearning/2021-01-12-gbm-gridsearch</loc>
     
     <lastmod>2021-01-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/MachineLearning/2021-01-12-gbm-gridsearch</loc>
+    <loc>https://hanielxx.com/Notes/2020-12-14-ucas-prml-review</loc>
     
     <lastmod>2021-01-12</lastmod>
     
@@ -1923,6 +1923,13 @@
   
   <url>
     <loc>https://hanielxx.com/tags/PLA/</loc>
+    <lastmod>2021-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/K-Fold/</loc>
     <lastmod>2021-01-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
