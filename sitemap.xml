@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hanielxx.com/Daily/2021-03-30-lift-notes</loc>
+    
+    <lastmod>2021-03-30</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/MachineLearning/2021-02-23-bert-create-pretrain-data-analysis</loc>
     
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/MachineLearning/2021-02-23-bert-create-pretrain-data-analysis</loc>
+    
+    <lastmod>2021-03-29</lastmod>
     
   </url>
   
@@ -858,7 +872,7 @@
 
   <url>
     <loc>https://hanielxx.com/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -866,1134 +880,1141 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Nju/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/SummerCamp/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Daily/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Lift/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/DeepLearning/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Attention/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Transformer/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/SelfAttention/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Multi-Head-Attention/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/HypnicJerk/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/TensorFlow/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/MachineLearning/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/MNIST/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Tensorflow/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/LeNet-5/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Problems/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Algorithm/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/LeetCode/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Hash-Map/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Math/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Easy/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Binary-Search/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Array/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Hard/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/String/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Medium/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Linked-List/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Large-Number/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Palindromic/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/DP/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Reverse/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BigNumber/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Split/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Palindrome/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Match/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Integer/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Pointer/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Map/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Prefix/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Recursive/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Closest/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/3Sum/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/LinkedList/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/TwoPointer/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Stack/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Pair/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Parentheses/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/List/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Merge/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/PriorityQueue/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Swap/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Vector/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/KMP/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ShiftOperation/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Permutation/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/In-Place/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Search/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BinarySearch/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BruteForce/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Backtracking/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BinaryTree/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Majority/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Xor/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Linear/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Matrix/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Arch/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Linux/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Gnome/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Synaptics/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Vim/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/YCM/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ArchLinux/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/PKGBUILD/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/AUR/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ABS/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/LNMP/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Learning/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/UCAS/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Deb/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Debtap/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Manjaro/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Mendeley/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Gnome-tweaks/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Summary/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/UEFI/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/GPT/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Install/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/%E5%87%B8%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/%E5%87%B8%E9%9B%86/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/%E5%87%B8%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/SVM/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/GBM/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/GridSearch/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/GBDT/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/K-Fold/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ML/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Python/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Clustering/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/K-Means/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/EM/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Notes/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/%E8%B6%85%E5%B9%B3%E9%9D%A2/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/%E5%87%BD%E6%95%B0%E9%97%B4%E9%9A%94/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/%E5%87%A0%E4%BD%95%E9%97%B4%E9%9A%94/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ACM-ICPC/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/C/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Queue/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Canvas/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Web/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ImageData/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Markdown/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Async/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/SpaceVim/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/TSP/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/LP/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ILP/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Review/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Tornado/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/PRML/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ParallelComputing/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/DistributedSystem/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/DataMining/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Numpy/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BigData/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/RNAi/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/siRNA/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Note/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Basic/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/DataScience/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Contest/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/DataFountain/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Kaggle/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/NowCoder/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Graph/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Dijkstra/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Reprint/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Scale/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Binary/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Tree/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Factorial/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Greedy/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Sort/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BubbleSort/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Knapsack/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Struct/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BFS/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Paper/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/AUC/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ROC/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/MapReduce/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/PaperNotes/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/GFS/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/PLA/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BERT/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Pretrain/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/JobHunting/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/Interview/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/ByteDance/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/KuaiShou/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/tags/BaiDu/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/LifeNotes/</loc>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2002,56 +2023,56 @@
   
   <url>
     <loc>https://hanielxx.com/categories/Daily/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/categories/MachineLearning/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/categories/LeetCode/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/categories/Linux/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/categories/Notes/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/categories/NowCoder/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/categories/Papers/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hanielxx.com/categories/MachineLearning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/</loc>
-    <lastmod>2021-03-28</lastmod>
+    <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
