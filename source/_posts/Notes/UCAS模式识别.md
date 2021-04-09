@@ -39,13 +39,13 @@ urlname: ucas-prml-review
 
 1. 朴素贝叶斯，算后验概率比一下
 2. Fisher 线性判别
-   1. 准则函数：$J = \frac{w^T S_b w}{w^T S_w w}$
-   2. 类间离散度矩阵：$S_b = (m_1 - m_2)(m_1 - m_2)^T$
-   3. 类内离散度矩阵：$S_w = S_{w_1} + S_{w_2} = \sum_{i=1}^{N_1} (m_i - m_1)(m_i -m_1)^T + \sum_{i=1}^{N_2}(m_i - m_2)(m_i - m_2)^T$
-   4. 最佳变换向量：$w^* = S_w^{-1}(m_1 - m_2)$
-   5. 如果两类有概率权重，计算 $m_1,\ m_2,\ S_w$的时候要加上权重。
-   6. 计算 $S_w^{-1}$的时候，是把 $[S_w I]$进行行变换，变成 $I S_w^{-1}$，其中 $I$是单位阵。
-   7. 最后投影计算：$w^* \cdot X$
+   1. 准则函数: $J = \frac{w^T S_b w}{w^T S_w w}$
+   1. 类间离散度矩阵：$S_b = (m_1 - m_2)(m_1 - m_2)^T$
+   2. 类内离散度矩阵：$S_w = S_{w_1} + S_{w_2} = \sum_{i=1}^{N_1} (m_i - m_1)(m_i -m_1)^T + \sum_{i=1}^{N_2}(m_i - m_2)(m_i - m_2)^T$
+   3. 最佳变换向量：$w^* = S_w^{-1}(m_1 - m_2)$
+   4. 如果两类有概率权重，计算 $m_1,\ m_2,\ S_w$的时候要加上权重。
+   5. 计算 $S_w^{-1}$的时候，是把 $[S_w I]$进行行变换，变成 $I S_w^{-1}$，其中 $I$是单位阵。
+   6. 最后投影计算：$w^* \cdot X$
 3. K-L 变换
    1. 判断所有样本均值是否为 0，如果有类别概率，就加上这个概率权重
    2. 计算协方差矩阵 $R=E[E_i(XX^T)]$
@@ -71,16 +71,16 @@ urlname: ucas-prml-review
    1. 正则化项越大，模型越简单，越小，模型越复杂
    2. $\lambda$越大，训练误差增大，测试误差先降后升
 9. SVM
-   1. 决策边界的问题
+   3. 决策边界的问题
        1. hard margin 最小化的只是 $\frac{1}{2}||w||^2$，会让 margin 最大化
        2. 如果是 sorft margin，松弛因子 C 越大，误差 $\epsilon$占的比例越大。越不会存在分错的点。
        3. C 趋向于 0 的时候，损失函数近似 hard margin，决策边界 margin 会很宽，而且不会在意部分样本错分类，因为就算错分了，C=0 也不会有惩罚。
        4. margin $r =\frac{1}{2}\frac{w^T(x_1 - x_2)}{||w||} = \frac{1}{||w||}$
        5. margin 越大，泛化能力越强。
        6. 当 C 很大的时候，噪声点可能会影响决策边界。因为支持向量就是决策边界上的点，如果新噪声点出现在决策边界里面，就会改变决策边界。
-   2. 注意对偶问题的损失函数是：$L_d({\alpha_i}) = - \frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j x_i^T x_i + \sum_i^N \alpha_i$。有个负号的。$s.t.\ \alpha_i \ge 0\ \forall i,\ \sum_i^N \alpha_i  y^{(i)} = 0$
-   3. 计算题，把所有样本点要带入$L$，然后算出所有的$\alpha_i$，观察两类中最近的两个点，就是支持向量，然后计算 $w^* = \sum_{i\in SV}\alpha_i y_i x_i,\ w_0=\frac{1}{|SV|}\sum_{i\in SV}(y_i - w^Tx_i),\ g(x) = w * ^Tx+w_0^*$。注意 $w_0$算的时候要除以支持向量个数。
-   4. 注意几个常见的核函数：
+   4. 注意对偶问题的损失函数是：$L_d({\alpha_i}) = - \frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j x_i^T x_i + \sum_i^N \alpha_i$。有个负号的。$s.t.\ \alpha_i \ge 0\ \forall i,\ \sum_i^N \alpha_i  y^{(i)} = 0$
+   5. 计算题，把所有样本点要带入$L$，然后算出所有的$\alpha_i$，观察两类中最近的两个点，就是支持向量，然后计算 $w\* = \sum_{i\in SV}\alpha_i y_i x_i,\ w_0=\frac{1}{|SV|}\sum_{i\in SV}(y_i - w^Tx_i),\ g(x) = w\* ^Tx+w_0^*$。注意 $w_0$算的时候要除以支持向量个数。
+   6. 注意几个常见的核函数：
        1. 核函数是有效的，和核函数矩阵是半正定的，是充要条件。
        2. $f(x) = w*\Phi(x)+b= \sum_{x_i\in SV} \alpha_i y_i x_i \Phi(x) + b = \sum_{x_i\in SV}\alpha_i y_i K(x_i, x)+b$
        3. RBF 核/高斯核：$K(x,x') = exp(-\frac{||x-x'||^2}{2s^2})$
@@ -286,7 +286,7 @@ M 类的条件平均风险
    - ![3JiZdH](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/3JiZdH.png)
 2. 每两个类就弄一个判别函数，只把这两个类分开。因此 M 类就需要$\frac{M*(M-1)}{2}$个判别函数。除了参数多的缺点，还存在不确定区域，即这个区域，对所有的$d_{ij}$都找不到一个$d_{ij}>0$的情况。
    - ![wgnrTz](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/wgnrTz.png)
-3. 是第二种方法的特例，第二种方法是直接写出了两两之间  判别的判别函数，而这里是分成每个类有一个自己的判别函数，但这个又不是情况一那样直接将按照大于 0 还是小于 0 分。这里是比较各自判别函数的大小。如果某个类的判别函数值比所有其他类都大，那就分到这个类。
+3. 是第二种方法的特例，第二种方法是直接写出了两两之间判别的判别函数，而这里是分成每个类有一个自己的判别函数，但这个又不是情况一那样直接按照大于0还是小于0分。这里是比较各自判别函数的大小。如果某个类的判别函数值比所有其他类都大，那就分到这个类。
    - ![2vs266](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/2vs266.png)
 4. 划分方法 1 和方法 2 的比较
    - 对于 M 类模式的分类，多类情况 1 需要 M 个判别函数，而多类情况 2 需要 M\*(M-1)/2 个判别函数，当 M 较大时，后者需要更多的判别式（这是多类情况 2 的一个缺点）。
@@ -629,10 +629,6 @@ MLE 是假设参数是确定的值
 
 ![LfzThU](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/LfzThU.png)
 
-## 逻辑回归
-
-## 对数似然函数
-
 ## 损失函数
 
 ## 聚类
@@ -641,8 +637,24 @@ MLE 是假设参数是确定的值
 
 ## 概率图
 
-## HMM 隐马尔科夫
+### HMM 隐马尔科夫
+
+### 贝叶斯球
+
+![AIphZb](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/AIphZb.png)
 
 ## Boost 和 Bagging
 
 ### AdaBoost
+
+参考[Wikipedia](https://en.wikipedia.org/wiki/AdaBoost)
+
+流程如下：
+1. 数据集为:${x_i, y_i}_{i=1, 2,...m}, y_i \in {1, -1}$
+2. 初始化样本权重：$D_i = \frac{1}{m} (\forall i)$
+3. $for\ t=1···T:$
+   - 训练一个弱学习器 $h_t:\ X->{1,\ -1}$
+   - $error\ =\ \sum_{i=1}^m D_t(i) I[h_t(x_i) \ne y_i]$
+   - $h_t$权重：$\alpha_t = \frac{1}{2} ln(\frac{1-\sigma_t}{\sigma_t}$
+   - 对所有样本更新权重：$D_{t+1}(i) = \frac{D_t(i)}{Z_t} \exp^{-\alpha_t y_i h_t(x_i)}$，其中$Z_t$是正则化因子
+4. $H_{final}(x)=sign(\sum_t^T \alpha_t h_t(x))$

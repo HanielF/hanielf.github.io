@@ -182,7 +182,8 @@ index2_generator:
   order_by: -date
   exclude:
     - tag LeetCode # 不包含标签为LeetCode的文章
-    - tag NowCoder # 不包含标签为LeetCode的文章
+    - tag NowCoder # 不包含标签为牛客网的文章
+    - tag Private # 不包含私密的文章
 
 #####################################
 ###==========Theme config==========###
@@ -308,10 +309,10 @@ theme_config:
   # External url should start with http:// or https://
   menu:
     home: / || fa fa-home
-    # about: /about/ || fa fa-user
     tags: /tags/ || fa fa-tags
     categories: /categories/ || fa fa-th
     archives: /archives/ || fa fa-archive
+    about: /about/ || fa fa-user
     algorithm: /tags/Algorithm/ || fa fa-code
     #schedule: /schedule/ || fa fa-calendar
     #sitemap: /sitemap.xml || fa fa-sitemap
@@ -757,10 +758,10 @@ theme_config:
   # Multiple Comment System Support
   comments:
     # Available values: tabs | buttons
-    style: tabs
+    style: buttons
     # Choose a comment system to be displayed by default.
     # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
-    active:
+    active: disqus
     # Setting `true` means remembering the comment system selected by the visitor.
     storage: true
     # Lazyload all comment systems.
@@ -775,8 +776,8 @@ theme_config:
 
   # Disqus
   disqus:
-    enable: false
-    shortname:
+    enable: true
+    shortname: hanielxx
     count: true
     #post_meta_order: 0
 
@@ -790,9 +791,15 @@ theme_config:
     # Leave api empty if you are able to connect to Disqus API. Otherwise you need a reverse proxy for it.
     # For example:
     # api: https://disqus.skk.moe/disqus/
-    api:
-    apikey: # Register new application from https://disqus.com/api/applications/
-    shortname: # See: https://disqus.com/admin/settings/general/
+    api: https://disqus.skk.moe/disqus/
+    apikey: 4DMvlRhVTS2QrGNiqVEqoYaThf44ttdIExyRNtHdusimW4M5Xu7XuD94aUW5agNr # Register new application from https://disqus.com/api/applications/
+    shortname: hanielxx # See: https://disqus.com/admin/settings/general/
+    siteName: https://hanielxx.com/
+    identifier: document.location.origin + document.location.pathname + document.location.search
+    nesting: 10
+    admin: hanielfarnsworth
+    adminLabel: 作者
+
 
   # Changyan
   changyan:
