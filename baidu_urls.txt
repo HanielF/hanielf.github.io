@@ -1,7 +1,8 @@
 https://hanielxx.com/Daily/2021-03-30-lift-notes
 https://hanielxx.com/Notes/2021-03-22-jobhunting-interview-notes
 https://hanielxx.com/MachineLearning/2021-02-23-bert-create-pretrain-data-analysis
-https://hanielxx.com/MachineLearning/2021-02-23-bert-create-pretrain-data-analysis
+https://hanielxx.com/MachineLearning/2021-02-23-bert-finetune-analysis
+https://hanielxx.com/MachineLearning/2021-02-23-classy-vision-and-multimodal-video-classification
 https://hanielxx.com/MachineLearning/2021-01-12-gbm-gridsearch
 https://hanielxx.com/Notes/2020-12-29-ucas-parallel-and-distributed-computing
 https://hanielxx.com/Notes/2020-12-24-ucas-algorithm

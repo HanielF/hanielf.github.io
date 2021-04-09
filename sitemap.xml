@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hanielxx.com/MachineLearning/2021-02-23-bert-finetune-analysis</loc>
+    
+    <lastmod>2021-04-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/MachineLearning/2021-02-23-classy-vision-and-multimodal-video-classification</loc>
+    
+    <lastmod>2021-04-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/Daily/2021-03-30-lift-notes</loc>
     
     <lastmod>2021-04-09</lastmod>
@@ -19,13 +33,6 @@
     <loc>https://hanielxx.com/Notes/2021-03-22-jobhunting-interview-notes</loc>
     
     <lastmod>2021-04-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/MachineLearning/2021-02-23-bert-create-pretrain-data-analysis</loc>
-    
-    <lastmod>2021-03-29</lastmod>
     
   </url>
   
@@ -2021,6 +2028,41 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Private/</loc>
+    <lastmod>2021-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/ClassyVision/</loc>
+    <lastmod>2021-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/MultiModal/</loc>
+    <lastmod>2021-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/VideoClassification/</loc>
+    <lastmod>2021-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Pytorch/</loc>
+    <lastmod>2021-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/DistributedTraining/</loc>
     <lastmod>2021-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
