@@ -265,11 +265,11 @@ run_training_loop()
 
 #### 训练模型
 
-AllenNLP使用`Trainer`来训练模型。Trainer会负责关联你的model、optimizer、instances、dataloder，执行training loop等
+AllenNLP使用`Trainer`来训练模型。Trainer会负责关联你的model、optimizer、instances、dataloder，执行training loop等。所有的function几乎都是`build_`格式。
 
 ##### 依赖setup
 
-- 中间实现和上面的一样
+- 中间实现和上面的一样，所以省略了一些代码
 
 ```python
 import tempfile
@@ -319,6 +319,7 @@ class SimpleClassifier(Model):
     ) -> Dict[str, torch.Tensor]:
 
 def build_dataset_reader() -> DatasetReader:
+    # ....
     return ClassificationTsvReader()
 
 def read_data(reader: DatasetReader) -> Tuple[List[Instance], List[Instance]]:
@@ -329,10 +330,12 @@ def read_data(reader: DatasetReader) -> Tuple[List[Instance], List[Instance]]:
 
 
 def build_vocab(instances: Iterable[Instance]) -> Vocabulary:
+    # ...
     return Vocabulary.from_instances(instances)
 
 
 def build_model(vocab: Vocabulary) -> Model:
+    # ...
     return SimpleClassifier(vocab, embedder, encoder)
 ```
 
@@ -393,4 +396,373 @@ def build_trainer(
     return trainer
 
 run_training_loop()
+```
+
+### 用allennlp内置的训练框架
+
+上面的所有的`build_*`方法，allennlp都有对应实现，可以直接使用，然后自定义自己的`DatasetReader`和`Model`类。
+
+这个方法通过`json`配置文件来指定所有的参数，然后框架会创建对应的对象，然后进行training loop。
+
+AllenNLP依赖模型构造器中的类型注释，来正确地构造这些对象。
+
+举例：
+
+```python
+def build_model(vocab: Vocabulary) -> Model:
+    print("Building the model")
+    vocab_size = vocab.get_vocab_size("tokens")
+    embedder = BasicTextFieldEmbedder(
+        {"tokens": Embedding(embedding_dim=10, num_embeddings=vocab_size)})
+    encoder = BagOfEmbeddingsEncoder(embedding_dim=10)
+    return SimpleClassifier(vocab, embedder, encoder)
+```
+
+对应的`JSON`字典应该像下面这个：
+
+```json
+"model": {
+    "type": "simple_classifier",
+    "embedder": {
+        "token_embedders": {
+            "tokens": {
+                "type": "embedding",
+                "embedding_dim": 10
+            }
+        }
+    },
+    "encoder": {
+        "type": "bag_of_embeddings",
+        "embedding_dim": 10
+    }
+}
+```
+
+> There are two special things to note: first, to select a particular subclass of a base type (e.g., SimpleClassifier as a subclass of Model,
+> or BagOfEmbeddingsEncoder as a subclass of Seq2VecEncoder) we need an additional "type": "simple_classifier" key.
+> The string "simple_classifier" comes from the call to Model.register that we saw in the previous chapter.
+
+这里的vocab没有配置在json中，因为它通过data构造出来后，直接pass进model。
+
+通常，显示为 `build_ *` 方法的参数的对象之间的顺序依赖关系被排除在配置文件之外，因为它们以不同的方式处理。
+
+上面的方式同样应用于dataset reader, dataloader, trainer等所有对象。
+
+实际上，allennlp用的是`Jsonnet`，是`json`的superset，支持更优雅的特征比如变量和imports，但是能像JSON文件一样使用。
+
+上面的classifier的配置可以像下面这样：
+
+```json
+{
+    "dataset_reader" : {
+        "type": "classification-tsv",
+        "token_indexers": {
+            "tokens": {
+                "type": "single_id"
+            }
+        }
+    },
+    "train_data_path": "quick_start/data/movie_review/train.tsv",
+    "validation_data_path": "quick_start/data/movie_review/dev.tsv",
+    "model": {
+        "type": "simple_classifier",
+        "embedder": {
+            "token_embedders": {
+                "tokens": {
+                    "type": "embedding",
+                    "embedding_dim": 10
+                }
+            }
+        },
+        "encoder": {
+            "type": "bag_of_embeddings",
+            "embedding_dim": 10
+        }
+    },
+    "data_loader": {
+        "batch_size": 8,
+        "shuffle": true
+    },
+    "trainer": {
+        "optimizer": "adam",
+        "num_epochs": 5
+    }
+}
+
+```
+
+配置文件中可以看到所有在build_ *方法参数对应的条目（词汇表除外，我们将其省略，因为我们仅使用默认参数）。 通过按名称将JSON对象中的键与构造函数参数进行匹配来读取配置文件。如果keys不匹配，会有`ConfigurationError`。
+
+这种训练方式使用`allennlp train [config.json] -s [serialization_dir]`。
+
+allennlp通过`.register()`方法来导入类，和其他框架差不多，都是用装饰器。
+
+### evaluate过程
+
+allennlp用`Metric`来追踪一些训练过程中的指标。
+
+下面以accuracy指标为例。
+
+只需要在模型的初始化中加入：`self.accuracy = CategoricalAccuracy()`，然后在forward path中更新metric，`self.accuracy(logits, label)`。
+
+AllenNLP中每个metric都会维护`counts`的计数，来计算这个metric。对于上面的acc，维护的counts就是预测对的数量。每次调用acc实例的时候都会更新这个变量。通过`get_metrics()`方法可以得到。这个方法需要自己在模型中实现。
+
+```python
+class SimpleClassifier(Model):
+    # ....
+
+    def get_metrics(self, reset: bool = False) -> Dict[str, float]:
+        return {"accuracy": self.accuracy.get_metric(reset)}
+```
+
+命令行就直接`allennlp evaluate`就可以，它读入`allennlp train`命令生成的模型文件路径，以及包含test instances的文件路径，最后返回计算好的metric。
+
+### prediction过程
+
+train、evaluate过程中的样本都是有标签的，而perdition没有。因此如果想共用代码，只需要对label这个参数设置为optional。训练阶段会包含`LabelFields`，预测阶段没有。
+
+```python
+@DatasetReader.register('classification-tsv')
+class ClassificationTsvReader(DatasetReader):
+    def __init__(self,
+                 lazy: bool = False,
+                 tokenizer: Tokenizer = None,
+                 token_indexers: Dict[str, TokenIndexer] = None):
+        super().__init__(lazy)
+        self.tokenizer = tokenizer or WhitespaceTokenizer()
+        self.token_indexers = token_indexers or {'tokens': SingleIdTokenIndexer()}
+
+    def text_to_instance(self, text: str, label: str = None) -> Instance:
+        tokens = self.tokenizer.tokenize(text)
+        text_field = TextField(tokens, self.token_indexers)
+        fields = {'text': text_field}
+        if label:
+            fields['label'] = LabelField(label)
+        return Instance(fields)
+
+    def _read(self, file_path: str) -> Iterable[Instance]:
+        with open(file_path, 'r') as lines:
+            for line in lines:
+                text, sentiment = line.strip().split('\t')
+                yield self.text_to_instance(text, sentiment)
+```
+
+同样，在model的`forward`方法中，也需要进行调整，因为没有label就没法算loss，也不需要算，只要返回结果。需要在参数中设置默认值`None`，然后在计算metrics和loss的外面加一个`if`。
+
+```python
+class SimpleClassifier(Model):
+    def forward(self,
+                text: Dict[str, torch.Tensor],
+                label: torch.Tensor = None) -> Dict[str, torch.Tensor]:
+        # Shape: (batch_size, num_tokens, embedding_dim)
+        embedded_text = self.embedder(text)
+        # Shape: (batch_size, num_tokens)
+        mask = util.get_text_field_mask(text)
+        # Shape: (batch_size, encoding_dim)
+        encoded_text = self.encoder(embedded_text, mask)
+        # Shape: (batch_size, num_labels)
+        logits = self.classifier(encoded_text)
+        # Shape: (batch_size, num_labels)
+        probs = torch.nn.functional.softmax(logits)
+        output = {'probs': probs}
+        if label is not None:
+            self.accuracy(logits, label)
+            # Shape: (1,)
+            output['loss'] = torch.nn.functional.cross_entropy(logits, label)
+        return output
+```
+
+AllenNLPshiyong `predictors`来进行预测，它是一个在训练模型外面的包装类。主要工作是接受`json`格式的instances输入，转换为`instance`对象，传进模型，返回`json`格式的结果。
+
+`Predictor`需要继承基类`Predictor`并且实现`predict()`和`_json_to_instances()`方法。其他的由基类负责。
+
+```python
+@Predictor.register("sentence_classifier")
+class SentenceClassifierPredictor(Predictor):
+    def predict(self, sentence: str) -> JsonDict:
+        # This method is implemented in the base class.
+        return self.predict_json({"sentence": sentence})
+
+    def _json_to_instance(self, json_dict: JsonDict) -> Instance:
+        sentence = json_dict["sentence"]
+        return self._dataset_reader.text_to_instance(sentence)
+```
+
+日常的一些任务都已经有内置的`Predictor`了，所以先检查一下有没有再自己写。
+
+如果要自己写
+
+```python
+class SentenceClassifierPredictor(Predictor):
+    def predict(self, sentence: str) -> JsonDict:
+        return self.predict_json({"sentence": sentence})
+
+    def _json_to_instance(self, json_dict: JsonDict) -> Instance:
+        sentence = json_dict["sentence"]
+        return self._dataset_reader.text_to_instance(sentence)
+
+
+# We've copied the training loop from an earlier example, with updated model
+# code, above in the Setup section. We run the training loop to get a trained
+# model.
+model, dataset_reader = run_training_loop()
+vocab = model.vocab
+predictor = SentenceClassifierPredictor(model, dataset_reader)
+
+output = predictor.predict("A good movie!")
+print(
+    [
+        (vocab.get_token_from_index(label_id, "labels"), prob)
+        for label_id, prob in enumerate(output["probs"])
+    ]
+)
+output = predictor.predict("This was a monstrous waste of time.")
+print(
+    [
+        (vocab.get_token_from_index(label_id, "labels"), prob)
+        for label_id, prob in enumerate(output["probs"])
+    ]
+)
+```
+
+会得到类似下面的输出：
+> [('neg', 0.48853254318237305), ('pos', 0.511467456817627)]  
+> [('neg', 0.5346643924713135), ('pos', 0.4653356373310089)]
+
+命令行和evaluate很像，接受模型的路径，和包含预测样本instances的json文件路径。
+
+在[对应的repo](https://github.com/allenai/allennlp-guide)中，切换到敖`quick_start`目录可以直接执行下面的命令。
+
+```bash
+$ allennlp train \
+    my_text_classifier.jsonnet \
+    --serialization-dir model \
+    --include-package my_text_classifier
+
+$ allennlp evaluate \
+    model/model.tar.gz \
+    data/movie_review/test.tsv \
+    --include-package my_text_classifier
+
+$ allennlp predict \
+    model/model.tar.gz \
+    data/movie_review/test.jsonl \
+    --include-package my_text_classifier \
+    --predictor sentence_classifier
+```
+
+## 进阶
+
+### 预训练情景
+
+AllenNLP把很多模块抽象化，你只需要实现内部的细节，整个流程如何连接则不需要自己管。比如`TextFieldEmbedder`和`Seq2Vector`，只要接口和他们相同，就可以使用它。
+
+`SeqVevEncoder`可以是任何，只要是输入为一个序列向量`(batch_size, num_tokens, embedding_dim)`，输出为`(batch_size, encoding_dim)`，都可以使用它。比如bag of embedding, CNN, RNN, Transformer等。
+
+使用bert的一个demo
+
+```python
+local bert_model = "bert-base-uncased";
+
+{
+    "dataset_reader" : {
+        "type": "classification-tsv",
+        "tokenizer": {
+            "type": "pretrained_transformer",
+            "model_name": bert_model,
+        },
+        "token_indexers": {
+            "bert": {
+                "type": "pretrained_transformer",
+                "model_name": bert_model,
+            }
+        },
+        "max_tokens": 512
+    },
+    "train_data_path": "quick_start/data/movie_review/train.tsv",
+    "validation_data_path": "quick_start/data/movie_review/dev.tsv",
+    "model": {
+        "type": "simple_classifier",
+        "embedder": {
+            "token_embedders": {
+                "bert": {
+                    "type": "pretrained_transformer",
+                    "model_name": bert_model
+                }
+            }
+        },
+        "encoder": {
+            "type": "bert_pooler",
+            "pretrained_model": bert_model
+        }
+    },
+    "data_loader": {
+        "batch_size": 8,
+        "shuffle": true
+    },
+    "trainer": {
+        "optimizer": {
+            "type": "huggingface_adamw",
+            "lr": 1.0e-5
+        },
+        "num_epochs": 5
+    }
+}
+```
+
+下面直接复制了一段
+
+> Use a PretrainedTransformerTokenizer ("pretrained_transformer"), which tokenizes the string into wordpieces and adds special tokens like [CLS] and [SEP]
+>
+> Use a PretrainedTransformerIndexer ("pretrained_transformer"), which converts those wordpieces into ids using BERT's vocabulary
+>
+> Replace the embedder layer with a PretrainedTransformerEmbedder ("pretrained_transformer"), which uses a pretrained BERT model to embed the tokens, returning the top layer from BERT
+>
+> Replace the encoder with a BertPooler ("bert_pooler"), which adds another (pretrained) linear layer on top of the [CLS] token and returns the result
+
+```bash
+$ allennlp train \
+    my_text_classifier.jsonnet \
+    --serialization-dir model-bert \
+    --include-package my_text_classifier
+```
+
+修改不同的transformer架构如BERT，RoBERTa，XLNet，都只需要改`model_name`就可以。上面的修改也只是改了配置文件，没有改模型代码。
+
+### 部署网页展示demo
+
+还可以直接部署一个网页展示，
+
+```bash
+pip install allennlp-server
+python allennlp-server/server_simple.py \
+    --archive-path model/model.tar.gz \
+    --predictor sentence_classifier \
+    --field-name sentence
+    --include-package my_text_classifier
+```
+
+具体的需要再查。
+
+### GPU相关
+
+用allennlp不需要自己去让模型兼容gpu，或者手动把参数，模型移到gpu上。直接添加`cuda_device`选项，指定GPU的device id。
+
+```json
+    "trainer": {
+        ...
+        "cuda_device": 0
+        ...
+    }
+```
+
+或者用分布式多gpu，使用pytorch的`DistributedDataParallel`包。eval和predict的时候可以直接在命令行指定cuda device。
+
+```json
+    "trainer": {
+        ...
+    },
+    "distributed": {
+        "cuda_devices": [0, 1, 2, 3]
+    }
 ```
