@@ -2,22 +2,33 @@
 title: ClassyVision框架和多模态视频分类流程
 comments: true
 mathjax: false
-date: 2021-04-09 16:11:01
-tags: [ClassyVision, MultiModal, VideoClassification, DeepLearning, Pytorch, DistributedTraining, Private]
+date: 2021-02-23 16:11:01
+tags:
+  [
+    ClassyVision,
+    MultiModal,
+    VideoClassification,
+    DeepLearning,
+    Pytorch,
+    DistributedTraining,
+    Private,
+  ]
 categories: MachineLearning
 urlname: classy-vision-and-multimodal-video-classification
 ---
+
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-记录对ClassyVision框架的理解，以及数据处理pipeline。中间有用到pytorch的分布式训练。
+记录对 ClassyVision 框架的理解，以及数据处理 pipeline。中间有用到 pytorch 的分布式训练。
 {% endnote %}
+
 <!--more-->
 
 ## 拉数据和处理
 
-1. 先处理数据得到`videos.txt`
-2. 然后得到pid-label的类似`saishi_train_data_v3.txt`的文件。
+1. 先处理数据得到`videos.txt`，每行一个 pid
+2. 然后得到 pid-label 的类似`saishi_train_data_v3.txt`的文件。
 3. 然后得到`视频ID,概率值,标签,描述`的数据回查文件。
 4. 然后拉取数据，就是`run.sh`
 5. 然后生成
@@ -30,16 +41,16 @@ urlname: classy-vision-and-multimodal-video-classification
 - `df -h`找到 mmu 项目路径`/mnt/mmu_ssd/share/yangfan/yuanwei/xingshisenlin_saishi`
 - 查看`run.sh`
 
-### run.sh脚本说明
+### run.sh 脚本说明
 
 - `run.sh`脚本文件
-- 命令：webserver下`bash run.sh`
+- 命令：webserver 下`bash run.sh`
 - 功能：拉取视频相关计数、特征、文本、视频封面和指定帧、用户特征
 - 生成：`users.txt，author_2tower_embedding_by_photo_id，text.txt，cover目录，users_list.txt，users_list_out.txt`
-- users_list需要自己手动通过`users.txt`生成
+- users_list 需要自己手动通过`users.txt`生成
 
 - 准备说明：
-  - videos.txt: 每行一个pid
+  - videos.txt: 每行一个 pid
 
 ```bash
 nohup sh /data/project/export_photo_info_count.sh -f `pwd`/videos.txt -o `pwd`/users.txt &
@@ -48,7 +59,7 @@ nohup java -Dfile.encoding=UTF-8 -cp /data/project/chenxiaohui/kuaishou-mmu-data
 nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 &
 ```
 
-### run.sh导出视频相关计数
+### run.sh 导出视频相关计数
 
 - bash 脚本：`export_photo_info_count.sh`
 - 功能：导出视频相关计数
@@ -62,17 +73,13 @@ nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 
   - -f 输入文件，其中每一行是一个 photo id
   - -o 指定的输出文件，结果：photoId \t viewCount \t likeCount \t unlikeCount \t commentCount \t forwardCount \t authorId
 
-### get_user_list
-
-准备好 author id，和`cut -f7 -d $'\t' users.txt | sort | uniq > users_list.txt`效果一样
-
-### run.sh导出特征
+### run.sh 导出用户特征向量
 
 - bash 脚本：`export_features.sh`
-- 功能：导出特征
+- 功能：导出特征，-d9 是导出用户特征向量
 - 输入：videos.txt
 - 输出：author_2tower_embedding_by_photo_id
-- 格式：pid \t 64维的embedding向量，向量也可能为空
+- 格式：pid \t 64 维的 embedding 向量，向量也可能为空
 - wiki：<https://docs.corp.kuaishou.com/k/home/VBbdL4rQHmz4/fcABg6qainvICo6XTlhYqNAQN>
 - 使用：`` nohup sh /data/project/export_features.sh -i `pwd`/videos.txt -o `pwd` -t 10 -d "9" & ``
 - 参数
@@ -81,17 +88,17 @@ nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 
   - -t 线程个数
   - -d 想要的算法结果，以逗号分隔开，比如 -d "1,2"
 - 上述的`-d 9`表示输出`author_2tower_embedding_by_photo_id`，是推荐那边的双塔模型输出的作者信息编码，作用可以理解成这个作者偏向于发什么类型的视频。
-- 这个后续会使用`generate_rec_for_raw_user_embeding_from_hive_file()`方法处理得到rec
+- 这个后续会使用`generate_rec_for_raw_user_embeding_from_hive_file()`方法处理得到 rec
 - 关于`-d`更多的信息看 wiki
 
-### run.sh导出文本
+### run.sh 导出文本
 
 - 功能：导出视频相关文本，包括视频第一帧的 caption、标题 title、内容 text、OCR 结果、作者添加的视频字幕
 - wiki: <https://docs.corp.kuaishou.com/k/home/VaBp46x_CVEw/fcABSVDkEsfNzNYd5emmlRsye>
 - 输入：videos.txt
 - 输出：text.txt
 - 格式：pid + caption + "\t" + title + "\t" + text + "\t" + ocr + "\t" + speech
-- 命令：``nohup java -Dfile.encoding=UTF-8 -cp /data/project/chenxiaohui/kuaishou-mmu-data/*:kuaishou-mmu-data-1.0-SNAPSHOT.jar com.kuaishou.runner.BaseRunner -r  ExportTextSer    vice -i `pwd`/videos.txt -o `pwd`/text.txt -t 10 &``
+- 命令：`` nohup java -Dfile.encoding=UTF-8 -cp /data/project/chenxiaohui/kuaishou-mmu-data/*:kuaishou-mmu-data-1.0-SNAPSHOT.jar com.kuaishou.runner.BaseRunner -r ExportTextSer vice -i `pwd`/videos.txt -o `pwd`/text.txt -t 10 & ``
 - 输出：`caption + "\t" + title + "\t" + text + "\t" + ocr + "\t" + speech`
 - 参数：
   - -t 线程个数
@@ -102,20 +109,24 @@ nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 
   - 输入方式二、输入指定 id
     - -i 指定将要传入的 photo id 数据文件，每一行一个 photo id，需要传入绝对路径
 
-### run.sh导出视频封面和指定帧
+### run.sh 导出视频封面和指定帧
 
 - wiki: <https://docs.corp.kuaishou.com/k/home/VPLKPDK8Fv-k/fcACJiIC2EN2KOKRYwvDciV0g>
 - 命令：`` nohup sh /data/project/export_frames.sh `pwd`/videos.txt `pwd`/cover 1 100 30 & ``
 - 输入：videos.txt
-- 输出：cover目录下的视频封面和指定帧
+- 输出：cover 目录下的视频封面和指定帧
 - 参数：
   - 第一个参数，photo id 列表文件，每一行一个 photo id，需要传入绝对路径
   - 第二个参数，图片存储到的目录，绝对路径
   - 第三个参数，运行类型。如果导出指定帧(type=2)，photo id 列表文件输入应该是 photo_id\t1,2,3 类型，帧 id 用逗号隔开，photo_id 和帧 id 用\t 隔开. 注意：\t 是不可见的符号，也可以用单个空格进行分割
   - 第四个参数，线程数，最大 200
-  - 第五个参数，文件夹数量，一般为 10 (数据是按照”photo_id%文件夹数量“的方式下载存放的，请注意)，每个目录最多存放10w个
+  - 第五个参数，文件夹数量，一般为 10 (数据是按照”photo_id%文件夹数量“的方式下载存放的，请注意)，每个目录最多存放 10w 个
 
-### run.sh导出用户特征
+### get_user_list
+
+准备好 author id，和`cut -f7 -d $'\t' users.txt | sort | uniq > users_list.txt`效果一样
+
+### run.sh 导出用户特征
 
 - wiki: <https://docs.corp.kuaishou.com/k/home/VdeW2QONo4Qw/fcAB7R1aarXIFGzBDBwTvkI0D>
 - 命令：`` sh /data/project/user_info_export.sh -i `pwd`/users_list.txt ``
@@ -238,7 +249,7 @@ def encode(record, index, label, data):
     record.write_idx(index, s)
 ```
 
-## 跑模型
+## 模型训练
 
 ### bash 运行脚本
 
@@ -301,13 +312,14 @@ wait
    1. 其中训练文件为`/share/yangfan/yuanwei/xingshisenlin_saishi/train_data_v3/`
    2. 其中 train 数据样例为`/share/yangfan/yuanwei/xingshisenlin_saishi/cover/11/38989219271.jpg 38989219271 38989219271 38989219271 0`
    3. dataset 类文件为`multimodal_dataset_raw_user.py`
-   4. 还会在其中创建 bert-tokenizer 和 transform
-   5. 还会生成 noise words 和 drop words 和 target map
-   6. 会将 dataset 中的`target`通过`"target_file": "/share/yuanwei/xingshisenlin/saishi/data/saishi_class.target`转换成 one-hot 编码的类别
-   7. 会给`user_feature`添加 noise
-   8. 会给`text_feature`按照 drop file 中的词进行 drop，就是将 drop file 中的词都删掉，然后在`randint(0,min(len(s),self.token_max_length-10))`位置随机加入一个 noise file 中的词。后面还会做 padding
-   9. `user_profile_feature`和`text_feature`操作相同，但是不会 drop word 和 noise
-   10. 最后会将`sample[0:-1]`进行 transform，然后加上`index`返回
+   4. dataset同时会读取`rec`文件和`idx`文件
+   5. 还会在其中创建 bert-tokenizer 和 transform
+   6. 还会生成 noise words 和 drop words 和 target map
+   7. 会将 dataset 中的`target`通过`"target_file": "/share/yuanwei/xingshisenlin/saishi/data/saishi_class.target`转换成 one-hot 编码的类别
+   8. 会给`user_feature`添加 noise
+   9. 会给`text_feature`按照 drop file 中的词进行 drop，就是将 drop file 中的词都删掉，然后在`randint(0,min(len(s),self.token_max_length-10))`位置随机加入一个 noise file 中的词。后面还会做 padding
+   10. `user_profile_feature`和`text_feature`操作相同，但是不会 drop word 和 noise
+   11. 最后会将`sample[0:-1]`进行 transform，然后加上`index`返回
 9. meters 文件为`accuracy_meter_allownegative_dict_3.py`，只看了基本的函数，其他还没具体看，后面遇到了再回来看
 10. optimizer: SGD
 11. models 文件为`classy_multimodal_yw_3.py`，其中
@@ -321,6 +333,59 @@ wait
     6. fuse_model: multi_head_attention_new
     7. heads: FullyConnectedHeadFeaDict
 
+
+## 模型测试和评估
+
+测试的过程大体如下：
+1. 取一批新数据，没有标注，作为测试集（非验证集）
+2. 获取这些样本的data、特征等，和训练的特征一样
+3. 有两种方式喂给模型
+   1. 和训练方式相同：gputest，流程是：
+      1. 修改gputest-config，将drop和noise比例置0
+      2. 和模型训练相同，只是epoch为1
+      3. 在模型训练的代码中有一段代码会保存结果在一个临时目录
+        > classification_task:812
+        > self.write_test[local_rank]=open('/share/yuanwei05/model_test_tmp/%s.txt'%(local_rank),'w')
+   2. 使用`run_.sh->predict_.sh->test_.sh`，加载checkpoint，然后一条一条读入，进行预测，得到结果。
+4. 如果是gputest方式，手动将临时结果目录下的文件，copy到自己的目录下
+5. 使用`/share/yuanwei05/wudao/eval/get_shuf_202104_strategy.py`随机采样test结果，然后进行数据回查
+6. 在数据回查的过程中，设置一个阈值，高于这个阈值的就为真
+7. 通过阈值，每个类采样一两百给人工评，可以算出precision，近似整个测试集的precision
+8. 对于训练的模型，每个phase都会保存model，checkpoint会保存最后一个phase的model，如果模型没有过拟合，那么最后一个phase即checkpoint的结果和之前最好的model，效果差不会很大，一个点左右无所谓。
+
+最后的生成文件如下：
+
+```bash
+> ll -t /share/yangfan/yuanwei/wudao_eval_2021_0401-0403
+total 34G
+-rw-r--r-- 1 1001 1001  19K Apr  7 12:16 data_format_gputest.py
+-rw-r--r-- 1 root root  16M Apr  7 12:14 train.idx
+-rw-r--r-- 1 root root 6.6G Apr  7 12:14 train.rec
+-rw-r--r-- 1 root root  91M Apr  7 12:14 train.txt
+-rw-r--r-- 1 root root  51M Apr  7 12:07 train_data.txt
+-rw-r--r-- 1 root root  51M Apr  7 12:04 train_org.txt
+-rw-r--r-- 1 root root 1.7G Apr  7 12:03 audio_128.txt
+-rw-r--r-- 1 root root  780 Apr  7 11:55 needRunVideoEmbedding.txt
+-rw-r--r-- 1 root root 4.1G Apr  7 11:55 video_embedding.txt
+-rw-r--r-- 1 root root  866 Apr  7 11:51 get_videoembedding.py
+-rw-rw-r-- 1 1001 1001  59M Apr  7 11:09 users_profile.txt
+-rw-rw-r-- 1 1001 1001  21G Apr  7 11:08 audio
+-rw-rw-r-- 1 1001 1001 395M Apr  7 11:08 author_2tower_embedding_by_photo_id
+-rw------- 1 1001 1001 416K Apr  7 11:08 nohup.out
+-rw-rw-r-- 1 1001 1001  33M Apr  7 11:08 users_list_out.txt
+-rw-rw-r-- 1 1001 1001 411M Apr  7 11:06 text.txt
+drwxrwxr-x 1 1001 1001   30 Apr  7 11:04 cover/
+-rw-rw-r-- 1 1001 1001 4.2M Apr  7 11:01 users_list.txt
+-rw-r--r-- 1 1001 1001  701 Apr  7 11:01 run.sh
+-rw-rw-r-- 1 1001 1001  24M Apr  7 10:55 users.txt
+-rw-r--r-- 1 root root 8.0M Apr  7 10:51 videos.txt
+-rw-r--r-- 1 root root 1.2K Apr  7 10:30 mk_train_org.py
+-rw-r--r-- 1 1001 1001 5.0K Apr  7 10:28 main.py
+-rw-r--r-- 1 1001 1001  863 Apr  7 10:28 find_noframe0.py
+-rw-r--r-- 1 1001 1001  748 Apr  7 10:28 convert_to_128.py
+-rwxr-xr-x 1 1001 1001  350 Apr  7 10:28 get_user_by_photo.sh*
+```
+
 ## 推荐类别项目
 
 ### 关键词收集
@@ -331,3 +396,16 @@ wait
 - 适合
 - 好物
 - 推广
+
+### 数据量
+
+| 类别 | 已标注 | 未标注 | 共计  |
+| ---- | ------ | ------ | ----- |
+| 穿搭 | 9993   | 5007   | 15000 |
+| 旅游 | 2845   | 8622   | 11467 |
+| 美食 | 8498   | 6520   | 15018 |
+| 美妆 | 9027   | 5973   | 15000 |
+| 汽车 | 3522   | 11478  | 15000 |
+| 亲子 | 2898   | 10514  | 13412 |
+| 游戏 | 3334   | 11666  | 15000 |
+
