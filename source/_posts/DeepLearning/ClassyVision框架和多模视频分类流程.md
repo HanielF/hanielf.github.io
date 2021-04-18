@@ -2,7 +2,7 @@
 title: ClassyVision框架和多模态视频分类流程
 comments: true
 mathjax: false
-date: 2021-02-23 16:11:01
+date: 2021-04-09 16:11:01
 tags: [ClassyVision, MultiModal, VideoClassification, DeepLearning, Pytorch, DistributedTraining, Private]
 categories: MachineLearning
 urlname: classy-vision-and-multimodal-video-classification
