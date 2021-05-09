@@ -97,7 +97,7 @@ nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 
 - 输入：videos.txt
 - 输出：text.txt
 - 格式：pid + caption + "\t" + title + "\t" + text + "\t" + ocr + "\t" + speech
-- 命令：`` nohup java -Dfile.encoding=UTF-8 -cp /data/project/chenxiaohui/kuaishou-mmu-data/*:kuaishou-mmu-data-1.0-SNAPSHOT.jar com.kuaishou.runner.BaseRunner -r ExportTextSer vice -i `pwd`/videos.txt -o `pwd`/text.txt -t 10 & ``
+- 命令：`` nohup java -Dfile.encoding=UTF-8 -cp /data/project/chenxiaohui/kuaishou-mmu-data/*:kuaishou-mmu-data-1.0-SNAPSHOT.jar com.kuaishou.runner.BaseRunner -r ExportTextService -i `pwd`/videos.txt -o `pwd`/text.txt -t 10 & ``
 - 输出：`caption + "\t" + title + "\t" + text + "\t" + ocr + "\t" + speech`
 - 参数：
   - -t 线程个数
@@ -131,6 +131,7 @@ nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 
 - 命令：`` sh /data/project/user_info_export.sh -i `pwd`/users_list.txt ``
 - 输入：`users_list.txt`
 - 输出：`users_list_out.txt`
+- 格式：userId  用户名 用户简介
 - 参数：
   - -i 输入文件，其中每一行是一个 author id
 - 需要先准备好 author id：`cut -f7 -d $'\t' users.txt | sort | uniq > users_list.txt`

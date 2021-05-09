@@ -848,11 +848,158 @@ print("Embedded tokens:", embedded_tokens)
 
 另一种选择是为非初始单词提供空标签，并为任何带有空标签的单词掩盖损失计算。但是，从建模角度来看，这是有问题的，因为它打破了CRF局部性假设（您不会从CRF转换概率中获得任何用处），并且通常会使建模更加困难。我们不推荐这种方法。
 
-## padding和mask
+### padding和mask
 
 由于要batch computation，所以不一样长的序列需要padding，allennlp里面用的是`text_field.get_padding_lengths()`。`collate_function`方法会在batch中找到最长的dimension，然后将这个最大值传给`text_field.as_tensor()`，因此每个相同维度的tensor在被创建之前就会被batched。
 
 mask的过程在`TextFieldEmbedder`中，但是也要确保模型代码做了对应的masking computation。
 
 `allennlp.nn.util`中提供了很多masked版本的pytorch的工具类方法，比如`masked_softmax`和`masked_log_softmax`和`masked_topk`
+
+### 使用TextField输出的TextFieldTensors
+
+TextField会返回一个TextFieldTensors对象，是一个复杂的字典结构。
+
+不要直接编写访问TextfieldTensors对象内部的代码。allennlp中有几个方法可以访问textfieldtensors。TextFieldEmbedder对象会把TextFieldTensors对象转换为每个输入token对应一个embedding。一般会通过mask，并获得token id来把他们转换为字符串。allennlp.nn.util中提供了get_text_field_mask和get_token_ids_from_text_field_tesors.
+
+```python
+# We're following the logic from the "Combining multiple TokenIndexers" example
+# above.
+tokenizer = SpacyTokenizer(pos_tags=True)
+
+vocab = Vocabulary()
+vocab.add_tokens_to_namespace(
+    ["This", "is", "some", "text", "."], namespace="token_vocab"
+)
+vocab.add_tokens_to_namespace(
+    ["T", "h", "i", "s", " ", "o", "m", "e", "t", "x", "."], namespace="character_vocab"
+)
+vocab.add_tokens_to_namespace(["DT", "VBZ", "NN", "."], namespace="pos_tag_vocab")
+
+text = "This is some text."
+text2 = "This is some text with more tokens."
+tokens = tokenizer.tokenize(text)
+tokens2 = tokenizer.tokenize(text2)
+print("Tokens:", tokens)
+print("Tokens 2:", tokens2)
+
+
+# Represents each token with (1) an id from a vocabulary, (2) a sequence of
+# characters, and (3) part of speech tag ids.
+token_indexers = {
+    "tokens": SingleIdTokenIndexer(namespace="token_vocab"),
+    "token_characters": TokenCharactersIndexer(namespace="character_vocab"),
+    "pos_tags": SingleIdTokenIndexer(namespace="pos_tag_vocab", feature_name="tag_"),
+}
+
+text_field = TextField(tokens, token_indexers)
+text_field.index(vocab)
+text_field2 = TextField(tokens2, token_indexers)
+text_field2.index(vocab)
+
+# We're using the longer padding lengths here; we'd typically be relying on our
+# collate function to figure out what the longest values are to use.
+padding_lengths = text_field2.get_padding_lengths()
+tensor_dict = text_field.as_tensor(padding_lengths)
+tensor_dict2 = text_field2.as_tensor(padding_lengths)
+print("Combined tensor dictionary:", tensor_dict)
+print("Combined tensor dictionary 2:", tensor_dict2)
+
+text_field_tensors = text_field.batch_tensors([tensor_dict, tensor_dict2])
+print("Batched tensor dictionary:", text_field_tensors)
+
+# We've seen plenty of examples of using a TextFieldEmbedder, so we'll just show
+# the utility methods here.
+mask = nn_util.get_text_field_mask(text_field_tensors)
+print("Mask:", mask)
+print("Mask size:", mask.size())
+token_ids = nn_util.get_token_ids_from_text_field_tensors(text_field_tensors)
+print("Token ids:", token_ids)
+
+# We can also handle getting masks when you have lists of TextFields, but there's
+# an important parameter that you need to pass, which we'll show here.  The
+# difference in output that you see between here and above is just that there's an
+# extra dimension in this output.  Where shapes used to be (batch_size=2, ...),
+# now they are (batch_size=1, list_length=2, ...).
+list_field = ListField([text_field, text_field2])
+tensor_dict = list_field.as_tensor(list_field.get_padding_lengths())
+text_field_tensors = list_field.batch_tensors([tensor_dict])
+print("Batched tensors for ListField[TextField]:", text_field_tensors)
+
+# The num_wrapping_dims argument tells get_text_field_mask how many nested lists
+# there are around the TextField, which we need for our heuristics that guess
+# which tensor to use when computing a mask.
+mask = nn_util.get_text_field_mask(text_field_tensors, num_wrapping_dims=1)
+print("Mask:", mask)
+print("Mask:", mask.size())
+```
+
+输出：
+
+```
+Tokens: [This, is, some, text, .]
+Tokens 2: [This, is, some, text, with, more, tokens, .]
+Combined tensor dictionary: {'tokens': {'tokens': tensor([2, 3, 4, 5, 6, 0, 0, 0])}, 'token_characters': {'token_characters': tensor([[ 2,  3,  4,  5,  0,  0],
+        [ 4,  5,  0,  0,  0,  0],
+        [ 5,  7,  8,  9,  0,  0],
+        [10,  9, 11, 10,  0,  0],
+        [12,  0,  0,  0,  0,  0],
+        [ 0,  0,  0,  0,  0,  0],
+        [ 0,  0,  0,  0,  0,  0],
+        [ 0,  0,  0,  0,  0,  0]])}, 'pos_tags': {'tokens': tensor([2, 3, 2, 4, 5, 0, 0, 0])}}
+Combined tensor dictionary 2: {'tokens': {'tokens': tensor([2, 3, 4, 5, 1, 1, 1, 6])}, 'token_characters': {'token_characters': tensor([[ 2,  3,  4,  5,  0,  0],
+        [ 4,  5,  0,  0,  0,  0],
+        [ 5,  7,  8,  9,  0,  0],
+        [10,  9, 11, 10,  0,  0],
+        [ 1,  4, 10,  3,  0,  0],
+        [ 8,  7,  1,  9,  0,  0],
+        [10,  7,  1,  9,  1,  5],
+        [12,  0,  0,  0,  0,  0]])}, 'pos_tags': {'tokens': tensor([2, 3, 2, 4, 1, 1, 1, 5])}}
+Batched tensor dictionary: {'tokens': {'tokens': tensor([[2, 3, 4, 5, 6, 0, 0, 0],
+        [2, 3, 4, 5, 1, 1, 1, 6]])}, 'token_characters': {'token_characters': tensor([[[ 2,  3,  4,  5,  0,  0],
+         [ 4,  5,  0,  0,  0,  0],
+         [ 5,  7,  8,  9,  0,  0],
+         [10,  9, 11, 10,  0,  0],
+         [12,  0,  0,  0,  0,  0],
+         [ 0,  0,  0,  0,  0,  0],
+         [ 0,  0,  0,  0,  0,  0],
+         [ 0,  0,  0,  0,  0,  0]],
+
+        [[ 2,  3,  4,  5,  0,  0],
+         [ 4,  5,  0,  0,  0,  0],
+         [ 5,  7,  8,  9,  0,  0],
+         [10,  9, 11, 10,  0,  0],
+         [ 1,  4, 10,  3,  0,  0],
+         [ 8,  7,  1,  9,  0,  0],
+         [10,  7,  1,  9,  1,  5],
+         [12,  0,  0,  0,  0,  0]]])}, 'pos_tags': {'tokens': tensor([[2, 3, 2, 4, 5, 0, 0, 0],
+        [2, 3, 2, 4, 1, 1, 1, 5]])}}
+Mask: tensor([[ True,  True,  True,  True,  True, False, False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True]])
+Mask size: torch.Size([2, 8])
+Token ids: tensor([[2, 3, 4, 5, 6, 0, 0, 0],
+        [2, 3, 4, 5, 1, 1, 1, 6]])
+Batched tensors for ListField[TextField]: {'tokens': {'tokens': tensor([[[2, 3, 4, 5, 6, 0, 0, 0],
+         [2, 3, 4, 5, 1, 1, 1, 6]]])}, 'token_characters': {'token_characters': tensor([[[[ 2,  3,  4,  5,  0,  0],
+          [ 4,  5,  0,  0,  0,  0],
+          [ 5,  7,  8,  9,  0,  0],
+          [10,  9, 11, 10,  0,  0],
+          [12,  0,  0,  0,  0,  0],
+          [ 0,  0,  0,  0,  0,  0],
+          [ 0,  0,  0,  0,  0,  0],
+          [ 0,  0,  0,  0,  0,  0]],
+
+         [[ 2,  3,  4,  5,  0,  0],
+          [ 4,  5,  0,  0,  0,  0],
+          [ 5,  7,  8,  9,  0,  0],
+          [10,  9, 11, 10,  0,  0],
+          [ 1,  4, 10,  3,  0,  0],
+          [ 8,  7,  1,  9,  0,  0],
+          [10,  7,  1,  9,  1,  5],
+          [12,  0,  0,  0,  0,  0]]]])}, 'pos_tags': {'tokens': tensor([[[2, 3, 2, 4, 5, 0, 0, 0],
+         [2, 3, 2, 4, 1, 1, 1, 5]]])}}
+Mask: tensor([[[ True,  True,  True,  True,  True, False, False, False],
+         [ True,  True,  True,  True,  True,  True,  True,  True]]])
+Mask: torch.Size([1, 2, 8])
+```
 
