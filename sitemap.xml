@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hanielxx.com/MachineLearning/2021-04-03-classy-vision-and-multimodal-video-classification</loc>
-    
-    <lastmod>2021-05-16</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/MachineLearning/2021-04-26-allennlp-notes-2</loc>
     
     <lastmod>2021-05-16</lastmod>
@@ -233,14 +226,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/categories/</loc>
+    <loc>https://hanielxx.com/archives/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/archives/</loc>
+    <loc>https://hanielxx.com/categories/</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -366,14 +359,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/NowCoder/2019-07-26-nowcoder-score-sort</loc>
+    <loc>https://hanielxx.com/NowCoder/2019-09-21-perfect-num-and-excess-num</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/NowCoder/2019-09-21-perfect-num-and-excess-num</loc>
+    <loc>https://hanielxx.com/NowCoder/2019-07-26-nowcoder-score-sort</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -569,14 +562,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-06-02-leetcode-search-a-2d-matrix-ii</loc>
+    <loc>https://hanielxx.com/Linux/2019-07-22-ArchLinux-Gnome-Synaptics</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/Linux/2019-07-22-ArchLinux-Gnome-Synaptics</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-06-02-leetcode-search-a-2d-matrix-ii</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -660,13 +653,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-11-06-LeetCode-034-Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/LeetCode/2019-11-05-LeetCode-033-Search-in-Rotated-Sorted-Array</loc>
     
     <lastmod>2020-11-14</lastmod>
@@ -681,6 +667,13 @@
   </url>
   
   <url>
+    <loc>https://hanielxx.com/LeetCode/2019-11-06-LeetCode-034-Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array</loc>
+    
+    <lastmod>2020-11-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/LeetCode/2019-10-24-Remove-Duplicates-from-Sorted-Array</loc>
     
     <lastmod>2020-11-14</lastmod>
@@ -688,14 +681,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-10-30-LeetCode-028-Implement-strStr</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-10-24-LeetCode-027-Remove-Element</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-10-24-LeetCode-027-Remove-Element</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-10-30-LeetCode-028-Implement-strStr</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -765,14 +758,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-05-18-leetcode-longest-common-prefix</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-05-01-leetcode-roman-to-integer</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-05-01-leetcode-roman-to-integer</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-05-18-leetcode-longest-common-prefix</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -814,14 +807,14 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-04-19-leetcode-palindrome-number</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-04-27-leetcode-regular-expression-matching</loc>
     
     <lastmod>2020-11-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-04-27-leetcode-regular-expression-matching</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-04-19-leetcode-palindrome-number</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -835,13 +828,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-04-14-leetcode-median-of-two-sorted-arrays</loc>
-    
-    <lastmod>2020-11-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/LeetCode/2019-04-13-leetcode-longest-substring-without-repeating-characters</loc>
     
     <lastmod>2020-11-14</lastmod>
@@ -849,7 +835,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/LeetCode/2019-04-14-leetcode-longest-palindromic-substring</loc>
+    <loc>https://hanielxx.com/LeetCode/2019-04-14-leetcode-median-of-two-sorted-arrays</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -857,6 +843,13 @@
   
   <url>
     <loc>https://hanielxx.com/LeetCode/2019-04-15-leetcode-zigzag-conversion</loc>
+    
+    <lastmod>2020-11-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/LeetCode/2019-04-14-leetcode-longest-palindromic-substring</loc>
     
     <lastmod>2020-11-14</lastmod>
     
@@ -907,20 +900,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/LifeNotes/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Private/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/HypnicJerk/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -942,6 +921,20 @@
   </url>
   
   <url>
+    <loc>https://hanielxx.com/tags/LifeNotes/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Private/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/tags/Lift/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -949,7 +942,49 @@
   </url>
   
   <url>
+    <loc>https://hanielxx.com/tags/AllenNLP/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/NLP/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/OpenLibrary/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/tags/DeepLearning/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Pytorch/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/BERT/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Pretrain/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -978,76 +1013,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Multi-Head-Attention/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/BERT/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Pretrain/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/AllenNLP/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/NLP/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/OpenLibrary/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Pytorch/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/ClassyVision/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/MultiModal/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/VideoClassification/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/DistributedTraining/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1110,7 +1075,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Hash-Map/</loc>
+    <loc>https://hanielxx.com/tags/String/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1124,7 +1089,21 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Easy/</loc>
+    <loc>https://hanielxx.com/tags/Medium/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Linked-List/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Large-Number/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1152,28 +1131,21 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Linked-List/</loc>
+    <loc>https://hanielxx.com/tags/Hash-Map/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Large-Number/</loc>
+    <loc>https://hanielxx.com/tags/Easy/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Medium/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/String/</loc>
+    <loc>https://hanielxx.com/tags/Split/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1194,13 +1166,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Split/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/Reverse/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1215,6 +1180,13 @@
   </url>
   
   <url>
+    <loc>https://hanielxx.com/tags/Match/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/tags/Palindrome/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1222,7 +1194,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Match/</loc>
+    <loc>https://hanielxx.com/tags/Pointer/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1237,13 +1209,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Integer/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Pointer/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1439,13 +1404,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Matrix/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/Arch/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1468,6 +1426,13 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Synaptics/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Matrix/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1502,6 +1467,13 @@
   </url>
   
   <url>
+    <loc>https://hanielxx.com/tags/LNMP/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/tags/Vim/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1510,13 +1482,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/YCM/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/LNMP/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1894,6 +1859,41 @@
   </url>
   
   <url>
+    <loc>https://hanielxx.com/tags/JobHunting/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Interview/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/ByteDance/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/KuaiShou/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/BaiDu/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/tags/DataScience/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -1937,41 +1937,6 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Binary/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/JobHunting/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/Interview/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/ByteDance/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/KuaiShou/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/BaiDu/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2048,27 +2013,6 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/tags/Paper/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/AUC/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/tags/ROC/</loc>
-    <lastmod>2021-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hanielxx.com/tags/MapReduce/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
@@ -2084,6 +2028,27 @@
   
   <url>
     <loc>https://hanielxx.com/tags/GFS/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Paper/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/AUC/</loc>
+    <lastmod>2021-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/ROC/</loc>
     <lastmod>2021-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
