@@ -18,7 +18,11 @@ urlname: gnn-graph-clustering
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-遇到一个聚类问题，感觉可以建模到GNN上面。
+遇到一个聚类问题，感觉可以建模到GNN上面。记录一下问题和思路。
+
+包括基于Graph的聚类：Chinese Whisper、Spectral Cluster，基于GNN的聚类：基于GCN、CDP(ECCV2018)、DAEGC(IJCAI2019), AGC(SOTA)
+
+<!--more-->
 
 **特点：**
 1. 无监督的多模态数据
@@ -28,7 +32,7 @@ urlname: gnn-graph-clustering
 5. 图的数量很大，并且大小不确定，从几十到大几百上千不等
 6. node之间的link很稀疏并且是顺序连接，部分连边可能并不代表真实的联系
 7. 如果是自己设置图的连边，那阈值也都不同，如果不建模到图上，就不存在连边问题，直接是一堆样本进行聚类
-8. 或许可以用正则出来的集数作为连边信息，只要是集数连着就有边，没有集数就没有边，semi-supervised
+8. 或许可以用集数作为连边信息，只要是集数连着就有边，没有集数就没有边，semi-supervised
 
 **几个方向：**
 1. ~~Link Prediction~~
@@ -52,7 +56,6 @@ urlname: gnn-graph-clustering
 
 {% endnote %}
 
-<!--more-->
 
 ## 基于Graph
 
@@ -179,6 +182,10 @@ paper： Learning to Cluster Faces on Affinity Graphy(CVPR2019)
 
 强调的是goal-directed的embedding方法，用attention based网络捕捉相邻节点之间的importance，并且结合了structure和node content信息作为compact representation。通过graph embedding产生的soft labels进行自监督聚类. 自监督过程和graph embedding优化过程是joint learned and optimized。
 
+大致上就是先用auto encoder训练，然后用k-means得到一个初始化的cluster center，然后再做自监督的embedding优化，同时更新迭代簇中心位置。
+
+这篇文章会在后面单独写一个笔记。
+
 - Require:
   - Graph G with n nodes;
   - Number of clusters k;
@@ -188,7 +195,13 @@ paper： Learning to Cluster Faces on Affinity Graphy(CVPR2019)
 - Output:
   - k disjoint groups
 
-### AGC
+模型结构：
+![MwcbDs](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/others/MwcbDs.png)
+
+实验结果：
+![fYsPmB](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/others/fYsPmB.png)
+
+### AGC(IJCAI2019)
 
 graph-clustering SOTA论文
 
@@ -198,11 +211,21 @@ graph-clustering SOTA论文
 
 在使用k-order GCN之后，用了谱聚类。问题是谱聚类也要指定k值，所以论文里面是通过实验找到最好的k值...
 
+和上面的DAEGC挺像的。
+
 ## 思路
 
 1. 算法不能提前指定类别数
 2. 边的确定
    1. ep是merge了pid_ep和photo_ep
    2. 根据ep来建立连接关系，每个1都和2相连，每个2都和3相连
-   3. 所有的-1，按照时间顺序，连接前后W个视频，W是窗口大小，设为3
-   4. 
+   3. 按照时间顺序连接所有pid
+   4. 所有的-1，按照时间顺序，连接前后W个视频，W是窗口大小，设为3
+3. node content X：使用视频的hetu_embedding，128维
+4. edge weight W: similarity between nodes
+5. 难点：
+   1. K值无法确定，且会有新增视频进来，K值一直在增加
+   2. 如果每次新加入一个节点就得重新train，会很慢
+   3. 每次的输入是一整个graph，输出是不同的类，不同用户之间的cluster肯定是不同的。所以要是考虑所有用户，那类别数是没上限的，只能考虑单个用户的图。
+   4. 每个用户是一个graph，是不是都得训模型，还是可以有通用的提取特征的模型，直接inference每个用户图
+   5. 最后要得到的是node embedding给下游模型做cluster，但是涉及到不同cluster中的节点数不同，有的多有的少。如果在无监督的情况下，想用密度聚类聚在一起，存在1）节点多的cluster召回高的时候，节点少的cluster会被聚成一个类；2）节点少的cluster准确高的时候，节点多的cluster召回低
