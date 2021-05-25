@@ -9,7 +9,6 @@ tags:
     OpenLibrary,
     DeepLearning,
     Pytorch,
-    Private,
   ]
 categories: MachineLearning
 urlname: allennlp-notes-2
@@ -18,7 +17,7 @@ urlname: allennlp-notes-2
 <meta name="referrer" content="no-referrer" />
 
 {% note info %}
-进一步理解和使用AllenNLP这个框架
+进一步理解和使用AllenNLP这个框架，续前面的[AllenNLP框架学习笔记（一）](https://hanielxx.com/MachineLearning/2021-04-14-allennlp-notes)
 {% endnote %}
 
 <!--more-->
@@ -1003,3 +1002,6 @@ Mask: tensor([[[ True,  True,  True,  True,  True, False, False, False],
 Mask: torch.Size([1, 2, 8])
 ```
 
+## 未完
+
+剩下的懒得记了，赶时间，直接看很快地过了一遍guide剩下内容。笔记自己参考下官方文档吧，也不多了。

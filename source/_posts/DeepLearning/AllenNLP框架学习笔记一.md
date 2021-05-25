@@ -9,7 +9,6 @@ tags:
     OpenLibrary,
     DeepLearning,
     Pytorch,
-    Private,
   ]
 categories: MachineLearning
 urlname: allennlp-notes
@@ -19,6 +18,8 @@ urlname: allennlp-notes
 
 {% note info %}
 刚开始学习使用AllenNLP框架，记录一些笔记供参考。
+
+感觉这个框架用起来比较优雅，从基类的抽象，到模块间的配合。但缺点是官方的guide又臭又长，讲的也不是很清楚感觉，很多东西还是得边看源码边写。这个笔记是看官方guide记录，只能做到脑子里大概有个框架，要熟悉AllenNLP还是得看源码。
 {% endnote %}
 
 <!--more-->
