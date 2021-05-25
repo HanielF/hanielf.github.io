@@ -39,6 +39,8 @@ urlname: classy-vision-and-multimodal-video-classification
   - `ssh web_server@bjpg-rs8553.yz02 -p22`
 - `df -h`找到 mmu 项目路径`/mnt/mmu_ssd/share/yangfan/yuanwei/xingshisenlin_saishi`
 - 查看`run.sh`
+- 如果提示文件不存在类似信息，查看是否切换到webserver用户，是否有权限
+- 如果执行出错，可能存在隐藏字符无法执行，自己手打试试
 
 ### run.sh 脚本说明
 
@@ -72,6 +74,12 @@ nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 
   - -f 输入文件，其中每一行是一个 photo id
   - -o 指定的输出文件，结果：photoId \t viewCount \t likeCount \t unlikeCount \t commentCount \t forwardCount \t authorId
 
+### 导出所有视频
+
+- webserver下，对777目录的
+- 执行：`sh /data/project/export_author_videos.sh  -i "/data/project/data/author.txt" -o  "/data/project/data/author_video.txt"`
+- 输出：uid \t pid,pid,pid
+
 ### run.sh 导出用户特征向量
 
 - bash 脚本：`export_features.sh`
@@ -97,6 +105,7 @@ nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 
 - 输入：videos.txt
 - 输出：text.txt
 - 格式：pid + caption + "\t" + title + "\t" + text + "\t" + ocr + "\t" + speech
+- 先chmod 777 dir
 - 命令：`` nohup java -Dfile.encoding=UTF-8 -cp /data/project/chenxiaohui/kuaishou-mmu-data/*:kuaishou-mmu-data-1.0-SNAPSHOT.jar com.kuaishou.runner.BaseRunner -r ExportTextService -i `pwd`/videos.txt -o `pwd`/text.txt -t 10 & ``
 - 输出：`caption + "\t" + title + "\t" + text + "\t" + ocr + "\t" + speech`
 - 参数：
