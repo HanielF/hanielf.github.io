@@ -78,7 +78,7 @@ nohup sh  /data/project/export_frames.sh  `pwd`/videos.txt `pwd`/cover 1 100 30 
 ### 导出所有视频
 
 - webserver下，对777目录的
-- 执行：`sh /data/project/export_author_videos.sh  -i "/data/project/data/author.txt" -o  "/data/project/data/author_video.txt"`
+- 执行：`nohup sh /data/project/export_author_videos.sh -i "users.txt" -o  user_pids.txt" &`
 - 输出：uid \t pid,pid,pid
 
 ### run.sh 导出用户特征向量

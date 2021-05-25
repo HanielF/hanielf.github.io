@@ -20,7 +20,7 @@ urlname: gnn-graph-clustering
 {% note info %}
 遇到一个聚类问题，感觉可以建模到GNN上面。记录一下问题和思路。
 
-包括基于Graph的聚类：Chinese Whisper、Spectral Cluster，基于GNN的聚类：基于GCN、CDP(ECCV2018)、DAEGC(IJCAI2019), AGC(SOTA)
+包括基于Graph的聚类：Chinese Whisper、Spectral Cluster，基于GNN的聚类：基于GCN、CDP(ECCV2018)、DAEGC(IJCAI2019), AGC(IJCAI2019)
 
 <!--more-->
 
