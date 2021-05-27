@@ -1,7 +1,7 @@
 ---
 title: ClassyVision框架和多模态视频分类流程
 comments: true
-mathjax: false
+mathjax: true
 date: 2021-04-03 16:11:01
 tags:
   [

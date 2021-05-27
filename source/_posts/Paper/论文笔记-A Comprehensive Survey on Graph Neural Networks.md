@@ -4,8 +4,7 @@ tags:
   - GNN
   - Survey
   - Review
-  - IEEE
-  - 2021
+  - IEEE-2021
 categories:
   - Papers
 comments: true
@@ -18,12 +17,12 @@ urlname: gnn-survey-IEEE-2021
 
 {% note info %}
 
-- 一篇关于GNN的综述，将GNN分为
+- 一篇关于GNN的综述，主要讲
   - namely recurrent graph neural networks,
   - convolutional graph neural networks,
-  - graph autoen- coders,
+  - graph autoencoders,
   - spatial-temporal graph neural networks
-- 主要内容是
+- 文章结构是
   - GNN发展
   - GNN分类
   - GNN模型的overview

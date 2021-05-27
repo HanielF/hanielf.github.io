@@ -1,7 +1,7 @@
 ---
 title: GNN和图聚类
 comments: true
-mathjax: false
+mathjax: true
 date: 2021-05-09 13:11:01
 tags:
   [
