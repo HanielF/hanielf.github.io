@@ -1,5 +1,5 @@
 ---
-title: 模型评价指标 | 论文笔记 | SiRNA silencing efficacy prediction based on a deep architecture
+title: 论文笔记 | SiRNA silencing efficacy prediction based on a deep architecture
 tags:
   - DeepLearning
   - Paper
