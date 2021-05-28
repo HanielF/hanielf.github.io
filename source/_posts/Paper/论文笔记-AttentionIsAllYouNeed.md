@@ -1,5 +1,5 @@
 ---
-title: Attention Is All You Need
+title: 论文笔记 | Attention Is All You Need
 comments: true
 mathjax: true
 date: 2020-08-15 18:42:24
@@ -9,7 +9,7 @@ tags:
   - Transformer
   - SelfAttention
   - Multi-Head-Attention
-categories: MachineLearning
+categories: Papers
 urlname: attention-is-all-you-need
 ---
 
