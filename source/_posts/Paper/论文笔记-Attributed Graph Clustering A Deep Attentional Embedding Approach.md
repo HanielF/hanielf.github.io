@@ -4,8 +4,8 @@ tags:
   - GNN
   - DAEGC
   - IJCAI-2019
-  - Node Clustering
-  - Graph Clustering
+  - NodeClustering
+  - GraphClustering
   - GAE
 categories:
   - Papers
