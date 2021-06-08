@@ -44,4 +44,5 @@ urlname: gnn-agc-IJCAI-2019
 
 1. 给定无向图 $G=(V, E, X)$，V是顶点集合，有n个点，E是边表，用邻接矩阵A表示，$A \in R^{n\times n}$，$X = [x_1, x_2, ···, x_n]^T \in R^{n\times d}$。如果 $v_j$可以让 $v_i$通过k个边到达，就说 $v_j$是$v_i$的 $k-hop$邻居。
 2. 目标是将G分成m个不相交的clusters
-3. 
+3. 定义，graph singal $f = Uz = \sum_{q=1}^n z_q u_q$，U是拉普拉斯矩阵分解得到的 $L_s = U \Lambda U^{-1}$，$u_q$就是特征向量，z是各个特征向量的系数，也就是embedding，$z_q$越大表明基向量 $u_q$在f中的强度越大。
+4. 定义，smooth是表示相邻节点在图中有相似的特征embedding。
