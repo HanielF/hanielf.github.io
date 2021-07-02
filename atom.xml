@@ -6,7 +6,7 @@
   <link href="https://hanielxx.com/atom.xml" rel="self"/>
   
   <link href="https://hanielxx.com/"/>
-  <updated>2021-05-28T18:39:50.679Z</updated>
+  <updated>2021-07-02T07:27:37.782Z</updated>
   <id>https://hanielxx.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>似水流年中的碎碎念</title>
+    <link href="https://hanielxx.com/Daily/2021-07-02-spiritual-whispers-as-time-goes-by"/>
+    <id>https://hanielxx.com/Daily/2021-07-02-spiritual-whispers-as-time-goes-by</id>
+    <published>2021-07-02T04:53:30.000Z</published>
+    <updated>2021-07-02T07:27:37.782Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>似水流年中的碎碎念</p></div><a id="more"></a><h2 id="2021年7月"><a href="#2021年7月" class="headerlink" title="2021年7月"></a>2021年7月</h2><div class="note info"><p>考试周….好丧，考完写吧</p></div>]]></content>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;似水流年中的碎碎念&lt;/p&gt;&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="Daily" scheme="https://hanielxx.com/categories/Daily/"/>
+    
+    
+    <category term="Daily" scheme="https://hanielxx.com/tags/Daily/"/>
+    
+    <category term="LifeNotes" scheme="https://hanielxx.com/tags/LifeNotes/"/>
+    
+    <category term="Private" scheme="https://hanielxx.com/tags/Private/"/>
+    
+  </entry>
   
   <entry>
     <title>论文笔记 | Attributed Graph Clustering via Adaptive Graph Convolution</title>
@@ -247,6 +272,31 @@
     <category term="BERT" scheme="https://hanielxx.com/tags/BERT/"/>
     
     <category term="Pretrain" scheme="https://hanielxx.com/tags/Pretrain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021-生活札记</title>
+    <link href="https://hanielxx.com/Daily/2021-03-30-lift-notes"/>
+    <id>https://hanielxx.com/Daily/2021-03-30-lift-notes</id>
+    <published>2021-03-30T14:53:30.000Z</published>
+    <updated>2021-07-02T07:09:12.792Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>从<code>2021.3.31</code>起，记录每日生活札记。</p><p>2021 年 3 月 30 日晚，11：00 睡，希望能开个好头~</p></div><a id="more"></a><h2 id="2021-年-4-月"><a href="#2021-年-4-月" class="headerlink" title="2021 年 4 月"></a>2021 年 4 月</h2><h3 id="第一周-4-1-4-7"><a href="#第一周-4-1-4-7" class="headerlink" title="第一周 4.1-4.7"></a>第一周 4.1-4.7</h3><table><thead><tr><th>日期</th><th>起床</th><th>睡觉</th><th>学习 和 工作</th><th>备注</th></tr></thead><tbody><tr><td>3.31</td><td>7:10</td><td>11:40</td><td>1. 上午入职<br>2. 下午看各种材料申请各种权限<br>3. 开始看多模框架代码</td><td>太累了，早上 5 点多醒，早起去拿核酸报告<br>中午不知道午休时间没休息<br>下午开始头晕，腿酸麻</td></tr><tr><td>4.1</td><td>8:10</td><td>1:45</td><td>1. 配置服务器和 mac 环境<br>2. 看<a href="https://classyvision.ai/tutorials" target="_blank" rel="external nofollow noopener noreferrer">classyvision-tutorials</a><br>3. 快手入职相关</td><td>比第一天好一点<br>但还是很累<br>知道了自己面试的面评失眠了</td></tr><tr><td>4.2</td><td>8:15</td><td>1:30</td><td>1. 看完<a href="https://classyvision.ai/tutorials" target="_blank" rel="external nofollow noopener noreferrer">classyvision-tutorials</a>并做了思维导图<br>2. 和 mentor 汇报<br>配置服务器和 mac 环境并 debug<br>3. 办了张招商银行工资卡</td><td>1. 状态一般，用了 降噪耳机白天舒服多了<br>2. 后面的任务感觉压力还是挺大的，要加油<br>3. 后面三天清明假期，要好好补课程作业了</td></tr><tr><td>4.3 -4.7</td><td></td><td></td><td>1. 熟悉了数据处理源码<br>2. 理解数据处理的源码<br>3. 跑通了赛事任务</td><td></td></tr></tbody></table><h3 id="第二周-4-8-4-14"><a href="#第二周-4-8-4-14" class="headerlink" title="第二周 4.8-4.14"></a>第二周 4.8-4.14</h3><table><thead><tr><th>日期</th><th>起床</th><th>睡觉</th><th>学习 和 工作</th><th>备注</th></tr></thead><tbody><tr><td>4.8</td><td>8:32</td><td>1:12</td><td>1. 开始接触推荐类别任务<br>2. 了解hive表拉取数据到模型迭代的流程<br>3. 写数据处理data_format pipeline，重新定义接口</td><td></td></tr><tr><td>4.9</td><td>8:28</td><td>1:34</td><td>1. 对推荐已有的数据进行部分回查<br>2. 修改推荐的配置，初步跑通得到一个base<br>3. 看源码</td><td>代码看多了看的很晕</td></tr><tr><td>4.10</td><td>8:38</td><td></td><td>1. 学习hive sql<br>2. 理解模型如何计算评价指标<br>3. 看源码了解训练过程</td><td>理解的还不是特别清楚</td></tr></tbody></table><div class="note info"><p>每天好忙。。日常十一点多到宿舍，只想躺着歇会。。</p><p>每天好枯燥。。重复性劳动真的好没意思。。</p><p>懒得写了。。七月底离职吧。。诶</p></div>]]></content>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;从&lt;code&gt;2021.3.31&lt;/code&gt;起，记录每日生活札记。&lt;/p&gt;&lt;p&gt;2021 年 3 月 30 日晚，11：00 睡，希望能开个好头~&lt;/p&gt;&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="Daily" scheme="https://hanielxx.com/categories/Daily/"/>
+    
+    
+    <category term="Daily" scheme="https://hanielxx.com/tags/Daily/"/>
+    
+    <category term="LifeNotes" scheme="https://hanielxx.com/tags/LifeNotes/"/>
+    
+    <category term="Private" scheme="https://hanielxx.com/tags/Private/"/>
     
   </entry>
   
@@ -527,56 +577,6 @@
     <category term="Review" scheme="https://hanielxx.com/tags/Review/"/>
     
     <category term="BigData" scheme="https://hanielxx.com/tags/BigData/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>入睡抽动 | 奇怪的一天</title>
-    <link href="https://hanielxx.com/Daily/2020-12-04-hypnic-jerk"/>
-    <id>https://hanielxx.com/Daily/2020-12-04-hypnic-jerk</id>
-    <published>2020-12-04T10:07:52.000Z</published>
-    <updated>2021-05-17T15:34:22.994Z</updated>
-    
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>2020年12月4日，天气晴郎，万里无云，阳光明媚，对，就是感觉很平常的一天。</p><p>然鹅，现在，傍晚18:18:26，我感觉这一天还是挺不对劲的。</p></div><a id="more"></a><p>今天第一节课时算法课，我们几个小伙伴是轮流占座的。今天轮到了我和老樊同学。昨晚特意早睡了，早上醒的也比较早，六点十几分就醒了，那时候闹钟还没响。当时感觉没啥问题，毕竟也睡了六个多小时。现在感觉，是不是醒的太早了…</p><p>上完算法课，吃个饭，下午继续三节并行和分布式的课。中午趴着休息了十来分钟。然后就十来分钟，我抽了一下，当时感觉差点掉地上了。因为以前也有过类似经历，也没太在意。</p><p>今天并行课后两节比较水，老师也说不考试，没对应作业。于是乎，拿出电脑写作业emmmm。卷，就硬卷。大概三点左右，老师突然喊人回答问题，我抬头看了下，看着老师去拿名单，心里突然砰的一下，有种不好的预感，刚想着，woc，不会是喊我吧。这时候老师才刚拿起名单看，我开始紧张了，越发感觉就是我…</p><p>果然，老师拿了名单才两秒，就喊了我的名字。我惊了，站起来直接说不会，虽然很羞耻。但只要脸皮够厚，我不害羞就没人在意我emmm。老师没有为难，但是坐下之后我心跳特别快，和打鼓一样。一直在想woc，这么准的吗，有点灵异的味道了…可能这就是第六感？想起以前那么多次提问，那么多次划水，从来没有过这样的。我从心了。</p><p>下课直接去了学园一自习。那里环境真的太好了，空调也特别舒服。学了一会忍不住犯困，我知道昨天还是没睡够的，中午也没怎么补觉，就准备趴一会去吃饭吧。这时候大概五点半。但是刚趴下还没睡熟，迷迷糊糊的突然身体又抽了一下，我感觉要摔了，猛地拍了下桌子。教室里的安静被打破了，后面的小姐姐似乎被我吓到了，我连忙转身笑着说声抱歉。这是今天第二次。我不以为意地继续趴桌子，为了防止刚才的情况，特意把电脑往前推了推，让自己更大面积的趴在桌子上。可是恍惚间才过几分钟，突然又抽了一下，这次没有什么场景，就是手抽了一下，梦的推了下电脑。这次整个教室似乎都在看我，对面几个哥们”关心地”扭过头朝我看来，我不太好意思地摆摆手，笑着示意没事，嘴里无声地说这抱歉，想来他们应该能看懂。</p><p>我不敢再入睡了。平时一次都没有的，今天缺来了三次，这又不是堵车。。查了下Google，翻了翻知乎。原来这玩意叫“肌抽跃”，入睡时发生的也叫“入睡抽动”，英文叫”Hypnic jerk”。</p><blockquote><p>A <strong>hypnic jerk</strong>, <strong>hypnagogic jerk</strong>, <strong>sleep start</strong>, <strong>sleep twitch</strong>, <strong>myoclonic jerk</strong>, or <strong>night start</strong> is a brief and sudden involuntary <a href="https://en.wikipedia.org/wiki/Muscle_contraction" target="_blank" rel="external nofollow noopener noreferrer" title="Muscle contraction">contraction of the muscles</a> of the body which occurs when a person is beginning to fall asleep, often causing the person to jump and awaken suddenly for a moment. Hypnic jerks are one form of involuntary muscle twitches called <a href="https://en.wikipedia.org/wiki/Myoclonus" target="_blank" rel="external nofollow noopener noreferrer" title="Myoclonus">myoclonus</a>. ——维基百科</p></blockquote><p>这个现象比较普遍，但是似乎没有一个科学严谨的原因解释。</p><p>下面收集了几个似乎比较靠谱的：</p><ol><li>潜在原因包括：焦虑，咖啡因，压力，剧烈活动。简单说就是过于劳累，或者睡少了，睡一觉就好。</li><li>部分专家认为这是正常的，因为入睡肌肉会放松下来，但是大脑似乎曲解了这种放松信号，想维持原样，因此全身肌肉抽了一下。</li><li>从清醒状态进入睡眠时，心跳减慢、体温下降、呼吸变缓，肌肉也会随之放松。网状启动系统（Reticular Activation System，RAS）负责控制这一转换过程，入睡抽动可能仅仅是网状启动系统出现了一点问题。</li></ol><p>感觉第一条应该比较普遍，第二条也可能是第一条引起的，第三条应该是少部分情况，可以无视。网上说的什么生病的征兆，什么要死了大脑唤醒身体什么的，也太离谱了。</p><p>虽然还是解释不了为什么心里会对点名有强烈的预感，不过这似乎也不是什么坏事hhh。</p><p>总之，还是要规律作息啦，每天睡足7小时。之前看一个统计，每天睡6.5h到7h最好。我还小，就睡足7h吧。突然想起白天听老樊说他昨天两三点才睡，算一算，六点五十五在一楼的，起码得六点半起，满打满算死个半小时……太恐怖了，真的是当之无愧的“卷王”，我是做不到这样的，上次占座一点多点睡，还睡过头了emmm，这就是菜狗和神仙的区别了吧。还是，好好学习，好好生活，天天向上！</p><hr>]]></content>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;2020年12月4日，天气晴郎，万里无云，阳光明媚，对，就是感觉很平常的一天。&lt;/p&gt;&lt;p&gt;然鹅，现在，傍晚18:18:26，我感觉这一天还是挺不对劲的。&lt;/p&gt;&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="Daily" scheme="https://hanielxx.com/categories/Daily/"/>
-    
-    
-    <category term="Daily" scheme="https://hanielxx.com/tags/Daily/"/>
-    
-    <category term="HypnicJerk" scheme="https://hanielxx.com/tags/HypnicJerk/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>论文笔记 | Map Reduce</title>
-    <link href="https://hanielxx.com/Papers/2020-11-25-map-reduce"/>
-    <id>https://hanielxx.com/Papers/2020-11-25-map-reduce</id>
-    <published>2020-11-25T05:34:18.000Z</published>
-    <updated>2021-05-17T15:34:23.123Z</updated>
-    
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>分布式经典论文Map Reduce笔记。论文原文：<a href="https://www.cs.amherst.edu/~ccmcgeoch/cs34/papers/p107-dean.pdf" target="_blank" rel="external nofollow noopener noreferrer">MapReduce: Simplified Data Processing on Large Clusters</a></p></div><a id="more"></a><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>将大的任务分成小的部分，分给不同的机器上，然后得到结果在汇聚到一起。</p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/RQBpjq.png" alt="RQBpjq"></p><ul><li>数据文件</li><li>分为M 份</li><li>选一个主进程，为其他worker进程分配一个map任务或者reduce任务</li><li>map任务从输入数据中取出key/value，使用map函数</li><li>中间key/value保存在内存</li><li>中间key/value写入磁盘，分为R 份</li><li>主进程将磁盘位置告诉reduce 进程</li><li>reduce worker收到master的位置信息后，使用RPC读数据</li><li>reduce worker将数据按照中间 key排序</li><li>reduce worker 迭代排序后的数据，将key和对应中间value集合传给reduce方法</li><li>reduce方法的输出被添加到最后的输出文件</li><li>所有的reduce结束后，返回给用户程序</li><li>最后应该是有R个output file，一般不用用户合并，可以直接调用另一个人mapreduce或者直接用于其他应用</li><li></li><li>M和R应该远大于worker的数量，能提升动态加载均衡，也能在worker失效时加快恢复</li></ul><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>Map函数，由用户编写，输入键值对集，产生中间键值对集，最后会把由相同键的key/value pair合并，然后传给reduce 函数。</p><p>输入数据被保存在节点本地，这样来节省带宽</p><h2 id="Reduce"><a href="#Reduce" class="headerlink" title="Reduce"></a>Reduce</h2><p>Reduce，接受中间键值对，一个键可能对应一个value集合。Reduce将所有的值进行merge，形成小的value集合，比如进行mean操作，产生一个value输出。<br>中间键值对是通过迭代器传给reduce方法的，这样就可以处理比较大的，无法全放进内存的数据。</p><p>Map操作和Reduce操作都在不同的的机器上进行，map是将数据分为M个，reduce是将中间key值分为R个<br>M和R应该比worker多的多，这样可以让每个worker执行多个task，能够提升动态加载的平衡，并且加速恢复fail worker</p><h2 id="容错"><a href="#容错" class="headerlink" title="容错"></a>容错</h2><p>master定期访问worker，没有回应的worker被标记为失效，然后这个worker上的map/reduce任务被重置为初始状态，等待重新分配到其他worker</p><p>MapReduce能够应对大规模的故障，在出故障的机器上：</p><ul><li>已经完成的map任务也要重做，因为map的结果保存在那个机器上，无法访问了。重做的同时，会发送通知给所有的reduce worker，它们还没有读过map输出的，会在新的map worker那读数据</li><li>已经完成的reduce不需要重做，因为结果是存在全局文件系统</li></ul><h2 id="答辩PPT"><a href="#答辩PPT" class="headerlink" title="答辩PPT"></a>答辩PPT</h2><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/dhh32t.png" alt="dhh32t"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/rxheIS.png" alt="rxheIS"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/bNZAk5.png" alt="bNZAk5"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/OzsRoX.png" alt="OzsRoX"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/WzpFFZ.png" alt="WzpFFZ"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/MmnA0V.png" alt="MmnA0V"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/CH017m.png" alt="CH017m"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/gN0g3b.png" alt="gN0g3b"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/KNPlHS.png" alt="KNPlHS"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/6PTCOf.png" alt="6PTCOf"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/xbuKgG.png" alt="xbuKgG"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/m4D7Vh.png" alt="m4D7Vh"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/4itxXM.png" alt="4itxXM"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/wR6D77.png" alt="wR6D77"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/n9mwJS.png" alt="n9mwJS"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/2nqvtK.png" alt="2nqvtK"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/zH7ORt.png" alt="zH7ORt"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/7AikXP.png" alt="7AikXP"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/3gKh1F.png" alt="3gKh1F"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/7hBrZA.png" alt="7hBrZA"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/aXOrs6.png" alt="aXOrs6"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/jwgAsc.png" alt="jwgAsc"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/hDO5kz.png" alt="hDO5kz"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/nlvUbH.png" alt="nlvUbH"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/fgsSpQ.png" alt="fgsSpQ"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/4J5m98.png" alt="4J5m98"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/S1MvAv.png" alt="S1MvAv"></p><p><img src="https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/rDZZTa.png" alt="rDZZTa"></p>]]></content>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;分布式经典论文Map Reduce笔记。论文原文：&lt;a href=&quot;https://www.cs.amherst.edu/~ccmcgeoch/cs34/papers/p107-dean.pdf&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noopener noreferrer&quot;&gt;MapReduce: Simplified Data Processing on Large Clusters&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="Papers" scheme="https://hanielxx.com/categories/Papers/"/>
-    
-    
-    <category term="DistributedSystem" scheme="https://hanielxx.com/tags/DistributedSystem/"/>
-    
-    <category term="MapReduce" scheme="https://hanielxx.com/tags/MapReduce/"/>
-    
-    <category term="PaperNotes" scheme="https://hanielxx.com/tags/PaperNotes/"/>
-    
-    <category term="GFS" scheme="https://hanielxx.com/tags/GFS/"/>
     
   </entry>
   
