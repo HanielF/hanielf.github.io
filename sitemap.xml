@@ -9,7 +9,7 @@
   </url>
   
   <url>
-    <loc>https://hanielxx.com/uncategorized/2021-07-02-</loc>
+    <loc>https://hanielxx.com/MachineLearning/2021-04-03-classy-vision-and-multimodal-video-classification</loc>
     
     <lastmod>2021-07-02</lastmod>
     
@@ -1069,6 +1069,34 @@
   
   <url>
     <loc>https://hanielxx.com/tags/Pretrain/</loc>
+    <lastmod>2021-07-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/ClassyVision/</loc>
+    <lastmod>2021-07-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/MultiModal/</loc>
+    <lastmod>2021-07-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/VideoClassification/</loc>
+    <lastmod>2021-07-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/DistributedTraining/</loc>
     <lastmod>2021-07-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
