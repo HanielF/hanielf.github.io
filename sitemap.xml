@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hanielxx.com/Papers/2021-09-10-recurrent-vln-bert</loc>
+    <loc>https://hanielxx.com/Papers/2021-09-10-topological-planning-vln</loc>
+    
+    <lastmod>2021-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/Papers/2021-09-09-recurrent-vln-bert</loc>
     
     <lastmod>2021-09-11</lastmod>
     
@@ -2245,6 +2252,20 @@
   
   <url>
     <loc>https://hanielxx.com/tags/PLA/</loc>
+    <lastmod>2021-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/Topological-Plannint-VLN/</loc>
+    <lastmod>2021-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/TopologicalMap/</loc>
     <lastmod>2021-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
