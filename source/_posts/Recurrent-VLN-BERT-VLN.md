@@ -1,7 +1,7 @@
 ---
 title: "论文笔记 | VLN BERT: A Recurrent Vision-and-Language BERT for Navigation"
-mathjax: false
-date: 2021-09-10 20:11:01
+mathjax: true
+date: 2021-09-09 20:11:01
 tags:
   [
     Recurrent-VLN-BERT,
@@ -64,9 +64,9 @@ urlname: recurrent-vln-bert
 8. state refinement：
    1. 没有使用state信息直接预测decision
    2. 对language和visual tokens分别：
-      1. 计算attention score $A_{l,k}^{s,x} = \frac{{Q_{l,k}^s K_{l,k}^x}^T}{\sqrt{d_h}}$
+      1. 计算attention score: ${A_{l,k}^{s,x}}=\frac{Q_{l,k}^s {K_{l,k}^x}^T}{\sqrt{d_h}}$
       2. 得到多头注意力的平均score，然后softmax这些score得到对每个token位置的score。 $\hat{A_l}^{s,x} = Softmax(\bar{A_l}^{s,x}) = Softmax(\frac{1}{K}\sum_{k=1}^K A_{l,k}^{s,x})$
-   3. 然后再和原有的tokne乘起来，得到加权和。 $F_t^x = \hat{A_l}^{s,x}X, F_t^v = \hat{A_l^{s,v}V_t}$
+   3. 然后再和原有的tokne乘起来，得到加权和。 $F_t^x = \hat{A_l}^{s,x}X,F_t^v = \hat{A_l^{s,v}V_t}$
    4. 在原始的text和visual 特征之间进行跨模态对齐，是element-wise product的方式。$s_t^f = [s_t^r;F_t^x \circledcirc F_t^v]W^T$。这里的 $s_t^r$是最后一层的输出state特征。简单来说就是文本和图像特征对齐后和输出的state拼接在一起做了一个线性变换。REVERIE任务中不需要文本特征，因为它的instruction都是比较高层次的
    5. 最后得到当前的state：$s_t = [s_t^f;a_t]W^s$，其中 $a_t$是selected action。
 9. decision makig：
