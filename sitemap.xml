@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hanielxx.com/MachineLearning/2021-09-12-vln-speaker-follower</loc>
+    
+    <lastmod>2021-09-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/Papers/2021-09-09-recurrent-vln-bert</loc>
+    
+    <lastmod>2021-09-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hanielxx.com/MachineLearning/2021-09-13-imitation-learning</loc>
     
     <lastmod>2021-09-15</lastmod>
@@ -10,20 +24,6 @@
   
   <url>
     <loc>https://hanielxx.com/Papers/2021-09-12-scene-memory-vln</loc>
-    
-    <lastmod>2021-09-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/Papers/2021-09-09-recurrent-vln-bert</loc>
-    
-    <lastmod>2021-09-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hanielxx.com/uncategorized/2021-09-12-</loc>
     
     <lastmod>2021-09-13</lastmod>
     
@@ -2378,6 +2378,13 @@
   
   <url>
     <loc>https://hanielxx.com/tags/ReinforcementLearning/</loc>
+    <lastmod>2021-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hanielxx.com/tags/SpeakerFollower/</loc>
     <lastmod>2021-09-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
