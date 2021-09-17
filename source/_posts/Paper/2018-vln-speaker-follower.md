@@ -1,5 +1,27 @@
-# 2021-9-12 论文分享记录
+---
+title: 论文分享笔记 | vln-speaker-follower
+comments: true
+mathjax: true
+date: 2021-09-12 23:11:01
+tags:
+  [
+      VLN,
+      SpeakerFollower,
+      Multimodal,
+      DeepLearning,
+      Notes
+  ]
+categories: MachineLearning
+urlname: vln-speaker-follower
+---
 
+<meta name="referrer" content="no-referrer" />
+
+{% note info %}
+VLN中的spaker-follower论文分享的简单记录
+{% endnote %}
+
+<!--more-->
 ## speaker-follower
 
 1. speaker相当于是为了生成更多的Instructions，任意采样两个点，生成路径，用这个路径生成Instruction
