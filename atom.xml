@@ -6,7 +6,7 @@
   <link href="https://hanielxx.com/atom.xml" rel="self"/>
   
   <link href="https://hanielxx.com/"/>
-  <updated>2021-09-17T12:47:06.955Z</updated>
+  <updated>2021-10-10T04:12:08.502Z</updated>
   <id>https://hanielxx.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论文撰写 | 常用句式和词汇</title>
+    <link href="https://hanielxx.com/MachineLearning/2021-10-09-paperwritting"/>
+    <id>https://hanielxx.com/MachineLearning/2021-10-09-paperwritting</id>
+    <published>2021-10-09T05:11:01.000Z</published>
+    <updated>2021-10-10T04:12:08.502Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>一些常见的论文写作词汇和句式，拯救写作困难症</p></div><a id="more"></a><h2 id="句式"><a href="#句式" class="headerlink" title="句式"></a>句式</h2><ol><li>recently has shown</li><li>we present</li><li>significantly improves</li><li>we hope</li><li>designed for</li><li>after that</li><li>there be 句型</li><li>for example</li><li>such as</li><li>while</li><li>…, which is …</li><li>… treat … as … with …</li><li>…, and then</li><li>It is …</li><li>To …, xxx …</li><li>…, make it easier/xxx to …</li><li>… via …</li><li>incorporate … into … to ….</li><li>To adapt to … such as …</li><li>xxx introduce ..</li><li>Inspired by xxx</li><li>As shown in xxx</li><li>In this work, xxx</li><li>These problems ….</li><li>To address these problems, …</li><li>Compared to xxx, xxx …</li><li>… is greatly improved</li><li>xxx has large advantages in terms of …</li><li>Following xxx, …</li><li>For fair comparison between xxx and xxx,</li></ol><h2 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h2><ol><li>moreover</li><li>with</li><li>e.g.</li><li>significantly</li><li>improve</li><li>modification</li><li>converge on</li><li>promising results</li><li>recent studies</li><li>further</li><li>aims to</li><li>stronger</li><li>feasible</li><li>built on</li><li>namely</li><li>specifically</li><li>yield</li><li>higher than</li><li>utilize</li><li>introduce</li><li>some improments xxx</li><li>xxx can obtain …</li><li>top-x error/accuracy</li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;一些常见的论文写作词汇和句式，拯救写作困难症&lt;/p&gt;&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="MachineLearning" scheme="https://hanielxx.com/categories/MachineLearning/"/>
+    
+    
+    <category term="Notes" scheme="https://hanielxx.com/tags/Notes/"/>
+    
+    <category term="PaperWritting" scheme="https://hanielxx.com/tags/PaperWritting/"/>
+    
+  </entry>
   
   <entry>
     <title>LTR精排序笔记整理[转]</title>
@@ -580,33 +603,6 @@
     <category term="OpenLibrary" scheme="https://hanielxx.com/tags/OpenLibrary/"/>
     
     <category term="Pytorch" scheme="https://hanielxx.com/tags/Pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BERT-FineTune源码理解</title>
-    <link href="https://hanielxx.com/MachineLearning/2021-03-31-bert-finetune-analysis"/>
-    <id>https://hanielxx.com/MachineLearning/2021-03-31-bert-finetune-analysis</id>
-    <published>2021-03-31T08:11:01.000Z</published>
-    <updated>2021-05-25T15:36:53.752Z</updated>
-    
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>之前有分析了BERT预训练的源码，即<code>create_pretraining_data.py</code>和<code>run_pretrain.py</code>两个文件，参见<a href="https://hanielxx.com/MachineLearning/2021-02-23-bert-create-pretrain-data-analysis">BERT-预训练源码理解</a>。</p><p>现在对<code>run_classifier.py</code>进行分析。</p><p>待更新上传</p></div><a id="more"></a>]]></content>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;之前有分析了BERT预训练的源码，即&lt;code&gt;create_pretraining_data.py&lt;/code&gt;和&lt;code&gt;run_pretrain.py&lt;/code&gt;两个文件，参见&lt;a href=&quot;https://hanielxx.com/MachineLearning/2021-02-23-bert-create-pretrain-data-analysis&quot;&gt;BERT-预训练源码理解&lt;/a&gt;。&lt;/p&gt;&lt;p&gt;现在对&lt;code&gt;run_classifier.py&lt;/code&gt;进行分析。&lt;/p&gt;&lt;p&gt;待更新上传&lt;/p&gt;&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="MachineLearning" scheme="https://hanielxx.com/categories/MachineLearning/"/>
-    
-    
-    <category term="Private" scheme="https://hanielxx.com/tags/Private/"/>
-    
-    <category term="BERT" scheme="https://hanielxx.com/tags/BERT/"/>
-    
-    <category term="Pretrain" scheme="https://hanielxx.com/tags/Pretrain/"/>
-    
-    <category term="DeepLearning" scheme="https://hanielxx.com/tags/DeepLearning/"/>
     
   </entry>
   
