@@ -6,7 +6,7 @@
   <link href="https://hanielxx.com/atom.xml" rel="self"/>
   
   <link href="https://hanielxx.com/"/>
-  <updated>2021-11-26T03:22:28.171Z</updated>
+  <updated>2021-11-26T03:22:21.925Z</updated>
   <id>https://hanielxx.com/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>论文笔记 | HiT:Hierarchical Transformer with Momentum Contrast for Video-Text Retrieval</title>
-    <link href="https://hanielxx.com/Papers/2021-11-09-hit-video-text-retrieval"/>
-    <id>https://hanielxx.com/Papers/2021-11-09-hit-video-text-retrieval</id>
-    <published>2021-11-09T05:34:18.000Z</published>
-    <updated>2021-11-26T03:22:28.171Z</updated>
-    
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>论文《HiT: Hierarchical Transformer with Momentum Contrast for Video-Text Retrieval》笔记</p></div><a id="more"></a><h2 id="背景和问题"><a href="#背景和问题" class="headerlink" title="背景和问题"></a>背景和问题</h2><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/uYL9dy.png" alt="uYL9dy"></p><h2 id="概述和总结"><a href="#概述和总结" class="headerlink" title="概述和总结"></a>概述和总结</h2><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/TXxIFJ.png" alt="TXxIFJ"></p><h2 id="模型和方法"><a href="#模型和方法" class="headerlink" title="模型和方法"></a>模型和方法</h2><h3 id="The-pipeline-of-our-method"><a href="#The-pipeline-of-our-method" class="headerlink" title="The pipeline of our method."></a>The pipeline of our method.</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/m5sYRB.png" alt="m5sYRB"></p><h3 id="Hierarchical-Transformer"><a href="#Hierarchical-Transformer" class="headerlink" title="Hierarchical Transformer"></a>Hierarchical Transformer</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/kG5TdK.png" alt="kG5TdK"></p><h3 id="Video-Encoders"><a href="#Video-Encoders" class="headerlink" title="Video Encoders"></a>Video Encoders</h3><p><img src="https://note.youdao.com/yws/res/2040/WEBRESOURCE457659e8a29d6ef7b449e583199d12df" alt="image.png"></p><p><img src="https://note.youdao.com/yws/res/2041/WEBRESOURCEcda631d6e0ecf57e30c583f8359795f0" alt="image.png"></p><h3 id="TEXT-Encoders"><a href="#TEXT-Encoders" class="headerlink" title="TEXT Encoders"></a>TEXT Encoders</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/DElUe2.png" alt="DElUe2"></p><h3 id="Momentum-Cross-modal-Contrast"><a href="#Momentum-Cross-modal-Contrast" class="headerlink" title="Momentum Cross-modal Contrast"></a>Momentum Cross-modal Contrast</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/MJc5i4.png" alt="MJc5i4"></p><h3 id="Matching"><a href="#Matching" class="headerlink" title="Matching"></a>Matching</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/7lXP9X.png" alt="7lXP9X"></p><h2 id="Experments"><a href="#Experments" class="headerlink" title="Experments"></a>Experments</h2><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/DQXpQ0.png" alt="DQXpQ0"></p><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/KPJUnj.png" alt="KPJUnj"></p>]]></content>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;论文《HiT: Hierarchical Transformer with Momentum Contrast for Video-Text Retrieval》笔记&lt;/p&gt;&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="Papers" scheme="https://hanielxx.com/categories/Papers/"/>
-    
-    
-    <category term="Transformer" scheme="https://hanielxx.com/tags/Transformer/"/>
-    
-    <category term="MultiModal" scheme="https://hanielxx.com/tags/MultiModal/"/>
-    
-    <category term="VideoTextRetrieval" scheme="https://hanielxx.com/tags/VideoTextRetrieval/"/>
-    
-    <category term="HiT" scheme="https://hanielxx.com/tags/HiT/"/>
-    
-    <category term="MultiScale" scheme="https://hanielxx.com/tags/MultiScale/"/>
-    
-  </entry>
   
   <entry>
     <title>论文笔记 | Less is More:CLIP BERT for Video-and-Language Learning via Sparse Sampling</title>
@@ -62,15 +33,44 @@
     <category term="Papers" scheme="https://hanielxx.com/categories/Papers/"/>
     
     
-    <category term="Transformer" scheme="https://hanielxx.com/tags/Transformer/"/>
-    
     <category term="MultiModal" scheme="https://hanielxx.com/tags/MultiModal/"/>
+    
+    <category term="Transformer" scheme="https://hanielxx.com/tags/Transformer/"/>
     
     <category term="ClipBERT" scheme="https://hanielxx.com/tags/ClipBERT/"/>
     
     <category term="Backbone" scheme="https://hanielxx.com/tags/Backbone/"/>
     
     <category term="Video-Text-Architecture" scheme="https://hanielxx.com/tags/Video-Text-Architecture/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文笔记 | HiT:Hierarchical Transformer with Momentum Contrast for Video-Text Retrieval</title>
+    <link href="https://hanielxx.com/Papers/2021-11-09-hit-video-text-retrieval"/>
+    <id>https://hanielxx.com/Papers/2021-11-09-hit-video-text-retrieval</id>
+    <published>2021-11-09T05:34:18.000Z</published>
+    <updated>2021-11-26T03:22:28.171Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><div class="note info"><p>论文《HiT: Hierarchical Transformer with Momentum Contrast for Video-Text Retrieval》笔记</p></div><a id="more"></a><h2 id="背景和问题"><a href="#背景和问题" class="headerlink" title="背景和问题"></a>背景和问题</h2><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/uYL9dy.png" alt="uYL9dy"></p><h2 id="概述和总结"><a href="#概述和总结" class="headerlink" title="概述和总结"></a>概述和总结</h2><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/TXxIFJ.png" alt="TXxIFJ"></p><h2 id="模型和方法"><a href="#模型和方法" class="headerlink" title="模型和方法"></a>模型和方法</h2><h3 id="The-pipeline-of-our-method"><a href="#The-pipeline-of-our-method" class="headerlink" title="The pipeline of our method."></a>The pipeline of our method.</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/m5sYRB.png" alt="m5sYRB"></p><h3 id="Hierarchical-Transformer"><a href="#Hierarchical-Transformer" class="headerlink" title="Hierarchical Transformer"></a>Hierarchical Transformer</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/kG5TdK.png" alt="kG5TdK"></p><h3 id="Video-Encoders"><a href="#Video-Encoders" class="headerlink" title="Video Encoders"></a>Video Encoders</h3><p><img src="https://note.youdao.com/yws/res/2040/WEBRESOURCE457659e8a29d6ef7b449e583199d12df" alt="image.png"></p><p><img src="https://note.youdao.com/yws/res/2041/WEBRESOURCEcda631d6e0ecf57e30c583f8359795f0" alt="image.png"></p><h3 id="TEXT-Encoders"><a href="#TEXT-Encoders" class="headerlink" title="TEXT Encoders"></a>TEXT Encoders</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/DElUe2.png" alt="DElUe2"></p><h3 id="Momentum-Cross-modal-Contrast"><a href="#Momentum-Cross-modal-Contrast" class="headerlink" title="Momentum Cross-modal Contrast"></a>Momentum Cross-modal Contrast</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/MJc5i4.png" alt="MJc5i4"></p><h3 id="Matching"><a href="#Matching" class="headerlink" title="Matching"></a>Matching</h3><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/7lXP9X.png" alt="7lXP9X"></p><h2 id="Experments"><a href="#Experments" class="headerlink" title="Experments"></a>Experments</h2><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/DQXpQ0.png" alt="DQXpQ0"></p><p><img src="https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/KPJUnj.png" alt="KPJUnj"></p>]]></content>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;论文《HiT: Hierarchical Transformer with Momentum Contrast for Video-Text Retrieval》笔记&lt;/p&gt;&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="Papers" scheme="https://hanielxx.com/categories/Papers/"/>
+    
+    
+    <category term="MultiModal" scheme="https://hanielxx.com/tags/MultiModal/"/>
+    
+    <category term="Transformer" scheme="https://hanielxx.com/tags/Transformer/"/>
+    
+    <category term="HiT" scheme="https://hanielxx.com/tags/HiT/"/>
+    
+    <category term="VideoTextRetrieval" scheme="https://hanielxx.com/tags/VideoTextRetrieval/"/>
+    
+    <category term="MultiScale" scheme="https://hanielxx.com/tags/MultiScale/"/>
     
   </entry>
   
@@ -120,8 +120,6 @@
     <category term="MachineLearning" scheme="https://hanielxx.com/categories/MachineLearning/"/>
     
     
-    <category term="DataAugmentation" scheme="https://hanielxx.com/tags/DataAugmentation/"/>
-    
     <category term="ContrastiveLearning" scheme="https://hanielxx.com/tags/ContrastiveLearning/"/>
     
     <category term="MoCo" scheme="https://hanielxx.com/tags/MoCo/"/>
@@ -135,6 +133,8 @@
     <category term="BYOL" scheme="https://hanielxx.com/tags/BYOL/"/>
     
     <category term="BatchNorm" scheme="https://hanielxx.com/tags/BatchNorm/"/>
+    
+    <category term="DataAugmentation" scheme="https://hanielxx.com/tags/DataAugmentation/"/>
     
     <category term="MLP" scheme="https://hanielxx.com/tags/MLP/"/>
     
@@ -161,11 +161,11 @@
     
     <category term="MultiModal" scheme="https://hanielxx.com/tags/MultiModal/"/>
     
-    <category term="Support-Set" scheme="https://hanielxx.com/tags/Support-Set/"/>
-    
     <category term="CrossModal" scheme="https://hanielxx.com/tags/CrossModal/"/>
     
     <category term="VideoTextRetrieval" scheme="https://hanielxx.com/tags/VideoTextRetrieval/"/>
+    
+    <category term="Support-Set" scheme="https://hanielxx.com/tags/Support-Set/"/>
     
   </entry>
   
@@ -215,15 +215,15 @@
     <category term="Papers" scheme="https://hanielxx.com/categories/Papers/"/>
     
     
-    <category term="Transformer" scheme="https://hanielxx.com/tags/Transformer/"/>
-    
     <category term="MultiModal" scheme="https://hanielxx.com/tags/MultiModal/"/>
     
-    <category term="CrossModal" scheme="https://hanielxx.com/tags/CrossModal/"/>
+    <category term="Transformer" scheme="https://hanielxx.com/tags/Transformer/"/>
     
     <category term="Video-Text" scheme="https://hanielxx.com/tags/Video-Text/"/>
     
     <category term="Retrieval" scheme="https://hanielxx.com/tags/Retrieval/"/>
+    
+    <category term="CrossModal" scheme="https://hanielxx.com/tags/CrossModal/"/>
     
     <category term="HANet" scheme="https://hanielxx.com/tags/HANet/"/>
     
@@ -348,9 +348,9 @@
     
     <category term="Notes" scheme="https://hanielxx.com/tags/Notes/"/>
     
-    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
-    
     <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
+    
+    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
     
     <category term="Airbert" scheme="https://hanielxx.com/tags/Airbert/"/>
     
@@ -375,11 +375,11 @@
     
     <category term="DeepLearning" scheme="https://hanielxx.com/tags/DeepLearning/"/>
     
-    <category term="Notes" scheme="https://hanielxx.com/tags/Notes/"/>
-    
     <category term="ImitationLearning" scheme="https://hanielxx.com/tags/ImitationLearning/"/>
     
     <category term="ReinforcementLearning" scheme="https://hanielxx.com/tags/ReinforcementLearning/"/>
+    
+    <category term="Notes" scheme="https://hanielxx.com/tags/Notes/"/>
     
   </entry>
   
@@ -404,9 +404,9 @@
     
     <category term="Notes" scheme="https://hanielxx.com/tags/Notes/"/>
     
-    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
-    
     <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
+    
+    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
     
     <category term="SpeakerFollower" scheme="https://hanielxx.com/tags/SpeakerFollower/"/>
     
@@ -433,13 +433,13 @@
     
     <category term="Notes" scheme="https://hanielxx.com/tags/Notes/"/>
     
-    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
+    <category term="EnvBiasVLN" scheme="https://hanielxx.com/tags/EnvBiasVLN/"/>
     
     <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
     
-    <category term="EnvBiasVLN" scheme="https://hanielxx.com/tags/EnvBiasVLN/"/>
-    
     <category term="Dataset" scheme="https://hanielxx.com/tags/Dataset/"/>
+    
+    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
     
   </entry>
   
@@ -466,11 +466,11 @@
     
     <category term="Graph" scheme="https://hanielxx.com/tags/Graph/"/>
     
+    <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
+    
     <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
     
     <category term="PaperNotes" scheme="https://hanielxx.com/tags/PaperNotes/"/>
-    
-    <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
     
     <category term="SceneMemoryVLN" scheme="https://hanielxx.com/tags/SceneMemoryVLN/"/>
     
@@ -495,11 +495,11 @@
     
     <category term="DeepLearning" scheme="https://hanielxx.com/tags/DeepLearning/"/>
     
-    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
-    
-    <category term="PaperNotes" scheme="https://hanielxx.com/tags/PaperNotes/"/>
+    <category term="DataAugmentation" scheme="https://hanielxx.com/tags/DataAugmentation/"/>
     
     <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
+    
+    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
     
     <category term="EvalauteNavInstrsVLN" scheme="https://hanielxx.com/tags/EvalauteNavInstrsVLN/"/>
     
@@ -511,7 +511,7 @@
     
     <category term="NLG" scheme="https://hanielxx.com/tags/NLG/"/>
     
-    <category term="DataAugmentation" scheme="https://hanielxx.com/tags/DataAugmentation/"/>
+    <category term="PaperNotes" scheme="https://hanielxx.com/tags/PaperNotes/"/>
     
     <category term="EACL" scheme="https://hanielxx.com/tags/EACL/"/>
     
@@ -538,19 +538,19 @@
     
     <category term="GNN" scheme="https://hanielxx.com/tags/GNN/"/>
     
+    <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
+    
     <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
     
     <category term="PaperNotes" scheme="https://hanielxx.com/tags/PaperNotes/"/>
     
-    <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
-    
     <category term="CVPR" scheme="https://hanielxx.com/tags/CVPR/"/>
-    
-    <category term="Transformer" scheme="https://hanielxx.com/tags/Transformer/"/>
     
     <category term="Topological-Plannint-VLN" scheme="https://hanielxx.com/tags/Topological-Plannint-VLN/"/>
     
     <category term="TopologicalMap" scheme="https://hanielxx.com/tags/TopologicalMap/"/>
+    
+    <category term="Transformer" scheme="https://hanielxx.com/tags/Transformer/"/>
     
   </entry>
   
@@ -571,19 +571,19 @@
     <category term="Papers" scheme="https://hanielxx.com/categories/Papers/"/>
     
     
-    <category term="BERT" scheme="https://hanielxx.com/tags/BERT/"/>
-    
     <category term="DeepLearning" scheme="https://hanielxx.com/tags/DeepLearning/"/>
     
-    <category term="Recurrent-VLN-BERT" scheme="https://hanielxx.com/tags/Recurrent-VLN-BERT/"/>
+    <category term="BERT" scheme="https://hanielxx.com/tags/BERT/"/>
+    
+    <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
     
     <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
     
     <category term="PaperNotes" scheme="https://hanielxx.com/tags/PaperNotes/"/>
     
-    <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
-    
     <category term="CVPR" scheme="https://hanielxx.com/tags/CVPR/"/>
+    
+    <category term="Recurrent-VLN-BERT" scheme="https://hanielxx.com/tags/Recurrent-VLN-BERT/"/>
     
   </entry>
   
@@ -606,13 +606,13 @@
     
     <category term="DeepLearning" scheme="https://hanielxx.com/tags/DeepLearning/"/>
     
-    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
-    
     <category term="Multimodal" scheme="https://hanielxx.com/tags/Multimodal/"/>
     
-    <category term="CVPR" scheme="https://hanielxx.com/tags/CVPR/"/>
+    <category term="VLN" scheme="https://hanielxx.com/tags/VLN/"/>
     
     <category term="R2R" scheme="https://hanielxx.com/tags/R2R/"/>
+    
+    <category term="CVPR" scheme="https://hanielxx.com/tags/CVPR/"/>
     
   </entry>
   
