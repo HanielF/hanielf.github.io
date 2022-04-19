@@ -1,5 +1,5 @@
 ---
-title:      LTR精排序笔记整理[转]
+title:      LTR精排序笔记
 subtitle:   Learning to Rank
 date:       2021-09-17 20:11:01
 tags:
@@ -11,13 +11,13 @@ mathjax: true
 urlname: ltr
 ---
 
-# 前言
-
-看到的一篇博客，转自[LTR精排序](https://ningshixian.github.io/2020/07/21/LTR%E7%B2%BE%E6%8E%92%E5%BA%8F/)
+{% note info %}
+看到的一篇讲排序学习的博客，转自[LTR精排序](https://ningshixian.github.io/2020/07/21/LTR%E7%B2%BE%E6%8E%92%E5%BA%8F/)
+{% endnote %}
+ <!-- more -->
 
 Elasticsearch 内部有几种不同的算法来评估相关度(relevance)：TF-IDF、BM25、BM25F等。但是这种模型 $f(q,d)$ 其实是简单的概率模型，评估 query 在 doc 中出现的位置、次数、频率等因素，但是不能有效的根据用户反馈（点击／停留时间）来持续优化搜索结果。比如说用户搜索了某些关键词，点击了某些结果，而这些结果并不是排在最前面的，但确实是用户最想要的。那有没有什么方法可以使它们排在前面呢？
 
- <!-- more -->
 
 - 什么是排序学习？
 

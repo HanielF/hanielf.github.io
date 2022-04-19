@@ -23,7 +23,8 @@ Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be valid
 - Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition
 
 <center>
-{% asset_img grid.png "A partially filled sudoku which is valid." %}
+
+!['A partially filled sudoku which is valid.'](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/2soqOa.png)
 </center>
 
 The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.
@@ -61,7 +62,7 @@ The Sudoku board could be partially filled, where empty cells are filled with th
 - 使用到的技巧就是，坐标变换
 
 <center>
-{% asset_img sub_grid.png %}
+![subgrid](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/hQmDNO.png)
 </center>
 
 

@@ -58,10 +58,13 @@ $$ softmax(x)_i = {exp(x_i) \over \sum_jexp(x_j)} $$
 {% endnote %}
 
 结合上面的evidence可以知道，evidence越大，正则化后的结果更大，就是权重更大。
-{% asset_img sof1.png %}
+
+![x](https://raw.githubusercontent.com/HanielF/ImageRepo/main/blog/2022-04-11-20-10-35-uuTCLX.png)
+
 进一步写成:
 $$ y = softmax(W_x + b) $$
 
 ## 实现模型
+
 
 

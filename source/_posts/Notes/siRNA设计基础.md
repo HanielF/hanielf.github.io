@@ -264,7 +264,8 @@ shRNA 由 siRNA 和环状连接序列组成。
 1. 观察结果
 
 #### Northern blot杂交
-{% asset_img 1.png 肿瘤转移抑制基因 KAil 不同转移潜能癌细胞中的表达 %}
+
+!['肿瘤转移抑制基因 KAil 不同转移潜能癌细胞中的表达'](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/sirna-1.png)
 
 #### 原位杂交
 它即可检测 mRNA 的表达，又可观察 mRNA 的定位，是研究细胞内基因表达及有关因素调控的有效工具Northern blot 分析和 RT-PCR 两种方法只用于检测某 特定的 RNA 片段，它们都只能证明细胞或组织中是否存在待测的核酸而不能证明核酸分子在细胞或组织中存在的部位，不具有定位性，也不能反映组织、细胞、器官的差异
@@ -284,7 +285,8 @@ shRNA 由 siRNA 和环状连接序列组成。
 
 #### 区别
 具体的还是参看[蛋白表达不同检测表达方式的比较和分析](https://wenku.baidu.com/view/67f81ad7d4bbfd0a79563c1ec5da50e2524dd102.html)
-{% asset_img 2.png  蛋白表达不同检测表达方式的比较和分析%}
+
+![蛋白表达不同检测表达方式的比较和分析](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/sirna-2.png)
 
 
 <!-- ## miRNA和tRNA -->
@@ -301,10 +303,6 @@ RNAi的重要工具
 - 组织中广泛表达
 - miRNA 可能调控多种关键基因
 - 可在转录后以及翻译水平上调控基因表达，可能在不影响 mRNA 的水平下调控基因表达
-
-[//]:# (### tRNA)
-
-
 
 ## 总结
 ### 《小干扰RNA的合理设计》总结

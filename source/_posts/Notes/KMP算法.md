@@ -26,13 +26,20 @@ KMP算法又复习了一遍，写个总结，贴下自己的代码。
 具体的可以看[详解KMP算法](https://www.cnblogs.com/yjiyjige/p/3263858.html)这篇博客，讲的挺好的，也有图解。
 这里只放几张截图，不做详细介绍了。
 
-{% asset_img 1.png 基本思想%}
-{% asset_img 2.png j指针移动的位置%}
-{% asset_img 3.png "next[j]=k，表示当T[i] != P[j]时，j指针的下一个位置"%}
-{% asset_img 4.png j=0和j=1时的情况%}
-{% asset_img 5.png "P[k]=P[j]时，next[j+1]==next[j]+1"%}
-{% asset_img 6.png "P[k] != P[j]时， k = next[k]"%}
- 
+![基本思想](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/kmp-1.png)
+
+![j指针移动的位置](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/kmp-2.png)
+
+!["next[j]=k，表示当T[i] != P[j]时，j指针的下一个位置"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/kmp-3.png)
+
+!["j=0和j=1时的情况"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/kmp-4.png)
+
+!["P[k]=P[j]时，next[j+1]==next[j]+1"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/kmp-5.png)
+
+!["P[k] != P[j]时， k = next[k]"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/kmp-6.png)
+
+![kmp-7](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/kmp-7.png)
+
 ## KMP算法实现
 
 ```c

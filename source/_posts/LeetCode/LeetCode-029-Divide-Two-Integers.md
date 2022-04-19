@@ -125,12 +125,12 @@ def divide(self, dividend: int, divisor: int) -> int:
 ## 大整数进制转换
 附上自己做的思维导图截图
 
-{% asset_img 1.png  %}
+![1](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/uKqNqv.png)
 
 ## 大整数乘法
 附上自己做的思维导图截图
 
-{% asset_img 2.png %}
+![2](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/KuRL1o.png)
 
 ## 总结
 - 大整数运算，时间复杂度太高的，可以想想移位运算和二进制模拟。甚至是字符串。

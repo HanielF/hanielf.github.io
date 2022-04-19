@@ -52,8 +52,8 @@ $ y=R $ or $y = [lower, upper] \setminus R (bounded regression)$
 - 自然语言处理中语言的parse tree
 
 总的可以看下图：
-{% asset_img tol1.png Learning with Different Output Space %}
 
+![Learning with Different Output Space](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/tol1.png)
 
 # 不同程度标记的样本
 ## 监督学习: Supervised Learning
@@ -92,7 +92,8 @@ $ y=R $ or $y = [lower, upper] \setminus R (bounded regression)$
 - 广告系统输入的是顾客资料，顾客点击或者不点击，推荐
 
 ## 总结
-{% asset_img tol2.png "Learning with Different Data Label yn" %}
+
+![Learning with Different Data Label yn](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/tol2.png)
 
 # 不同的训练方式
 ## batch Supervised multiclass classification
@@ -135,7 +136,9 @@ batch learning像是填鸭式，online learning像是教书，一条一条教.
 这种按照输入样本的 features 进行分类的方法在实际中并不常用，因为输入的样本往往是各种 features交杂在一起的，不同问题需要与其相应的 features 才能得到好的效果，features 对结果的影响比较大。因此机器学习中也产生了 feature engineering 一说。
 
 ## 总结
-{% asset_img tol3.png "Learning with Different input Space" %}
+
+![Learning with Different input Space](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/tol3.png)
+
 
 
 

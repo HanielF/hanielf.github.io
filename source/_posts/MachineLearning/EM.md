@@ -42,7 +42,7 @@ urlname: EM-Notes
 ### 图解
 如果用图表示会很清晰：
 <center>
-{% asset_img 1.png 图示%}
+![图示](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/tmM5I8.png)
 </center>
 
 图中，实线f是凸函数，X是随机变量，有0.5的概率是a，有0.5的概率是b。（就像掷硬币一样）。
@@ -198,7 +198,7 @@ $$
 
 固定$$ \phi_j和\sum_j $$对$$ \mu_j $$求导得
 <center>
-{% asset_img 4.png %}
+![bfUeF9](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/bfUeF9.png)
 </center>
 
 等于0时，得到

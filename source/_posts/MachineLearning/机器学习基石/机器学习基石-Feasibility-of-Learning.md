@@ -42,8 +42,9 @@ NFL定理的前提是，所有问题出现的机会相等、或所有问题都�
 
 想到以前数学家证明硬币一面朝上的概率，通过很多很多很多次的抛硬币来统计每面朝上的概率，最后证明就是1/2，并且抛的次数越多，概率越接近。
 
-{% asset_img fol1.png "Hoeffding Inequality 1/2" %}
-{% asset_img fol2.png "Hoeffding Inequality 2/2" %}
+!["Hoeffding Inequality 1/2"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/fol1.png)
+
+!["Hoeffding Inequality 2/2"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/fol2.png)
 
 # Connection to Learning
 
@@ -55,8 +56,9 @@ $$ E_out(h) $$代表总的样本中的不一致的概率
 
 如果$$ E_in(h) \sim E_out(h) $$，并且$$ E_in(h) $$很小，我们就可以推断，$$ E_out(h) $$很小，并且，$$ h \sim f with respect to P $$
 
-{% asset_img fol3.png "Added Componentss" %}
-{% asset_img fol4.png "The Formal Guarantee" %}
+!["Added Componentss"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/fol3.png)
+
+!["The Formal Guarantee"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/fol4.png)
 
 {% note danger %}
 **real learning** is: $$ A $$ shall **make choices $$ \in H $$** (like PLA)
@@ -81,7 +83,8 @@ Hoeffding说的是取样的和真实的大部分情况下是符合的，只有�
 Hoeffding说的是在一个Data里面，抽一堆和大部分符合
 
 这里说的其实是一堆Data里，出现不好的Data的概率是：
-{% asset_img fol5.png "Bound of BAD Data" %}
+
+!["Bound of BAD Data"](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/fol5.png)
 
 所以如果假设数量有限，即M有限，并且每个Data样本N足够大，那么不管$$ A $$怎么选，$$ E_out(g) \sim E_in(g)$$，即可以放心选，这样就说明了有限数量的h情况下，机器学习是可行的
 

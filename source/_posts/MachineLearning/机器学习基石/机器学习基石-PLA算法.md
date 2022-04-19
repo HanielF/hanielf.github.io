@@ -23,16 +23,17 @@ urlname: machinelearning-pla
 - $$\mathcal g$$: 最终的假设，是\mathcalf的一个近似函数
 
 课件上很清楚的描绘了机器学习的一个过程
-{% asset_img pla1.png 基本过程 %}
+![基本过程](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/pla1.png)
 
 ## 感知机
 感知机是神经网络的基础，与线性回归（Linear Regression），逻辑回归（Logistics Regression）等模型也非常类似，是一种非常典型的线性模型。
 
 原始的感知机算法用于解决二分类问题，其思想如下：假设样本有 d 个特征，但是每个特征的重要性不一样，因此各个特征的权重也不一样，对其进行加权后得到的总和假如大于某个阈值则认为归为其中一类，反之归为另一类。如在信用卡的例子中，通过感知机有如下的结果
-{% asset_img pla2.png 推导过程 %}
+![推导过程](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/pla2.png)
 
 然后可以将threshold化为常数项作为$$w_0$$,简化为下图：
-{% asset_img pla3.png 简化过程%}
+![简化过程](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/pla3.png)
+
 上面的$$w$$和$$x$$均为一个列向量，即$$w$$转置后成为行向量
 
 ## PLA
@@ -44,20 +45,22 @@ urlname: machinelearning-pla
 3. 重复上面的过程直到所有的样本点都能够被参数$$w$$正确预测。
 
 对于某个被预测错误的样本点，参数$$ w $$更新过程如下：
-{% asset_img pla4.png w的更新 %}
+![w的更新](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/pla4.png)
 
 注意上面的算法的前提是所有的样本点都必须线性可分，假如样本点线性不可分，那么PLA按照上面的规则会陷入死循环中。如下是线性可分与线性不可分的例子)
-{% asset_img pla5.png 线性不可分的例子 %}
+
+![线性不可分的例子](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/pla5.png)
 
 ## 收敛性证明
 上面提到只有当所有的样本均为线性可分时，PLA才能将所有的样本点正确分类后再停下了，但是这仅仅是定性的说明而已，并没有严格的数学正面来支撑其收敛性，下面要讲的便是通过数学证明来说明 PLA 算法的收敛性。
 
 课程中用两次递进的证明来说明收敛性
-{% asset_img pla6.png 简单证明 %}
+
+![简单证明](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/pla6.png)
 
 上面讲的是随着参数$$ w $$的更新,$$ w^T_fw_t+1 $$的值越来越大，也就是两者越来越相似
 衡量两个向量相似性的一种方法就是考虑他们的内积，值越大，代表两者约接近，但是这里还没对向量归一化，所以证明并不严格，但是已经说明了两者具有这个趋势，下面是更严格的过程
-{% asset_img pla7.png 严格证明 %}
+![严格证明](https://cdn.jsdelivr.net/gh/HanielF/ImageRepo@main/blog/pla7.png)
 
 上面似乎只是说明了经过 T 次的纠错，wt 的值会限制在一个范围内，但是并没有给出最终结论
 $$ {w_f \over ||w_f||}{w_T \over ||w_T||} \ge \sqrt{T} * constant $$
