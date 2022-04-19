@@ -31,10 +31,12 @@ urlname: Paper-note-Research-on-prediction-method-of-siRNA-silencing-efficiency-
 早期主要是用统计学方法寻找siRNA不同沉默效率的规则，因此沉默效率不能量化，只能分高效和低效siRNA
 
 主要是在siRNA不同位置上的规则约束，这部分可以用一张表总结。
-{% asset_img 1-1.png siRNA序列打分规则 %}
+
+![8v6DoHEhjlCYAnF](https://i.loli.net/2021/11/04/8v6DoHEhjlCYAnF.png)
+
 
 其次需要考虑siRNA热力学稳定性，主要是下面两种规则：
-{% asset_img 1-2.png siRNA热力学稳定性规则 %}
+![1NusWtUV4bBASX7](https://i.loli.net/2021/11/04/1NusWtUV4bBASX7.png)
 
 **缺点是：**
 1. 样本量太少

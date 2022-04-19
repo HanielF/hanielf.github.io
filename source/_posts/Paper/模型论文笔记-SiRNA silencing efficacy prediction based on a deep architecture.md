@@ -64,7 +64,7 @@ siRNA 通常是 19-29bp 长度的短 RNA 双链，在 RNA 干扰机制中有很�
 
 模型结构图如下：
 
-{% asset_img model.png %}
+![qWysw3iSOeCDBGf](https://i.loli.net/2021/11/04/qWysw3iSOeCDBGf.png)
 
 ## 总结与思考
 
@@ -85,7 +85,7 @@ siRNA 通常是 19-29bp 长度的短 RNA 双链，在 RNA 干扰机制中有很�
 
 这样就可以得到混淆矩阵如下：
 
-{% asset_img matrix.jpg %}
+https://i.loli.net/2021/11/04/19yWqY3Oi5EgraS.png
 
 ### 真阳率和假阳率
 
