@@ -22,6 +22,10 @@
 .constraintRow b,.constraintRow span{min-width:0}.constraintRow strong{display:block;color:#d8e6df;font-size:8px}.constraintRow small{display:block;margin-top:5px;color:#657a70;font-size:7px}.constraintReason{grid-column:3/8;color:#ff8278}
 .applyConstraint{border:1px solid rgba(101,231,173,.35);border-radius:7px;background:rgba(101,231,173,.06);color:#65e7ad;padding:7px;font-size:7px}.applyConstraint:hover{background:rgba(101,231,173,.14)}
 .constraintDisclaimer{margin-top:12px;color:#7d8f86}
+.trendTradeHead,.trendTradeRow{min-width:760px;display:grid;grid-template-columns:1fr .65fr .8fr .8fr 1.1fr 1.5fr;gap:14px;align-items:center;padding:0 18px}
+.trendTradeHead{height:40px;color:#62766c;font-size:8px}
+.trendTradeRow{min-height:52px;border-top:1px solid rgba(213,238,226,.07);color:#9eb0a7;font:9px monospace}
+.trendTradeRow b{font-size:9px}
 
 @media(max-width:980px){.constraintControls{grid-template-columns:repeat(2,1fr)}.constraintSummary{grid-template-columns:repeat(2,1fr)}.constraintRule{align-items:flex-start;flex-wrap:wrap}.constraintRule i{width:100%;margin-left:0}}
 @media(max-width:620px){.constraintPanel{padding:13px}.constraintControls{grid-template-columns:1fr}.constraintSummary{grid-template-columns:1fr 1fr}.constraintCard b{font-size:14px}}
