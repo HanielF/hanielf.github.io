@@ -1,0 +1,4 @@
+.assetCheck{grid-template-columns:16px minmax(0,1fr) auto auto}
+.applyBest{grid-column:1/-1;margin-top:2px!important}
+.validationSummary>.empty,.batchSummary>.empty{grid-column:1/-1}
+@media(max-width:620px){.assetCheck{grid-template-columns:16px minmax(0,1fr) auto}.assetCheck em{display:none}}
