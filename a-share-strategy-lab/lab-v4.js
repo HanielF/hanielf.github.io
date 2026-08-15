@@ -13,6 +13,8 @@ const S=[
 
 const ASSETS=[
   {code:'000001',name:'上证指数',type:'index',group:'大盘'},
+  {code:'000300',name:'沪深300',type:'index',group:'大盘'},
+  {code:'000905',name:'中证500',type:'index',group:'大盘'},
   {code:'399006',name:'创业板指',type:'index',group:'大盘'},
   {code:'000688',name:'科创50',type:'index',group:'大盘'},
   {code:'601138',name:'工业富联',type:'stock',group:'个股'},
