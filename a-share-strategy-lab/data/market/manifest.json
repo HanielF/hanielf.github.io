@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "market-cache-v8-bootstrap",
+  "updatedAt": null,
+  "source": "东方财富公开日线，经校验后作为静态基线；浏览器仅请求缺失增量",
+  "adjustment": "前复权（股票/ETF），指数不复权",
+  "entries": {}
+}

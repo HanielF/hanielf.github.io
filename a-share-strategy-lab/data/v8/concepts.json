@@ -1,0 +1,151 @@
+{
+  "version": "concept-universe-v8.0.0",
+  "updatedAt": "2026-08-16",
+  "quality": "historical-approximation",
+  "methodology": "免费数据首版：概念股票池与业务相关度为静态研究底稿；每期热度、龙头与可交易性只使用信号日及以前的行情。历史成分并非付费点时快照，报告会单独标记近似偏差。",
+  "concepts": [
+    {
+      "id": "battery", "name": "锂电池", "availableFrom": "2021-01-01", "confidence": 0.88,
+      "stocks": [
+        {"code":"300750","name":"宁德时代","purity":96,"reason":"动力与储能电池核心业务"},
+        {"code":"002594","name":"比亚迪","purity":84,"reason":"新能源汽车与动力电池一体化"},
+        {"code":"300014","name":"亿纬锂能","purity":93,"reason":"消费、动力与储能锂电池"},
+        {"code":"002460","name":"赣锋锂业","purity":91,"reason":"锂资源与锂化合物产业链"},
+        {"code":"002466","name":"天齐锂业","purity":90,"reason":"锂资源开发与锂产品"},
+        {"code":"002812","name":"恩捷股份","purity":92,"reason":"锂电池隔膜材料"}
+      ]
+    },
+    {
+      "id": "solar", "name": "光伏", "availableFrom": "2021-01-01", "confidence": 0.9,
+      "stocks": [
+        {"code":"601012","name":"隆基绿能","purity":96,"reason":"光伏硅片与组件"},
+        {"code":"300274","name":"阳光电源","purity":94,"reason":"光伏逆变器与储能系统"},
+        {"code":"600438","name":"通威股份","purity":88,"reason":"高纯晶硅与电池片"},
+        {"code":"002459","name":"晶澳科技","purity":94,"reason":"光伏电池与组件"},
+        {"code":"002129","name":"TCL中环","purity":86,"reason":"光伏硅片与半导体材料"},
+        {"code":"603806","name":"福斯特","purity":91,"reason":"光伏封装胶膜"}
+      ]
+    },
+    {
+      "id": "storage", "name": "储能", "availableFrom": "2021-01-01", "confidence": 0.82,
+      "stocks": [
+        {"code":"300274","name":"阳光电源","purity":91,"reason":"储能系统与逆变器"},
+        {"code":"688063","name":"派能科技","purity":97,"reason":"储能电池系统"},
+        {"code":"002335","name":"科华数据","purity":78,"reason":"储能、数据中心电源"},
+        {"code":"300693","name":"盛弘股份","purity":83,"reason":"储能变流器与电能质量"},
+        {"code":"300827","name":"上能电气","purity":84,"reason":"光伏与储能变流器"},
+        {"code":"300068","name":"南都电源","purity":86,"reason":"储能电池与系统集成"}
+      ]
+    },
+    {
+      "id": "ai_compute", "name": "AI算力", "availableFrom": "2022-11-01", "confidence": 0.78,
+      "stocks": [
+        {"code":"601138","name":"工业富联","purity":85,"reason":"AI服务器与云计算基础设施"},
+        {"code":"000977","name":"浪潮信息","purity":92,"reason":"服务器与算力基础设施"},
+        {"code":"603019","name":"中科曙光","purity":89,"reason":"高性能计算与服务器"},
+        {"code":"688256","name":"寒武纪","purity":95,"reason":"AI加速芯片"},
+        {"code":"688041","name":"海光信息","purity":96,"reason":"国产CPU与协处理器"},
+        {"code":"000938","name":"紫光股份","purity":82,"reason":"网络设备与算力基础设施"}
+      ]
+    },
+    {
+      "id": "cpo", "name": "CPO与光通信", "availableFrom": "2023-01-01", "confidence": 0.82,
+      "stocks": [
+        {"code":"300308","name":"中际旭创","purity":97,"reason":"高速光模块"},
+        {"code":"300502","name":"新易盛","purity":97,"reason":"高速光模块"},
+        {"code":"300394","name":"天孚通信","purity":94,"reason":"光器件与光引擎组件"},
+        {"code":"002281","name":"光迅科技","purity":91,"reason":"光模块与光器件"},
+        {"code":"000988","name":"华工科技","purity":79,"reason":"光通信器件与激光装备"},
+        {"code":"603083","name":"剑桥科技","purity":86,"reason":"高速光模块与通信设备"}
+      ]
+    },
+    {
+      "id": "pcb", "name": "PCB", "availableFrom": "2021-01-01", "confidence": 0.9,
+      "stocks": [
+        {"code":"300476","name":"胜宏科技","purity":96,"reason":"高阶PCB"},
+        {"code":"002463","name":"沪电股份","purity":97,"reason":"通信与服务器PCB"},
+        {"code":"600183","name":"生益科技","purity":91,"reason":"覆铜板与粘结片"},
+        {"code":"002916","name":"深南电路","purity":96,"reason":"PCB、封装基板"},
+        {"code":"002384","name":"东山精密","purity":78,"reason":"FPC与电子制造"},
+        {"code":"603228","name":"景旺电子","purity":96,"reason":"多品类PCB"}
+      ]
+    },
+    {
+      "id": "semi_equipment", "name": "半导体设备", "availableFrom": "2021-01-01", "confidence": 0.92,
+      "stocks": [
+        {"code":"002371","name":"北方华创","purity":96,"reason":"半导体核心工艺设备"},
+        {"code":"688012","name":"中微公司","purity":97,"reason":"刻蚀与薄膜设备"},
+        {"code":"688072","name":"拓荆科技","purity":97,"reason":"薄膜沉积设备"},
+        {"code":"688082","name":"盛美上海","purity":96,"reason":"清洗与湿法设备"},
+        {"code":"688120","name":"华海清科","purity":97,"reason":"CMP设备"},
+        {"code":"688037","name":"芯源微","purity":94,"reason":"涂胶显影与清洗设备"}
+      ]
+    },
+    {
+      "id": "memory", "name": "存储芯片", "availableFrom": "2021-01-01", "confidence": 0.82,
+      "stocks": [
+        {"code":"603986","name":"兆易创新","purity":92,"reason":"NOR Flash与MCU"},
+        {"code":"300223","name":"北京君正","purity":88,"reason":"存储与计算芯片"},
+        {"code":"001309","name":"德明利","purity":95,"reason":"存储模组与主控"},
+        {"code":"301308","name":"江波龙","purity":96,"reason":"存储产品与品牌"},
+        {"code":"688525","name":"佰维存储","purity":96,"reason":"存储模组与封测"},
+        {"code":"000021","name":"深科技","purity":71,"reason":"存储制造与电子制造"}
+      ]
+    },
+    {
+      "id": "robot", "name": "人形机器人", "availableFrom": "2022-09-01", "confidence": 0.72,
+      "stocks": [
+        {"code":"002050","name":"三花智控","purity":68,"reason":"机电执行器相关零部件"},
+        {"code":"601689","name":"拓普集团","purity":70,"reason":"机器人执行器相关零部件"},
+        {"code":"688017","name":"绿的谐波","purity":95,"reason":"精密谐波减速器"},
+        {"code":"603728","name":"鸣志电器","purity":88,"reason":"控制电机与驱动系统"},
+        {"code":"603662","name":"柯力传感","purity":73,"reason":"力学传感器与机器人布局"},
+        {"code":"002472","name":"双环传动","purity":72,"reason":"精密传动与减速器"}
+      ]
+    },
+    {
+      "id": "low_altitude", "name": "低空经济", "availableFrom": "2023-12-01", "confidence": 0.68,
+      "stocks": [
+        {"code":"002085","name":"万丰奥威","purity":74,"reason":"通航飞机与低空制造"},
+        {"code":"000099","name":"中信海直","purity":92,"reason":"通用航空运营"},
+        {"code":"001696","name":"宗申动力","purity":69,"reason":"航空发动机相关布局"},
+        {"code":"688070","name":"纵横股份","purity":96,"reason":"工业无人机"},
+        {"code":"688631","name":"莱斯信息","purity":79,"reason":"空管与低空管理信息化"},
+        {"code":"000801","name":"四川九洲","purity":73,"reason":"空管与航空电子"}
+      ]
+    },
+    {
+      "id": "consumer_ai", "name": "AI终端与消费电子", "availableFrom": "2021-01-01", "confidence": 0.74,
+      "stocks": [
+        {"code":"002475","name":"立讯精密","purity":89,"reason":"消费电子精密制造"},
+        {"code":"002241","name":"歌尔股份","purity":88,"reason":"声学、XR与智能硬件"},
+        {"code":"002273","name":"水晶光电","purity":84,"reason":"光学元件与AR光学"},
+        {"code":"002600","name":"领益智造","purity":82,"reason":"精密功能件与整机组装"},
+        {"code":"300433","name":"蓝思科技","purity":81,"reason":"智能终端结构件"},
+        {"code":"603501","name":"韦尔股份","purity":83,"reason":"图像传感芯片"}
+      ]
+    },
+    {
+      "id": "mlcc", "name": "MLCC", "availableFrom": "2021-01-01", "confidence": 0.9,
+      "stocks": [
+        {"code":"000636","name":"风华高科","purity":94,"reason":"MLCC与电子元件"},
+        {"code":"300408","name":"三环集团","purity":90,"reason":"陶瓷元件与MLCC"},
+        {"code":"603678","name":"火炬电子","purity":88,"reason":"陶瓷电容器"},
+        {"code":"002859","name":"洁美科技","purity":82,"reason":"电子元器件薄型载带"},
+        {"code":"603267","name":"鸿远电子","purity":89,"reason":"高可靠陶瓷电容器"},
+        {"code":"300285","name":"国瓷材料","purity":78,"reason":"电子陶瓷材料"}
+      ]
+    },
+    {
+      "id": "fiber", "name": "光纤光缆", "availableFrom": "2021-01-01", "confidence": 0.9,
+      "stocks": [
+        {"code":"601869","name":"长飞光纤","purity":97,"reason":"光纤预制棒、光纤光缆"},
+        {"code":"600522","name":"中天科技","purity":85,"reason":"光通信与电力线缆"},
+        {"code":"600487","name":"亨通光电","purity":86,"reason":"光通信网络与线缆"},
+        {"code":"600498","name":"烽火通信","purity":91,"reason":"光通信设备与光纤"},
+        {"code":"002491","name":"通鼎互联","purity":87,"reason":"光纤光缆与通信网络"},
+        {"code":"600105","name":"永鼎股份","purity":79,"reason":"光缆与通信产业"}
+      ]
+    }
+  ]
+}
