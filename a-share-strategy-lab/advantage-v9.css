@@ -1,0 +1,825 @@
+:root {
+  --adv-bg: var(--v8-surface, #101c19);
+  --adv-bg-soft: var(--v8-surface-2, #0b1613);
+  --adv-bg-raised: var(--v8-surface-3, #13231e);
+  --adv-line: var(--v8-line, rgba(213, 238, 226, .12));
+  --adv-line-strong: var(--v8-line-strong, rgba(101, 231, 173, .34));
+  --adv-text: var(--v8-text, #edf6f1);
+  --adv-muted: var(--v8-muted, #81968b);
+  --adv-green: var(--v8-green, #65e7ad);
+  --adv-green-soft: var(--v8-green-soft, #b9f6d9);
+  --adv-gold: var(--v8-gold, #e5bd70);
+  --adv-red: var(--v8-red, #ff8278);
+  --adv-sticky-top: 78px;
+}
+
+.advantageReport {
+  position: relative;
+  overflow: visible;
+  margin-top: 14px;
+  color: var(--adv-text);
+  font-size: 14px;
+}
+
+.advantageReport *,
+.advantageReport *::before,
+.advantageReport *::after { box-sizing: border-box; }
+
+.advantageReport :is(p, span, small, li, th, td, dt, dd, label) {
+  font-size: max(12px, .75rem);
+  line-height: 1.55;
+}
+
+.advantageReport :is(button, a[role="button"], input, select) {
+  min-height: 44px;
+  font-size: 12px;
+}
+
+.advantageReport :is(button, a, input, select, summary):focus-visible {
+  outline: 2px solid var(--adv-green);
+  outline-offset: 2px;
+}
+
+/* display:contents lets the cap tabs remain sticky for the whole report. */
+.advantageHead { display: contents; }
+
+.advantageHead > div:first-child {
+  padding: 22px;
+  border: 1px solid var(--adv-line);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(101, 231, 173, .075), transparent 48%),
+    var(--adv-bg);
+}
+
+.advantageHead h2 {
+  margin: 8px 0;
+  color: var(--adv-text);
+  font-size: clamp(23px, 3vw, 34px);
+  letter-spacing: -.035em;
+}
+
+.advantageHead p:last-child {
+  max-width: 880px;
+  margin: 0;
+  color: var(--adv-muted);
+}
+
+#drawdownTabs,
+.drawdownTabs,
+.advantageCapTabs {
+  position: sticky;
+  z-index: 16;
+  top: var(--adv-sticky-top);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(130px, 1fr));
+  gap: 7px;
+  width: min(440px, 100%);
+  margin: 10px 0 0 auto;
+  padding: 7px;
+  border: 1px solid var(--adv-line);
+  border-radius: 13px;
+  background: rgba(8, 17, 15, .94);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .22);
+  backdrop-filter: blur(16px);
+}
+
+#drawdownTabs button,
+.drawdownTabs button,
+.advantageCapTabs button {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #91a59b;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+}
+
+#drawdownTabs button:hover,
+.drawdownTabs button:hover,
+.advantageCapTabs button:hover {
+  border-color: var(--adv-line);
+  color: var(--adv-green-soft);
+}
+
+#drawdownTabs button:is(.active, [aria-selected="true"]),
+.drawdownTabs button:is(.active, [aria-selected="true"]),
+.advantageCapTabs button:is(.active, [aria-selected="true"]) {
+  border-color: rgba(101, 231, 173, .3);
+  background: rgba(101, 231, 173, .11);
+  color: var(--adv-green-soft);
+  box-shadow: inset 0 0 0 1px rgba(101, 231, 173, .06);
+}
+
+.capComparison,
+#capComparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.capComparison > article,
+#capComparison > article,
+.capSummaryCard,
+.advantageSummaryCard {
+  position: relative;
+  min-width: 0;
+  min-height: 168px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid var(--adv-line);
+  border-radius: 15px;
+  background: var(--adv-bg-soft);
+}
+
+.capComparison > article::before,
+#capComparison > article::before,
+.capSummaryCard::before,
+.advantageSummaryCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--adv-green);
+}
+
+.capComparison > article[data-cap="30"]::before,
+#capComparison > article[data-cap="30"]::before,
+.capSummaryCard[data-cap="30"]::before { background: var(--adv-gold); }
+
+.capComparison header,
+#capComparison header,
+.capSummaryCard header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.capComparison h3,
+#capComparison h3,
+.capSummaryCard h3 {
+  margin: 0;
+  color: var(--adv-text);
+  font-size: 18px;
+}
+
+.capComparison dl,
+#capComparison dl,
+.capSummaryCard dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 16px 0 0;
+}
+
+.capComparison dl > div,
+#capComparison dl > div,
+.capSummaryCard dl > div {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(213, 238, 226, .08);
+  border-radius: 10px;
+  background: rgba(19, 35, 30, .54);
+}
+
+.capComparison dt,
+#capComparison dt,
+.capSummaryCard dt { color: var(--adv-muted); }
+
+.capComparison dd,
+#capComparison dd,
+.capSummaryCard dd {
+  margin: 5px 0 0;
+  color: var(--adv-text);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.025em;
+}
+
+.reportSectionHead,
+.advantageSectionHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 30px 0 12px;
+}
+
+.reportSectionHead h3,
+.advantageSectionHead h3,
+.advantageReport > section > h3 {
+  margin: 0;
+  color: var(--adv-text);
+  font-size: 20px;
+  letter-spacing: -.025em;
+}
+
+.reportSectionHead > span,
+.advantageSectionHead > span { color: var(--adv-muted); }
+
+#trainingTop3,
+#trainingTop5,
+.advantageTopStrategies {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+:is(#trainingTop3, #trainingTop5, .advantageTopStrategies) > article,
+.topStrategyCard,
+.advantageTopCard {
+  position: relative;
+  min-width: 0;
+  min-height: 260px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid var(--adv-line);
+  border-radius: 15px;
+  background:
+    linear-gradient(150deg, rgba(101, 231, 173, .055), transparent 44%),
+    var(--adv-bg-soft);
+}
+
+:is(#trainingTop3, #trainingTop5, .advantageTopStrategies) > article:first-child,
+.topStrategyCard:first-child {
+  border-color: rgba(229, 189, 112, .34);
+  background:
+    linear-gradient(150deg, rgba(229, 189, 112, .08), transparent 48%),
+    var(--adv-bg-soft);
+}
+
+:is(#trainingTop3, #trainingTop5, .advantageTopStrategies) article header,
+.topStrategyCard header,
+.advantageTopCard header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.advRank,
+.strategyRank {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  min-height: 34px;
+  place-items: center;
+  border: 1px solid rgba(101, 231, 173, .25);
+  border-radius: 50%;
+  color: var(--adv-green);
+  font: 800 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.advStatus,
+.strategyStatus,
+.gateStatus {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid var(--adv-line);
+  border-radius: 999px;
+  color: var(--adv-muted);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+:is(.advStatus, .strategyStatus, .gateStatus).is-pass,
+:is(.advStatus, .strategyStatus, .gateStatus).pass {
+  border-color: rgba(101, 231, 173, .28);
+  background: rgba(101, 231, 173, .08);
+  color: var(--adv-green);
+}
+
+:is(.advStatus, .strategyStatus, .gateStatus).is-observe,
+:is(.advStatus, .strategyStatus, .gateStatus).observe {
+  border-color: rgba(229, 189, 112, .3);
+  background: rgba(229, 189, 112, .075);
+  color: var(--adv-gold);
+}
+
+:is(.advStatus, .strategyStatus, .gateStatus).is-fail,
+:is(.advStatus, .strategyStatus, .gateStatus).fail {
+  border-color: rgba(255, 130, 120, .27);
+  background: rgba(255, 130, 120, .07);
+  color: var(--adv-red);
+}
+
+:is(#trainingTop3, #trainingTop5, .advantageTopStrategies) h4,
+.topStrategyCard h4,
+.advantageTopCard h4 {
+  margin: 15px 0 5px;
+  color: var(--adv-text);
+  font-size: 18px;
+}
+
+:is(#trainingTop3, #trainingTop5, .advantageTopStrategies) article > small,
+.topStrategyCard > small,
+.advantageTopCard > small { color: var(--adv-muted); }
+
+.advStrategyMetrics,
+.topStrategyMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.advStrategyMetrics > div,
+.topStrategyMetrics > div {
+  min-width: 0;
+  padding: 10px 8px;
+  border: 1px solid rgba(213, 238, 226, .075);
+  border-radius: 9px;
+  background: rgba(19, 35, 30, .48);
+}
+
+.advStrategyMetrics span,
+.topStrategyMetrics span { display: block; color: var(--adv-muted); }
+
+.advStrategyMetrics b,
+.topStrategyMetrics b {
+  display: block;
+  margin-top: 4px;
+  color: var(--adv-text);
+  font-size: 16px;
+}
+
+.frozenParams,
+.advFrozenParams {
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(213, 238, 226, .08);
+  color: var(--adv-muted);
+  overflow-wrap: anywhere;
+}
+
+#oosComparison,
+#assetValidation,
+.advantageTableWrap {
+  min-width: 0;
+  overflow-x: auto;
+  border: 1px solid var(--adv-line);
+  border-radius: 14px;
+  background: var(--adv-bg-soft);
+}
+
+:is(#oosComparison, #assetValidation, .advantageTableWrap) table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  color: #a7b9af;
+}
+
+:is(#oosComparison, #assetValidation, .advantageTableWrap) th,
+:is(#oosComparison, #assetValidation, .advantageTableWrap) td {
+  padding: 13px 12px;
+  border-bottom: 1px solid rgba(213, 238, 226, .075);
+  text-align: left;
+  vertical-align: middle;
+}
+
+:is(#oosComparison, #assetValidation, .advantageTableWrap) th {
+  color: #71867b;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+:is(#oosComparison, #assetValidation, .advantageTableWrap) tbody tr:last-child td { border-bottom: 0; }
+:is(#oosComparison, #assetValidation, .advantageTableWrap) tbody tr:hover { background: rgba(101, 231, 173, .035); }
+
+.assetValidationHead,
+.assetValidationRow {
+  display: grid;
+  grid-template-columns: minmax(160px, 1.3fr) repeat(3, minmax(84px, .7fr)) minmax(130px, 1fr) minmax(105px, .8fr) minmax(115px, .9fr) minmax(88px, .65fr);
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+}
+
+.assetValidationHead { color: #71867b; }
+.assetValidationRow { border-top: 1px solid rgba(213, 238, 226, .075); color: #a7b9af; }
+.assetValidationRow:hover { background: rgba(101, 231, 173, .035); }
+.assetValidationCard { display: none; }
+
+#assetFilters,
+.assetFilters {
+  display: flex;
+  max-width: 100%;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+#assetFilters button,
+.assetFilters button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 13px;
+  border: 1px solid var(--adv-line);
+  border-radius: 999px;
+  background: var(--adv-bg-soft);
+  color: #8da198;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#assetFilters button:is(.active, [aria-pressed="true"]),
+.assetFilters button:is(.active, [aria-pressed="true"]) {
+  border-color: rgba(101, 231, 173, .3);
+  background: rgba(101, 231, 173, .09);
+  color: var(--adv-green-soft);
+}
+
+.advantageGates,
+#advantageGates,
+.gateGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+:is(.advantageGates, #advantageGates, .gateGrid) > :is(li, article),
+.advantageGate {
+  min-height: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 13px;
+  border: 1px solid var(--adv-line);
+  border-radius: 11px;
+  background: var(--adv-bg-soft);
+}
+
+:is(.advantageGates, #advantageGates, .gateGrid) > .pass,
+.advantageGate.pass { border-color: rgba(101, 231, 173, .28); }
+
+:is(.advantageGates, #advantageGates, .gateGrid) > .fail,
+.advantageGate.fail { border-color: rgba(255, 130, 120, .26); }
+
+.diagnosticGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#riskCostDiagnostics,
+#stabilityDiagnostics,
+.diagnosticCard {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--adv-line);
+  border-radius: 14px;
+  background: var(--adv-bg-soft);
+}
+
+:is(#riskCostDiagnostics, #stabilityDiagnostics, .diagnosticCard) h3 {
+  margin: 0 0 13px;
+  color: var(--adv-text);
+  font-size: 18px;
+}
+
+:is(#riskCostDiagnostics, #stabilityDiagnostics, .diagnosticCard) dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+:is(#riskCostDiagnostics, #stabilityDiagnostics, .diagnosticCard) dl > div {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(213, 238, 226, .075);
+  border-radius: 9px;
+  background: rgba(19, 35, 30, .48);
+}
+
+:is(#riskCostDiagnostics, #stabilityDiagnostics, .diagnosticCard) dt { color: var(--adv-muted); }
+:is(#riskCostDiagnostics, #stabilityDiagnostics, .diagnosticCard) dd { margin: 5px 0 0; color: var(--adv-text); font-weight: 800; }
+
+#failureSamples,
+#reproducibility,
+.advantageReport details {
+  margin-top: 16px;
+  overflow: clip;
+  border: 1px solid var(--adv-line);
+  border-radius: 14px;
+  background: var(--adv-bg-soft);
+}
+
+#failureSamples { border-color: rgba(255, 130, 120, .2); }
+
+.advantageReport details > summary {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #c9d8d0;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.advantageReport details > summary::-webkit-details-marker { display: none; }
+
+.advantageReport details > summary::after {
+  content: "+";
+  color: var(--adv-green);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.advantageReport details[open] > summary::after { content: "−"; }
+
+#failureBody,
+#reproducibilityBody,
+.detailsBody {
+  margin: 0;
+  padding: 0 16px 16px;
+  border-top: 1px solid rgba(213, 238, 226, .075);
+}
+
+.failureList { display: grid; gap: 8px; padding-top: 14px; }
+
+.failureRow {
+  display: grid;
+  grid-template-columns: minmax(145px, .9fr) minmax(120px, .7fr) minmax(220px, 1.6fr);
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid rgba(255, 130, 120, .14);
+  border-radius: 10px;
+  background: rgba(255, 130, 120, .035);
+}
+
+.failureRow b { color: #e5ece8; }
+.failureRow span { color: var(--adv-muted); overflow-wrap: anywhere; }
+.failureReason { color: var(--adv-red) !important; }
+
+#reproducibilityBody,
+.reproducibilityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+  padding-top: 14px;
+}
+
+:is(#reproducibilityBody, .reproducibilityGrid) > div {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(120px, .7fr) minmax(0, 1.3fr);
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(213, 238, 226, .07);
+}
+
+:is(#reproducibilityBody, .reproducibilityGrid) dt { color: var(--adv-muted); }
+:is(#reproducibilityBody, .reproducibilityGrid) dd {
+  min-width: 0;
+  margin: 0;
+  color: #c2d1c9;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  overflow-wrap: anywhere;
+}
+
+.advantageReport .is-positive,
+.advantageReport .positive { color: var(--adv-green) !important; }
+.advantageReport .is-negative,
+.advantageReport .negative { color: var(--adv-red) !important; }
+.advantageReport .is-neutral { color: var(--adv-gold) !important; }
+
+.advantageReport [data-cap-panel] { scroll-margin-top: calc(var(--adv-sticky-top) + 70px); }
+
+@media (max-width: 980px) {
+  #trainingTop3,
+  #trainingTop5,
+  .advantageTopStrategies { grid-template-columns: 1fr; }
+
+  :is(#trainingTop3, #trainingTop5, .advantageTopStrategies) > article,
+  .topStrategyCard,
+  .advantageTopCard { min-height: 0; }
+
+  .advantageGates,
+  #advantageGates,
+  .gateGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  :root { --adv-sticky-top: 72px; }
+
+  .advantageReport { font-size: 13px; }
+
+  .advantageHead > div:first-child { padding: 18px 16px; }
+
+  #drawdownTabs,
+  .drawdownTabs,
+  .advantageCapTabs {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .capComparison,
+  #capComparison { grid-template-columns: 1fr 1fr; }
+
+  .capComparison > article,
+  #capComparison > article,
+  .capSummaryCard,
+  .advantageSummaryCard {
+    min-height: 0;
+    padding: 15px;
+  }
+
+  .capComparison dl,
+  #capComparison dl,
+  .capSummaryCard dl { grid-template-columns: 1fr; }
+
+  .reportSectionHead,
+  .advantageSectionHead {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #assetFilters,
+  .assetFilters { margin-inline: -2px; padding-bottom: 3px; }
+
+  .diagnosticGrid { grid-template-columns: 1fr; }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) table,
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) tbody,
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) tr,
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) td {
+    width: 100%;
+    min-width: 0;
+    display: block;
+  }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) thead { display: none; }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) tbody {
+    display: grid;
+    gap: 9px;
+  }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) tr {
+    padding: 8px 13px;
+    border: 1px solid var(--adv-line);
+    border-radius: 12px;
+    background: var(--adv-bg-soft);
+  }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) td {
+    min-height: 38px;
+    display: grid;
+    grid-template-columns: minmax(102px, .8fr) minmax(0, 1.2fr);
+    gap: 12px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(213, 238, 226, .07);
+    text-align: right;
+  }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) td:last-child { border-bottom: 0; }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) td::before {
+    content: attr(data-label);
+    color: var(--adv-muted);
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  #assetValidation td:nth-child(1)::before { content: "标的 / 模型"; }
+  #assetValidation td:nth-child(2)::before { content: "OOS策略"; }
+  #assetValidation td:nth-child(3)::before { content: "OOS持有"; }
+  #assetValidation td:nth-child(4)::before { content: "超额"; }
+  #assetValidation td:nth-child(5)::before { content: "策略 / 持有回撤"; }
+  #assetValidation td:nth-child(6)::before { content: "稳定性"; }
+  #assetValidation td:nth-child(7)::before { content: "成本 / 换手"; }
+  #assetValidation td:nth-child(8)::before { content: "验收"; }
+
+  .assetValidationHead { display: none; }
+  .assetValidationRow { display: none; }
+  .assetValidationCard { display: block; }
+
+  .failureRow {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  #reproducibilityBody,
+  .reproducibilityGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 430px) {
+  .capComparison,
+  #capComparison { grid-template-columns: 1fr; }
+
+  .advStrategyMetrics,
+  .topStrategyMetrics { grid-template-columns: 1fr 1fr; }
+
+  .advantageGates,
+  #advantageGates,
+  .gateGrid { grid-template-columns: 1fr; }
+
+  :is(#riskCostDiagnostics, #stabilityDiagnostics, .diagnosticCard) dl { grid-template-columns: 1fr; }
+
+  :is(#reproducibilityBody, .reproducibilityGrid) > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advantageReport * { scroll-behavior: auto !important; transition: none !important; }
+}
+
+@media print {
+  .advantageReport {
+    color: #111;
+    font-size: 10pt;
+  }
+
+  .advantageHead { display: block; }
+  .advantageHead > div:first-child { padding: 0 0 12px; border: 0; background: #fff; }
+
+  #drawdownTabs,
+  .drawdownTabs,
+  .advantageCapTabs,
+  #assetFilters,
+  .assetFilters { display: none !important; }
+
+  /* Both cap panels must exist in the DOM; print overrides the active-tab hidden state. */
+  .advantageReport [data-cap-panel],
+  .advantageReport [data-cap-panel][hidden] {
+    display: block !important;
+    margin-top: 18px;
+  }
+
+  .advantageReport [data-cap-panel]::before {
+    content: attr(data-print-title);
+    display: block;
+    margin: 0 0 10px;
+    color: #111;
+    font-size: 18pt;
+    font-weight: 800;
+  }
+
+  .capComparison > article,
+  #capComparison > article,
+  .capSummaryCard,
+  .advantageSummaryCard,
+  :is(#trainingTop3, #trainingTop5, .advantageTopStrategies) > article,
+  .topStrategyCard,
+  .advantageTopCard,
+  #riskCostDiagnostics,
+  #stabilityDiagnostics,
+  .diagnosticCard,
+  .advantageReport details,
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) {
+    break-inside: avoid;
+    border-color: #cfcfcf;
+    background: #fff;
+    box-shadow: none;
+    color: #111;
+  }
+
+  .advantageReport :is(h2, h3, h4, b, strong, dd, td) { color: #111 !important; }
+  .advantageReport :is(p, span, small, dt, th, li) { color: #444 !important; }
+
+  #trainingTop3,
+  #trainingTop5,
+  .advantageTopStrategies { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .advantageReport details:not([open]) > *:not(summary) { display: block !important; }
+  .advantageReport details > summary::after { display: none; }
+
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) { overflow: visible; }
+  :is(#oosComparison, #assetValidation, .advantageTableWrap) table {
+    min-width: 0;
+    color: #111;
+    font-size: 8.5pt;
+  }
+
+  .advantageReport a { color: #111; text-decoration: none; }
+}

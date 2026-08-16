@@ -62,7 +62,7 @@
     }
     if(Object.keys(state.barsByCode).length<25)throw new Error(`完整行情仅 ${Object.keys(state.barsByCode).length-1} 只，低于正式组合最低要求`);
     const marketStatus=window.MarketDataStoreV8?await window.MarketDataStoreV8.status():{dataVersion:'runtime-only'};
-    state.dataVersion=marketStatus.dataVersion;state.loadKey=key;
+    state.dataVersion=marketStatus.dataVersion;state.dataSource=marketStatus.source||'静态行情清单与按需增量';state.lastTradingDate=marketStatus.lastTradingDate||null;state.loadKey=key;
   }
 
   async function executeResearch(openPortfolio=false){
@@ -160,10 +160,10 @@
     $('reportBody').innerHTML=`
       <article class="reportLead"><span>${allPassed?'封存量化门槛全部通过':'封存量化门槛未全部通过'} · 但历史成分仅为C级近似</span><h2>${allPassed?'本次组合在封存样本满足收益与回撤目标':'本次组合尚不能宣称稳定跑赢持有基准'}</h2><p>样本外收益 ${pct(s.return)}，${benchmarkNames[run.options.benchmarkCode]} ${pct(b.return)}，超额 ${pct(s.return-b.return)}；最大回撤 ${pct(s.drawdown)}。历史概念成分为免费档案重建，因此结果只能作为策略探索，不能冒充无偏证明。</p></article>
       <section class="reportChapter"><span>01 / 目标与验收门槛</span><h3>预注册的封存测试规则</h3><ul class="gateList">${gate('样本外净收益 > 0',g.positive)}${gate('样本外收益高于主基准',g.beatsBenchmark)}${gate(`样本外最大回撤 ≤ ${run.options.maxPortfolioDD}%`,g.drawdownCap)}${gate('回撤小于主基准',g.drawdownImproved)}${gate('外层滚动窗口至少60%跑赢',g.walkForward)}</ul></section>
-      <section class="reportChapter"><span>02 / 数据清单</span><h3>${esc(run.dataVersion)}</h3><p>行情：东方财富公开日线，静态清单与浏览器持久缓存优先，缺失区间才即时补齐。股票信号使用前复权日线；成交按开盘价、3bp费率、5bp滑点、100股整手近似。研究期 ${run.options.start}—${run.options.end}，${periodCount} 个时期，${run.universeSize} 只去重股票，读取失败 ${state.failures.length} 只。</p></section>
+      <section class="reportChapter"><span>02 / 数据清单</span><h3>${esc(run.dataVersion)}</h3><p>行情：${esc(state.dataSource||'静态行情清单与按需增量')}，静态年度分片与浏览器持久缓存优先，缺失区间才即时补齐。股票信号使用乘法复权总回报坐标；成交按开盘价、3bp费率、5bp滑点、100股整手近似。研究期 ${run.options.start}—${run.options.end}，${periodCount} 个时期，${run.universeSize} 只去重股票，读取失败 ${state.failures.length} 只。</p></section>
       <section class="reportChapter"><span>03 / 历史选股方法</span><h3>概念 Top${run.options.conceptCount} → 龙头 Top${run.options.leaderCount} + 正宗 Top${run.options.pureCount}</h3><p>概念热度使用信号日前20/60日相对强度、成交升温、站上MA20广度与波动惩罚；龙头使用相对强度、趋势和流动性；“正宗”使用静态业务相关度底稿。所有行情特征严格 ≤ signalDate，tradeDate 为下一月首个交易日。</p></section>
       <section class="reportChapter"><span>04 / 组合与成交模型</span><h3>${run.options.portfolioSize}只 · ${run.options.weighting} · 单股上限${run.options.stockCap}%</h3><p>共享现金、先卖后买、100股整手、最低5元佣金、卖出印花税分段近似；停牌/缺开盘价订单阻断。月度保留缓冲排名 ${run.options.bufferRank}，换手上限 ${run.options.turnoverCap}%，趋势与组合回撤共同决定总风险仓位。</p></section>
-      <section class="reportChapter"><span>05 / 参数搜索与冻结边界</span><h3>开发期 ${run.validation.development.join('—')} · 封存期 ${run.validation.sealedTest.join('—')}</h3><p>候选配置只按开发期 CAGR、Calmar、相对回撤和30%回撤惩罚评分；封存期不参与配置选择、过滤或重排。另用36个月开发＋3个月测试滚动拼接外层 OOS，资金连续、不在窗口间重置。</p></section>
+      <section class="reportChapter"><span>05 / 参数搜索与冻结边界</span><h3>开发期 ${run.validation.development.join('—')} · 封存期 ${run.validation.sealedTest.join('—')}</h3><p>候选配置只按开发期 CAGR、Calmar、相对回撤和${run.options.maxPortfolioDD}%回撤惩罚评分；封存期不参与配置选择、过滤或重排。另用36个月开发＋3个月测试滚动拼接外层 OOS，资金连续、不在窗口间重置。</p></section>
       <section class="reportChapter"><span>06 / 结果与多基准</span><div class="reportMetricGrid">${metricCard('封存策略',pct(s.return),`回撤 ${pct(s.drawdown)}`,s.return>=0?'up':'down')}${metricCard('主基准',pct(b.return),benchmarkNames[run.options.benchmarkCode],b.return>=0?'gold':'down')}${metricCard('封存超额',pct(s.return-b.return),`Calmar ${num(s.calmar)}`,s.return>b.return?'up':'down')}${metricCard('全周期诊断',pct(run.selected.stats.return),'非独立证据')}</div></section>
       <section class="reportChapter"><span>07 / 时期与持仓附录</span><h3>${periodCount} 个时期 · ${run.selected.timeline.length} 次月度构建</h3><p>${run.selected.timeline.slice(-12).map(row=>`${row.period}：${row.concepts.join('/')}; ${row.holdings.map(item=>item.name).join('、')}`).join('<br>')}</p></section>
       <section class="reportChapter"><span>08 / 逐股贡献与失败</span><h3>${assetRows().length} 只实际持有 · ${run.selected.blocked.length} 次成交阻断</h3><p>${assetRows().slice(0,12).map(row=>`${row.name} ${pct(row.contributionRate)}（${row.periods}期）`).join(' · ')}</p></section>
